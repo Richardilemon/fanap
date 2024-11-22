@@ -2,24 +2,26 @@ version: '3.8'
 
 services:
   postgres:
-    image: postgres:13
+    image: postgres
     environment:
-      POSTGRES_USER: ridata
-      POSTGRES_PASSWORD: Temitope001
-      POSTGRES_DB: fpl_db
+      POSTGRES_USER: "richardilemon"
+      POSTGRES_PASSWORD: "Temitope001"
+      POSTGRES_DB: "fpl_db"
     volumes:
       - pgdata:/var/lib/postgresql/data
       - ./sql:/docker-entrypoint-initdb.d
     ports:
-      - "5433:5432"
+      - "5440:5432"  
 
   pgadmin:
     image: dpage/pgadmin4
     environment:
-      PGADMIN_DEFAULT_EMAIL: richardilemon@gmail.com
-      PGADMIN_DEFAULT_PASSWORD: Temitope001
+      PGADMIN_DEFAULT_EMAIL: "richardilemon@gmail.com"
+      PGADMIN_DEFAULT_PASSWORD: "Temitope1"
     ports:
-      - "8081:80"
+      - "8082:80"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
     depends_on:
       - postgres
 
@@ -30,9 +32,10 @@ services:
     depends_on:
       - postgres
     environment:
-      DATABASE_URL: postgresql://ridata:Temitope001@postgres:5432/fpl_db
+      DATABASE_URL: postgresql://richardilemon:Temitope001@postgres:5432/fpl_db  
     volumes:
       - ./scripts:/app/scripts
 
 volumes:
+  pgadmin_data:
   pgdata:
