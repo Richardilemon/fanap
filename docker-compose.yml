@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_USER: "richardilemon"
+      POSTGRES_PASSWORD: "Temitope001"
+      POSTGRES_DB: "fpl_db"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./sql:/docker-entrypoint-initdb.d
+    ports:
+      - "5440:5432"  
+
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "richardilemon@gmail.com"
+      PGADMIN_DEFAULT_PASSWORD: "Temitope1"
+    ports:
+      - "8082:80"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    depends_on:
+      - postgres
+
+  loader:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - postgres
+    environment:
+      DATABASE_URL: postgresql://richardilemon:Temitope001@postgres:5432/fpl_db  
+    volumes:
+      - ./scripts:/app/scripts
+
+volumes:
+  pgadmin_data:
+  pgdata:
