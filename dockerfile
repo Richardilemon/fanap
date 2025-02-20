@@ -13,4 +13,4 @@ RUN pip install numpy==1.21.6 pandas==1.3.5 sqlalchemy
 COPY scripts /app/scripts
 
 # Set the default command to run the load_players.py script
-CMD ["python", "scripts/load.py"]
+#CMD ["python", "scripts/load.py"]

@@ -104,3 +104,4 @@ for season in seasons:
         print(f"Failed to retrieve player directories for season {season}: {response.status_code}")
 
 print("Script completed.")
+
