@@ -1,0 +1,2 @@
+CREATE DATABASE fpl_db;
+CREATE DATABASE airflow_db;
