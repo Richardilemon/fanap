@@ -1,0 +1,36 @@
+[2025-05-12T12:07:34.291+0000] {logging_mixin.py:150} INFO - Changing /opt/airflow/logs/dag_id=fpl_etl_pipeline/run_id=scheduled__2025-05-10T00:00:00+00:00/task_id=load_gameweeks permission to 509
+[2025-05-12T12:07:34.292+0000] {logging_mixin.py:150} INFO - Failed to change /opt/airflow/logs/dag_id=fpl_etl_pipeline/run_id=scheduled__2025-05-10T00:00:00+00:00/task_id=load_gameweeks permission to 509: [Errno 1] Operation not permitted: '/opt/airflow/logs/dag_id=fpl_etl_pipeline/run_id=scheduled__2025-05-10T00:00:00+00:00/task_id=load_gameweeks'
+[2025-05-12T12:07:34.360+0000] {logging_mixin.py:150} INFO - Changing /opt/airflow/logs/dag_id=fpl_etl_pipeline/run_id=scheduled__2025-05-10T00:00:00+00:00/task_id=load_gameweeks permission to 509
+[2025-05-12T12:07:34.361+0000] {logging_mixin.py:150} INFO - Failed to change /opt/airflow/logs/dag_id=fpl_etl_pipeline/run_id=scheduled__2025-05-10T00:00:00+00:00/task_id=load_gameweeks permission to 509: [Errno 1] Operation not permitted: '/opt/airflow/logs/dag_id=fpl_etl_pipeline/run_id=scheduled__2025-05-10T00:00:00+00:00/task_id=load_gameweeks'
+[2025-05-12T12:07:34.433+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fpl_etl_pipeline.load_gameweeks scheduled__2025-05-10T00:00:00+00:00 [queued]>
+[2025-05-12T12:07:34.448+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fpl_etl_pipeline.load_gameweeks scheduled__2025-05-10T00:00:00+00:00 [queued]>
+[2025-05-12T12:07:34.449+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2025-05-12T12:07:34.475+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): load_gameweeks> on 2025-05-10 00:00:00+00:00
+[2025-05-12T12:07:34.483+0000] {standard_task_runner.py:57} INFO - Started process 345 to run task
+[2025-05-12T12:07:34.488+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'fpl_etl_pipeline', 'load_gameweeks', 'scheduled__2025-05-10T00:00:00+00:00', '--job-id', '29', '--raw', '--subdir', 'DAGS_FOLDER/fpl_etl_pipeline.py', '--cfg-path', '/tmp/tmp19wumqr5']
+[2025-05-12T12:07:34.492+0000] {standard_task_runner.py:85} INFO - Job 29: Subtask load_gameweeks
+[2025-05-12T12:07:34.613+0000] {logging_mixin.py:150} INFO - Changing /opt/airflow/logs/dag_id=fpl_etl_pipeline/run_id=scheduled__2025-05-10T00:00:00+00:00/task_id=load_gameweeks permission to 509
+[2025-05-12T12:07:34.615+0000] {logging_mixin.py:150} INFO - Failed to change /opt/airflow/logs/dag_id=fpl_etl_pipeline/run_id=scheduled__2025-05-10T00:00:00+00:00/task_id=load_gameweeks permission to 509: [Errno 1] Operation not permitted: '/opt/airflow/logs/dag_id=fpl_etl_pipeline/run_id=scheduled__2025-05-10T00:00:00+00:00/task_id=load_gameweeks'
+[2025-05-12T12:07:34.618+0000] {task_command.py:410} INFO - Running <TaskInstance: fpl_etl_pipeline.load_gameweeks scheduled__2025-05-10T00:00:00+00:00 [running]> on host d45b3068fd3d
+[2025-05-12T12:07:35.019+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='richardilemon' AIRFLOW_CTX_DAG_ID='fpl_etl_pipeline' AIRFLOW_CTX_TASK_ID='load_gameweeks' AIRFLOW_CTX_EXECUTION_DATE='2025-05-10T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-05-10T00:00:00+00:00'
+[2025-05-12T12:07:35.022+0000] {logging_mixin.py:150} INFO - Creating game_weeks table...
+[2025-05-12T12:07:35.025+0000] {logging_mixin.py:150} INFO - Processing season 2020-21...
+[2025-05-12T12:07:38.591+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 181, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 198, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/app/load_gameweeks.py", line 76, in main
+    gameweeks = parse_gameweeks(csv_text, season)
+  File "/app/load_gameweeks.py", line 28, in parse_gameweeks
+    kickoff_time = datetime.strptime(row["kickoff_time"], "%Y-%m-%d %H:%M:%S")
+  File "/usr/local/lib/python3.7/_strptime.py", line 577, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+  File "/usr/local/lib/python3.7/_strptime.py", line 359, in _strptime
+    (data_string, format))
+ValueError: time data '2020-09-12T11:30:00Z' does not match format '%Y-%m-%d %H:%M:%S'
+[2025-05-12T12:07:38.624+0000] {taskinstance.py:1350} INFO - Marking task as UP_FOR_RETRY. dag_id=fpl_etl_pipeline, task_id=load_gameweeks, execution_date=20250510T000000, start_date=20250512T120734, end_date=20250512T120738
+[2025-05-12T12:07:38.649+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 29 for task load_gameweeks (time data '2020-09-12T11:30:00Z' does not match format '%Y-%m-%d %H:%M:%S'; 345)
+[2025-05-12T12:07:38.698+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2025-05-12T12:07:38.776+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

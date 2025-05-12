@@ -1,8 +1,12 @@
-import os
+import sys
+sys.path.append('/app')
+import requests
 import pandas as pd
 import psycopg2
+from io import StringIO
 from db_config import get_db_connection
 
+SEASONS = ["2019-20", "2020-21", "2021-22", "2022-23", "2023-24", "2024-25"]
 
 def create_teams_table(conn):
     with conn.cursor() as cur:
@@ -26,14 +30,22 @@ def create_teams_table(conn):
         """)
         conn.commit()
 
+def fetch_teams_csv(base_url, season):
+    url = f"{base_url.rstrip('/')}/{season}/teams.csv"  # Remove trailing slash
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
+        return response.text
+    except requests.RequestException as e:
+        print(f"⚠️ Failed to fetch teams.csv for {season}: {e}")
+        return None
 
-def load_and_insert_teams_from_csv(conn, season_folder_path, season_label):
-    teams_csv = os.path.join(season_folder_path, "teams.csv")
-    if not os.path.isfile(teams_csv):
-        print(f"⚠️ Skipping {season_label}: teams.csv not found.")
+def load_and_insert_teams_from_csv(conn, csv_text, season_label):
+    if not csv_text:
+        print(f"⚠️ Skipping {season_label}: No CSV data.")
         return
 
-    df = pd.read_csv(teams_csv)
+    df = pd.read_csv(StringIO(csv_text))
 
     with conn.cursor() as cur:
         for _, row in df.iterrows():
@@ -69,29 +81,20 @@ def load_and_insert_teams_from_csv(conn, season_folder_path, season_label):
         conn.commit()
     print(f"✅ Loaded teams for {season_label}")
 
-
-def normalize_season_folder(folder_name):
-    return folder_name.replace('-', '/')
-
-
-def main(base_data_path):
+def main(base_url):
     conn = get_db_connection()
     try:
+        print("Creating teams table...")
         create_teams_table(conn)
-
-        for folder in sorted(os.listdir(base_data_path)):
-            season_path = os.path.join(base_data_path, folder)
-            if not os.path.isdir(season_path):
-                continue
-            season = normalize_season_folder(folder)
-            load_and_insert_teams_from_csv(conn, season_path, season)
-
+        for season in SEASONS:
+            print(f"Fetching teams for {season}...")
+            csv_text = fetch_teams_csv(base_url, season)
+            load_and_insert_teams_from_csv(conn, csv_text, season)
+        print("✅ Teams history loaded successfully.")
     finally:
         conn.close()
 
-
 if __name__ == "__main__":
     import sys
-    base_path = sys.argv[1] if len(sys.argv) > 1 else "./data"
-    main(base_path)
-    print("✅ Teams data loaded successfully.")
+    base_url = sys.argv[1] if len(sys.argv) > 1 else "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/master/data"
+    main(base_url)

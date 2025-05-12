@@ -27,7 +27,6 @@ def create_teams_table(conn):
                 strength_defence_home INTEGER,
                 strength_defence_away INTEGER,
                 strength INTEGER,
-                position INTEGER,
                 PRIMARY KEY (season, code)
             );
         """)
@@ -43,9 +42,9 @@ def insert_teams(conn, teams, season):
                     strength_overall_home, strength_overall_away,
                     strength_attack_home, strength_attack_away,
                     strength_defence_home, strength_defence_away,
-                    strength, position
+                    strength
                 )
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
                 ON CONFLICT (season, code) DO UPDATE SET
                     id = EXCLUDED.id,
                     name = EXCLUDED.name,
@@ -56,14 +55,13 @@ def insert_teams(conn, teams, season):
                     strength_attack_away = EXCLUDED.strength_attack_away,
                     strength_defence_home = EXCLUDED.strength_defence_home,
                     strength_defence_away = EXCLUDED.strength_defence_away,
-                    strength = EXCLUDED.strength,
-                    position = EXCLUDED.position;
+                    strength = EXCLUDED.strength;
             """, (
                 season, team["code"], team["id"], team["name"], team["short_name"],
                 team["strength_overall_home"], team["strength_overall_away"],
                 team["strength_attack_home"], team["strength_attack_away"],
                 team["strength_defence_home"], team["strength_defence_away"],
-                team["strength"], team["position"]
+                team["strength"]
             ))
         conn.commit()
 
@@ -78,7 +76,7 @@ def infer_season():
     else:
         start_year = year - 1
         end_year = year
-    return f"{start_year}/{str(end_year)[-2:]}"
+    return f"{start_year}-{str(end_year)[-2:]}"
 
 def main(season=None):
     if not season:

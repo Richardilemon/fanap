@@ -1,11 +1,11 @@
 import requests
 import psycopg2
+import csv
+from io import StringIO
 from datetime import datetime, timedelta
 from db_config import get_db_connection
 
-
-SEASONS = ["2020-21", "2021-22", "2022-23", "2023-24"]
-
+SEASONS = ["2019-20", "2020-21", "2021-22", "2022-23", "2023-24", "2024-25"]
 
 def fetch_fixtures_for_season(season):
     """Fetch fixtures from the GitHub archive for a specific season."""
@@ -14,18 +14,14 @@ def fetch_fixtures_for_season(season):
     response.raise_for_status()
     return response.text
 
-
 def parse_gameweeks(csv_text, season):
     """Extract first fixture time for each gameweek in a season to set deadlines."""
-    import csv
-    from io import StringIO
-
     reader = csv.DictReader(StringIO(csv_text))
     gameweek_map = {}
 
     for row in reader:
         gw = int(row["event"])
-        kickoff_time = datetime.strptime(row["kickoff_time"], "%Y-%m-%d %H:%M:%S")
+        kickoff_time = datetime.strptime(row["kickoff_time"], "%Y-%m-%dT%H:%M:%SZ")
         if gw not in gameweek_map or kickoff_time < gameweek_map[gw]:
             gameweek_map[gw] = kickoff_time
 
@@ -35,7 +31,6 @@ def parse_gameweeks(csv_text, season):
         gameweeks.append((season, gw, deadline))
 
     return gameweeks
-
 
 def create_gameweeks_table(conn):
     """Create the game_weeks table."""
@@ -50,7 +45,6 @@ def create_gameweeks_table(conn):
         """)
         conn.commit()
 
-
 def insert_gameweeks(conn, gameweeks):
     """Insert gameweek data into the table."""
     with conn.cursor() as cur:
@@ -62,7 +56,6 @@ def insert_gameweeks(conn, gameweeks):
                     deadline = EXCLUDED.deadline;
             """, (season, gw, deadline))
         conn.commit()
-
 
 def main():
     conn = get_db_connection()
@@ -79,7 +72,6 @@ def main():
         print("✅ Gameweek deadlines loaded successfully.")
     finally:
         conn.close()
-
 
 if __name__ == "__main__":
     main()

@@ -1,0 +1,73 @@
+[2025-05-10T05:11:37.223+0000] {logging_mixin.py:150} INFO - Changing /opt/airflow/logs/dag_id=fpl_etl_pipeline/run_id=scheduled__2025-05-09T00:00:00+00:00/task_id=load_teams permission to 509
+[2025-05-10T05:11:37.226+0000] {logging_mixin.py:150} INFO - Failed to change /opt/airflow/logs/dag_id=fpl_etl_pipeline/run_id=scheduled__2025-05-09T00:00:00+00:00/task_id=load_teams permission to 509: [Errno 1] Operation not permitted: '/opt/airflow/logs/dag_id=fpl_etl_pipeline/run_id=scheduled__2025-05-09T00:00:00+00:00/task_id=load_teams'
+[2025-05-10T05:11:37.458+0000] {logging_mixin.py:150} INFO - Changing /opt/airflow/logs/dag_id=fpl_etl_pipeline/run_id=scheduled__2025-05-09T00:00:00+00:00/task_id=load_teams permission to 509
+[2025-05-10T05:11:37.463+0000] {logging_mixin.py:150} INFO - Failed to change /opt/airflow/logs/dag_id=fpl_etl_pipeline/run_id=scheduled__2025-05-09T00:00:00+00:00/task_id=load_teams permission to 509: [Errno 1] Operation not permitted: '/opt/airflow/logs/dag_id=fpl_etl_pipeline/run_id=scheduled__2025-05-09T00:00:00+00:00/task_id=load_teams'
+[2025-05-10T05:11:38.264+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fpl_etl_pipeline.load_teams scheduled__2025-05-09T00:00:00+00:00 [queued]>
+[2025-05-10T05:11:38.352+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fpl_etl_pipeline.load_teams scheduled__2025-05-09T00:00:00+00:00 [queued]>
+[2025-05-10T05:11:38.353+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2025-05-10T05:11:38.533+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): load_teams> on 2025-05-09 00:00:00+00:00
+[2025-05-10T11:43:11.504+0000] {standard_task_runner.py:57} INFO - Started process 4574 to run task
+[2025-05-10T11:43:11.563+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'fpl_etl_pipeline', 'load_teams', 'scheduled__2025-05-09T00:00:00+00:00', '--job-id', '24', '--raw', '--subdir', 'DAGS_FOLDER/fpl_etl_pipeline.py', '--cfg-path', '/tmp/tmpzzzrvl4e']
+[2025-05-10T11:43:19.004+0000] {standard_task_runner.py:85} INFO - Job 24: Subtask load_teams
+[2025-05-10T11:43:22.386+0000] {logging_mixin.py:150} INFO - Changing /opt/airflow/logs/dag_id=fpl_etl_pipeline/run_id=scheduled__2025-05-09T00:00:00+00:00/task_id=load_teams permission to 509
+[2025-05-10T11:43:22.553+0000] {logging_mixin.py:150} INFO - Failed to change /opt/airflow/logs/dag_id=fpl_etl_pipeline/run_id=scheduled__2025-05-09T00:00:00+00:00/task_id=load_teams permission to 509: [Errno 1] Operation not permitted: '/opt/airflow/logs/dag_id=fpl_etl_pipeline/run_id=scheduled__2025-05-09T00:00:00+00:00/task_id=load_teams'
+[2025-05-10T11:43:22.665+0000] {task_command.py:410} INFO - Running <TaskInstance: fpl_etl_pipeline.load_teams scheduled__2025-05-09T00:00:00+00:00 [running]> on host 15039a0aaf98
+[2025-05-10T11:43:24.243+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='richardilemon' AIRFLOW_CTX_DAG_ID='fpl_etl_pipeline' AIRFLOW_CTX_TASK_ID='load_teams' AIRFLOW_CTX_EXECUTION_DATE='2025-05-09T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-05-09T00:00:00+00:00'
+[2025-05-10T11:43:24.313+0000] {logging_mixin.py:150} INFO - Creating teams table...
+[2025-05-10T11:43:24.436+0000] {logging_mixin.py:150} INFO - Fetching teams for 2016-17...
+[2025-05-10T11:43:28.755+0000] {logging_mixin.py:150} INFO - ⚠️ Failed to fetch teams.csv for 2016-17: HTTPSConnectionPool(host='raw.githubusercontent.com', port=443): Max retries exceeded with url: /vaastav/Fantasy-Premier-League/master/data/2016-17/teams.csv (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f06b2320f90>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+[2025-05-10T11:43:28.766+0000] {logging_mixin.py:150} INFO - ⚠️ Skipping 2016-17: No CSV data.
+[2025-05-10T11:43:28.773+0000] {logging_mixin.py:150} INFO - Fetching teams for 2017-18...
+[2025-05-10T11:43:32.876+0000] {logging_mixin.py:150} INFO - ⚠️ Failed to fetch teams.csv for 2017-18: HTTPSConnectionPool(host='raw.githubusercontent.com', port=443): Max retries exceeded with url: /vaastav/Fantasy-Premier-League/master/data/2017-18/teams.csv (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f06b2337bd0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+[2025-05-10T11:43:32.892+0000] {logging_mixin.py:150} INFO - ⚠️ Skipping 2017-18: No CSV data.
+[2025-05-10T11:43:32.928+0000] {logging_mixin.py:150} INFO - Fetching teams for 2018-19...
+[2025-05-10T11:43:45.008+0000] {local_task_job_runner.py:292} WARNING - State of this instance has been externally set to up_for_retry. Terminating instance.
+[2025-05-10T11:43:45.026+0000] {process_utils.py:135} INFO - Sending Signals.SIGTERM to group 4574. PIDs of all processes in the group: [4574]
+[2025-05-10T11:43:45.035+0000] {process_utils.py:86} INFO - Sending the signal Signals.SIGTERM to group 4574
+[2025-05-10T11:43:45.036+0000] {taskinstance.py:1517} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-05-10T11:43:45.101+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 181, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 198, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/fpl_etl_pipeline.py", line 19, in load_teams_task
+    load_teams_history_main(base_url)
+  File "/app/load_teams_history.py", line 91, in main
+    csv_text = fetch_teams_csv(base_url, season)
+  File "/app/load_teams_history.py", line 36, in fetch_teams_csv
+    response = requests.get(url)
+  File "/home/airflow/.local/lib/python3.7/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/requests/adapters.py", line 497, in send
+    chunked=chunked,
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 721, in urlopen
+    chunked=chunked,
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 403, in _make_request
+    self._validate_conn(conn)
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 1053, in _validate_conn
+    conn.connect()
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connection.py", line 429, in connect
+    tls_in_tls=tls_in_tls,
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/util/ssl_.py", line 450, in ssl_wrap_socket
+    sock, context, tls_in_tls, server_hostname=server_hostname
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/util/ssl_.py", line 493, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+  File "/usr/local/lib/python3.7/ssl.py", line 423, in wrap_socket
+    session=session
+  File "/usr/local/lib/python3.7/ssl.py", line 870, in _create
+    self.do_handshake()
+  File "/usr/local/lib/python3.7/ssl.py", line 1139, in do_handshake
+    self._sslobj.do_handshake()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1519, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2025-05-10T11:43:45.151+0000] {taskinstance.py:1350} INFO - Marking task as FAILED. dag_id=fpl_etl_pipeline, task_id=load_teams, execution_date=20250509T000000, start_date=20250510T051138, end_date=20250510T114345
+[2025-05-10T11:43:45.284+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 24 for task load_teams (Task received SIGTERM signal; 4574)
+[2025-05-10T11:43:45.330+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=4574, status='terminated', exitcode=1, started='11:43:12') (4574) terminated with exit code 1
