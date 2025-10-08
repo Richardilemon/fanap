@@ -1,0 +1,14 @@
+[2025-10-07T16:18:59.676+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fpl_etl_pipeline.fetch_teams manual__2025-10-07T16:18:55.325038+00:00 [queued]>
+[2025-10-07T16:18:59.692+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fpl_etl_pipeline.fetch_teams manual__2025-10-07T16:18:55.325038+00:00 [queued]>
+[2025-10-07T16:18:59.692+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2025-10-07T16:18:59.717+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): fetch_teams> on 2025-10-07 16:18:55.325038+00:00
+[2025-10-07T16:18:59.722+0000] {standard_task_runner.py:57} INFO - Started process 1705 to run task
+[2025-10-07T16:18:59.726+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'fpl_etl_pipeline', 'fetch_teams', 'manual__2025-10-07T16:18:55.325038+00:00', '--job-id', '95', '--raw', '--subdir', 'DAGS_FOLDER/fpl_etl_pipeline.py', '--cfg-path', '/tmp/tmp44j30_2g']
+[2025-10-07T16:18:59.729+0000] {standard_task_runner.py:85} INFO - Job 95: Subtask fetch_teams
+[2025-10-07T16:18:59.821+0000] {task_command.py:410} INFO - Running <TaskInstance: fpl_etl_pipeline.fetch_teams manual__2025-10-07T16:18:55.325038+00:00 [running]> on host f44e38d8e384
+[2025-10-07T16:18:59.992+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='richardilemon' AIRFLOW_CTX_DAG_ID='fpl_etl_pipeline' AIRFLOW_CTX_TASK_ID='fetch_teams' AIRFLOW_CTX_EXECUTION_DATE='2025-10-07T16:18:55.325038+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-07T16:18:55.325038+00:00'
+[2025-10-07T16:19:00.176+0000] {logging_mixin.py:150} INFO - ⚠️ Failed to fetch teams data: HTTPSConnectionPool(host='fantasy.premierleague.com', port=443): Max retries exceeded with url: /api/bootstrap-static/ (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f49e3cd0890>: Failed to establish a new connection: [Errno -5] No address associated with hostname')) (URL: https://fantasy.premierleague.com/api/bootstrap-static/)
+[2025-10-07T16:19:00.177+0000] {python.py:183} INFO - Done. Returned value was: []
+[2025-10-07T16:19:00.222+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=fpl_etl_pipeline, task_id=fetch_teams, execution_date=20251007T161855, start_date=20251007T161859, end_date=20251007T161900
+[2025-10-07T16:19:00.261+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2025-10-07T16:19:00.308+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

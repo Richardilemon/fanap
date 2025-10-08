@@ -1,0 +1,36 @@
+[2025-10-07T15:33:14.443+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fpl_etl_pipeline.create_teams_table manual__2025-10-07T15:33:05.955062+00:00 [queued]>
+[2025-10-07T15:33:14.467+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fpl_etl_pipeline.create_teams_table manual__2025-10-07T15:33:05.955062+00:00 [queued]>
+[2025-10-07T15:33:14.469+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2025-10-07T15:33:14.499+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): create_teams_table> on 2025-10-07 15:33:05.955062+00:00
+[2025-10-07T15:33:14.508+0000] {standard_task_runner.py:57} INFO - Started process 469 to run task
+[2025-10-07T15:33:14.514+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'fpl_etl_pipeline', 'create_teams_table', 'manual__2025-10-07T15:33:05.955062+00:00', '--job-id', '82', '--raw', '--subdir', 'DAGS_FOLDER/fpl_etl_pipeline.py', '--cfg-path', '/tmp/tmpe1x2navs']
+[2025-10-07T15:33:14.517+0000] {standard_task_runner.py:85} INFO - Job 82: Subtask create_teams_table
+[2025-10-07T15:33:14.691+0000] {task_command.py:410} INFO - Running <TaskInstance: fpl_etl_pipeline.create_teams_table manual__2025-10-07T15:33:05.955062+00:00 [running]> on host f44e38d8e384
+[2025-10-07T15:33:15.058+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='richardilemon' AIRFLOW_CTX_DAG_ID='fpl_etl_pipeline' AIRFLOW_CTX_TASK_ID='create_teams_table' AIRFLOW_CTX_EXECUTION_DATE='2025-10-07T15:33:05.955062+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-07T15:33:05.955062+00:00'
+[2025-10-07T15:33:15.103+0000] {base.py:73} INFO - Using connection ID 'fpl_db_conn' for task execution.
+[2025-10-07T15:33:15.129+0000] {db_config.py:33} INFO - Database Connection Established
+[2025-10-07T15:33:15.132+0000] {db_config.py:43} ERROR - Failed to connect to database: cross-database references are not implemented: "fpl_db.public.teams"
+LINE 2:             CREATE TABLE IF NOT EXISTS fpl_db.public.teams (
+                                               ^
+
+[2025-10-07T15:33:15.133+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 181, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 198, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/scripts/db_config.py", line 35, in wrapper
+    result = func(conn=conn)  # fetch_teams_data(_connection)
+  File "/opt/airflow/scripts/load_teams_live.py", line 52, in create_teams_table
+    """)
+psycopg2.errors.FeatureNotSupported: cross-database references are not implemented: "fpl_db.public.teams"
+LINE 2:             CREATE TABLE IF NOT EXISTS fpl_db.public.teams (
+                                               ^
+
+[2025-10-07T15:33:15.184+0000] {taskinstance.py:1350} INFO - Marking task as UP_FOR_RETRY. dag_id=fpl_etl_pipeline, task_id=create_teams_table, execution_date=20251007T153305, start_date=20251007T153314, end_date=20251007T153315
+[2025-10-07T15:33:15.238+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 82 for task create_teams_table (cross-database references are not implemented: "fpl_db.public.teams"
+LINE 2:             CREATE TABLE IF NOT EXISTS fpl_db.public.teams (
+                                               ^
+; 469)
+[2025-10-07T15:33:15.293+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2025-10-07T15:33:15.324+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check
