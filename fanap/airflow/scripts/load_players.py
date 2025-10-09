@@ -1,14 +1,20 @@
 import requests
 import psycopg2
 from scripts.db_config import get_db_connection
+from airflow.models import Variable
 
 
 def fetch_players_data():
     """Fetch player data from the FPL API."""
-    url = "https://fantasy.premierleague.com/api/bootstrap-static/"
-    response = requests.get(url)
-    response.raise_for_status()
-    return response.json().get("elements", [])
+    try:
+        url = Variable.get("FPL_TEAMS_API_URL")
+        response = requests.get(url)
+        response.raise_for_status()
+        return response.json().get("elements", [])
+
+    except requests.RequestException as e:
+        print(f"⚠️ Failed to fetch players data: {e} (URL: {url})")
+        return []
 
 
 def create_players_table(conn):

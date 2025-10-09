@@ -1,0 +1,43 @@
+[2025-10-09T08:08:32.608+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fpl_etl_pipeline.check_fixtures_api manual__2025-10-09T07:58:16.728651+00:00 [queued]>
+[2025-10-09T08:08:32.650+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fpl_etl_pipeline.check_fixtures_api manual__2025-10-09T07:58:16.728651+00:00 [queued]>
+[2025-10-09T08:08:32.652+0000] {taskinstance.py:1308} INFO - Starting attempt 2 of 2
+[2025-10-09T08:08:32.721+0000] {taskinstance.py:1327} INFO - Executing <Task(HttpSensor): check_fixtures_api> on 2025-10-09 07:58:16.728651+00:00
+[2025-10-09T08:08:32.729+0000] {standard_task_runner.py:57} INFO - Started process 465 to run task
+[2025-10-09T08:08:32.740+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'fpl_etl_pipeline', 'check_fixtures_api', 'manual__2025-10-09T07:58:16.728651+00:00', '--job-id', '181', '--raw', '--subdir', 'DAGS_FOLDER/fpl_etl_pipeline.py', '--cfg-path', '/tmp/tmplrbv4x5b']
+[2025-10-09T08:08:32.745+0000] {standard_task_runner.py:85} INFO - Job 181: Subtask check_fixtures_api
+[2025-10-09T08:08:33.271+0000] {task_command.py:410} INFO - Running <TaskInstance: fpl_etl_pipeline.check_fixtures_api manual__2025-10-09T07:58:16.728651+00:00 [running]> on host 671762379d36
+[2025-10-09T08:08:33.558+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='richardilemon' AIRFLOW_CTX_DAG_ID='fpl_etl_pipeline' AIRFLOW_CTX_TASK_ID='check_fixtures_api' AIRFLOW_CTX_EXECUTION_DATE='2025-10-09T07:58:16.728651+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-09T07:58:16.728651+00:00'
+[2025-10-09T08:08:33.607+0000] {http.py:122} INFO - Poking: data/
+[2025-10-09T08:08:33.672+0000] {base.py:73} INFO - Using connection ID 'fixtures_data_path' for task execution.
+[2025-10-09T08:08:34.778+0000] {http.py:181} ERROR - HTTP error: Bad Request
+[2025-10-09T08:08:34.786+0000] {http.py:182} ERROR - 400: Invalid request
+[2025-10-09T08:08:34.833+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/http/hooks/http.py", line 179, in check_response
+    response.raise_for_status()
+  File "/home/airflow/.local/lib/python3.7/site-packages/requests/models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/master/data/data/
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/sensors/base.py", line 225, in execute
+    raise e
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/sensors/base.py", line 212, in execute
+    poke_return = self.poke(context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/http/sensors/http.py", line 137, in poke
+    raise exc
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/http/sensors/http.py", line 128, in poke
+    extra_options=self.extra_options,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/http/hooks/http.py", line 169, in run
+    return self.run_and_check(session, prepped_request, extra_options)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/http/hooks/http.py", line 222, in run_and_check
+    self.check_response(response)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/http/hooks/http.py", line 183, in check_response
+    raise AirflowException(str(response.status_code) + ":" + response.reason)
+airflow.exceptions.AirflowException: 400:Bad Request
+[2025-10-09T08:08:34.850+0000] {taskinstance.py:1350} INFO - Marking task as FAILED. dag_id=fpl_etl_pipeline, task_id=check_fixtures_api, execution_date=20251009T075816, start_date=20251009T080832, end_date=20251009T080834
+[2025-10-09T08:08:34.890+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 181 for task check_fixtures_api (400:Bad Request; 465)
+[2025-10-09T08:08:34.936+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2025-10-09T08:08:35.312+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

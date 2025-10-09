@@ -1,86 +1,69 @@
 import requests
-import psycopg2
 import csv
 from io import StringIO
 from datetime import datetime, timedelta
-from scripts.db_config import get_db_connection
+from scripts.db_config import db_connection_wrapper
+from airflow.models import Variable
 
 SEASONS = ["2019-20", "2020-21", "2021-22", "2022-23", "2023-24", "2024-25"]
 
 
-def fetch_fixtures_for_season(season):
+def fetch_gameweek_for_season(season) -> dict:
     """Fetch fixtures from the GitHub archive for a specific season."""
-    url = f"https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/master/data/{season}/fixtures.csv"
-    response = requests.get(url)
-    response.raise_for_status()
-    return response.text
+    try:
+        url = f"{Variable.get('FIXTURES_BASE_URL')}/{season}/{Variable.get('FIXTURES_DATASET_PATH')}"
+        response = requests.get(url)
+        response.raise_for_status()
+        return {"season": season, "csv": response.text}
+
+    except requests.RequestException as e:
+        print(f"⚠️ Failed to fetch fixtures.csv for {season}: {e} (URL: {url})")
+        return {"season": season, "csv": None}
 
 
-def parse_gameweeks(csv_text, season):
+def parse_gameweeks(fixture_data):
     """Extract first fixture time for each gameweek in a season to set deadlines."""
-    reader = csv.DictReader(StringIO(csv_text))
-    gameweek_map = {}
+
+    season = fixture_data["season"]
+    reader = csv.DictReader(StringIO(fixture_data["csv"]))
+    gameweeks = []
+    gw_map = {}
 
     for row in reader:
         gw = int(row["event"])
         kickoff_time = datetime.strptime(row["kickoff_time"], "%Y-%m-%dT%H:%M:%SZ")
-        if gw not in gameweek_map or kickoff_time < gameweek_map[gw]:
-            gameweek_map[gw] = kickoff_time
+        if gw not in gw_map or kickoff_time < gw_map[gw]:
+            gw_map[gw] = kickoff_time
 
-    gameweeks = []
-    for gw, kickoff in gameweek_map.items():
+    for gw, kickoff in gw_map.items():
         deadline = kickoff - timedelta(hours=1)
         gameweeks.append((season, gw, deadline))
 
     return gameweeks
 
 
-def create_gameweeks_table(conn):
-    """Create the game_weeks table."""
-    with conn.cursor() as cur:
-        cur.execute("""
-            CREATE TABLE IF NOT EXISTS game_weeks (
-                season TEXT,
-                gameweek INTEGER,
-                deadline TIMESTAMP,
-                PRIMARY KEY (season, gameweek)
-            );
-        """)
-        conn.commit()
+def combine_gameweeks(results):
+    """Combine parsed gameweek results from multiple seasons into one dictionary."""
+    combined = []
+    for r in results:
+        if r:
+            combined.extend(r)
+    return combined
 
 
-def insert_gameweeks(conn, gameweeks):
+@db_connection_wrapper
+def load_gameweeks(connection, gameweeks):
     """Insert gameweek data into the table."""
-    with conn.cursor() as cur:
-        for season, gw, deadline in gameweeks:
-            cur.execute(
-                """
-                INSERT INTO game_weeks (season, gameweek, deadline)
-                VALUES (%s, %s, %s)
-                ON CONFLICT (season, gameweek) DO UPDATE SET
-                    deadline = EXCLUDED.deadline;
-            """,
-                (season, gw, deadline),
-            )
-        conn.commit()
-
-
-def main():
-    conn = get_db_connection()
-    try:
-        print("Creating game_weeks table...")
-        create_gameweeks_table(conn)
-
-        for season in SEASONS:
-            print(f"Processing season {season}...")
-            csv_text = fetch_fixtures_for_season(season)
-            gameweeks = parse_gameweeks(csv_text, season)
-            insert_gameweeks(conn, gameweeks)
-
-        print("✅ Gameweek deadlines loaded successfully.")
-    finally:
-        conn.close()
-
-
-if __name__ == "__main__":
-    main()
+    _cursor = connection.cursor()
+    for season, gw, deadline in gameweeks:
+        _cursor.execute(
+            """
+            INSERT INTO game_weeks (season, gameweek, deadline)
+            VALUES (%s, %s, %s)
+            ON CONFLICT (season, gameweek) DO UPDATE SET
+                deadline = EXCLUDED.deadline;
+        """,
+            (season, gw, deadline),
+        )
+    connection.commit()
+    print(f"✅ Inserted/Updated {len(gameweeks)} gameweeks.")

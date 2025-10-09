@@ -1,0 +1,18 @@
+[2025-10-09T08:03:24.732+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fpl_etl_pipeline.insert_teams_task manual__2025-10-09T07:58:16.728651+00:00 [queued]>
+[2025-10-09T08:03:24.749+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fpl_etl_pipeline.insert_teams_task manual__2025-10-09T07:58:16.728651+00:00 [queued]>
+[2025-10-09T08:03:24.750+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2025-10-09T08:03:24.891+0000] {taskinstance.py:1327} INFO - Executing <Task(_PythonDecoratedOperator): insert_teams_task> on 2025-10-09 07:58:16.728651+00:00
+[2025-10-09T08:03:24.895+0000] {standard_task_runner.py:57} INFO - Started process 409 to run task
+[2025-10-09T08:03:24.899+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'fpl_etl_pipeline', 'insert_teams_task', 'manual__2025-10-09T07:58:16.728651+00:00', '--job-id', '178', '--raw', '--subdir', 'DAGS_FOLDER/fpl_etl_pipeline.py', '--cfg-path', '/tmp/tmp_j7r4ltd']
+[2025-10-09T08:03:24.902+0000] {standard_task_runner.py:85} INFO - Job 178: Subtask insert_teams_task
+[2025-10-09T08:03:24.985+0000] {task_command.py:410} INFO - Running <TaskInstance: fpl_etl_pipeline.insert_teams_task manual__2025-10-09T07:58:16.728651+00:00 [running]> on host 671762379d36
+[2025-10-09T08:03:25.145+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='richardilemon' AIRFLOW_CTX_DAG_ID='fpl_etl_pipeline' AIRFLOW_CTX_TASK_ID='insert_teams_task' AIRFLOW_CTX_EXECUTION_DATE='2025-10-09T07:58:16.728651+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-09T07:58:16.728651+00:00'
+[2025-10-09T08:03:25.170+0000] {base.py:73} INFO - Using connection ID 'fpl_db_conn' for task execution.
+[2025-10-09T08:03:25.181+0000] {db_config.py:66} INFO - Database Connection Established
+[2025-10-09T08:03:25.181+0000] {load_teams_live.py:209} INFO - Teams data inserted/updated successfully.
+[2025-10-09T08:03:25.182+0000] {logging_mixin.py:150} INFO - Inserted 0 teams into database for season 2025-26...
+[2025-10-09T08:03:25.182+0000] {load_teams_live.py:214} INFO - Database Connection Closed
+[2025-10-09T08:03:25.183+0000] {python.py:183} INFO - Done. Returned value was: None
+[2025-10-09T08:03:25.203+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=fpl_etl_pipeline, task_id=insert_teams_task, execution_date=20251009T075816, start_date=20251009T080324, end_date=20251009T080325
+[2025-10-09T08:03:25.232+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2025-10-09T08:03:25.289+0000] {taskinstance.py:2653} INFO - 1 downstream tasks scheduled from follow-on schedule check

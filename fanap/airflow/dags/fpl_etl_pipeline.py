@@ -2,11 +2,18 @@ from airflow import DAG
 from airflow.decorators import task, dag
 from airflow.providers.postgres.operators.postgres import PostgresOperator
 from datetime import datetime, timedelta
-from scripts.load_teams_live import fetch_teams_data, insert_teams
+from scripts.load_gameweeks import (
+    combine_gameweeks,
+    fetch_gameweek_for_season,
+    load_gameweeks,
+    parse_gameweeks,
+)
+from scripts.load_teams_live import fetch_teams_data, load_teams
 from scripts.load_teams_live import infer_season
 from airflow.sensors.http_sensor import HttpSensor
 import logging
-
+from airflow.models import Variable
+from scripts.load_gameweeks import SEASONS
 
 CURRENT_SEASON = infer_season()
 
@@ -30,14 +37,14 @@ default_args = {
 def fpl_etl_pipeline():
     """ETL Pipeline for Fantasy Premier League Data"""
 
-    check_teams_api = HttpSensor(
-        task_id="check_teams_api",
-        http_conn_id="fpl_base_api",
-        endpoint="api/bootstrap-static/",
-        poke_interval=5,
-        timeout=20,
-        mode="reschedule",
-    )
+    # check_teams_api = HttpSensor(
+    #     task_id="check_teams_api",
+    #     http_conn_id="fpl_base_api",
+    #     endpoint="api/bootstrap-static/",
+    #     poke_interval=5,
+    #     timeout=20,
+    #     mode="reschedule",
+    # )
 
     # Create Teams Table
     create_teams_table = PostgresOperator(
@@ -70,37 +77,97 @@ def fpl_etl_pipeline():
 
     # Insert Teams Task (receives teams from previous)
     @task()
-    def insert_teams_task(teams):
-        insert_teams(teams, CURRENT_SEASON)
+    def load_teams_task(teams):
+        load_teams(teams, CURRENT_SEASON)
 
     # create load_fixtures table
-    load_fixtures_table = PostgresOperator(
-        task_id="create_fixtures_table",
+    # load_fixtures_table
+
+    check_fixtures_data_url = HttpSensor(
+        task_id="check_fixtures_data_url",
+        http_conn_id="fixtures_base_path",
+        endpoint=f"{CURRENT_SEASON}/{Variable.get('FIXTURES_DATASET_PATH')}",
+        poke_interval=5,
+        timeout=20,
+        mode="reschedule",
+    )
+
+    """Create the game_weeks table."""
+    create_gameweeks_table = PostgresOperator(
+        task_id="create_gameweeks_table",
         postgres_conn_id="fpl_db_conn",
         sql="""
-            CREATE TABLE IF NOT EXISTS fixtures (
-                code INTEGER PRIMARY KEY,
+            CREATE TABLE IF NOT EXISTS game_weeks (
                 season TEXT,
                 gameweek INTEGER,
-                kickoff_time TIMESTAMP WITH TIME ZONE,
-                team_h_code INTEGER,
-                team_a_code INTEGER,
-                team_h_score INTEGER,
-                team_a_score INTEGER,
-                team_h_difficulty INTEGER,
-                team_a_difficulty INTEGER
+                deadline TIMESTAMP,
+                PRIMARY KEY (season, gameweek)
             );
         """,
     )
 
+    @task()
+    def load_gameweek_task(season):
+        return fetch_gameweek_for_season(season)
+
+    @task()
+    def parse_gameweeks_task(gameweeks_data):
+        return parse_gameweeks(gameweeks_data)
+
+    @task()
+    def combine_gameweeks_task(results):
+        return combine_gameweeks(results)
+
+    @task
+    def populate_gameweeks(gameweeks):
+        return load_gameweeks(gameweeks)
+
+    # create_fixtures_table = PostgresOperator(
+    #     task_id="create_fixtures_table",
+    #     postgres_conn_id="fpl_db_conn",
+    #     sql="""
+    #         CREATE TABLE IF NOT EXISTS fixtures (
+    #             code INTEGER PRIMARY KEY,
+    #             season TEXT,
+    #             gameweek INTEGER,
+    #             kickoff_time TIMESTAMP WITH TIME ZONE,
+    #             team_h_code INTEGER,
+    #             team_a_code INTEGER,
+    #             team_h_score INTEGER,
+    #             team_a_score INTEGER,
+    #             team_h_difficulty INTEGER,
+    #             team_a_difficulty INTEGER
+    #         );
+    #     """,
+    # )
+
     # Define dependencies using TaskFlow API chaining
 
     teams = fetch_teams_task()
+
+    gameweeks_fn = load_gameweek_task.expand(season=SEASONS)
+    teams_gameweeks_parsed = parse_gameweeks_task.expand(gameweeks_data=gameweeks_fn)
+    combined_gameweeks = combine_gameweeks_task(teams_gameweeks_parsed)
+    populate_gameweeks(combined_gameweeks)
+
     (
-        create_teams_table
-        >> check_teams_api
-        >> insert_teams_task(teams)
-        >> load_fixtures_table
+        [
+            (create_teams_table >> load_teams_task(teams))
+            # (create_teams_table >> check_teams_api >> load_teams_task(teams))
+            >> check_fixtures_data_url
+            >> create_gameweeks_table
+            >> gameweeks_fn
+            # >> teams_gameweeks_parsed
+            # >> combine_gameweeks_task
+            # >> populate_gameweeks(combined_fixtures)
+        ]
+        # >> create_fixtures_table
+        # >>
+        # >> create_gameweeks_table
+        # >> gameweeks
+        # >> teams_gameweeks_parsed
+        # >> combined_fixtures
+        # >> populate_gameweeks(combined_fixtures)
     )
 
 
@@ -162,6 +229,5 @@ fpl_etl_pipeline = fpl_etl_pipeline()
 # insert_teams(conn, teams, season)
 
 
-# create_teams_table >> check_teams_api >> fetch_teams >> insert_teams_data
 # Set task dependencies
 # load_teams >> load_fixtures >> load_gameweeks >> load_players >> load_player_gameweek_stats
