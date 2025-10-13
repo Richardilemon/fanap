@@ -5,8 +5,10 @@ import psycopg2
 from io import StringIO
 from datetime import datetime, timedelta
 from scripts.db_config import get_db_connection
+from load_fixtures import SEASONS
+from airflow.models import Variable
 
-SEASONS = ["2020-21", "2021-22", "2022-23", "2023-24"]
+# SEASONS = ["2020-21", "2021-22", "2022-23", "2023-24"]
 REPO_BASE = (
     "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/master/data"
 )

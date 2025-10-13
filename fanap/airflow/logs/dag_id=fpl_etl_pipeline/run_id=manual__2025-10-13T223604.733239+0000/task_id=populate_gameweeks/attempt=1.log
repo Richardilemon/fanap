@@ -1,0 +1,16 @@
+[2025-10-13T22:36:48.222+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fpl_etl_pipeline.populate_gameweeks manual__2025-10-13T22:36:04.733239+00:00 [queued]>
+[2025-10-13T22:36:48.241+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fpl_etl_pipeline.populate_gameweeks manual__2025-10-13T22:36:04.733239+00:00 [queued]>
+[2025-10-13T22:36:48.242+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2025-10-13T22:36:48.394+0000] {taskinstance.py:1327} INFO - Executing <Task(_PythonDecoratedOperator): populate_gameweeks> on 2025-10-13 22:36:04.733239+00:00
+[2025-10-13T22:36:48.403+0000] {standard_task_runner.py:57} INFO - Started process 1483 to run task
+[2025-10-13T22:36:48.409+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'fpl_etl_pipeline', 'populate_gameweeks', 'manual__2025-10-13T22:36:04.733239+00:00', '--job-id', '661', '--raw', '--subdir', 'DAGS_FOLDER/fpl_etl_pipeline.py', '--cfg-path', '/tmp/tmp1lowo2m0']
+[2025-10-13T22:36:48.411+0000] {standard_task_runner.py:85} INFO - Job 661: Subtask populate_gameweeks
+[2025-10-13T22:36:48.508+0000] {task_command.py:410} INFO - Running <TaskInstance: fpl_etl_pipeline.populate_gameweeks manual__2025-10-13T22:36:04.733239+00:00 [running]> on host 033ad6cd18d9
+[2025-10-13T22:36:48.725+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='richardilemon' AIRFLOW_CTX_DAG_ID='fpl_etl_pipeline' AIRFLOW_CTX_TASK_ID='populate_gameweeks' AIRFLOW_CTX_EXECUTION_DATE='2025-10-13T22:36:04.733239+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-13T22:36:04.733239+00:00'
+[2025-10-13T22:36:48.762+0000] {base.py:73} INFO - Using connection ID 'fpl_db_conn' for task execution.
+[2025-10-13T22:36:48.773+0000] {db_config.py:66} INFO - Database Connection Established
+[2025-10-13T22:36:48.832+0000] {logging_mixin.py:150} INFO - ✅ Inserted/Updated 265 gameweeks.
+[2025-10-13T22:36:48.833+0000] {python.py:183} INFO - Done. Returned value was: None
+[2025-10-13T22:36:48.849+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=fpl_etl_pipeline, task_id=populate_gameweeks, execution_date=20251013T223604, start_date=20251013T223648, end_date=20251013T223648
+[2025-10-13T22:36:48.900+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2025-10-13T22:36:48.948+0000] {taskinstance.py:2653} INFO - 1 downstream tasks scheduled from follow-on schedule check

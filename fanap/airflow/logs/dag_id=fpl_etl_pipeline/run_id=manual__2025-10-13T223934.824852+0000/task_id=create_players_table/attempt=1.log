@@ -1,0 +1,38 @@
+[2025-10-13T22:40:11.992+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fpl_etl_pipeline.create_players_table manual__2025-10-13T22:39:34.824852+00:00 [queued]>
+[2025-10-13T22:40:12.009+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fpl_etl_pipeline.create_players_table manual__2025-10-13T22:39:34.824852+00:00 [queued]>
+[2025-10-13T22:40:12.010+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2025-10-13T22:40:12.187+0000] {taskinstance.py:1327} INFO - Executing <Task(PostgresOperator): create_players_table> on 2025-10-13 22:39:34.824852+00:00
+[2025-10-13T22:40:12.195+0000] {standard_task_runner.py:57} INFO - Started process 1600 to run task
+[2025-10-13T22:40:12.200+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'fpl_etl_pipeline', 'create_players_table', 'manual__2025-10-13T22:39:34.824852+00:00', '--job-id', '702', '--raw', '--subdir', 'DAGS_FOLDER/fpl_etl_pipeline.py', '--cfg-path', '/tmp/tmp_twek3c9']
+[2025-10-13T22:40:12.202+0000] {standard_task_runner.py:85} INFO - Job 702: Subtask create_players_table
+[2025-10-13T22:40:12.293+0000] {task_command.py:410} INFO - Running <TaskInstance: fpl_etl_pipeline.create_players_table manual__2025-10-13T22:39:34.824852+00:00 [running]> on host 033ad6cd18d9
+[2025-10-13T22:40:12.427+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='richardilemon' AIRFLOW_CTX_DAG_ID='fpl_etl_pipeline' AIRFLOW_CTX_TASK_ID='create_players_table' AIRFLOW_CTX_EXECUTION_DATE='2025-10-13T22:39:34.824852+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-13T22:39:34.824852+00:00'
+[2025-10-13T22:40:12.428+0000] {sql.py:265} INFO - Executing: 
+            CREATE TABLE IF NOT EXISTS players (
+                code INTEGER PRIMARY KEY,
+                first_name TEXT,
+                second_name TEXT,
+                web_name TEXT,
+                team_code INTEGER,
+                type_name TEXT,
+                now_cost INTEGER,
+                status TEXT
+            );
+        
+[2025-10-13T22:40:12.453+0000] {base.py:73} INFO - Using connection ID 'fpl_db_conn' for task execution.
+[2025-10-13T22:40:12.552+0000] {base.py:73} INFO - Using connection ID 'fpl_db_conn' for task execution.
+[2025-10-13T22:40:12.562+0000] {sql.py:375} INFO - Running statement: 
+            CREATE TABLE IF NOT EXISTS players (
+                code INTEGER PRIMARY KEY,
+                first_name TEXT,
+                second_name TEXT,
+                web_name TEXT,
+                team_code INTEGER,
+                type_name TEXT,
+                now_cost INTEGER,
+                status TEXT
+            );
+        , parameters: None
+[2025-10-13T22:40:12.579+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=fpl_etl_pipeline, task_id=create_players_table, execution_date=20251013T223934, start_date=20251013T224011, end_date=20251013T224012
+[2025-10-13T22:40:12.612+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2025-10-13T22:40:12.645+0000] {taskinstance.py:2653} INFO - 1 downstream tasks scheduled from follow-on schedule check

@@ -3871,3 +3871,73 @@ NameError: name 'gameweeks' is not defined
 [2025-10-09T13:39:31.954+0000] {logging_mixin.py:150} INFO - [2025-10-09T13:39:31.953+0000] {dag.py:2742} INFO - Sync 1 DAGs
 [2025-10-09T13:39:31.989+0000] {logging_mixin.py:150} INFO - [2025-10-09T13:39:31.988+0000] {dag.py:3508} INFO - Setting next_dagrun for fpl_etl_pipeline to 2025-10-09T00:00:00+00:00, run_after=2025-10-10T00:00:00+00:00
 [2025-10-09T13:39:32.017+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/fpl_etl_pipeline.py took 0.210 seconds
+[2025-10-09T13:40:02.989+0000] {processor.py:157} INFO - Started process (PID=3098) to work on /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-09T13:40:02.990+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/fpl_etl_pipeline.py for tasks to queue
+[2025-10-09T13:40:02.992+0000] {logging_mixin.py:150} INFO - [2025-10-09T13:40:02.992+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-09T13:40:03.080+0000] {processor.py:836} INFO - DAG(s) dict_keys(['fpl_etl_pipeline']) retrieved from /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-09T13:40:03.106+0000] {logging_mixin.py:150} INFO - [2025-10-09T13:40:03.105+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-10-09T13:40:03.144+0000] {logging_mixin.py:150} INFO - [2025-10-09T13:40:03.143+0000] {dag.py:3508} INFO - Setting next_dagrun for fpl_etl_pipeline to 2025-10-09T00:00:00+00:00, run_after=2025-10-10T00:00:00+00:00
+[2025-10-09T13:40:03.170+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/fpl_etl_pipeline.py took 0.186 seconds
+[2025-10-09T13:40:35.174+0000] {processor.py:157} INFO - Started process (PID=3103) to work on /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-09T13:40:35.175+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/fpl_etl_pipeline.py for tasks to queue
+[2025-10-09T13:40:35.177+0000] {logging_mixin.py:150} INFO - [2025-10-09T13:40:35.176+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-09T13:40:35.278+0000] {processor.py:836} INFO - DAG(s) dict_keys(['fpl_etl_pipeline']) retrieved from /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-09T13:40:35.323+0000] {logging_mixin.py:150} INFO - [2025-10-09T13:40:35.322+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-10-09T13:40:35.396+0000] {logging_mixin.py:150} INFO - [2025-10-09T13:40:35.396+0000] {dag.py:3508} INFO - Setting next_dagrun for fpl_etl_pipeline to 2025-10-09T00:00:00+00:00, run_after=2025-10-10T00:00:00+00:00
+[2025-10-09T13:40:35.433+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/fpl_etl_pipeline.py took 0.263 seconds
+[2025-10-09T13:41:07.419+0000] {processor.py:157} INFO - Started process (PID=3108) to work on /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-09T13:41:07.420+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/fpl_etl_pipeline.py for tasks to queue
+[2025-10-09T13:41:07.421+0000] {logging_mixin.py:150} INFO - [2025-10-09T13:41:07.421+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-09T13:41:07.514+0000] {processor.py:836} INFO - DAG(s) dict_keys(['fpl_etl_pipeline']) retrieved from /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-09T13:41:07.544+0000] {logging_mixin.py:150} INFO - [2025-10-09T13:41:07.544+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-10-09T13:41:07.619+0000] {logging_mixin.py:150} INFO - [2025-10-09T13:41:07.619+0000] {dag.py:3508} INFO - Setting next_dagrun for fpl_etl_pipeline to 2025-10-09T00:00:00+00:00, run_after=2025-10-10T00:00:00+00:00
+[2025-10-09T13:41:07.675+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/fpl_etl_pipeline.py took 0.263 seconds
+[2025-10-09T13:41:38.761+0000] {processor.py:157} INFO - Started process (PID=3113) to work on /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-09T13:41:38.762+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/fpl_etl_pipeline.py for tasks to queue
+[2025-10-09T13:41:38.766+0000] {logging_mixin.py:150} INFO - [2025-10-09T13:41:38.765+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-09T13:41:38.959+0000] {processor.py:836} INFO - DAG(s) dict_keys(['fpl_etl_pipeline']) retrieved from /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-09T13:41:39.056+0000] {logging_mixin.py:150} INFO - [2025-10-09T13:41:39.055+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-10-09T13:41:39.193+0000] {logging_mixin.py:150} INFO - [2025-10-09T13:41:39.192+0000] {dag.py:3508} INFO - Setting next_dagrun for fpl_etl_pipeline to 2025-10-09T00:00:00+00:00, run_after=2025-10-10T00:00:00+00:00
+[2025-10-09T13:41:39.259+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/fpl_etl_pipeline.py took 0.504 seconds
+[2025-10-09T13:42:10.906+0000] {processor.py:157} INFO - Started process (PID=3118) to work on /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-09T13:42:10.907+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/fpl_etl_pipeline.py for tasks to queue
+[2025-10-09T13:42:10.909+0000] {logging_mixin.py:150} INFO - [2025-10-09T13:42:10.908+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-09T13:42:11.003+0000] {processor.py:836} INFO - DAG(s) dict_keys(['fpl_etl_pipeline']) retrieved from /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-09T13:42:11.045+0000] {logging_mixin.py:150} INFO - [2025-10-09T13:42:11.044+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-10-09T13:42:11.190+0000] {logging_mixin.py:150} INFO - [2025-10-09T13:42:11.189+0000] {dag.py:3508} INFO - Setting next_dagrun for fpl_etl_pipeline to 2025-10-09T00:00:00+00:00, run_after=2025-10-10T00:00:00+00:00
+[2025-10-09T13:42:11.263+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/fpl_etl_pipeline.py took 0.361 seconds
+[2025-10-09T13:42:43.022+0000] {processor.py:157} INFO - Started process (PID=3123) to work on /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-09T13:42:43.023+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/fpl_etl_pipeline.py for tasks to queue
+[2025-10-09T13:42:43.024+0000] {logging_mixin.py:150} INFO - [2025-10-09T13:42:43.024+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-09T13:42:43.112+0000] {processor.py:836} INFO - DAG(s) dict_keys(['fpl_etl_pipeline']) retrieved from /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-09T13:42:43.141+0000] {logging_mixin.py:150} INFO - [2025-10-09T13:42:43.141+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-10-09T13:42:43.177+0000] {logging_mixin.py:150} INFO - [2025-10-09T13:42:43.176+0000] {dag.py:3508} INFO - Setting next_dagrun for fpl_etl_pipeline to 2025-10-09T00:00:00+00:00, run_after=2025-10-10T00:00:00+00:00
+[2025-10-09T13:42:43.204+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/fpl_etl_pipeline.py took 0.186 seconds
+[2025-10-09T13:43:15.142+0000] {processor.py:157} INFO - Started process (PID=3128) to work on /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-09T13:43:15.144+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/fpl_etl_pipeline.py for tasks to queue
+[2025-10-09T13:43:15.146+0000] {logging_mixin.py:150} INFO - [2025-10-09T13:43:15.146+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-09T13:43:15.245+0000] {processor.py:836} INFO - DAG(s) dict_keys(['fpl_etl_pipeline']) retrieved from /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-09T13:43:15.270+0000] {logging_mixin.py:150} INFO - [2025-10-09T13:43:15.270+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-10-09T13:43:15.307+0000] {logging_mixin.py:150} INFO - [2025-10-09T13:43:15.307+0000] {dag.py:3508} INFO - Setting next_dagrun for fpl_etl_pipeline to 2025-10-09T00:00:00+00:00, run_after=2025-10-10T00:00:00+00:00
+[2025-10-09T13:43:15.337+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/fpl_etl_pipeline.py took 0.203 seconds
+[2025-10-09T13:43:46.456+0000] {processor.py:157} INFO - Started process (PID=3133) to work on /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-09T13:43:46.457+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/fpl_etl_pipeline.py for tasks to queue
+[2025-10-09T13:43:46.459+0000] {logging_mixin.py:150} INFO - [2025-10-09T13:43:46.458+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-09T13:43:46.636+0000] {processor.py:836} INFO - DAG(s) dict_keys(['fpl_etl_pipeline']) retrieved from /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-09T13:43:46.675+0000] {logging_mixin.py:150} INFO - [2025-10-09T13:43:46.674+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-10-09T13:43:46.764+0000] {logging_mixin.py:150} INFO - [2025-10-09T13:43:46.764+0000] {dag.py:3508} INFO - Setting next_dagrun for fpl_etl_pipeline to 2025-10-09T00:00:00+00:00, run_after=2025-10-10T00:00:00+00:00
+[2025-10-09T13:43:46.832+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/fpl_etl_pipeline.py took 0.382 seconds
+[2025-10-09T13:44:18.570+0000] {processor.py:157} INFO - Started process (PID=3138) to work on /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-09T13:44:18.572+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/fpl_etl_pipeline.py for tasks to queue
+[2025-10-09T13:44:18.574+0000] {logging_mixin.py:150} INFO - [2025-10-09T13:44:18.574+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-09T13:44:18.675+0000] {processor.py:836} INFO - DAG(s) dict_keys(['fpl_etl_pipeline']) retrieved from /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-09T13:44:18.703+0000] {logging_mixin.py:150} INFO - [2025-10-09T13:44:18.703+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-10-09T13:44:18.740+0000] {logging_mixin.py:150} INFO - [2025-10-09T13:44:18.740+0000] {dag.py:3508} INFO - Setting next_dagrun for fpl_etl_pipeline to 2025-10-09T00:00:00+00:00, run_after=2025-10-10T00:00:00+00:00
+[2025-10-09T13:44:18.772+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/fpl_etl_pipeline.py took 0.208 seconds
+[2025-10-09T13:44:50.309+0000] {processor.py:157} INFO - Started process (PID=3143) to work on /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-09T13:44:50.312+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/fpl_etl_pipeline.py for tasks to queue
+[2025-10-09T13:44:50.315+0000] {logging_mixin.py:150} INFO - [2025-10-09T13:44:50.314+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-09T13:44:50.484+0000] {processor.py:836} INFO - DAG(s) dict_keys(['fpl_etl_pipeline']) retrieved from /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-09T13:44:50.525+0000] {logging_mixin.py:150} INFO - [2025-10-09T13:44:50.525+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-10-09T13:44:50.560+0000] {logging_mixin.py:150} INFO - [2025-10-09T13:44:50.560+0000] {dag.py:3508} INFO - Setting next_dagrun for fpl_etl_pipeline to 2025-10-09T00:00:00+00:00, run_after=2025-10-10T00:00:00+00:00
+[2025-10-09T13:44:50.589+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/fpl_etl_pipeline.py took 0.293 seconds

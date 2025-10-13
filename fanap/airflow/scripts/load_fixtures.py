@@ -2,25 +2,26 @@ import sys
 
 sys.path.append("/app")
 import requests
-import psycopg2
 from datetime import datetime
-
-from scripts.db_config import get_db_connection
+from scripts.db_config import db_connection_wrapper
 import csv
 from io import StringIO
+from airflow.models import Variable
 
 SEASONS = ["2018-19", "2019-20", "2020-21", "2021-22", "2022-23", "2023-24", "2024-25"]
 
 
-def fetch_fixtures(season):
-    url = f"https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/master/data/{season}/fixtures.csv"
+def fetch_data_from_api(season) -> dict:
+    """Fetch fixtures from the GitHub archive for a specific season."""
     try:
+        url = f"{Variable.get('FIXTURES_BASE_URL')}/{season}/{Variable.get('FIXTURES_DATASET_PATH')}"
         response = requests.get(url)
         response.raise_for_status()
-        return response.text
+        return {"season": season, "csv": response.text}
+
     except requests.RequestException as e:
         print(f"⚠️ Failed to fetch fixtures.csv for {season}: {e} (URL: {url})")
-        return None
+        return {"season": season, "csv": None}
 
 
 def parse_fixtures(csv_text, season):
@@ -28,7 +29,7 @@ def parse_fixtures(csv_text, season):
         print(f"⚠️ Skipping {season}: No CSV data.")
         return []
 
-    reader = csv.DictReader(StringIO(csv_text))
+    reader = csv.DictReader(StringIO(csv_text["csv"]))
     fixtures = []
 
     for row in reader:
@@ -85,76 +86,43 @@ def parse_fixtures(csv_text, season):
     return fixtures
 
 
-def create_fixtures_table(conn):
-    with conn.cursor() as cur:
-        cur.execute("""
-            CREATE TABLE IF NOT EXISTS fixtures (
-                code INTEGER PRIMARY KEY,
-                season TEXT,
-                gameweek INTEGER,
-                kickoff_time TIMESTAMP WITH TIME ZONE,
-                team_h_code INTEGER,
-                team_a_code INTEGER,
-                team_h_score INTEGER,
-                team_a_score INTEGER,
-                team_h_difficulty INTEGER,
-                team_a_difficulty INTEGER
-            );
-        """)
-        conn.commit()
+def combine_data_from_api(results):
+    """Combine parsed gameweek results from multiple seasons into one dictionary."""
+    combined = []
+    for r in results:
+        if r:
+            combined.extend(r)
+    return combined
 
 
-def insert_fixtures(conn, fixtures):
+@db_connection_wrapper
+def load_fixtures(connection, fixtures):
     if not fixtures:
         return
+    _cursor = connection.cursor()
 
-    with conn.cursor() as cur:
-        for fixture in fixtures:
-            cur.execute(
-                """
-                INSERT INTO fixtures (
-                    code, season, gameweek, kickoff_time,
-                    team_h_code, team_a_code,
-                    team_h_score, team_a_score,
-                    team_h_difficulty, team_a_difficulty
-                )
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-                ON CONFLICT (code) DO UPDATE SET
-                    season = EXCLUDED.season,
-                    gameweek = EXCLUDED.gameweek,
-                    kickoff_time = EXCLUDED.kickoff_time,
-                    team_h_code = EXCLUDED.team_h_code,
-                    team_a_code = EXCLUDED.team_a_code,
-                    team_h_score = EXCLUDED.team_h_score,
-                    team_a_score = EXCLUDED.team_a_score,
-                    team_h_difficulty = EXCLUDED.team_h_difficulty,
-                    team_a_difficulty = EXCLUDED.team_a_difficulty;
-            """,
-                fixture,
+    for fixture in fixtures:
+        _cursor.execute(
+            """
+            INSERT INTO fixtures (
+                code, season, gameweek, kickoff_time,
+                team_h_code, team_a_code,
+                team_h_score, team_a_score,
+                team_h_difficulty, team_a_difficulty
             )
-        conn.commit()
-
-
-def main():
-    conn = get_db_connection()
-    try:
-        print("Creating fixtures table...")
-        create_fixtures_table(conn)
-
-        for season in SEASONS:
-            print(f"Fetching fixtures for {season}...")
-            csv_text = fetch_fixtures(season)
-            fixtures = parse_fixtures(csv_text, season)
-            print(f"Inserting {len(fixtures)} fixtures...")
-            insert_fixtures(conn, fixtures)
-
-        print("✅ Fixtures loaded successfully.")
-
-    except Exception as e:
-        print(f"An Error Occurred: {e}")
-    finally:
-        conn.close()
-
-
-if __name__ == "__main__":
-    main()
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            ON CONFLICT (code) DO UPDATE SET
+                season = EXCLUDED.season,
+                gameweek = EXCLUDED.gameweek,
+                kickoff_time = EXCLUDED.kickoff_time,
+                team_h_code = EXCLUDED.team_h_code,
+                team_a_code = EXCLUDED.team_a_code,
+                team_h_score = EXCLUDED.team_h_score,
+                team_a_score = EXCLUDED.team_a_score,
+                team_h_difficulty = EXCLUDED.team_h_difficulty,
+                team_a_difficulty = EXCLUDED.team_a_difficulty;
+        """,
+            fixture,
+        )
+    connection.commit()
+    print(f"✅ Inserted/Updated {len(fixtures)} fixtures.")

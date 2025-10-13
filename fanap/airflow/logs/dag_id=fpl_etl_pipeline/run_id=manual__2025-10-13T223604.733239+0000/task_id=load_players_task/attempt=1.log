@@ -1,0 +1,29 @@
+[2025-10-13T22:36:52.088+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fpl_etl_pipeline.load_players_task manual__2025-10-13T22:36:04.733239+00:00 [queued]>
+[2025-10-13T22:36:52.104+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fpl_etl_pipeline.load_players_task manual__2025-10-13T22:36:04.733239+00:00 [queued]>
+[2025-10-13T22:36:52.104+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2025-10-13T22:36:52.238+0000] {taskinstance.py:1327} INFO - Executing <Task(_PythonDecoratedOperator): load_players_task> on 2025-10-13 22:36:04.733239+00:00
+[2025-10-13T22:36:52.243+0000] {standard_task_runner.py:57} INFO - Started process 1487 to run task
+[2025-10-13T22:36:52.247+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'fpl_etl_pipeline', 'load_players_task', 'manual__2025-10-13T22:36:04.733239+00:00', '--job-id', '663', '--raw', '--subdir', 'DAGS_FOLDER/fpl_etl_pipeline.py', '--cfg-path', '/tmp/tmpmh1c2fks']
+[2025-10-13T22:36:52.249+0000] {standard_task_runner.py:85} INFO - Job 663: Subtask load_players_task
+[2025-10-13T22:36:52.322+0000] {task_command.py:410} INFO - Running <TaskInstance: fpl_etl_pipeline.load_players_task manual__2025-10-13T22:36:04.733239+00:00 [running]> on host 033ad6cd18d9
+[2025-10-13T22:36:53.497+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='richardilemon' AIRFLOW_CTX_DAG_ID='fpl_etl_pipeline' AIRFLOW_CTX_TASK_ID='load_players_task' AIRFLOW_CTX_EXECUTION_DATE='2025-10-13T22:36:04.733239+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-13T22:36:04.733239+00:00'
+[2025-10-13T22:36:53.524+0000] {base.py:73} INFO - Using connection ID 'fpl_db_conn' for task execution.
+[2025-10-13T22:36:53.535+0000] {db_config.py:66} INFO - Database Connection Established
+[2025-10-13T22:36:53.536+0000] {db_config.py:76} ERROR - Failed to connect to database: load_players() takes 2 positional arguments but 3 were given
+[2025-10-13T22:36:53.537+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/decorators/base.py", line 220, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 181, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 198, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/fpl_etl_pipeline.py", line 189, in load_players_task
+    return load_players(players, SEASONS)
+  File "/opt/airflow/scripts/db_config.py", line 68, in wrapper
+    result = func(connection, *args, **kwargs)  # fetch_teams_data(_connection)
+TypeError: load_players() takes 2 positional arguments but 3 were given
+[2025-10-13T22:36:53.558+0000] {taskinstance.py:1350} INFO - Marking task as UP_FOR_RETRY. dag_id=fpl_etl_pipeline, task_id=load_players_task, execution_date=20251013T223604, start_date=20251013T223652, end_date=20251013T223653
+[2025-10-13T22:36:53.581+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 663 for task load_players_task (load_players() takes 2 positional arguments but 3 were given; 1487)
+[2025-10-13T22:36:53.623+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2025-10-13T22:36:53.672+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

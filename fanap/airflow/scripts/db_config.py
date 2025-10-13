@@ -10,17 +10,17 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
-def get_db_connection():  # fetch_teams_data
-    try:
-        pg_hook = PostgresHook(postgres_conn_id="fpl_db_conn")
-        _connection = pg_hook.get_conn()
-        # _cursor = _connection.cursor()
+# def get_db_connection():  # fetch_teams_data
+#     try:
+#         pg_hook = PostgresHook(postgres_conn_id="fpl_db_conn")
+#         _connection = pg_hook.get_conn()
+#         # _cursor = _connection.cursor()
 
-        logging.info("Database Connection Established")
+#         logging.info("Database Connection Established")
 
-    except Exception as e:
-        logging.error(f"Failed to connect to database: {e}")
-        raise
+#     except Exception as e:
+#         logging.error(f"Failed to connect to database: {e}")
+#         raise
 
 
 def db_connection_wrapper(func):

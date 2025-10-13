@@ -1,6 +1,4 @@
 import requests
-import psycopg2
-from scripts.db_config import get_db_connection
 from datetime import datetime
 from scripts.db_config import db_connection_wrapper
 from airflow.models import Variable
@@ -51,64 +49,64 @@ def fetch_teams_data():
         return []
 
 
-# @db_connection_wrapper
-# def create_teams_table(conn, **kwargs):
-#     """
-#     Create the `teams` table in the PostgreSQL database if it does not already exist.
+# # @db_connection_wrapper
+# # def create_teams_table(conn, **kwargs):
+# #     """
+# #     Create the `teams` table in the PostgreSQL database if it does not already exist.
 
-#     This function ensures that the required table structure for storing Fantasy Premier League
-#     (FPL) team data exists in the database. It defines the schema for team attributes, including
-#     identifiers, performance strengths, and other key metrics. The function uses a primary key
-#     composed of `season` and `code` to maintain unique entries for each team across seasons.
+# #     This function ensures that the required table structure for storing Fantasy Premier League
+# #     (FPL) team data exists in the database. It defines the schema for team attributes, including
+# #     identifiers, performance strengths, and other key metrics. The function uses a primary key
+# #     composed of `season` and `code` to maintain unique entries for each team across seasons.
 
-#     The function is decorated with `@db_connection_wrapper`, which automatically manages
-#     database connection setup and teardown using Airflow's `PostgresHook`.
+# #     The function is decorated with `@db_connection_wrapper`, which automatically manages
+# #     database connection setup and teardown using Airflow's `PostgresHook`.
 
-#     Parameters
-#     ----------
-#     conn : The active PostgreSQL connection object, automatically provided by the decorator.
+# #     Parameters
+# #     ----------
+# #     conn : The active PostgreSQL connection object, automatically provided by the decorator.
 
-#     **kwargs : dict
-#         Additional keyword arguments (not used here but included for compatibility with Airflow’s
-#         operator call signature).
+# #     **kwargs : dict
+# #         Additional keyword arguments (not used here but included for compatibility with Airflow’s
+# #         operator call signature).
 
-#     Returns
-#     -------
-#     None
-#         The function does not return a value. It executes SQL statements to create the table
-#         and commits the transaction.
+# #     Returns
+# #     -------
+# #     None
+# #         The function does not return a value. It executes SQL statements to create the table
+# #         and commits the transaction.
 
-#     Raises
-#     ------
-#     If any database-related error occurs during table creation, it will be propagated upward
-#     after being logged by the decorator.
+# #     Raises
+# #     ------
+# #     If any database-related error occurs during table creation, it will be propagated upward
+# #     after being logged by the decorator.
 
-#     """
+# #     """
 
-#     with conn.cursor() as cur:
-#         cur.execute("""
-#             CREATE TABLE IF NOT EXISTS teams (
-#                 season TEXT,
-#                 code INTEGER,
-#                 id INTEGER,
-#                 name TEXT,
-#                 short_name TEXT,
-#                 strength_overall_home INTEGER,
-#                 strength_overall_away INTEGER,
-#                 strength_attack_home INTEGER,
-#                 strength_attack_away INTEGER,
-#                 strength_defence_home INTEGER,
-#                 strength_defence_away INTEGER,
-#                 strength INTEGER,
-#                 PRIMARY KEY (season, code)
-#             );
-#         """)
-#         conn.commit()
+# #     with conn.cursor() as cur:
+# #         cur.execute("""
+# #             CREATE TABLE IF NOT EXISTS teams (
+# #                 season TEXT,
+# #                 code INTEGER,
+# #                 id INTEGER,
+# #                 name TEXT,
+# #                 short_name TEXT,
+# #                 strength_overall_home INTEGER,
+# #                 strength_overall_away INTEGER,
+# #                 strength_attack_home INTEGER,
+# #                 strength_attack_away INTEGER,
+# #                 strength_defence_home INTEGER,
+# #                 strength_defence_away INTEGER,
+# #                 strength INTEGER,
+# #                 PRIMARY KEY (season, code)
+# #             );
+# #         """)
+# #         conn.commit()
 
-#         logging.info("Teams table created or already exists.")
+# #         logging.info("Teams table created or already exists.")
 
-#         conn.close()
-#         logging.info("Database Connection Closed")
+# #         conn.close()
+# #         logging.info("Database Connection Closed")
 
 
 def infer_season():
@@ -215,28 +213,28 @@ def load_teams(connection, teams, season):
     logging.info("Database Connection Closed")
 
 
-# def main(season=None):
-#     if not season:
-#         season = infer_season()
+# # def main(season=None):
+# #     if not season:
+# #         season = infer_season()
 
-#     conn = get_db_connection()
-#     try:
-#         print("Creating teams table...")
-#         create_teams_table(conn)
+# #     conn = get_db_connection()
+# #     try:
+# #         print("Creating teams table...")
+# #         create_teams_table(conn)
 
-#         print("Fetching teams data...")
-#         teams = fetch_teams_data()
+# #         print("Fetching teams data...")
+# #         teams = fetch_teams_data()
 
-#         print(f"Inserting {len(teams)} teams into database for season {season}...")
-#         insert_teams(conn, teams, season)
+# #         print(f"Inserting {len(teams)} teams into database for season {season}...")
+# #         insert_teams(conn, teams, season)
 
-#         print("\u2705 Teams data loaded successfully.")
-#     finally:
-#         conn.close()
+# #         print("\u2705 Teams data loaded successfully.")
+# #     finally:
+# #         conn.close()
 
 
-# if __name__ == "__main__":
-#     import sys
+# # if __name__ == "__main__":
+# #     import sys
 
-#     season_arg = sys.argv[1] if len(sys.argv) > 1 else None
-#     main(season=season_arg)
+# #     season_arg = sys.argv[1] if len(sys.argv) > 1 else None
+# #     main(season=season_arg)

@@ -1,0 +1,31 @@
+[2025-10-13T18:28:44.303+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fpl_etl_pipeline.populate_fixtures manual__2025-10-13T18:28:24.298203+00:00 [queued]>
+[2025-10-13T18:28:44.319+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fpl_etl_pipeline.populate_fixtures manual__2025-10-13T18:28:24.298203+00:00 [queued]>
+[2025-10-13T18:28:44.319+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2025-10-13T18:28:44.449+0000] {taskinstance.py:1327} INFO - Executing <Task(_PythonDecoratedOperator): populate_fixtures> on 2025-10-13 18:28:24.298203+00:00
+[2025-10-13T18:28:44.454+0000] {standard_task_runner.py:57} INFO - Started process 1200 to run task
+[2025-10-13T18:28:44.458+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'fpl_etl_pipeline', 'populate_fixtures', 'manual__2025-10-13T18:28:24.298203+00:00', '--job-id', '527', '--raw', '--subdir', 'DAGS_FOLDER/fpl_etl_pipeline.py', '--cfg-path', '/tmp/tmpqcqnujam']
+[2025-10-13T18:28:44.459+0000] {standard_task_runner.py:85} INFO - Job 527: Subtask populate_fixtures
+[2025-10-13T18:28:44.546+0000] {task_command.py:410} INFO - Running <TaskInstance: fpl_etl_pipeline.populate_fixtures manual__2025-10-13T18:28:24.298203+00:00 [running]> on host 9326c79de8dc
+[2025-10-13T18:28:44.870+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='richardilemon' AIRFLOW_CTX_DAG_ID='fpl_etl_pipeline' AIRFLOW_CTX_TASK_ID='populate_fixtures' AIRFLOW_CTX_EXECUTION_DATE='2025-10-13T18:28:24.298203+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-13T18:28:24.298203+00:00'
+[2025-10-13T18:28:44.913+0000] {base.py:73} INFO - Using connection ID 'fpl_db_conn' for task execution.
+[2025-10-13T18:28:44.943+0000] {db_config.py:66} INFO - Database Connection Established
+[2025-10-13T18:28:45.022+0000] {db_config.py:76} ERROR - Failed to connect to database: not all arguments converted during string formatting
+[2025-10-13T18:28:45.023+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/decorators/base.py", line 220, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 181, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 198, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/fpl_etl_pipeline.py", line 138, in populate_fixtures
+    return load_fixtures(fixtures)
+  File "/opt/airflow/scripts/db_config.py", line 68, in wrapper
+    result = func(connection, *args, **kwargs)  # fetch_teams_data(_connection)
+  File "/opt/airflow/scripts/load_fixtures.py", line 137, in load_fixtures
+    fixture,
+TypeError: not all arguments converted during string formatting
+[2025-10-13T18:28:45.038+0000] {taskinstance.py:1350} INFO - Marking task as UP_FOR_RETRY. dag_id=fpl_etl_pipeline, task_id=populate_fixtures, execution_date=20251013T182824, start_date=20251013T182844, end_date=20251013T182845
+[2025-10-13T18:28:45.057+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 527 for task populate_fixtures (not all arguments converted during string formatting; 1200)
+[2025-10-13T18:28:45.071+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2025-10-13T18:28:45.142+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check
