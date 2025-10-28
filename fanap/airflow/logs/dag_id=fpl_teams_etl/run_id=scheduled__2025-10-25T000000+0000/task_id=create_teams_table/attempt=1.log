@@ -1,0 +1,48 @@
+[2025-10-26T08:30:03.928+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fpl_teams_etl.create_teams_table scheduled__2025-10-25T00:00:00+00:00 [queued]>
+[2025-10-26T08:30:03.948+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fpl_teams_etl.create_teams_table scheduled__2025-10-25T00:00:00+00:00 [queued]>
+[2025-10-26T08:30:03.948+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2025-10-26T08:30:04.257+0000] {taskinstance.py:1327} INFO - Executing <Task(PostgresOperator): create_teams_table> on 2025-10-25 00:00:00+00:00
+[2025-10-26T08:30:04.272+0000] {standard_task_runner.py:57} INFO - Started process 619 to run task
+[2025-10-26T08:30:04.280+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'fpl_teams_etl', 'create_teams_table', 'scheduled__2025-10-25T00:00:00+00:00', '--job-id', '6722', '--raw', '--subdir', 'DAGS_FOLDER/fpl_teams_dag.py', '--cfg-path', '/tmp/tmp82l8a43i']
+[2025-10-26T08:30:04.293+0000] {standard_task_runner.py:85} INFO - Job 6722: Subtask create_teams_table
+[2025-10-26T08:30:04.544+0000] {task_command.py:410} INFO - Running <TaskInstance: fpl_teams_etl.create_teams_table scheduled__2025-10-25T00:00:00+00:00 [running]> on host accc60bed825
+[2025-10-26T08:30:05.021+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='richardilemon' AIRFLOW_CTX_DAG_ID='fpl_teams_etl' AIRFLOW_CTX_TASK_ID='create_teams_table' AIRFLOW_CTX_EXECUTION_DATE='2025-10-25T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-25T00:00:00+00:00'
+[2025-10-26T08:30:05.024+0000] {sql.py:265} INFO - Executing: 
+            CREATE TABLE IF NOT EXISTS teams (
+                season TEXT,
+                code INTEGER,
+                id INTEGER,
+                name TEXT,
+                short_name TEXT,
+                strength_overall_home INTEGER,
+                strength_overall_away INTEGER,
+                strength_attack_home INTEGER,
+                strength_attack_away INTEGER,
+                strength_defence_home INTEGER,
+                strength_defence_away INTEGER,
+                strength INTEGER,
+                PRIMARY KEY (season, code)
+            );
+        
+[2025-10-26T08:30:05.060+0000] {base.py:73} INFO - Using connection ID 'fpl_db_conn' for task execution.
+[2025-10-26T08:30:05.197+0000] {base.py:73} INFO - Using connection ID 'fpl_db_conn' for task execution.
+[2025-10-26T08:30:05.214+0000] {sql.py:375} INFO - Running statement: 
+            CREATE TABLE IF NOT EXISTS teams (
+                season TEXT,
+                code INTEGER,
+                id INTEGER,
+                name TEXT,
+                short_name TEXT,
+                strength_overall_home INTEGER,
+                strength_overall_away INTEGER,
+                strength_attack_home INTEGER,
+                strength_attack_away INTEGER,
+                strength_defence_home INTEGER,
+                strength_defence_away INTEGER,
+                strength INTEGER,
+                PRIMARY KEY (season, code)
+            );
+        , parameters: None
+[2025-10-26T08:30:05.240+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=fpl_teams_etl, task_id=create_teams_table, execution_date=20251025T000000, start_date=20251026T083003, end_date=20251026T083005
+[2025-10-26T08:30:05.312+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2025-10-26T08:30:05.370+0000] {taskinstance.py:2653} INFO - 1 downstream tasks scheduled from follow-on schedule check

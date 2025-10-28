@@ -1,0 +1,13 @@
+[2025-10-25T22:46:40.059+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fpl_fixtures_pipeline.fetch_fixtures_task manual__2025-10-25T22:46:32.120080+00:00 map_index=6 [queued]>
+[2025-10-25T22:46:40.083+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fpl_fixtures_pipeline.fetch_fixtures_task manual__2025-10-25T22:46:32.120080+00:00 map_index=6 [queued]>
+[2025-10-25T22:46:40.085+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2025-10-25T22:46:40.458+0000] {taskinstance.py:1327} INFO - Executing <Mapped(_PythonDecoratedOperator): fetch_fixtures_task> on 2025-10-25 22:46:32.120080+00:00
+[2025-10-25T22:46:40.470+0000] {standard_task_runner.py:57} INFO - Started process 9017 to run task
+[2025-10-25T22:46:40.479+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'fpl_fixtures_pipeline', 'fetch_fixtures_task', 'manual__2025-10-25T22:46:32.120080+00:00', '--job-id', '6593', '--raw', '--subdir', 'DAGS_FOLDER/fixtures_dag.py', '--cfg-path', '/tmp/tmpmilj1y6a', '--map-index', '6']
+[2025-10-25T22:46:40.483+0000] {standard_task_runner.py:85} INFO - Job 6593: Subtask fetch_fixtures_task
+[2025-10-25T22:46:40.633+0000] {task_command.py:410} INFO - Running <TaskInstance: fpl_fixtures_pipeline.fetch_fixtures_task manual__2025-10-25T22:46:32.120080+00:00 map_index=6 [running]> on host 754e4af34fcd
+[2025-10-25T22:46:40.899+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='richardilemon' AIRFLOW_CTX_DAG_ID='fpl_fixtures_pipeline' AIRFLOW_CTX_TASK_ID='fetch_fixtures_task' AIRFLOW_CTX_EXECUTION_DATE='2025-10-25T22:46:32.120080+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-25T22:46:32.120080+00:00'
+[2025-10-25T22:46:43.048+0000] {python.py:183} INFO - Done. Returned value was: []
+[2025-10-25T22:46:43.128+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=fpl_fixtures_pipeline, task_id=fetch_fixtures_task, map_index=6, execution_date=20251025T224632, start_date=20251025T224640, end_date=20251025T224643
+[2025-10-25T22:46:43.191+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2025-10-25T22:46:43.514+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

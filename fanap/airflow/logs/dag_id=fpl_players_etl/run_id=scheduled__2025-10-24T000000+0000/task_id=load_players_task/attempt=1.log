@@ -1,0 +1,16 @@
+[2025-10-25T21:59:34.894+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fpl_players_etl.load_players_task scheduled__2025-10-24T00:00:00+00:00 [queued]>
+[2025-10-25T21:59:34.906+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fpl_players_etl.load_players_task scheduled__2025-10-24T00:00:00+00:00 [queued]>
+[2025-10-25T21:59:34.906+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2025-10-25T21:59:34.934+0000] {taskinstance.py:1327} INFO - Executing <Task(_PythonDecoratedOperator): load_players_task> on 2025-10-24 00:00:00+00:00
+[2025-10-25T21:59:34.940+0000] {standard_task_runner.py:57} INFO - Started process 6359 to run task
+[2025-10-25T21:59:34.944+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'fpl_players_etl', 'load_players_task', 'scheduled__2025-10-24T00:00:00+00:00', '--job-id', '6518', '--raw', '--subdir', 'DAGS_FOLDER/fpl_players_dag.py', '--cfg-path', '/tmp/tmpzs6grl5n']
+[2025-10-25T21:59:34.947+0000] {standard_task_runner.py:85} INFO - Job 6518: Subtask load_players_task
+[2025-10-25T21:59:35.210+0000] {task_command.py:410} INFO - Running <TaskInstance: fpl_players_etl.load_players_task scheduled__2025-10-24T00:00:00+00:00 [running]> on host 754e4af34fcd
+[2025-10-25T21:59:36.383+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='richardilemon' AIRFLOW_CTX_DAG_ID='fpl_players_etl' AIRFLOW_CTX_TASK_ID='load_players_task' AIRFLOW_CTX_EXECUTION_DATE='2025-10-24T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-24T00:00:00+00:00'
+[2025-10-25T21:59:36.413+0000] {base.py:73} INFO - Using connection ID 'fpl_db_conn' for task execution.
+[2025-10-25T21:59:36.423+0000] {db_config.py:66} INFO - Database Connection Established
+[2025-10-25T21:59:36.780+0000] {logging_mixin.py:150} INFO - Inserted/Updated 746 players into database...
+[2025-10-25T21:59:36.781+0000] {python.py:183} INFO - Done. Returned value was: None
+[2025-10-25T21:59:36.808+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=fpl_players_etl, task_id=load_players_task, execution_date=20251024T000000, start_date=20251025T215934, end_date=20251025T215936
+[2025-10-25T21:59:36.922+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2025-10-25T21:59:36.968+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

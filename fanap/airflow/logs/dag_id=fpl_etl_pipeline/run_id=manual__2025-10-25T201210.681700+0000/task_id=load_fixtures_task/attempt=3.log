@@ -1,0 +1,7 @@
+[2025-10-25T20:17:31.818+0000] {task_command.py:410} INFO - Running <TaskInstance: fpl_etl_pipeline.load_fixtures_task manual__2025-10-25T20:12:10.681700+00:00 [failed]> on host 754e4af34fcd
+[2025-10-25T20:17:32.168+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='richardilemon' AIRFLOW_CTX_DAG_ID='fpl_etl_pipeline' AIRFLOW_CTX_TASK_ID='load_fixtures_task' AIRFLOW_CTX_EXECUTION_DATE='2025-10-25T20:12:10.681700+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-25T20:12:10.681700+00:00'
+[2025-10-25T20:17:32.231+0000] {base.py:73} INFO - Using connection ID 'fpl_db_conn' for task execution.
+[2025-10-25T20:17:32.270+0000] {db_config.py:66} INFO - Database Connection Established
+[2025-10-25T20:17:33.788+0000] {logging_mixin.py:150} INFO - ✅ Inserted/Updated 10 fixtures.
+[2025-10-25T20:17:33.789+0000] {python.py:183} INFO - Done. Returned value was: None
+[2025-10-25T20:17:33.805+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=fpl_etl_pipeline, task_id=load_fixtures_task, execution_date=20251025T201210, start_date=20251025T201731, end_date=20251025T201733

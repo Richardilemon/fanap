@@ -1,0 +1,14 @@
+[2025-10-26T14:17:13.651+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fpl_gameweeks_etl.fetch_players_gw_task manual__2025-10-26T14:16:24.692862+00:00 map_index=3 [queued]>
+[2025-10-26T14:17:13.716+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fpl_gameweeks_etl.fetch_players_gw_task manual__2025-10-26T14:16:24.692862+00:00 map_index=3 [queued]>
+[2025-10-26T14:17:13.724+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2025-10-26T14:17:14.436+0000] {taskinstance.py:1327} INFO - Executing <Mapped(_PythonDecoratedOperator): fetch_players_gw_task> on 2025-10-26 14:16:24.692862+00:00
+[2025-10-26T14:17:14.454+0000] {standard_task_runner.py:57} INFO - Started process 1308 to run task
+[2025-10-26T14:17:14.465+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'fpl_gameweeks_etl', 'fetch_players_gw_task', 'manual__2025-10-26T14:16:24.692862+00:00', '--job-id', '8062', '--raw', '--subdir', 'DAGS_FOLDER/fpl_gameweeks_dag.py', '--cfg-path', '/tmp/tmp5li6wy47', '--map-index', '3']
+[2025-10-26T14:17:14.467+0000] {standard_task_runner.py:85} INFO - Job 8062: Subtask fetch_players_gw_task
+[2025-10-26T14:17:14.674+0000] {task_command.py:410} INFO - Running <TaskInstance: fpl_gameweeks_etl.fetch_players_gw_task manual__2025-10-26T14:16:24.692862+00:00 map_index=3 [running]> on host 88ea783d41a3
+[2025-10-26T14:17:15.190+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='richardilemon' AIRFLOW_CTX_DAG_ID='fpl_gameweeks_etl' AIRFLOW_CTX_TASK_ID='fetch_players_gw_task' AIRFLOW_CTX_EXECUTION_DATE='2025-10-26T14:16:24.692862+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-26T14:16:24.692862+00:00'
+[2025-10-26T14:19:00.847+0000] {local_task_job_runner.py:292} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2025-10-26T14:19:00.856+0000] {process_utils.py:135} INFO - Sending Signals.SIGTERM to group 1308. PIDs of all processes in the group: [1308]
+[2025-10-26T14:19:00.858+0000] {process_utils.py:86} INFO - Sending the signal Signals.SIGTERM to group 1308
+[2025-10-26T14:19:00.861+0000] {taskinstance.py:1517} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-10-26T14:19:01.009+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=1308, status='terminated', exitcode=0, started='14:17:13') (1308) terminated with exit code 0

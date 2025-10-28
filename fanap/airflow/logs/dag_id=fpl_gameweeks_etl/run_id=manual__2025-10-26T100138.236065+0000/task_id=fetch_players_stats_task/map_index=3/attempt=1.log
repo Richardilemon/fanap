@@ -1,0 +1,13 @@
+[2025-10-26T10:01:57.232+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fpl_gameweeks_etl.fetch_players_stats_task manual__2025-10-26T10:01:38.236065+00:00 map_index=3 [queued]>
+[2025-10-26T10:01:57.311+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fpl_gameweeks_etl.fetch_players_stats_task manual__2025-10-26T10:01:38.236065+00:00 map_index=3 [queued]>
+[2025-10-26T10:01:57.326+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2025-10-26T10:01:57.450+0000] {taskinstance.py:1327} INFO - Executing <Mapped(_PythonDecoratedOperator): fetch_players_stats_task> on 2025-10-26 10:01:38.236065+00:00
+[2025-10-26T10:01:57.513+0000] {standard_task_runner.py:57} INFO - Started process 593 to run task
+[2025-10-26T10:01:57.555+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'fpl_gameweeks_etl', 'fetch_players_stats_task', 'manual__2025-10-26T10:01:38.236065+00:00', '--job-id', '7016', '--raw', '--subdir', 'DAGS_FOLDER/fpl_gameweeks_dag.py', '--cfg-path', '/tmp/tmprm5cmzna', '--map-index', '3']
+[2025-10-26T10:01:57.559+0000] {standard_task_runner.py:85} INFO - Job 7016: Subtask fetch_players_stats_task
+[2025-10-26T10:02:00.785+0000] {task_command.py:410} INFO - Running <TaskInstance: fpl_gameweeks_etl.fetch_players_stats_task manual__2025-10-26T10:01:38.236065+00:00 map_index=3 [running]> on host d6ecd00cf5eb
+[2025-10-26T10:02:02.818+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='richardilemon' AIRFLOW_CTX_DAG_ID='fpl_gameweeks_etl' AIRFLOW_CTX_TASK_ID='fetch_players_stats_task' AIRFLOW_CTX_EXECUTION_DATE='2025-10-26T10:01:38.236065+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-26T10:01:38.236065+00:00'
+[2025-10-26T10:02:05.846+0000] {python.py:183} INFO - Done. Returned value was: []
+[2025-10-26T10:02:06.518+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=fpl_gameweeks_etl, task_id=fetch_players_stats_task, map_index=3, execution_date=20251026T100138, start_date=20251026T100157, end_date=20251026T100206
+[2025-10-26T10:02:08.039+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2025-10-26T10:02:09.074+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,26 @@
+[2025-10-26T14:13:25.971+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fpl_gameweeks_etl.fetch_players_gw_task manual__2025-10-26T14:12:52.938525+00:00 map_index=2 [queued]>
+[2025-10-26T14:13:26.014+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fpl_gameweeks_etl.fetch_players_gw_task manual__2025-10-26T14:12:52.938525+00:00 map_index=2 [queued]>
+[2025-10-26T14:13:26.015+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2025-10-26T14:13:27.520+0000] {taskinstance.py:1327} INFO - Executing <Mapped(_PythonDecoratedOperator): fetch_players_gw_task> on 2025-10-26 14:12:52.938525+00:00
+[2025-10-26T14:13:27.530+0000] {standard_task_runner.py:57} INFO - Started process 946 to run task
+[2025-10-26T14:13:27.539+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'fpl_gameweeks_etl', 'fetch_players_gw_task', 'manual__2025-10-26T14:12:52.938525+00:00', '--job-id', '8001', '--raw', '--subdir', 'DAGS_FOLDER/fpl_gameweeks_dag.py', '--cfg-path', '/tmp/tmp_jxf53l0', '--map-index', '2']
+[2025-10-26T14:13:27.542+0000] {standard_task_runner.py:85} INFO - Job 8001: Subtask fetch_players_gw_task
+[2025-10-26T14:13:27.730+0000] {task_command.py:410} INFO - Running <TaskInstance: fpl_gameweeks_etl.fetch_players_gw_task manual__2025-10-26T14:12:52.938525+00:00 map_index=2 [running]> on host 88ea783d41a3
+[2025-10-26T14:13:28.096+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='richardilemon' AIRFLOW_CTX_DAG_ID='fpl_gameweeks_etl' AIRFLOW_CTX_TASK_ID='fetch_players_gw_task' AIRFLOW_CTX_EXECUTION_DATE='2025-10-26T14:12:52.938525+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-26T14:12:52.938525+00:00'
+[2025-10-26T14:13:28.745+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/decorators/base.py", line 220, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 181, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 198, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/fpl_gameweeks_dag.py", line 105, in fetch_players_gw_task
+    season, category=None, endpoint=endpoint, player_folder=player_folder
+  File "/opt/airflow/scripts/utils/fetch_api_data.py", line 66, in fetch_data_from_api
+    response["player name"] = " ".join(player.split("_")[::-1])
+TypeError: 'Response' object does not support item assignment
+[2025-10-26T14:13:28.803+0000] {taskinstance.py:1350} INFO - Marking task as UP_FOR_RETRY. dag_id=fpl_gameweeks_etl, task_id=fetch_players_gw_task, map_index=2, execution_date=20251026T141252, start_date=20251026T141325, end_date=20251026T141328
+[2025-10-26T14:13:28.842+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 8001 for task fetch_players_gw_task ('Response' object does not support item assignment; 946)
+[2025-10-26T14:13:28.898+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2025-10-26T14:13:29.161+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

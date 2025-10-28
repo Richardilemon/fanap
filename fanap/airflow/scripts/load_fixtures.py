@@ -1,32 +1,13 @@
-import sys
-
-sys.path.append("/app")
-import requests
 from datetime import datetime
-from scripts.db_config import db_connection_wrapper
+from scripts.utils.db_config import db_connection_wrapper
 import csv
 from io import StringIO
-from airflow.models import Variable
-
-SEASONS = ["2018-19", "2019-20", "2020-21", "2021-22", "2022-23", "2023-24", "2024-25"]
+from scripts.utils.infer_season import infer_season
 
 
-def fetch_data_from_api(season) -> dict:
-    """Fetch fixtures from the GitHub archive for a specific season."""
-    try:
-        url = f"{Variable.get('FIXTURES_BASE_URL')}/{season}/{Variable.get('FIXTURES_DATASET_PATH')}"
-        response = requests.get(url)
-        response.raise_for_status()
-        return {"season": season, "csv": response.text}
-
-    except requests.RequestException as e:
-        print(f"⚠️ Failed to fetch fixtures.csv for {season}: {e} (URL: {url})")
-        return {"season": season, "csv": None}
-
-
-def parse_fixtures(csv_text, season):
+def parse_fixtures(csv_text):
     if not csv_text:
-        print(f"⚠️ Skipping {season}: No CSV data.")
+        print("⚠️ Skipping : No CSV data.")
         return []
 
     reader = csv.DictReader(StringIO(csv_text["csv"]))
@@ -40,6 +21,8 @@ def parse_fixtures(csv_text, season):
             if row["kickoff_time"]
             else None
         )
+        season = infer_season(kickoff_time)
+
         team_h = int(row["team_h"])
         team_a = int(row["team_a"])
         # Handle float values in scores
@@ -68,6 +51,13 @@ def parse_fixtures(csv_text, season):
             int(row["team_a_difficulty"]) if row["team_a_difficulty"] else None
         )
 
+        print(
+            f"Season -> {type(season)}, code -> {type(code)}, gameweek -> {type(gameweek)}, "
+            f"kickoff_time -> {type(kickoff_time)}, team_h -> {type(team_h)}, team_a -> {type(team_a)}, "
+            f"team_h_score -> {type(team_h_score)}, team_a_score -> {type(team_a_score)}, "
+            f"team_h_difficulty -> {type(team_h_difficulty)}, team_a_difficulty -> {type(team_a_difficulty)}"
+        )
+
         fixtures.append(
             (
                 code,
@@ -86,43 +76,36 @@ def parse_fixtures(csv_text, season):
     return fixtures
 
 
-def combine_data_from_api(results):
-    """Combine parsed gameweek results from multiple seasons into one dictionary."""
-    combined = []
-    for r in results:
-        if r:
-            combined.extend(r)
-    return combined
-
-
 @db_connection_wrapper
 def load_fixtures(connection, fixtures):
     if not fixtures:
         return
-    _cursor = connection.cursor()
+    cursor = connection.cursor()
 
     for fixture in fixtures:
-        _cursor.execute(
-            """
-            INSERT INTO fixtures (
-                code, season, gameweek, kickoff_time,
-                team_h_code, team_a_code,
-                team_h_score, team_a_score,
-                team_h_difficulty, team_a_difficulty
+        for match in fixture:
+            cursor.execute(
+                """
+                INSERT INTO fixtures (
+                    code, season, gameweek, kickoff_time,
+                    team_h_code, team_a_code,
+                    team_h_score, team_a_score,
+                    team_h_difficulty, team_a_difficulty
+                )
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                ON CONFLICT (code) DO UPDATE SET
+                    season = EXCLUDED.season,
+                    gameweek = EXCLUDED.gameweek,
+                    kickoff_time = EXCLUDED.kickoff_time,
+                    team_h_code = EXCLUDED.team_h_code,
+                    team_a_code = EXCLUDED.team_a_code,
+                    team_h_score = EXCLUDED.team_h_score,
+                    team_a_score = EXCLUDED.team_a_score,
+                    team_h_difficulty = EXCLUDED.team_h_difficulty,
+                    team_a_difficulty = EXCLUDED.team_a_difficulty;
+            """,
+                match,
             )
-            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-            ON CONFLICT (code) DO UPDATE SET
-                season = EXCLUDED.season,
-                gameweek = EXCLUDED.gameweek,
-                kickoff_time = EXCLUDED.kickoff_time,
-                team_h_code = EXCLUDED.team_h_code,
-                team_a_code = EXCLUDED.team_a_code,
-                team_h_score = EXCLUDED.team_h_score,
-                team_a_score = EXCLUDED.team_a_score,
-                team_h_difficulty = EXCLUDED.team_h_difficulty,
-                team_a_difficulty = EXCLUDED.team_a_difficulty;
-        """,
-            fixture,
-        )
+
     connection.commit()
-    print(f"✅ Inserted/Updated {len(fixtures)} fixtures.")
+    print(f"✅ Inserted/Updated {len(fixture) * len(fixtures)} fixtures.")

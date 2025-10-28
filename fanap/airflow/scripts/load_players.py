@@ -1,6 +1,6 @@
 import requests
 from airflow.models import Variable
-from scripts.db_config import db_connection_wrapper
+from scripts.utils.db_config import db_connection_wrapper
 
 
 def fetch_players_data():

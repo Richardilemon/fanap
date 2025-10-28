@@ -5,7 +5,7 @@ import requests
 import pandas as pd
 import psycopg2
 from io import StringIO
-from scripts.db_config import get_db_connection
+from scripts.utils.db_config import get_db_connection
 
 SEASONS = ["2019-20", "2020-21", "2021-22", "2022-23", "2023-24", "2024-25"]
 

@@ -1,0 +1,522 @@
+[2025-10-25T22:34:13.015+0000] {processor.py:157} INFO - Started process (PID=8193) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:34:13.016+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T22:34:13.017+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:34:13.017+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:34:13.103+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:34:13.098+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/load_player_gw_stats_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/load_player_gw_stats_dag.py", line 67, in <module>
+    fpl_etl_pipeline = fpl_gameweeks_etl()
+NameError: name 'fpl_gameweeks_etl' is not defined
+[2025-10-25T22:34:13.107+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:34:13.147+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.136 seconds
+[2025-10-25T22:34:43.291+0000] {processor.py:157} INFO - Started process (PID=8223) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:34:43.293+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T22:34:43.295+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:34:43.294+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:34:43.385+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:34:43.381+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/load_player_gw_stats_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/load_player_gw_stats_dag.py", line 67, in <module>
+    fpl_etl_pipeline = fpl_gameweeks_etl()
+NameError: name 'fpl_gameweeks_etl' is not defined
+[2025-10-25T22:34:43.387+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:34:43.423+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.142 seconds
+[2025-10-25T22:35:13.948+0000] {processor.py:157} INFO - Started process (PID=8253) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:35:13.949+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T22:35:13.950+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:35:13.950+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:35:14.009+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:35:14.005+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/load_player_gw_stats_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/load_player_gw_stats_dag.py", line 67, in <module>
+    fpl_etl_pipeline = fpl_gameweeks_etl()
+NameError: name 'fpl_gameweeks_etl' is not defined
+[2025-10-25T22:35:14.011+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:35:14.050+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.108 seconds
+[2025-10-25T22:35:45.166+0000] {processor.py:157} INFO - Started process (PID=8283) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:35:45.166+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T22:35:45.167+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:35:45.167+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:35:45.221+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:35:45.216+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/load_player_gw_stats_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/load_player_gw_stats_dag.py", line 67, in <module>
+    fpl_etl_pipeline = fpl_gameweeks_etl()
+NameError: name 'fpl_gameweeks_etl' is not defined
+[2025-10-25T22:35:45.225+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:35:45.263+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.101 seconds
+[2025-10-25T22:36:16.367+0000] {processor.py:157} INFO - Started process (PID=8313) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:36:16.368+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T22:36:16.369+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:36:16.369+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:36:16.427+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:36:16.423+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/load_player_gw_stats_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/load_player_gw_stats_dag.py", line 67, in <module>
+    fpl_etl_pipeline = fpl_gameweeks_etl()
+NameError: name 'fpl_gameweeks_etl' is not defined
+[2025-10-25T22:36:16.428+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:36:16.464+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.102 seconds
+[2025-10-25T22:36:46.844+0000] {processor.py:157} INFO - Started process (PID=8343) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:36:46.845+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T22:36:46.846+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:36:46.846+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:36:46.913+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:36:46.908+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/load_player_gw_stats_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/load_player_gw_stats_dag.py", line 67, in <module>
+    fpl_etl_pipeline = fpl_gameweeks_etl()
+NameError: name 'fpl_gameweeks_etl' is not defined
+[2025-10-25T22:36:46.914+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:36:46.950+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.113 seconds
+[2025-10-25T22:37:17.571+0000] {processor.py:157} INFO - Started process (PID=8373) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:37:17.572+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T22:37:17.574+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:37:17.573+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:37:17.661+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:37:17.654+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/load_player_gw_stats_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/load_player_gw_stats_dag.py", line 67, in <module>
+    fpl_etl_pipeline = fpl_gameweeks_etl()
+NameError: name 'fpl_gameweeks_etl' is not defined
+[2025-10-25T22:37:17.663+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:37:17.695+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.132 seconds
+[2025-10-25T22:37:48.539+0000] {processor.py:157} INFO - Started process (PID=8403) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:37:48.540+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T22:37:48.546+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:37:48.545+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:37:48.648+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:37:48.641+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/load_player_gw_stats_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/load_player_gw_stats_dag.py", line 67, in <module>
+    fpl_etl_pipeline = fpl_gameweeks_etl()
+NameError: name 'fpl_gameweeks_etl' is not defined
+[2025-10-25T22:37:48.650+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:37:48.712+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.179 seconds
+[2025-10-25T22:38:19.459+0000] {processor.py:157} INFO - Started process (PID=8433) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:38:19.461+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T22:38:19.463+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:38:19.462+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:38:19.538+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:38:19.532+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/load_player_gw_stats_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/load_player_gw_stats_dag.py", line 67, in <module>
+    fpl_etl_pipeline = fpl_gameweeks_etl()
+NameError: name 'fpl_gameweeks_etl' is not defined
+[2025-10-25T22:38:19.540+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:38:19.587+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.136 seconds
+[2025-10-25T22:38:49.806+0000] {processor.py:157} INFO - Started process (PID=8463) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:38:49.807+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T22:38:49.808+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:38:49.808+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:38:50.416+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:38:50.409+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/load_player_gw_stats_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/load_player_gw_stats_dag.py", line 67, in <module>
+    fpl_etl_pipeline = fpl_gameweeks_etl()
+NameError: name 'fpl_gameweeks_etl' is not defined
+[2025-10-25T22:38:50.418+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:38:50.456+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.145 seconds
+[2025-10-25T22:39:21.728+0000] {processor.py:157} INFO - Started process (PID=8493) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:39:21.730+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T22:39:21.733+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:39:21.731+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:39:21.833+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:39:21.826+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/load_player_gw_stats_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/load_player_gw_stats_dag.py", line 67, in <module>
+    fpl_etl_pipeline = fpl_gameweeks_etl()
+NameError: name 'fpl_gameweeks_etl' is not defined
+[2025-10-25T22:39:21.835+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:39:21.867+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.144 seconds
+[2025-10-25T22:39:52.808+0000] {processor.py:157} INFO - Started process (PID=8523) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:39:52.809+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T22:39:52.811+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:39:52.810+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:39:52.869+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:39:52.866+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/load_player_gw_stats_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/load_player_gw_stats_dag.py", line 67, in <module>
+    fpl_etl_pipeline = fpl_gameweeks_etl()
+NameError: name 'fpl_gameweeks_etl' is not defined
+[2025-10-25T22:39:52.871+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:39:52.904+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.101 seconds
+[2025-10-25T22:40:23.842+0000] {processor.py:157} INFO - Started process (PID=8563) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:40:23.845+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T22:40:23.848+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:40:23.847+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:40:24.006+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:40:24.002+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/load_player_gw_stats_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/load_player_gw_stats_dag.py", line 67, in <module>
+    fpl_etl_pipeline = fpl_gameweeks_etl()
+NameError: name 'fpl_gameweeks_etl' is not defined
+[2025-10-25T22:40:24.007+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:40:24.039+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.207 seconds
+[2025-10-25T22:40:54.629+0000] {processor.py:157} INFO - Started process (PID=8603) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:40:54.630+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T22:40:54.631+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:40:54.631+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:40:54.696+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:40:54.689+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/load_player_gw_stats_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/load_player_gw_stats_dag.py", line 67, in <module>
+    fpl_etl_pipeline = fpl_gameweeks_etl()
+NameError: name 'fpl_gameweeks_etl' is not defined
+[2025-10-25T22:40:54.698+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:40:54.748+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.124 seconds
+[2025-10-25T22:41:25.856+0000] {processor.py:157} INFO - Started process (PID=8633) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:41:25.858+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T22:41:25.861+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:41:25.860+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:41:26.089+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:41:26.074+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/load_player_gw_stats_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/load_player_gw_stats_dag.py", line 67, in <module>
+    fpl_etl_pipeline = fpl_gameweeks_etl()
+NameError: name 'fpl_gameweeks_etl' is not defined
+[2025-10-25T22:41:26.100+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:41:26.213+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.367 seconds
+[2025-10-25T22:41:56.326+0000] {processor.py:157} INFO - Started process (PID=8663) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:41:56.327+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T22:41:56.328+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:41:56.328+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:41:56.384+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:41:56.380+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/load_player_gw_stats_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/load_player_gw_stats_dag.py", line 67, in <module>
+    fpl_etl_pipeline = fpl_gameweeks_etl()
+NameError: name 'fpl_gameweeks_etl' is not defined
+[2025-10-25T22:41:56.385+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:41:56.418+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.098 seconds
+[2025-10-25T22:42:27.338+0000] {processor.py:157} INFO - Started process (PID=8698) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:42:27.340+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T22:42:27.342+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:42:27.342+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:42:27.402+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:42:27.394+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/load_player_gw_stats_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/load_player_gw_stats_dag.py", line 67, in <module>
+    fpl_etl_pipeline = fpl_gameweeks_etl()
+NameError: name 'fpl_gameweeks_etl' is not defined
+[2025-10-25T22:42:27.406+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:42:27.443+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.111 seconds
+[2025-10-25T22:42:37.954+0000] {processor.py:157} INFO - Started process (PID=8718) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:42:37.955+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T22:42:37.957+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:42:37.956+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:42:37.984+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:42:38.017+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.068 seconds
+[2025-10-25T22:43:08.330+0000] {processor.py:157} INFO - Started process (PID=8758) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:43:08.341+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T22:43:08.345+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:43:08.345+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:43:08.441+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:43:08.532+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.219 seconds
+[2025-10-25T22:43:39.236+0000] {processor.py:157} INFO - Started process (PID=8804) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:43:39.237+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T22:43:39.238+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:43:39.238+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:43:39.255+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:43:39.288+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.058 seconds
+[2025-10-25T22:44:09.615+0000] {processor.py:157} INFO - Started process (PID=8834) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:44:09.616+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T22:44:09.618+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:44:09.617+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:44:09.635+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:44:09.659+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.049 seconds
+[2025-10-25T22:44:39.967+0000] {processor.py:157} INFO - Started process (PID=8864) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:44:39.969+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T22:44:39.970+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:44:39.970+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:44:39.990+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:44:40.019+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.060 seconds
+[2025-10-25T22:45:10.267+0000] {processor.py:157} INFO - Started process (PID=8899) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:45:10.268+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T22:45:10.270+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:45:10.269+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:45:10.289+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:45:10.317+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.056 seconds
+[2025-10-25T22:45:41.309+0000] {processor.py:157} INFO - Started process (PID=8945) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:45:41.311+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T22:45:41.313+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:45:41.312+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:45:41.324+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:45:41.350+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.045 seconds
+[2025-10-25T22:46:11.512+0000] {processor.py:157} INFO - Started process (PID=8975) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:46:11.513+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T22:46:11.514+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:46:11.514+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:46:11.527+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:46:11.552+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.045 seconds
+[2025-10-25T22:46:41.622+0000] {processor.py:157} INFO - Started process (PID=9023) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:46:41.624+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T22:46:41.626+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:46:41.625+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:46:41.642+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:46:41.671+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.055 seconds
+[2025-10-25T22:47:11.814+0000] {processor.py:157} INFO - Started process (PID=9069) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:47:11.816+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T22:47:11.817+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:47:11.816+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:47:11.836+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:47:11.864+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.056 seconds
+[2025-10-25T22:47:42.459+0000] {processor.py:157} INFO - Started process (PID=9103) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:47:42.462+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T22:47:42.465+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:47:42.463+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:47:42.485+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:47:42.516+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.064 seconds
+[2025-10-25T22:48:12.783+0000] {processor.py:157} INFO - Started process (PID=9163) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:48:12.784+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T22:48:12.786+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:48:12.786+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:48:12.805+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:48:12.841+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.064 seconds
+[2025-10-25T22:48:42.912+0000] {processor.py:157} INFO - Started process (PID=9193) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:48:42.914+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T22:48:42.917+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:48:42.916+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:48:42.941+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:48:42.971+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.064 seconds
+[2025-10-25T22:49:13.640+0000] {processor.py:157} INFO - Started process (PID=9248) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:49:13.643+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T22:49:13.645+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:49:13.645+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:49:13.708+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:49:13.760+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.128 seconds
+[2025-10-25T22:49:44.252+0000] {processor.py:157} INFO - Started process (PID=9287) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:49:44.254+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T22:49:44.257+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:49:44.256+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:49:44.285+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:49:44.336+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.096 seconds
+[2025-10-25T22:50:14.533+0000] {processor.py:157} INFO - Started process (PID=9322) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:50:14.534+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T22:50:14.535+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:50:14.535+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:50:14.549+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:50:14.576+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.047 seconds
+[2025-10-25T22:50:44.961+0000] {processor.py:157} INFO - Started process (PID=9368) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:50:44.962+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T22:50:44.963+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:50:44.963+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:50:44.981+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:50:45.004+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.048 seconds
+[2025-10-25T22:51:15.172+0000] {processor.py:157} INFO - Started process (PID=9398) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:51:15.173+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T22:51:15.175+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:51:15.174+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:51:15.195+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:51:15.227+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.062 seconds
+[2025-10-25T22:51:45.987+0000] {processor.py:157} INFO - Started process (PID=9428) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:51:45.988+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T22:51:45.989+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:51:45.989+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:51:46.001+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:51:46.025+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.042 seconds
+[2025-10-25T22:52:16.370+0000] {processor.py:157} INFO - Started process (PID=9458) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:52:16.372+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T22:52:16.375+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:52:16.375+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:52:16.403+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:52:16.445+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.089 seconds
+[2025-10-25T22:52:46.918+0000] {processor.py:157} INFO - Started process (PID=9471) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:52:46.920+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T22:52:46.922+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:52:46.922+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:52:46.955+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:52:46.988+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.077 seconds
+[2025-10-25T22:53:17.111+0000] {processor.py:157} INFO - Started process (PID=9503) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:53:17.113+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T22:53:17.116+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:53:17.116+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:53:17.132+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:53:17.159+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.053 seconds
+[2025-10-25T22:53:48.138+0000] {processor.py:157} INFO - Started process (PID=9533) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:53:48.139+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T22:53:48.141+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:53:48.141+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:53:48.159+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:53:48.184+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.050 seconds
+[2025-10-25T22:54:19.101+0000] {processor.py:157} INFO - Started process (PID=9563) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:54:19.103+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T22:54:19.104+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:54:19.104+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:54:19.119+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:54:19.140+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.045 seconds
+[2025-10-25T22:54:50.043+0000] {processor.py:157} INFO - Started process (PID=9593) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:54:50.044+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T22:54:50.045+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:54:50.044+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:54:50.062+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:54:50.085+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.048 seconds
+[2025-10-25T22:55:20.985+0000] {processor.py:157} INFO - Started process (PID=9623) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:55:20.986+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T22:55:20.987+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:55:20.987+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:55:21.002+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:55:21.029+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.050 seconds
+[2025-10-25T22:55:51.419+0000] {processor.py:157} INFO - Started process (PID=9653) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:55:51.421+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T22:55:51.422+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:55:51.422+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:55:51.436+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:55:51.463+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.050 seconds
+[2025-10-25T22:56:21.907+0000] {processor.py:157} INFO - Started process (PID=9715) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:56:21.908+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T22:56:21.910+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:56:21.910+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:56:22.444+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:56:22.479+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.059 seconds
+[2025-10-25T22:56:46.622+0000] {processor.py:157} INFO - Started process (PID=9745) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:56:46.623+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T22:56:46.625+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:56:46.624+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:56:46.654+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:56:46.680+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.064 seconds
+[2025-10-25T22:57:17.098+0000] {processor.py:157} INFO - Started process (PID=9775) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:57:17.100+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T22:57:17.102+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:57:17.101+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:57:17.118+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:57:17.143+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.048 seconds
+[2025-10-25T22:57:47.353+0000] {processor.py:157} INFO - Started process (PID=9805) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:57:47.354+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T22:57:47.356+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:57:47.355+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:57:47.374+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:57:47.406+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.057 seconds
+[2025-10-25T22:58:17.606+0000] {processor.py:157} INFO - Started process (PID=9835) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:58:17.607+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T22:58:17.608+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:58:17.608+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:58:17.625+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:58:17.650+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.048 seconds
+[2025-10-25T22:58:47.852+0000] {processor.py:157} INFO - Started process (PID=9865) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:58:47.853+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T22:58:47.855+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:58:47.855+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:58:47.874+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:58:47.903+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.057 seconds
+[2025-10-25T22:59:18.396+0000] {processor.py:157} INFO - Started process (PID=9895) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:59:18.397+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T22:59:18.398+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:59:18.398+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:59:18.416+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:59:18.444+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.053 seconds
+[2025-10-25T22:59:48.793+0000] {processor.py:157} INFO - Started process (PID=9925) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:59:48.798+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T22:59:48.800+0000] {logging_mixin.py:150} INFO - [2025-10-25T22:59:48.800+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:59:48.864+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T22:59:48.937+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.154 seconds
+[2025-10-25T23:00:19.725+0000] {processor.py:157} INFO - Started process (PID=9955) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:00:19.726+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T23:00:19.728+0000] {logging_mixin.py:150} INFO - [2025-10-25T23:00:19.728+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:00:19.747+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:00:19.775+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.056 seconds
+[2025-10-25T23:00:50.054+0000] {processor.py:157} INFO - Started process (PID=9985) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:00:50.055+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T23:00:50.057+0000] {logging_mixin.py:150} INFO - [2025-10-25T23:00:50.056+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:00:50.076+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:00:50.107+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.056 seconds
+[2025-10-25T23:01:20.675+0000] {processor.py:157} INFO - Started process (PID=10015) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:01:20.676+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T23:01:20.678+0000] {logging_mixin.py:150} INFO - [2025-10-25T23:01:20.677+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:01:20.698+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:01:20.735+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.072 seconds
+[2025-10-25T23:01:51.631+0000] {processor.py:157} INFO - Started process (PID=10045) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:01:51.632+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T23:01:51.634+0000] {logging_mixin.py:150} INFO - [2025-10-25T23:01:51.633+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:01:51.650+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:01:51.674+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.047 seconds
+[2025-10-25T23:02:21.739+0000] {processor.py:157} INFO - Started process (PID=10075) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:02:21.741+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T23:02:21.743+0000] {logging_mixin.py:150} INFO - [2025-10-25T23:02:21.743+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:02:21.759+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:02:21.782+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.047 seconds
+[2025-10-25T23:02:52.021+0000] {processor.py:157} INFO - Started process (PID=10105) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:02:52.023+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T23:02:52.024+0000] {logging_mixin.py:150} INFO - [2025-10-25T23:02:52.024+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:02:52.043+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:02:52.073+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.057 seconds
+[2025-10-25T23:03:22.347+0000] {processor.py:157} INFO - Started process (PID=10135) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:03:22.348+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T23:03:22.350+0000] {logging_mixin.py:150} INFO - [2025-10-25T23:03:22.349+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:03:22.370+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:03:22.394+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.051 seconds
+[2025-10-25T23:03:52.531+0000] {processor.py:157} INFO - Started process (PID=10160) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:03:52.533+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T23:03:52.536+0000] {logging_mixin.py:150} INFO - [2025-10-25T23:03:52.535+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:03:52.563+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:03:52.620+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.098 seconds
+[2025-10-25T23:04:23.085+0000] {processor.py:157} INFO - Started process (PID=10190) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:04:23.087+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T23:04:23.089+0000] {logging_mixin.py:150} INFO - [2025-10-25T23:04:23.088+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:04:23.106+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:04:23.134+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.053 seconds
+[2025-10-25T23:04:53.627+0000] {processor.py:157} INFO - Started process (PID=10220) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:04:53.627+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T23:04:53.629+0000] {logging_mixin.py:150} INFO - [2025-10-25T23:04:53.628+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:04:53.644+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:04:53.674+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.052 seconds
+[2025-10-25T23:05:23.985+0000] {processor.py:157} INFO - Started process (PID=10255) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:05:23.986+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T23:05:23.987+0000] {logging_mixin.py:150} INFO - [2025-10-25T23:05:23.987+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:05:24.005+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:05:24.036+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.060 seconds
+[2025-10-25T23:05:54.220+0000] {processor.py:157} INFO - Started process (PID=10285) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:05:54.221+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T23:05:54.222+0000] {logging_mixin.py:150} INFO - [2025-10-25T23:05:54.222+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:05:54.239+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:05:54.262+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.048 seconds
+[2025-10-25T23:06:24.354+0000] {processor.py:157} INFO - Started process (PID=10325) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:06:24.355+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T23:06:24.356+0000] {logging_mixin.py:150} INFO - [2025-10-25T23:06:24.356+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:06:24.374+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:06:24.409+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.060 seconds
+[2025-10-25T23:06:55.060+0000] {processor.py:157} INFO - Started process (PID=10355) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:06:55.061+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T23:06:55.062+0000] {logging_mixin.py:150} INFO - [2025-10-25T23:06:55.062+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:06:55.078+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:06:55.107+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.051 seconds
+[2025-10-25T23:07:25.392+0000] {processor.py:157} INFO - Started process (PID=10383) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:07:25.393+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T23:07:25.394+0000] {logging_mixin.py:150} INFO - [2025-10-25T23:07:25.393+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:07:25.411+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:07:25.443+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.055 seconds
+[2025-10-25T23:07:56.370+0000] {processor.py:157} INFO - Started process (PID=10415) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:07:56.372+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T23:07:56.375+0000] {logging_mixin.py:150} INFO - [2025-10-25T23:07:56.374+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:07:56.400+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:07:56.426+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.065 seconds
+[2025-10-25T23:08:26.502+0000] {processor.py:157} INFO - Started process (PID=10450) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:08:26.503+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T23:08:26.505+0000] {logging_mixin.py:150} INFO - [2025-10-25T23:08:26.504+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:08:26.517+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:08:26.543+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.045 seconds
+[2025-10-25T23:08:56.952+0000] {processor.py:157} INFO - Started process (PID=10480) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:08:56.953+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T23:08:56.955+0000] {logging_mixin.py:150} INFO - [2025-10-25T23:08:56.954+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:08:56.969+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:08:56.999+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.053 seconds
+[2025-10-25T23:09:27.354+0000] {processor.py:157} INFO - Started process (PID=10510) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:09:27.355+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T23:09:27.356+0000] {logging_mixin.py:150} INFO - [2025-10-25T23:09:27.356+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:09:27.371+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:09:27.393+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.043 seconds
+[2025-10-25T23:09:57.253+0000] {processor.py:157} INFO - Started process (PID=10540) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:09:57.254+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-25T23:09:57.256+0000] {logging_mixin.py:150} INFO - [2025-10-25T23:09:57.256+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:09:57.428+0000] {logging_mixin.py:150} INFO - [2025-10-25T23:09:57.421+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/load_player_gw_stats_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/load_player_gw_stats_dag.py", line 72, in <module>
+    fpl_etl_pipeline = fpl_gameweeks_etl()
+NameError: name 'fpl_gameweeks_etl' is not defined
+[2025-10-25T23:09:57.430+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-25T23:09:57.448+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.201 seconds

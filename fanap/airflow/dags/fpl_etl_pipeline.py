@@ -18,8 +18,8 @@ from scripts.load_fixtures import (
     fetch_data_from_api,
     parse_fixtures,
     load_fixtures,
-    combine_data_from_api,
 )
+from scripts.utils.combine_data import combine_data_from_api
 from scripts.load_players import fetch_players_data, load_players
 
 CURRENT_SEASON = infer_season()
@@ -118,18 +118,18 @@ def fpl_etl_pipeline():
     )
 
     """Create the game_weeks table."""
-    create_gameweeks_table = PostgresOperator(
-        task_id="create_gameweeks_table",
-        postgres_conn_id="fpl_db_conn",
-        sql="""
-            CREATE TABLE IF NOT EXISTS game_weeks (
-                season TEXT,
-                gameweek INTEGER,
-                deadline TIMESTAMP,
-                PRIMARY KEY (season, gameweek)
-            );
-        """,
-    )
+    # create_gameweeks_table = PostgresOperator(
+    #     task_id="create_gameweeks_table",
+    #     postgres_conn_id="fpl_db_conn",
+    #     sql="""
+    #         CREATE TABLE IF NOT EXISTS game_weeks (
+    #             season TEXT,
+    #             gameweek INTEGER,
+    #             deadline TIMESTAMP,
+    #             PRIMARY KEY (season, gameweek)
+    #         );
+    #     """,
+    # )
 
     @task()
     def fetch_fixtures_task(season):
@@ -137,60 +137,64 @@ def fpl_etl_pipeline():
 
     @task()
     def parse_fixtures_task(fixtures_data):
-        return parse_fixtures(fixtures_data, season=SEASONS)
+        return parse_fixtures(fixtures_data)
 
     @task()
-    def populate_fixtures(fixtures):
+    def load_fixtures_task(fixtures):
         return load_fixtures(fixtures)
+
+    # @task()
+    # def populate_fixtures(fixtures):
+    #     return load_fixtures(fixtures)
 
     @task()
     def combine_fixtures_task(results):
         return combine_data_from_api(results)
 
-    @task()
-    def load_gameweek_task(season):
-        return fetch_data_from_api(season)
+    # @task()
+    # def load_gameweek_task(season):
+    #     return fetch_data_from_api(season)
 
-    @task()
-    def parse_gameweeks_task(gameweeks_data):
-        return parse_gameweeks(gameweeks_data)
+    # @task()
+    # def parse_gameweeks_task(gameweeks_data):
+    #     return parse_gameweeks(gameweeks_data)
 
-    @task()
-    def combine_gameweeks_task(results):
-        return combine_data_from_api(results)
+    # @task()
+    # def combine_gameweeks_task(results):
+    #     return combine_data_from_api(results)
 
-    @task
-    def populate_gameweeks(gameweeks):
-        return load_gameweeks(gameweeks)
+    # @task
+    # def populate_gameweeks(gameweeks):
+    #     return load_gameweeks(gameweeks)
 
-    create_players_table = PostgresOperator(
-        task_id="create_players_table",
-        postgres_conn_id="fpl_db_conn",
-        sql="""
-            CREATE TABLE IF NOT EXISTS players (
-                code INTEGER PRIMARY KEY,
-                first_name TEXT,
-                second_name TEXT,
-                web_name TEXT,
-                team_code INTEGER,
-                type_name TEXT,
-                now_cost INTEGER,
-                status TEXT
-            );
-        """,
-    )
+    # create_players_table = PostgresOperator(
+    #     task_id="create_players_table",
+    #     postgres_conn_id="fpl_db_conn",
+    #     sql="""
+    #         CREATE TABLE IF NOT EXISTS players (
+    #             code INTEGER PRIMARY KEY,
+    #             first_name TEXT,
+    #             second_name TEXT,
+    #             web_name TEXT,
+    #             team_code INTEGER,
+    #             type_name TEXT,
+    #             now_cost INTEGER,
+    #             status TEXT
+    #         );
+    #     """,
+    # )
 
-    @task()
-    def fetch_players_task():
-        return fetch_players_data()
+    # @task()
+    # def fetch_players_task():
+    #     return fetch_players_data()
 
-    @task()
-    def load_players_task(players):
-        return load_players(players)
+    # @task()
+    # def load_players_task(players):
+    #     return load_players(players)
 
-    @task()
-    def combine_players_task(results):
-        return combine_data_from_api(results)
+    # @task()
+    # def combine_players_task(results):
+    #     return combine_data_from_api(results)
 
     # Define dependencies using TaskFlow API chaining
 
@@ -198,16 +202,17 @@ def fpl_etl_pipeline():
 
     fixtures_fn = fetch_fixtures_task.expand(season=SEASONS)
     parsed_fixtures = parse_fixtures_task.expand(fixtures_data=fixtures_fn)
-    combined_fixtures = combine_fixtures_task(parsed_fixtures)
-    populate_fixtures_fn = populate_fixtures(combined_fixtures)
+    load_fixtures_to_db = load_fixtures_task(parsed_fixtures)
+    # combined_fixtures = combine_fixtures_task(parsed_fixtures)
+    # populate_fixtures_fn = populate_fixtures(combined_fixtures)
 
-    gameweeks_fn = load_gameweek_task.expand(season=SEASONS)
-    teams_gameweeks_parsed = parse_gameweeks_task.expand(gameweeks_data=gameweeks_fn)
-    combined_gameweeks = combine_gameweeks_task(teams_gameweeks_parsed)
-    populate_gameweeks_fn = populate_gameweeks(combined_gameweeks)
+    # gameweeks_fn = load_gameweek_task.expand(season=SEASONS)
+    # teams_gameweeks_parsed = parse_gameweeks_task.expand(gameweeks_data=gameweeks_fn)
+    # combined_gameweeks = combine_gameweeks_task(teams_gameweeks_parsed)
+    # populate_gameweeks_fn = populate_gameweeks(combined_gameweeks)
 
-    players_info_fn = fetch_players_task()
-    load_players_info_fn = load_players_task(players=players_info_fn)
+    # players_info_fn = fetch_players_task()
+    # load_players_info_fn = load_players_task(players=players_info_fn)
     # combined_gameweeks = combine_gameweeks_task(teams_gameweeks_parsed)
     # populate_gameweeks_fn = populate_gameweeks(combined_gameweeks)
 
@@ -215,20 +220,24 @@ def fpl_etl_pipeline():
         [
             # (check_teams_api >> create_teams_table >> load_teams_task(teams))
             (create_teams_table >> load_teams_task(teams))
-            >> (create_fixtures_table)
-            # >> (check_fixtures_data_url >> create_fixtures_table)
+            >> create_fixtures_table
             >> fixtures_fn
             >> parsed_fixtures
-            >> combined_fixtures
-            >> populate_fixtures_fn
-            >> create_gameweeks_table
-            >> gameweeks_fn
-            >> teams_gameweeks_parsed
-            >> combined_gameweeks
-            >> populate_gameweeks_fn
-            >> create_players_table
-            >> load_players_info_fn
+            >> load_fixtures_to_db
         ]
+        # >> (check_fixtures_data_url >> create_fixtures_table)
+        #     >> fixtures_fn
+        #     >> parsed_fixtures
+        #     >> combined_fixtures
+        #     >> populate_fixtures_fn
+        #     >> create_gameweeks_table
+        #     >> gameweeks_fn
+        #     >> teams_gameweeks_parsed
+        #     >> combined_gameweeks
+        #     >> populate_gameweeks_fn
+        #     >> create_players_table
+        #     >> load_players_info_fn
+        # ]
     )
 
 

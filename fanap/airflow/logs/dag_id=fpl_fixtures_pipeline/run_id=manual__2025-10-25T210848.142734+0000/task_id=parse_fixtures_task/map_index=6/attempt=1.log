@@ -1,0 +1,24 @@
+[2025-10-25T21:09:13.593+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fpl_fixtures_pipeline.parse_fixtures_task manual__2025-10-25T21:08:48.142734+00:00 map_index=6 [queued]>
+[2025-10-25T21:09:13.715+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fpl_fixtures_pipeline.parse_fixtures_task manual__2025-10-25T21:08:48.142734+00:00 map_index=6 [queued]>
+[2025-10-25T21:09:13.736+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2025-10-25T21:09:15.197+0000] {taskinstance.py:1327} INFO - Executing <Mapped(_PythonDecoratedOperator): parse_fixtures_task> on 2025-10-25 21:08:48.142734+00:00
+[2025-10-25T21:09:15.215+0000] {standard_task_runner.py:57} INFO - Started process 4078 to run task
+[2025-10-25T21:09:15.220+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'fpl_fixtures_pipeline', 'parse_fixtures_task', 'manual__2025-10-25T21:08:48.142734+00:00', '--job-id', '6372', '--raw', '--subdir', 'DAGS_FOLDER/fixtures_dag.py', '--cfg-path', '/tmp/tmp4i_t2kq8', '--map-index', '6']
+[2025-10-25T21:09:15.235+0000] {standard_task_runner.py:85} INFO - Job 6372: Subtask parse_fixtures_task
+[2025-10-25T21:09:15.823+0000] {task_command.py:410} INFO - Running <TaskInstance: fpl_fixtures_pipeline.parse_fixtures_task manual__2025-10-25T21:08:48.142734+00:00 map_index=6 [running]> on host 754e4af34fcd
+[2025-10-25T21:09:17.362+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='richardilemon' AIRFLOW_CTX_DAG_ID='fpl_fixtures_pipeline' AIRFLOW_CTX_TASK_ID='parse_fixtures_task' AIRFLOW_CTX_EXECUTION_DATE='2025-10-25T21:08:48.142734+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-25T21:08:48.142734+00:00'
+[2025-10-25T21:09:17.370+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/decorators/base.py", line 220, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 181, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 198, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/fixtures_dag.py", line 70, in parse_fixtures_task
+    return parse_fixtures(fixtures_data, season=SEASONS)
+TypeError: parse_fixtures() got an unexpected keyword argument 'season'
+[2025-10-25T21:09:17.597+0000] {taskinstance.py:1350} INFO - Marking task as UP_FOR_RETRY. dag_id=fpl_fixtures_pipeline, task_id=parse_fixtures_task, map_index=6, execution_date=20251025T210848, start_date=20251025T210913, end_date=20251025T210917
+[2025-10-25T21:09:17.752+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 6372 for task parse_fixtures_task (parse_fixtures() got an unexpected keyword argument 'season'; 4078)
+[2025-10-25T21:09:17.870+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2025-10-25T21:09:18.463+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

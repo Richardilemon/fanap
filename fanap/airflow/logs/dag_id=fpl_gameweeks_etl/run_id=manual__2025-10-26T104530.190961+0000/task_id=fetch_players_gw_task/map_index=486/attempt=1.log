@@ -1,0 +1,31 @@
+[2025-10-26T11:02:09.621+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fpl_gameweeks_etl.fetch_players_gw_task manual__2025-10-26T10:45:30.190961+00:00 map_index=486 [queued]>
+[2025-10-26T11:02:11.083+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fpl_gameweeks_etl.fetch_players_gw_task manual__2025-10-26T10:45:30.190961+00:00 map_index=486 [queued]>
+[2025-10-26T11:02:11.088+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2025-10-26T11:02:11.191+0000] {taskinstance.py:1327} INFO - Executing <Mapped(_PythonDecoratedOperator): fetch_players_gw_task> on 2025-10-26 10:45:30.190961+00:00
+[2025-10-26T11:02:11.206+0000] {standard_task_runner.py:57} INFO - Started process 210 to run task
+[2025-10-26T11:02:11.274+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'fpl_gameweeks_etl', 'fetch_players_gw_task', 'manual__2025-10-26T10:45:30.190961+00:00', '--job-id', '7738', '--raw', '--subdir', 'DAGS_FOLDER/fpl_gameweeks_dag.py', '--cfg-path', '/tmp/tmp350wau32', '--map-index', '486']
+[2025-10-26T11:02:11.292+0000] {standard_task_runner.py:85} INFO - Job 7738: Subtask fetch_players_gw_task
+[2025-10-26T11:02:11.888+0000] {task_command.py:410} INFO - Running <TaskInstance: fpl_gameweeks_etl.fetch_players_gw_task manual__2025-10-26T10:45:30.190961+00:00 map_index=486 [running]> on host 9845efddf180
+[2025-10-26T11:02:13.345+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='richardilemon' AIRFLOW_CTX_DAG_ID='fpl_gameweeks_etl' AIRFLOW_CTX_TASK_ID='fetch_players_gw_task' AIRFLOW_CTX_EXECUTION_DATE='2025-10-26T10:45:30.190961+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-26T10:45:30.190961+00:00'
+[2025-10-26T11:02:14.205+0000] {fetch_api_data.py:66} INFO - Requested Url -> https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/master/data/2018-19/players/G/gw.csv
+[2025-10-26T11:02:15.007+0000] {fetch_api_data.py:66} INFO - Requested Url -> https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/master/data/2018-19/players/u/gw.csv
+[2025-10-26T11:02:15.735+0000] {fetch_api_data.py:66} INFO - Requested Url -> https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/master/data/2018-19/players/i/gw.csv
+[2025-10-26T11:02:16.552+0000] {fetch_api_data.py:66} INFO - Requested Url -> https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/master/data/2018-19/players/d/gw.csv
+[2025-10-26T11:02:17.165+0000] {fetch_api_data.py:66} INFO - Requested Url -> https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/master/data/2018-19/players/o/gw.csv
+[2025-10-26T11:02:17.714+0000] {fetch_api_data.py:66} INFO - Requested Url -> https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/master/data/2018-19/players/_/gw.csv
+[2025-10-26T11:02:18.244+0000] {fetch_api_data.py:66} INFO - Requested Url -> https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/master/data/2018-19/players/C/gw.csv
+[2025-10-26T11:02:18.787+0000] {fetch_api_data.py:66} INFO - Requested Url -> https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/master/data/2018-19/players/a/gw.csv
+[2025-10-26T11:02:19.260+0000] {fetch_api_data.py:66} INFO - Requested Url -> https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/master/data/2018-19/players/r/gw.csv
+[2025-10-26T11:02:19.756+0000] {fetch_api_data.py:66} INFO - Requested Url -> https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/master/data/2018-19/players/r/gw.csv
+[2025-10-26T11:02:20.264+0000] {fetch_api_data.py:66} INFO - Requested Url -> https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/master/data/2018-19/players/i/gw.csv
+[2025-10-26T11:02:20.771+0000] {fetch_api_data.py:66} INFO - Requested Url -> https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/master/data/2018-19/players/l/gw.csv
+[2025-10-26T11:02:21.242+0000] {fetch_api_data.py:66} INFO - Requested Url -> https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/master/data/2018-19/players/l/gw.csv
+[2025-10-26T11:02:21.740+0000] {fetch_api_data.py:66} INFO - Requested Url -> https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/master/data/2018-19/players/o/gw.csv
+[2025-10-26T11:02:22.285+0000] {fetch_api_data.py:66} INFO - Requested Url -> https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/master/data/2018-19/players/_/gw.csv
+[2025-10-26T11:02:22.785+0000] {fetch_api_data.py:66} INFO - Requested Url -> https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/master/data/2018-19/players/3/gw.csv
+[2025-10-26T11:02:23.467+0000] {fetch_api_data.py:66} INFO - Requested Url -> https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/master/data/2018-19/players/5/gw.csv
+[2025-10-26T11:02:24.256+0000] {fetch_api_data.py:66} INFO - Requested Url -> https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/master/data/2018-19/players/0/gw.csv
+[2025-10-26T11:02:24.266+0000] {python.py:183} INFO - Done. Returned value was: []
+[2025-10-26T11:02:24.343+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=fpl_gameweeks_etl, task_id=fetch_players_gw_task, map_index=486, execution_date=20251026T104530, start_date=20251026T110209, end_date=20251026T110224
+[2025-10-26T11:02:24.807+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2025-10-26T11:02:36.120+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check
