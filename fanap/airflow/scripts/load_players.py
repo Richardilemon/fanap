@@ -4,7 +4,14 @@ from scripts.utils.db_config import db_connection_wrapper
 
 
 def fetch_players_data():
-    """Fetch player data from the FPL API."""
+    """
+    Retrieve player data from the Fantasy Premier League (FPL) API.
+
+    Returns:
+        list: A list of player dictionaries containing player attributes 
+              (e.g., name,, team, status). Returns an empty list if 
+              the API request fails.
+    """
     try:
         url = Variable.get("FPL_TEAMS_API_URL")
         response = requests.get(url)
@@ -18,7 +25,18 @@ def fetch_players_data():
 
 @db_connection_wrapper
 def load_players(connection, players):
-    """Insert or update player data into the table."""
+    """
+    Insert or update player data in the 'players' table.
+
+    Args:
+        connection: Active database connection provided by the decorator.
+        players (list): A list of player dictionaries fetched from the FPL API.
+
+    Behavior:
+        - Inserts new player records into the database.
+        - Updates existing player records if a conflict occurs on 'code'.
+        - Commits all changes once completed.
+    """
     _cursor = connection.cursor()
     for player in players:
         _cursor.execute(

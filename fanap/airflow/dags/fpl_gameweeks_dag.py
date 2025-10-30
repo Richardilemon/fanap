@@ -13,6 +13,7 @@ from scripts.utils.infer_season import infer_season, SEASONS
 from scripts.load_player_gameweek_stats import (
     parse_players_seasons,
     parse_gw_stats_table,
+    load_player_gameweek_stats
 )
 
 
@@ -64,7 +65,9 @@ def fpl_gameweeks_etl():
                 season TEXT,
                 gameweek INTEGER,
                 player_name TEXT,
-                team_code INTEGER,
+                # team_code INTEGER,
+                fixture INTEGER,
+                opponent_team INTEGER,
                 goals_scored INTEGER,
                 assists INTEGER,
                 clean_sheets INTEGER,
@@ -123,8 +126,12 @@ def fpl_gameweeks_etl():
         return parse_fixtures(fixtures_data)
 
     @task()
-    def parse_gw_stats_table_task(gw_data, fixtures, players_folder):
-        return parse_gw_stats_table(gw_data, fixtures, players_folder)
+    def parse_gw_stats_table_task(gw_data, fixtures):
+        return parse_gw_stats_table(gw_data, fixtures)
+
+    @task()
+    def load_player_gameweek_stats_task(records):
+        return load_player_gameweek_stats(records)
 
     @task()
     def parse_gameweeks_task(gameweeks_data):
@@ -133,6 +140,7 @@ def fpl_gameweeks_etl():
     @task
     def load_gameweeks_task(gameweeks):
         return load_gameweeks(gameweeks)
+    
 
     gameweeks_fn = fetch_gameweek_task.expand(season=SEASONS)
     teams_gameweeks_parsed = parse_gameweeks_task.expand(gameweeks_data=gameweeks_fn)
@@ -145,42 +153,38 @@ def fpl_gameweeks_etl():
         players=parse_players_season_stats_fn
     )
 
-    # fetch_players_gw_fn = fetch_players_gw_task.expand(
-    #     season=SEASONS, player_folder=get_players_folder_fn
-    # )
     fetch_players_gw_fn = fetch_players_gw_task.partial(
         player_folder=get_players_folder_fn
     ).expand(
         season=SEASONS
-    )  # NOTE: ONLY THE 2018-19 SEASON DATA IS AVAILABLE ON THE API PROVIDED.
+    )  # NOTE: ONLY THE 2018-19 SEASON DATA (for Players) IS FULLY AVAILABLE ON THE API PROVIDED, AND SOME ACROSS THE OTHER SEASONS.
 
     fixtures_fn = fetch_fixtures_task.expand(season=SEASONS)
+    # get_match_code = match_code_task(fixtures_fn)
     parsed_fixtures = parse_fixtures_task.expand(fixtures_data=fixtures_fn)
 
     parse_gw_stats_table_task_fn = parse_gw_stats_table_task(
-        fetch_players_gw_fn, parsed_fixtures, get_players_folder_fn
+        fetch_players_gw_fn, parsed_fixtures
     )
+
+    # parse_gw_stats_table_task_fn = parse_gw_stats_table_task(
+    #     gw_data=fetch_players_gw_fn, fixtures=fixtures_fn
+    # )
+    load_player_gameweek_stats_task_fn = load_player_gameweek_stats_task(parse_gw_stats_table_task_fn)
+
 
     (
-        create_gameweeks_table
-        >> gameweeks_fn
-        >> create_gw_stats_table
-        >> players_task_fn
-        # >> fetch_players_gw_fn
-        >> parse_players_season_stats_fn
-        >> (get_players_folder_fn)
-        # >> fetch_players_gw_fn
-        >> parse_gw_stats_table_task_fn
-        >> load_parsed_gw
+    create_gameweeks_table
+    >> gameweeks_fn
+    >> create_gw_stats_table
+    >> players_task_fn
+    >> parse_players_season_stats_fn
+    >> get_players_folder_fn
+    >> parse_gw_stats_table_task_fn
     )
-    # (
-    #     create_gameweeks_table
-    #     >> gameweeks_fn
-    #     >> players_task_fn
-    #     >> (parse_players_season_stats_fn)
-    #     >> load_parsed_gw
-    # )
-    # (create_gameweeks_table >> gameweeks_fn >> (players_task_fn) >> load_parsed_gw)
 
+    # Continue remaining links as needed
+    parse_gw_stats_table_task_fn >> load_player_gameweek_stats_task_fn
 
+# invoke the pipeline
 gameweeks = fpl_gameweeks_etl()

@@ -1,0 +1,706 @@
+[2025-10-29T09:19:32.572+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fpl_gameweeks_etl.fetch_players_gw_task manual__2025-10-29T09:19:06.934488+00:00 map_index=3 [queued]>
+[2025-10-29T09:19:32.610+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fpl_gameweeks_etl.fetch_players_gw_task manual__2025-10-29T09:19:06.934488+00:00 map_index=3 [queued]>
+[2025-10-29T09:19:32.610+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2025-10-29T09:19:33.034+0000] {taskinstance.py:1327} INFO - Executing <Mapped(_PythonDecoratedOperator): fetch_players_gw_task> on 2025-10-29 09:19:06.934488+00:00
+[2025-10-29T09:19:33.050+0000] {standard_task_runner.py:57} INFO - Started process 7720 to run task
+[2025-10-29T09:19:33.069+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'fpl_gameweeks_etl', 'fetch_players_gw_task', 'manual__2025-10-29T09:19:06.934488+00:00', '--job-id', '763', '--raw', '--subdir', 'DAGS_FOLDER/fpl_gameweeks_dag.py', '--cfg-path', '/tmp/tmp9f4r_i6o', '--map-index', '3']
+[2025-10-29T09:19:33.072+0000] {standard_task_runner.py:85} INFO - Job 763: Subtask fetch_players_gw_task
+[2025-10-29T09:19:33.295+0000] {task_command.py:410} INFO - Running <TaskInstance: fpl_gameweeks_etl.fetch_players_gw_task manual__2025-10-29T09:19:06.934488+00:00 map_index=3 [running]> on host dede24b5451e
+[2025-10-29T09:19:33.595+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='richardilemon' AIRFLOW_CTX_DAG_ID='fpl_gameweeks_etl' AIRFLOW_CTX_TASK_ID='fetch_players_gw_task' AIRFLOW_CTX_EXECUTION_DATE='2025-10-29T09:19:06.934488+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-29T09:19:06.934488+00:00'
+[2025-10-29T09:19:34.372+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Petr_Cech_1: 404
+[2025-10-29T09:19:35.108+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Bernd_Leno_2: 404
+[2025-10-29T09:19:36.454+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Laurent_Koscielny_3: 404
+[2025-10-29T09:19:37.523+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Héctor_Bellerín_4: 404
+[2025-10-29T09:19:38.173+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Nacho_Monreal_5: 404
+[2025-10-29T09:19:38.864+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Rob_Holding_6: 404
+[2025-10-29T09:19:39.591+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Shkodran_Mustafi_7: 404
+[2025-10-29T09:19:40.660+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Sead_Kolasinac_8: 404
+[2025-10-29T09:19:41.718+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Konstantinos_Mavropanos_10: 404
+[2025-10-29T09:19:42.765+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Stephan_Lichtsteiner_11: 404
+[2025-10-29T09:19:43.399+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Sokratis_Papastathopoulos_12: 404
+[2025-10-29T09:19:44.268+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Mesut_Özil_13: 404
+[2025-10-29T09:19:45.198+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Aaron_Ramsey_14: 404
+[2025-10-29T09:19:45.805+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Alex_Iwobi_15: 404
+[2025-10-29T09:19:46.506+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Mohamed_Elneny_16: 404
+[2025-10-29T09:19:47.119+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Granit_Xhaka_17: 404
+[2025-10-29T09:19:47.827+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Henrikh_Mkhitaryan_18: 404
+[2025-10-29T09:19:48.493+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Reiss_Nelson_19: 404
+[2025-10-29T09:19:49.226+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Ainsley_Maitland-Niles_20: 404
+[2025-10-29T09:19:49.940+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Danny_Welbeck_21: 404
+[2025-10-29T09:19:50.520+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Alexandre_Lacazette_22: 404
+[2025-10-29T09:19:51.141+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Pierre-Emerick_Aubameyang_23: 404
+[2025-10-29T09:19:51.754+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Lucas_Torreira_450: 404
+[2025-10-29T09:19:52.348+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Matteo_Guendouzi_451: 404
+[2025-10-29T09:19:53.005+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Emiliano_Martínez_542: 404
+[2025-10-29T09:19:53.599+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Emile_Smith-Rowe_545: 404
+[2025-10-29T09:19:54.209+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Zech_Medley_546: 404
+[2025-10-29T09:19:54.876+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Edward_Nketiah_552: 404
+[2025-10-29T09:19:55.604+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Bukayo_Saka_563: 404
+[2025-10-29T09:19:56.264+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Joseph_Willock_566: 404
+[2025-10-29T09:19:56.964+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Carl_Jenkinson_581: 404
+[2025-10-29T09:19:57.588+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Denis_Suárez_586: 404
+[2025-10-29T09:19:58.163+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Asmir_Begovic_24: 404
+[2025-10-29T09:19:58.803+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Artur_Boruc_25: 404
+[2025-10-29T09:19:59.393+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Simon_Francis_26: 404
+[2025-10-29T09:19:59.988+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Steve_Cook_27: 404
+[2025-10-29T09:20:00.594+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Charlie_Daniels_28: 404
+[2025-10-29T09:20:01.183+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Adam_Smith_29: 404
+[2025-10-29T09:20:01.780+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Tyrone_Mings_30: 404
+[2025-10-29T09:20:02.395+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Nathan_Aké_31: 404
+[2025-10-29T09:20:03.005+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Jack_Simpson_32: 404
+[2025-10-29T09:20:03.579+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Marc_Pugh_34: 404
+[2025-10-29T09:20:04.193+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Andrew_Surman_35: 404
+[2025-10-29T09:20:04.845+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Junior_Stanislas_36: 404
+[2025-10-29T09:20:05.538+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Dan_Gosling_37: 404
+[2025-10-29T09:20:06.149+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Jordon_Ibe_38: 404
+[2025-10-29T09:20:06.792+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Lewis_Cook_39: 404
+[2025-10-29T09:20:07.609+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Ryan_Fraser_40: 404
+[2025-10-29T09:20:08.575+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Emerson_Hyndman_41: 404
+[2025-10-29T09:20:09.227+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for David_Brooks_42: 404
+[2025-10-29T09:20:09.924+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Callum_Wilson_43: 404
+[2025-10-29T09:20:10.527+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Lys_Mousset_44: 404
+[2025-10-29T09:20:11.134+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Joshua_King_45: 404
+[2025-10-29T09:20:11.707+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Jermain_Defoe_46: 404
+[2025-10-29T09:20:12.307+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Nathaniel_Clyne_241: 404
+[2025-10-29T09:20:12.902+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Dominic_Solanke_259: 404
+[2025-10-29T09:20:13.448+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Diego_Rico_473: 404
+[2025-10-29T09:20:14.076+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Jefferson_Lerma_494: 404
+[2025-10-29T09:20:14.748+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Chris_Mepham_580: 404
+[2025-10-29T09:20:15.351+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Sam_Surridge_599: 404
+[2025-10-29T09:20:15.927+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Kyle_Taylor_600: 404
+[2025-10-29T09:20:16.516+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Nnamdi_Ofoborh_613: 404
+[2025-10-29T09:20:17.144+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Mark_Travers_616: 404
+[2025-10-29T09:20:17.706+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Matt_Butcher_620: 404
+[2025-10-29T09:20:18.314+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Mathew_Ryan_47: 404
+[2025-10-29T09:20:18.972+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Lewis_Dunk_48: 404
+[2025-10-29T09:20:19.600+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Shane_Duffy_49: 404
+[2025-10-29T09:20:20.493+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Bruno_Saltor Grau_50: 404
+[2025-10-29T09:20:21.711+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Gaëtan_Bong_51: 404
+[2025-10-29T09:20:23.002+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Markus_Suttner_52: 404
+[2025-10-29T09:20:24.396+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Ezequiel_Schelotto_53: 404
+[2025-10-29T09:20:25.611+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Leon_Balogun_54: 404
+[2025-10-29T09:20:27.530+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Anthony_Knockaert_55: 404
+[2025-10-29T09:20:28.586+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Dale_Stephens_56: 404
+[2025-10-29T09:20:29.434+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Beram_Kayal_57: 404
+[2025-10-29T09:20:30.245+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Solomon_March_58: 404
+[2025-10-29T09:20:31.109+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Pascal_Groß_59: 404
+[2025-10-29T09:20:31.939+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Davy_Pröpper_60: 404
+[2025-10-29T09:20:32.838+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for José Heriberto_Izquierdo Mena_61: 404
+[2025-10-29T09:20:33.583+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Glenn_Murray_62: 404
+[2025-10-29T09:20:34.570+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Tomer_Hemed_63: 404
+[2025-10-29T09:20:35.467+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Sam_Baldock_64: 404
+[2025-10-29T09:20:36.171+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Jürgen_Locadia_65: 404
+[2025-10-29T09:20:37.065+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Florin_Andone_66: 404
+[2025-10-29T09:20:38.254+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for David_Button_179: 404
+[2025-10-29T09:20:39.561+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Jason_Steele_439: 404
+[2025-10-29T09:20:41.401+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Bernardo_Fernandes da Silva Junior_440: 404
+[2025-10-29T09:20:42.033+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Yves_Bissouma_466: 404
+[2025-10-29T09:20:42.921+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Alireza_Jahanbakhsh_476: 404
+[2025-10-29T09:20:43.715+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Martín_Montoya_503: 404
+[2025-10-29T09:20:44.625+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Viktor_Gyokeres_551: 404
+[2025-10-29T09:20:46.511+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Ben_White_559: 404
+[2025-10-29T09:20:50.582+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Max_Sanders_572: 404
+[2025-10-29T09:20:53.552+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Dan_Burn_582: 404
+[2025-10-29T09:20:55.796+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Jayson_Molumby_617: 404
+[2025-10-29T09:20:57.382+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Tom_Heaton_67: 404
+[2025-10-29T09:20:58.508+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Nick_Pope_68: 404
+[2025-10-29T09:20:59.538+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Matthew_Lowton_69: 404
+[2025-10-29T09:21:01.439+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Ben_Mee_70: 404
+[2025-10-29T09:21:02.556+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Stephen_Ward_71: 404
+[2025-10-29T09:21:03.272+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for James_Tarkowski_72: 404
+[2025-10-29T09:21:04.209+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Kevin_Long_73: 404
+[2025-10-29T09:21:05.188+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Charlie_Taylor_74: 404
+[2025-10-29T09:21:06.216+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Phil_Bardsley_75: 404
+[2025-10-29T09:21:06.890+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Johann Berg_Gudmundsson_76: 404
+[2025-10-29T09:21:07.672+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Steven_Defour_77: 404
+[2025-10-29T09:21:08.444+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Jeff_Hendrick_78: 404
+[2025-10-29T09:21:09.155+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Robbie_Brady_79: 404
+[2025-10-29T09:21:09.853+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Ashley_Westwood_80: 404
+[2025-10-29T09:21:10.586+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Jonathan_Walters_81: 404
+[2025-10-29T09:21:11.238+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Jack_Cork_82: 404
+[2025-10-29T09:21:11.918+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Aaron_Lennon_83: 404
+[2025-10-29T09:21:12.900+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Sam_Vokes_84: 404
+[2025-10-29T09:21:13.612+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Ashley_Barnes_85: 404
+[2025-10-29T09:21:14.287+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Nahki_Wells_86: 404
+[2025-10-29T09:21:14.948+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Chris_Wood_87: 404
+[2025-10-29T09:21:16.305+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Anders_Lindegaard_485: 404
+[2025-10-29T09:21:17.832+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Joe_Hart_490: 404
+[2025-10-29T09:21:19.114+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Ben_Gibson_491: 404
+[2025-10-29T09:21:19.867+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Matej_Vydra_495: 404
+[2025-10-29T09:21:20.463+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Dwight_McNeil_534: 404
+[2025-10-29T09:21:21.100+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Abd-Al-Ali Morakinyo Olaposi_Koiki_564: 404
+[2025-10-29T09:21:21.683+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Josh_Benson_583: 404
+[2025-10-29T09:21:22.243+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Peter_Crouch_590: 404
+[2025-10-29T09:21:22.816+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Anthony_Driscoll-Glennon_615: 404
+[2025-10-29T09:21:23.437+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Harry_Arter_33: 404
+[2025-10-29T09:21:24.034+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Neil_Etheridge_88: 404
+[2025-10-29T09:21:24.645+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Alex_Smithies_89: 404
+[2025-10-29T09:21:25.231+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Sean_Morrison_90: 404
+[2025-10-29T09:21:25.845+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Sol_Bamba_91: 404
+[2025-10-29T09:21:26.474+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Bruno_Ecuele Manga_92: 404
+[2025-10-29T09:21:27.063+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Matthew_Connolly_93: 404
+[2025-10-29T09:21:27.641+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Joe_Bennett_94: 404
+[2025-10-29T09:21:28.242+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Lee_Peltier_95: 404
+[2025-10-29T09:21:28.825+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Ashley Darel Jazz_Richards_96: 404
+[2025-10-29T09:21:29.481+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Greg_Halford_97: 404
+[2025-10-29T09:21:30.060+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Joe_Ralls_98: 404
+[2025-10-29T09:21:30.786+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for David Junior_Hoilett_99: 404
+[2025-10-29T09:21:31.374+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Nathaniel_Mendez-Laing_100: 404
+[2025-10-29T09:21:31.955+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Callum_Paterson_101: 404
+[2025-10-29T09:21:32.561+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Aron_Gunnarsson_102: 404
+[2025-10-29T09:21:33.142+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Anthony_Pilkington_103: 404
+[2025-10-29T09:21:33.714+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Loïc_Damour_104: 404
+[2025-10-29T09:21:34.325+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Danny_Ward_105: 404
+[2025-10-29T09:21:34.898+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Josh_Murphy_106: 404
+[2025-10-29T09:21:35.466+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Kenneth_Zohore_107: 404
+[2025-10-29T09:21:36.047+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Omar_Bogle_108: 404
+[2025-10-29T09:21:36.665+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Gary_Madine_109: 404
+[2025-10-29T09:21:37.283+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Bobby_Reid_110: 404
+[2025-10-29T09:21:37.883+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Oumar_Niasse_176: 404
+[2025-10-29T09:21:38.527+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Greg_Cunninghamm_467: 404
+[2025-10-29T09:21:39.201+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Víctor_Camarasa_504: 404
+[2025-10-29T09:21:39.834+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Kadeem_Harris_535: 404
+[2025-10-29T09:21:40.417+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Brian_Murphy_537: 404
+[2025-10-29T09:21:41.032+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Rhys_Healey_573: 404
+[2025-10-29T09:21:41.616+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Leandro_Bacuna_589: 404
+[2025-10-29T09:21:42.170+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Thibaut_Courtois_111: 404
+[2025-10-29T09:21:42.802+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Willy_Caballero_112: 404
+[2025-10-29T09:21:43.399+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for César_Azpilicueta_113: 404
+[2025-10-29T09:21:43.983+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Gary_Cahill_114: 404
+[2025-10-29T09:21:44.578+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Marcos_Alonso_115: 404
+[2025-10-29T09:21:45.184+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for David_Luiz Moreira Marinho_116: 404
+[2025-10-29T09:21:45.773+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Victor_Moses_117: 404
+[2025-10-29T09:21:46.374+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Antonio_Rüdiger_118: 404
+[2025-10-29T09:21:47.039+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Andreas_Christensen_119: 404
+[2025-10-29T09:21:47.747+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Davide_Zappacosta_120: 404
+[2025-10-29T09:21:48.352+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Emerson_Palmieri dos Santos_121: 404
+[2025-10-29T09:21:48.963+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Eden_Hazard_122: 404
+[2025-10-29T09:21:49.591+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Cesc_Fàbregas_123: 404
+[2025-10-29T09:21:50.229+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Willian_Borges Da Silva_124: 404
+[2025-10-29T09:21:50.839+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Pedro_Rodríguez Ledesma_125: 404
+[2025-10-29T09:21:51.428+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for N'Golo_Kanté_126: 404
+[2025-10-29T09:21:52.014+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Ross_Barkley_127: 404
+[2025-10-29T09:21:52.628+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Daniel_Drinkwater_128: 404
+[2025-10-29T09:21:53.229+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Tiemoué_Bakayoko_129: 404
+[2025-10-29T09:21:53.802+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Ethan_Ampadu_130: 404
+[2025-10-29T09:21:54.458+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Callum_Hudson-Odoi_131: 404
+[2025-10-29T09:21:55.056+0000] {fetch_api_data.py:90} INFO - Players Data --> [OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '0'), ('clean_sheets', '0'), ('creativity', '0.0'), ('element', '132'), ('fixture', '3'), ('goals_conceded', '0'), ('goals_scored', '0'), ('ict_index', '0.0'), ('influence', '0.0'), ('kickoff_time', '2021-08-14T14:00:00Z'), ('minutes', '0'), ('opponent_team', '7'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '1'), ('saves', '0'), ('selected', '7043'), ('team_a_score', '0'), ('team_h_score', '3'), ('threat', '0.0'), ('total_points', '0'), ('transfers_balance', '0'), ('transfers_in', '0'), ('transfers_out', '0'), ('value', '55'), ('was_home', 'True'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '0'), ('clean_sheets', '0'), ('creativity', '0.0'), ('element', '132'), ('fixture', '18'), ('goals_conceded', '0'), ('goals_scored', '0'), ('ict_index', '0.0'), ('influence', '0.0'), ('kickoff_time', '2021-08-22T15:30:00Z'), ('minutes', '0'), ('opponent_team', '1'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '2'), ('saves', '0'), ('selected', '6439'), ('team_a_score', '2'), ('team_h_score', '0'), ('threat', '0.0'), ('total_points', '0'), ('transfers_balance', '-1646'), ('transfers_in', '111'), ('transfers_out', '1757'), ('value', '55'), ('was_home', 'False'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '0'), ('clean_sheets', '0'), ('creativity', '0.0'), ('element', '132'), ('fixture', '23'), ('goals_conceded', '0'), ('goals_scored', '0'), ('ict_index', '0.0'), ('influence', '0.0'), ('kickoff_time', '2021-08-28T16:30:00Z'), ('minutes', '0'), ('opponent_team', '11'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '3'), ('saves', '0'), ('selected', '5094'), ('team_a_score', '1'), ('team_h_score', '1'), ('threat', '0.0'), ('total_points', '0'), ('transfers_balance', '-1421'), ('transfers_in', '26'), ('transfers_out', '1447'), ('value', '54'), ('was_home', 'False'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '0'), ('clean_sheets', '0'), ('creativity', '0.0'), ('element', '132'), ('fixture', '33'), ('goals_conceded', '0'), ('goals_scored', '0'), ('ict_index', '0.0'), ('influence', '0.0'), ('kickoff_time', '2021-09-11T16:30:00Z'), ('minutes', '0'), ('opponent_team', '2'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '4'), ('saves', '0'), ('selected', '5008'), ('team_a_score', '0'), ('team_h_score', '3'), ('threat', '0.0'), ('total_points', '0'), ('transfers_balance', '-379'), ('transfers_in', '191'), ('transfers_out', '570'), ('value', '54'), ('was_home', 'True'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '0'), ('clean_sheets', '0'), ('creativity', '0.0'), ('element', '132'), ('fixture', '48'), ('goals_conceded', '0'), ('goals_scored', '0'), ('ict_index', '0.0'), ('influence', '0.0'), ('kickoff_time', '2021-09-19T15:30:00Z'), ('minutes', '0'), ('opponent_team', '17'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '5'), ('saves', '0'), ('selected', '4987'), ('team_a_score', '3'), ('team_h_score', '0'), ('threat', '0.0'), ('total_points', '0'), ('transfers_balance', '-194'), ('transfers_in', '196'), ('transfers_out', '390'), ('value', '54'), ('was_home', 'False'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '4'), ('clean_sheets', '0'), ('creativity', '0.8'), ('element', '132'), ('fixture', '53'), ('goals_conceded', '0'), ('goals_scored', '0'), ('ict_index', '0.4'), ('influence', '3.6'), ('kickoff_time', '2021-09-25T11:30:00Z'), ('minutes', '14'), ('opponent_team', '12'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '6'), ('saves', '0'), ('selected', '4897'), ('team_a_score', '1'), ('team_h_score', '0'), ('threat', '0.0'), ('total_points', '1'), ('transfers_balance', '-209'), ('transfers_in', '161'), ('transfers_out', '370'), ('value', '54'), ('was_home', 'True'), ('yellow_cards', '0')]), OrderedDict([('assists', '1'), ('bonus', '1'), ('bps', '25'), ('clean_sheets', '0'), ('creativity', '21.9'), ('element', '132'), ('fixture', '63'), ('goals_conceded', '1'), ('goals_scored', '0'), ('ict_index', '5.9'), ('influence', '27.6'), ('kickoff_time', '2021-10-02T14:00:00Z'), ('minutes', '82'), ('opponent_team', '16'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '7'), ('saves', '0'), ('selected', '5392'), ('team_a_score', '1'), ('team_h_score', '3'), ('threat', '9.0'), ('total_points', '6'), ('transfers_balance', '319'), ('transfers_in', '593'), ('transfers_out', '274'), ('value', '54'), ('was_home', 'True'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '15'), ('clean_sheets', '1'), ('creativity', '8.8'), ('element', '132'), ('fixture', '73'), ('goals_conceded', '0'), ('goals_scored', '0'), ('ict_index', '3.3'), ('influence', '23.8'), ('kickoff_time', '2021-10-16T16:30:00Z'), ('minutes', '90'), ('opponent_team', '3'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '8'), ('saves', '0'), ('selected', '7486'), ('team_a_score', '1'), ('team_h_score', '0'), ('threat', '0.0'), ('total_points', '3'), ('transfers_balance', '1652'), ('transfers_in', '2220'), ('transfers_out', '568'), ('value', '54'), ('was_home', 'False'), ('yellow_cards', '0')]), OrderedDict([('assists', '1'), ('bonus', '0'), ('bps', '17'), ('clean_sheets', '0'), ('creativity', '11.4'), ('element', '132'), ('fixture', '84'), ('goals_conceded', '0'), ('goals_scored', '0'), ('ict_index', '5.7'), ('influence', '29.8'), ('kickoff_time', '2021-10-23T11:30:00Z'), ('minutes', '26'), ('opponent_team', '15'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '9'), ('saves', '0'), ('selected', '12746'), ('team_a_score', '0'), ('team_h_score', '7'), ('threat', '16.0'), ('total_points', '4'), ('transfers_balance', '4862'), ('transfers_in', '6039'), ('transfers_out', '1177'), ('value', '54'), ('was_home', 'True'), ('yellow_cards', '0')]), OrderedDict([('assists', '1'), ('bonus', '0'), ('bps', '11'), ('clean_sheets', '0'), ('creativity', '3.4'), ('element', '132'), ('fixture', '96'), ('goals_conceded', '0'), ('goals_scored', '0'), ('ict_index', '2.7'), ('influence', '5.8'), ('kickoff_time', '2021-10-30T14:00:00Z'), ('minutes', '26'), ('opponent_team', '14'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '10'), ('saves', '0'), ('selected', '12923'), ('team_a_score', '3'), ('team_h_score', '0'), ('threat', '18.0'), ('total_points', '4'), ('transfers_balance', '161'), ('transfers_in', '3526'), ('transfers_out', '3365'), ('value', '54'), ('was_home', 'False'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '1'), ('clean_sheets', '0'), ('creativity', '1.1'), ('element', '132'), ('fixture', '104'), ('goals_conceded', '1'), ('goals_scored', '0'), ('ict_index', '0.5'), ('influence', '2.2'), ('kickoff_time', '2021-11-06T15:00:00Z'), ('minutes', '17'), ('opponent_team', '5'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '11'), ('saves', '0'), ('selected', '15564'), ('team_a_score', '1'), ('team_h_score', '1'), ('threat', '2.0'), ('total_points', '1'), ('transfers_balance', '2262'), ('transfers_in', '3917'), ('transfers_out', '1655'), ('value', '54'), ('was_home', 'True'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '3'), ('clean_sheets', '0'), ('creativity', '0.6'), ('element', '132'), ('fixture', '113'), ('goals_conceded', '0'), ('goals_scored', '0'), ('ict_index', '0.3'), ('influence', '2.8'), ('kickoff_time', '2021-11-20T12:30:00Z'), ('minutes', '13'), ('opponent_team', '9'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '12'), ('saves', '0'), ('selected', '14785'), ('team_a_score', '3'), ('team_h_score', '0'), ('threat', '0.0'), ('total_points', '1'), ('transfers_balance', '-1021'), ('transfers_in', '1963'), ('transfers_out', '2984'), ('value', '54'), ('was_home', 'False'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '10'), ('clean_sheets', '0'), ('creativity', '3.8'), ('element', '132'), ('fixture', '125'), ('goals_conceded', '1'), ('goals_scored', '0'), ('ict_index', '2.5'), ('influence', '4.8'), ('kickoff_time', '2021-11-28T16:30:00Z'), ('minutes', '90'), ('opponent_team', '13'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '13'), ('saves', '0'), ('selected', '14306'), ('team_a_score', '1'), ('team_h_score', '1'), ('threat', '16.0'), ('total_points', '2'), ('transfers_balance', '-629'), ('transfers_in', '1743'), ('transfers_out', '2372'), ('value', '54'), ('was_home', 'True'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '9'), ('clean_sheets', '0'), ('creativity', '16.3'), ('element', '132'), ('fixture', '135'), ('goals_conceded', '1'), ('goals_scored', '0'), ('ict_index', '2.8'), ('influence', '3.6'), ('kickoff_time', '2021-12-01T19:30:00Z'), ('minutes', '90'), ('opponent_team', '18'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '14'), ('saves', '0'), ('selected', '15747'), ('team_a_score', '2'), ('team_h_score', '1'), ('threat', '8.0'), ('total_points', '2'), ('transfers_balance', '1239'), ('transfers_in', '2437'), ('transfers_out', '1198'), ('value', '54'), ('was_home', 'False'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '15'), ('clean_sheets', '0'), ('creativity', '31.3'), ('element', '132'), ('fixture', '149'), ('goals_conceded', '3'), ('goals_scored', '0'), ('ict_index', '8.1'), ('influence', '18.4'), ('kickoff_time', '2021-12-04T12:30:00Z'), ('minutes', '90'), ('opponent_team', '19'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '15'), ('saves', '0'), ('selected', '15499'), ('team_a_score', '2'), ('team_h_score', '3'), ('threat', '31.0'), ('total_points', '2'), ('transfers_balance', '-377'), ('transfers_in', '1824'), ('transfers_out', '2201'), ('value', '54'), ('was_home', 'False'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '10'), ('clean_sheets', '0'), ('creativity', '9.5'), ('element', '132'), ('fixture', '155'), ('goals_conceded', '2'), ('goals_scored', '0'), ('ict_index', '5.5'), ('influence', '16.2'), ('kickoff_time', '2021-12-11T15:00:00Z'), ('minutes', '90'), ('opponent_team', '10'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '16'), ('saves', '0'), ('selected', '16153'), ('team_a_score', '2'), ('team_h_score', '3'), ('threat', '29.0'), ('total_points', '2'), ('transfers_balance', '383'), ('transfers_in', '2365'), ('transfers_out', '1982'), ('value', '54'), ('was_home', 'True'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '10'), ('clean_sheets', '1'), ('creativity', '3.9'), ('element', '132'), ('fixture', '168'), ('goals_conceded', '0'), ('goals_scored', '0'), ('ict_index', '1.5'), ('influence', '2.4'), ('kickoff_time', '2021-12-16T19:45:00Z'), ('minutes', '64'), ('opponent_team', '8'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '17'), ('saves', '0'), ('selected', '14993'), ('team_a_score', '1'), ('team_h_score', '1'), ('threat', '9.0'), ('total_points', '2'), ('transfers_balance', '-1175'), ('transfers_in', '701'), ('transfers_out', '1876'), ('value', '54'), ('was_home', 'True'), ('yellow_cards', '1')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '0'), ('clean_sheets', '0'), ('creativity', '0.0'), ('element', '132'), ('fixture', '180'), ('goals_conceded', '0'), ('goals_scored', '0'), ('ict_index', '0.0'), ('influence', '0.0'), ('kickoff_time', '2021-12-19T14:00:00Z'), ('minutes', '0'), ('opponent_team', '20'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '18'), ('saves', '0'), ('selected', '13856'), ('team_a_score', '0'), ('team_h_score', '0'), ('threat', '0.0'), ('total_points', '0'), ('transfers_balance', '-1133'), ('transfers_in', '615'), ('transfers_out', '1748'), ('value', '54'), ('was_home', 'False'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '0'), ('clean_sheets', '0'), ('creativity', '0.0'), ('element', '132'), ('fixture', '181'), ('goals_conceded', '0'), ('goals_scored', '0'), ('ict_index', '0.0'), ('influence', '0.0'), ('kickoff_time', '2021-12-26T17:30:00Z'), ('minutes', '0'), ('opponent_team', '2'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '19'), ('saves', '0'), ('selected', '11522'), ('team_a_score', '3'), ('team_h_score', '1'), ('threat', '0.0'), ('total_points', '0'), ('transfers_balance', '-2076'), ('transfers_in', '45'), ('transfers_out', '2121'), ('value', '54'), ('was_home', 'False'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '0'), ('clean_sheets', '0'), ('creativity', '0.0'), ('element', '132'), ('fixture', '193'), ('goals_conceded', '0'), ('goals_scored', '0'), ('ict_index', '0.0'), ('influence', '0.0'), ('kickoff_time', '2021-12-29T19:30:00Z'), ('minutes', '0'), ('opponent_team', '4'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '20'), ('saves', '0'), ('selected', '11075'), ('team_a_score', '1'), ('team_h_score', '1'), ('threat', '0.0'), ('total_points', '0'), ('transfers_balance', '-791'), ('transfers_in', '24'), ('transfers_out', '815'), ('value', '54'), ('was_home', 'True'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '0'), ('clean_sheets', '0'), ('creativity', '0.0'), ('element', '132'), ('fixture', '203'), ('goals_conceded', '0'), ('goals_scored', '0'), ('ict_index', '0.0'), ('influence', '0.0'), ('kickoff_time', '2022-01-02T16:30:00Z'), ('minutes', '0'), ('opponent_team', '11'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '21'), ('saves', '0'), ('selected', '10208'), ('team_a_score', '2'), ('team_h_score', '2'), ('threat', '0.0'), ('total_points', '0'), ('transfers_balance', '-938'), ('transfers_in', '28'), ('transfers_out', '966'), ('value', '54'), ('was_home', 'True'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '0'), ('clean_sheets', '0'), ('creativity', '0.0'), ('element', '132'), ('fixture', '215'), ('goals_conceded', '0'), ('goals_scored', '0'), ('ict_index', '0.0'), ('influence', '0.0'), ('kickoff_time', '2022-01-15T12:30:00Z'), ('minutes', '0'), ('opponent_team', '12'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '22'), ('saves', '0'), ('selected', '9863'), ('team_a_score', '0'), ('team_h_score', '1'), ('threat', '0.0'), ('total_points', '0'), ('transfers_balance', '-517'), ('transfers_in', '206'), ('transfers_out', '723'), ('value', '54'), ('was_home', 'False'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '0'), ('clean_sheets', '0'), ('creativity', '0.0'), ('element', '132'), ('fixture', '232'), ('goals_conceded', '0'), ('goals_scored', '0'), ('ict_index', '0.0'), ('influence', '0.0'), ('kickoff_time', '2022-01-18T20:00:00Z'), ('minutes', '0'), ('opponent_team', '4'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '22'), ('saves', '0'), ('selected', '9863'), ('team_a_score', '1'), ('team_h_score', '1'), ('threat', '0.0'), ('total_points', '0'), ('transfers_balance', '-517'), ('transfers_in', '206'), ('transfers_out', '723'), ('value', '54'), ('was_home', 'False'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '0'), ('clean_sheets', '0'), ('creativity', '0.0'), ('element', '132'), ('fixture', '223'), ('goals_conceded', '0'), ('goals_scored', '0'), ('ict_index', '0.0'), ('influence', '0.0'), ('kickoff_time', '2022-01-23T16:30:00Z'), ('minutes', '0'), ('opponent_team', '17'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '23'), ('saves', '0'), ('selected', '9637'), ('team_a_score', '0'), ('team_h_score', '2'), ('threat', '0.0'), ('total_points', '0'), ('transfers_balance', '-293'), ('transfers_in', '85'), ('transfers_out', '378'), ('value', '54'), ('was_home', 'True'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '1'), ('clean_sheets', '0'), ('creativity', '0.3'), ('element', '132'), ('fixture', '254'), ('goals_conceded', '0'), ('goals_scored', '0'), ('ict_index', '0.0'), ('influence', '0.0'), ('kickoff_time', '2022-02-19T15:00:00Z'), ('minutes', '16'), ('opponent_team', '7'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '26'), ('saves', '0'), ('selected', '9186'), ('team_a_score', '1'), ('team_h_score', '0'), ('threat', '0.0'), ('total_points', '1'), ('transfers_balance', '-97'), ('transfers_in', '84'), ('transfers_out', '181'), ('value', '54'), ('was_home', 'False'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '0'), ('clean_sheets', '0'), ('creativity', '1.1'), ('element', '132'), ('fixture', '272'), ('goals_conceded', '0'), ('goals_scored', '0'), ('ict_index', '0.3'), ('influence', '1.8'), ('kickoff_time', '2022-03-05T15:00:00Z'), ('minutes', '20'), ('opponent_team', '5'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '28'), ('saves', '0'), ('selected', '9193'), ('team_a_score', '4'), ('team_h_score', '0'), ('threat', '0.0'), ('total_points', '1'), ('transfers_balance', '-4'), ('transfers_in', '156'), ('transfers_out', '160'), ('value', '54'), ('was_home', 'False'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '9'), ('clean_sheets', '0'), ('creativity', '12.9'), ('element', '132'), ('fixture', '297'), ('goals_conceded', '1'), ('goals_scored', '0'), ('ict_index', '2.6'), ('influence', '9.4'), ('kickoff_time', '2022-03-10T19:30:00Z'), ('minutes', '45'), ('opponent_team', '15'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '28'), ('saves', '0'), ('selected', '9193'), ('team_a_score', '3'), ('team_h_score', '1'), ('threat', '4.0'), ('total_points', '1'), ('transfers_balance', '-4'), ('transfers_in', '156'), ('transfers_out', '160'), ('value', '54'), ('was_home', 'False'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '0'), ('clean_sheets', '0'), ('creativity', '0.0'), ('element', '132'), ('fixture', '284'), ('goals_conceded', '0'), ('goals_scored', '0'), ('ict_index', '0.0'), ('influence', '0.0'), ('kickoff_time', '2022-03-13T14:00:00Z'), ('minutes', '0'), ('opponent_team', '14'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '29'), ('saves', '0'), ('selected', '9126'), ('team_a_score', '0'), ('team_h_score', '1'), ('threat', '0.0'), ('total_points', '0'), ('transfers_balance', '-84'), ('transfers_in', '106'), ('transfers_out', '190'), ('value', '54'), ('was_home', 'True'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '15'), ('clean_sheets', '0'), ('creativity', '27.2'), ('element', '132'), ('fixture', '303'), ('goals_conceded', '4'), ('goals_scored', '0'), ('ict_index', '5.7'), ('influence', '18.8'), ('kickoff_time', '2022-04-02T14:00:00Z'), ('minutes', '90'), ('opponent_team', '3'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '31'), ('saves', '0'), ('selected', '9052'), ('team_a_score', '4'), ('team_h_score', '1'), ('threat', '11.0'), ('total_points', '2'), ('transfers_balance', '-52'), ('transfers_in', '70'), ('transfers_out', '122'), ('value', '54'), ('was_home', 'True'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '17'), ('clean_sheets', '1'), ('creativity', '17.6'), ('element', '132'), ('fixture', '319'), ('goals_conceded', '0'), ('goals_scored', '0'), ('ict_index', '6.1'), ('influence', '22.2'), ('kickoff_time', '2022-04-09T14:00:00Z'), ('minutes', '90'), ('opponent_team', '16'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '32'), ('saves', '0'), ('selected', '9085'), ('team_a_score', '6'), ('team_h_score', '0'), ('threat', '21.0'), ('total_points', '3'), ('transfers_balance', '-5'), ('transfers_in', '66'), ('transfers_out', '71'), ('value', '54'), ('was_home', 'False'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '14'), ('clean_sheets', '0'), ('creativity', '19.2'), ('element', '132'), ('fixture', '243'), ('goals_conceded', '4'), ('goals_scored', '0'), ('ict_index', '4.0'), ('influence', '16.6'), ('kickoff_time', '2022-04-20T18:45:00Z'), ('minutes', '90'), ('opponent_team', '1'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '33'), ('saves', '0'), ('selected', '9276'), ('team_a_score', '4'), ('team_h_score', '2'), ('threat', '4.0'), ('total_points', '2'), ('transfers_balance', '138'), ('transfers_in', '262'), ('transfers_out', '124'), ('value', '54'), ('was_home', 'True'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '14'), ('clean_sheets', '1'), ('creativity', '50.2'), ('element', '132'), ('fixture', '335'), ('goals_conceded', '0'), ('goals_scored', '0'), ('ict_index', '8.8'), ('influence', '20.0'), ('kickoff_time', '2022-04-24T13:00:00Z'), ('minutes', '75'), ('opponent_team', '19'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '34'), ('saves', '0'), ('selected', '16738'), ('team_a_score', '0'), ('team_h_score', '1'), ('threat', '18.0'), ('total_points', '3'), ('transfers_balance', '7175'), ('transfers_in', '7511'), ('transfers_out', '336'), ('value', '54'), ('was_home', 'True'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '3'), ('clean_sheets', '0'), ('creativity', '0.3'), ('element', '132'), ('fixture', '364'), ('goals_conceded', '0'), ('goals_scored', '0'), ('ict_index', '0.6'), ('influence', '5.4'), ('kickoff_time', '2022-04-28T18:45:00Z'), ('minutes', '8'), ('opponent_team', '13'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '34'), ('saves', '0'), ('selected', '16738'), ('team_a_score', '1'), ('team_h_score', '1'), ('threat', '0.0'), ('total_points', '1'), ('transfers_balance', '7175'), ('transfers_in', '7511'), ('transfers_out', '336'), ('value', '54'), ('was_home', 'False'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '19'), ('clean_sheets', '0'), ('creativity', '17.3'), ('element', '132'), ('fixture', '342'), ('goals_conceded', '1'), ('goals_scored', '0'), ('ict_index', '5.6'), ('influence', '23.8'), ('kickoff_time', '2022-05-01T13:00:00Z'), ('minutes', '90'), ('opponent_team', '8'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '35'), ('saves', '0'), ('selected', '15713'), ('team_a_score', '0'), ('team_h_score', '1'), ('threat', '15.0'), ('total_points', '2'), ('transfers_balance', '-874'), ('transfers_in', '859'), ('transfers_out', '1733'), ('value', '54'), ('was_home', 'False'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '14'), ('clean_sheets', '0'), ('creativity', '2.9'), ('element', '132'), ('fixture', '355'), ('goals_conceded', '2'), ('goals_scored', '0'), ('ict_index', '2.0'), ('influence', '15.4'), ('kickoff_time', '2022-05-07T14:00:00Z'), ('minutes', '90'), ('opponent_team', '20'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '36'), ('saves', '0'), ('selected', '16483'), ('team_a_score', '2'), ('team_h_score', '2'), ('threat', '2.0'), ('total_points', '2'), ('transfers_balance', '605'), ('transfers_in', '2123'), ('transfers_out', '1518'), ('value', '54'), ('was_home', 'True'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '11'), ('clean_sheets', '1'), ('creativity', '17.0'), ('element', '132'), ('fixture', '323'), ('goals_conceded', '0'), ('goals_scored', '0'), ('ict_index', '2.5'), ('influence', '4.6'), ('kickoff_time', '2022-05-11T18:30:00Z'), ('minutes', '60'), ('opponent_team', '10'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '36'), ('saves', '0'), ('selected', '16483'), ('team_a_score', '3'), ('team_h_score', '0'), ('threat', '3.0'), ('total_points', '3'), ('transfers_balance', '605'), ('transfers_in', '2123'), ('transfers_out', '1518'), ('value', '54'), ('was_home', 'False'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '4'), ('clean_sheets', '0'), ('creativity', '12.3'), ('element', '132'), ('fixture', '264'), ('goals_conceded', '0'), ('goals_scored', '0'), ('ict_index', '1.8'), ('influence', '3.8'), ('kickoff_time', '2022-05-19T19:00:00Z'), ('minutes', '18'), ('opponent_team', '9'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '37'), ('saves', '0'), ('selected', '14951'), ('team_a_score', '1'), ('team_h_score', '1'), ('threat', '2.0'), ('total_points', '1'), ('transfers_balance', '-1026'), ('transfers_in', '742'), ('transfers_out', '1768'), ('value', '54'), ('was_home', 'True'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '0'), ('clean_sheets', '0'), ('creativity', '0.0'), ('element', '132'), ('fixture', '375'), ('goals_conceded', '0'), ('goals_scored', '0'), ('ict_index', '0.0'), ('influence', '0.0'), ('kickoff_time', '2022-05-22T15:00:00Z'), ('minutes', '0'), ('opponent_team', '18'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '38'), ('saves', '0'), ('selected', '14858'), ('team_a_score', '1'), ('team_h_score', '2'), ('threat', '0.0'), ('total_points', '0'), ('transfers_balance', '-518'), ('transfers_in', '702'), ('transfers_out', '1220'), ('value', '54'), ('was_home', 'True'), ('yellow_cards', '0')])]
+[2025-10-29T09:21:55.057+0000] {logging_mixin.py:150} INFO - Ruben Loftus-Cheek
+[2025-10-29T09:21:55.060+0000] {logging_mixin.py:150} INFO - Ruben Loftus-Cheek
+[2025-10-29T09:21:55.062+0000] {logging_mixin.py:150} INFO - Ruben Loftus-Cheek
+[2025-10-29T09:21:55.063+0000] {logging_mixin.py:150} INFO - Ruben Loftus-Cheek
+[2025-10-29T09:21:55.065+0000] {logging_mixin.py:150} INFO - Ruben Loftus-Cheek
+[2025-10-29T09:21:55.067+0000] {logging_mixin.py:150} INFO - Ruben Loftus-Cheek
+[2025-10-29T09:21:55.070+0000] {logging_mixin.py:150} INFO - Ruben Loftus-Cheek
+[2025-10-29T09:21:55.073+0000] {logging_mixin.py:150} INFO - Ruben Loftus-Cheek
+[2025-10-29T09:21:55.078+0000] {logging_mixin.py:150} INFO - Ruben Loftus-Cheek
+[2025-10-29T09:21:55.079+0000] {logging_mixin.py:150} INFO - Ruben Loftus-Cheek
+[2025-10-29T09:21:55.081+0000] {logging_mixin.py:150} INFO - Ruben Loftus-Cheek
+[2025-10-29T09:21:55.082+0000] {logging_mixin.py:150} INFO - Ruben Loftus-Cheek
+[2025-10-29T09:21:55.083+0000] {logging_mixin.py:150} INFO - Ruben Loftus-Cheek
+[2025-10-29T09:21:55.085+0000] {logging_mixin.py:150} INFO - Ruben Loftus-Cheek
+[2025-10-29T09:21:55.087+0000] {logging_mixin.py:150} INFO - Ruben Loftus-Cheek
+[2025-10-29T09:21:55.088+0000] {logging_mixin.py:150} INFO - Ruben Loftus-Cheek
+[2025-10-29T09:21:55.089+0000] {logging_mixin.py:150} INFO - Ruben Loftus-Cheek
+[2025-10-29T09:21:55.090+0000] {logging_mixin.py:150} INFO - Ruben Loftus-Cheek
+[2025-10-29T09:21:55.091+0000] {logging_mixin.py:150} INFO - Ruben Loftus-Cheek
+[2025-10-29T09:21:55.096+0000] {logging_mixin.py:150} INFO - Ruben Loftus-Cheek
+[2025-10-29T09:21:55.101+0000] {logging_mixin.py:150} INFO - Ruben Loftus-Cheek
+[2025-10-29T09:21:55.104+0000] {logging_mixin.py:150} INFO - Ruben Loftus-Cheek
+[2025-10-29T09:21:55.108+0000] {logging_mixin.py:150} INFO - Ruben Loftus-Cheek
+[2025-10-29T09:21:55.111+0000] {logging_mixin.py:150} INFO - Ruben Loftus-Cheek
+[2025-10-29T09:21:55.114+0000] {logging_mixin.py:150} INFO - Ruben Loftus-Cheek
+[2025-10-29T09:21:55.116+0000] {logging_mixin.py:150} INFO - Ruben Loftus-Cheek
+[2025-10-29T09:21:55.117+0000] {logging_mixin.py:150} INFO - Ruben Loftus-Cheek
+[2025-10-29T09:21:55.118+0000] {logging_mixin.py:150} INFO - Ruben Loftus-Cheek
+[2025-10-29T09:21:55.119+0000] {logging_mixin.py:150} INFO - Ruben Loftus-Cheek
+[2025-10-29T09:21:55.120+0000] {logging_mixin.py:150} INFO - Ruben Loftus-Cheek
+[2025-10-29T09:21:55.120+0000] {logging_mixin.py:150} INFO - Ruben Loftus-Cheek
+[2025-10-29T09:21:55.121+0000] {logging_mixin.py:150} INFO - Ruben Loftus-Cheek
+[2025-10-29T09:21:55.122+0000] {logging_mixin.py:150} INFO - Ruben Loftus-Cheek
+[2025-10-29T09:21:55.123+0000] {logging_mixin.py:150} INFO - Ruben Loftus-Cheek
+[2025-10-29T09:21:55.124+0000] {logging_mixin.py:150} INFO - Ruben Loftus-Cheek
+[2025-10-29T09:21:55.124+0000] {logging_mixin.py:150} INFO - Ruben Loftus-Cheek
+[2025-10-29T09:21:55.127+0000] {logging_mixin.py:150} INFO - Ruben Loftus-Cheek
+[2025-10-29T09:21:55.128+0000] {logging_mixin.py:150} INFO - Ruben Loftus-Cheek
+[2025-10-29T09:21:55.755+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Olivier_Giroud_133: 404
+[2025-10-29T09:21:56.411+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Álvaro_Morata_134: 404
+[2025-10-29T09:21:57.044+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Jorge Luiz_Frello Filho_459: 404
+[2025-10-29T09:21:57.664+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Tammy_Abraham_496: 404
+[2025-10-29T09:21:58.283+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Kepa_Arrizabalaga_498: 404
+[2025-10-29T09:21:58.865+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Mateo_Kovacic_499: 404
+[2025-10-29T09:21:59.453+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Gonzalo_Higuaín_579: 404
+[2025-10-29T09:22:00.067+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Addji Keaninkin Marc-Israel_Guehi_624: 404
+[2025-10-29T09:22:00.662+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Wayne_Hennessey_135: 404
+[2025-10-29T09:22:01.278+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Julian_Speroni_136: 404
+[2025-10-29T09:22:01.853+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Vicente_Guaita_137: 404
+[2025-10-29T09:22:02.494+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for James_Tomkins_138: 404
+[2025-10-29T09:22:03.118+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Scott_Dann_139: 404
+[2025-10-29T09:22:03.780+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Martin_Kelly_140: 404
+[2025-10-29T09:22:04.330+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Jeffrey_Schlupp_141: 404
+[2025-10-29T09:22:04.894+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Patrick_van Aanholt_142: 404
+[2025-10-29T09:22:05.457+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Mamadou_Sakho_143: 404
+[2025-10-29T09:22:06.063+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Jairo_Riedewald_144: 404
+[2025-10-29T09:22:06.658+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Aaron_Wan-Bissaka_145: 404
+[2025-10-29T09:22:07.278+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for James_McArthur_147: 404
+[2025-10-29T09:22:07.878+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Bakary_Sako_148: 404
+[2025-10-29T09:22:08.466+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Andros_Townsend_149: 404
+[2025-10-29T09:22:09.031+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Luka_Milivojevic_150: 404
+[2025-10-29T09:22:09.632+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Wilfried_Zaha_151: 404
+[2025-10-29T09:22:10.235+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Christian_Benteke_152: 404
+[2025-10-29T09:22:10.841+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Alexander_Sørloth_153: 404
+[2025-10-29T09:22:11.432+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Cheikhou_Kouyaté_412: 404
+[2025-10-29T09:22:12.041+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Joel_Ward_441: 404
+[2025-10-29T09:22:12.717+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Jaroslaw_Jach_442: 404
+[2025-10-29T09:22:13.428+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Pape_Souaré_443: 404
+[2025-10-29T09:22:14.016+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Connor_Wickham_444: 404
+[2025-10-29T09:22:14.587+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Sullay_Kaikai_477: 404
+[2025-10-29T09:22:15.189+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Max_Meyer_486: 404
+[2025-10-29T09:22:15.773+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Jordan_Ayew_505: 404
+[2025-10-29T09:22:16.425+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Joe_Tupper_576: 404
+[2025-10-29T09:22:17.050+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Lucas_Perri_584: 404
+[2025-10-29T09:22:17.674+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Michy_Batshuayi_592: 404
+[2025-10-29T09:22:18.569+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Sam_Woods_609: 404
+[2025-10-29T09:22:19.185+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Luke_Dreher_618: 404
+[2025-10-29T09:22:19.816+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Nikola_Tavares_619: 404
+[2025-10-29T09:22:20.422+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Jordan_Pickford_154: 404
+[2025-10-29T09:22:21.031+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Maarten_Stekelenburg_155: 404
+[2025-10-29T09:22:21.719+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Leighton_Baines_156: 404
+[2025-10-29T09:22:22.312+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Seamus_Coleman_157: 404
+[2025-10-29T09:22:22.954+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Phil_Jagielka_158: 404
+[2025-10-29T09:22:23.701+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Ashley_Williams_159: 404
+[2025-10-29T09:22:24.500+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Mason_Holgate_160: 404
+[2025-10-29T09:22:25.205+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Jonjoe_Kenny_161: 404
+[2025-10-29T09:22:25.863+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Michael_Keane_162: 404
+[2025-10-29T09:22:26.501+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Cuco_Martina_163: 404
+[2025-10-29T09:22:27.119+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Theo_Walcott_164: 404
+[2025-10-29T09:22:27.733+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Yannick_Bolasie_165: 404
+[2025-10-29T09:22:28.358+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for James_McCarthy_166: 404
+[2025-10-29T09:22:28.942+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Morgan_Schneiderlin_167: 404
+[2025-10-29T09:22:29.581+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Idrissa_Gueye_168: 404
+[2025-10-29T09:22:30.241+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Tom_Davies_169: 404
+[2025-10-29T09:22:30.896+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Ademola_Lookman_170: 404
+[2025-10-29T09:22:31.497+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Davy_Klaassen_171: 404
+[2025-10-29T09:22:32.189+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Gylfi_Sigurdsson_172: 404
+[2025-10-29T09:22:32.809+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Nikola_Vlasic_173: 404
+[2025-10-29T09:22:33.390+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Beni_Baningime_174: 404
+[2025-10-29T09:22:33.981+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Dominic_Calvert-Lewin_175: 404
+[2025-10-29T09:22:34.601+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Cenk_Tosun_177: 404
+[2025-10-29T09:22:35.274+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Richarlison_de Andrade_393: 404
+[2025-10-29T09:22:35.866+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Kevin_Mirallas_469: 404
+[2025-10-29T09:22:36.548+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Sandro_Ramírez_470: 404
+[2025-10-29T09:22:37.131+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Lucas_Digne_484: 404
+[2025-10-29T09:22:40.897+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Yerry_Mina_506: 404
+[2025-10-29T09:22:42.778+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Bernard_Anício Caldeira Duarte_507: 404
+[2025-10-29T09:22:43.630+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for André Filipe_Tavares Gomes_508: 404
+[2025-10-29T09:22:44.472+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Kurt_Zouma_526: 404
+[2025-10-29T09:22:45.055+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Kieran_Dowell_528: 404
+[2025-10-29T09:22:45.643+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Tyias_Browning_532: 404
+[2025-10-29T09:22:46.215+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Calum_Chambers_9: 404
+[2025-10-29T09:22:46.816+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Marcus_Bettinelli_178: 404
+[2025-10-29T09:22:47.446+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Tim_Ream_180: 404
+[2025-10-29T09:22:48.135+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Denis_Odoi_181: 404
+[2025-10-29T09:22:48.776+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Tom_Cairney_182: 404
+[2025-10-29T09:22:49.422+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Kevin_McDonald_183: 404
+[2025-10-29T09:22:50.067+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Ryan_Sessegnon_184: 404
+[2025-10-29T09:22:50.696+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Stefan_Johansen_185: 404
+[2025-10-29T09:22:51.313+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Floyd_Ayité_186: 404
+[2025-10-29T09:22:51.919+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Neeskens_Kebano_187: 404
+[2025-10-29T09:22:52.537+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Rui Pedro_da Rocha Fonte_188: 404
+[2025-10-29T09:22:53.190+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Aboubakar_Kamara_189: 404
+[2025-10-29T09:22:53.846+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Maxime_Le Marchand_455: 404
+[2025-10-29T09:22:54.455+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Jean Michael_Seri_456: 404
+[2025-10-29T09:22:55.254+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Cyrus_Christie_460: 404
+[2025-10-29T09:22:55.847+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Fabricio_Agosto Ramírez_474: 404
+[2025-10-29T09:22:56.494+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for André_Schürrle_478: 404
+[2025-10-29T09:22:57.219+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Aleksandar_Mitrovic_480: 404
+[2025-10-29T09:22:57.900+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Alfie_Mawson_487: 404
+[2025-10-29T09:22:58.807+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Sergio_Rico_509: 404
+[2025-10-29T09:22:59.463+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Joe_Bryan_510: 404
+[2025-10-29T09:23:00.183+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Timothy_Fosu-Mensah_511: 404
+[2025-10-29T09:23:00.796+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for André-Frank_Zambo Anguissa_512: 404
+[2025-10-29T09:23:01.594+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Luciano_Vietto_513: 404
+[2025-10-29T09:23:02.253+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Ibrahima_Cissé_521: 404
+[2025-10-29T09:23:02.872+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Zeze Steven_Sessegnon_541: 404
+[2025-10-29T09:23:03.574+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Ryan_Babel_575: 404
+[2025-10-29T09:23:04.277+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Håvard_Nordtveit_593: 404
+[2025-10-29T09:23:04.877+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Lazar_Markovic_594: 404
+[2025-10-29T09:23:05.487+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Harvey_Elliott_610: 404
+[2025-10-29T09:23:06.156+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Luca_De La Torre_621: 404
+[2025-10-29T09:23:06.731+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Jason_Puncheon_146: 404
+[2025-10-29T09:23:07.379+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Ben_Hamer_190: 404
+[2025-10-29T09:23:07.969+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Jonas_Lössl_191: 404
+[2025-10-29T09:23:08.563+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Christopher_Schindler_192: 404
+[2025-10-29T09:23:09.132+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Chris_Löwe_193: 404
+[2025-10-29T09:23:09.813+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Tommy_Smith_194: 404
+[2025-10-29T09:23:10.445+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Mathias_Jorgensen_195: 404
+[2025-10-29T09:23:11.034+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Scott_Malone_196: 404
+[2025-10-29T09:23:11.619+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Florent_Hadergjonaj_197: 404
+[2025-10-29T09:23:12.243+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Terence_Kongolo_198: 404
+[2025-10-29T09:23:12.880+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Aaron_Mooy_199: 404
+[2025-10-29T09:23:13.458+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Rajiv_van La Parra_200: 404
+[2025-10-29T09:23:14.047+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Jonathan_Hogg_201: 404
+[2025-10-29T09:23:14.700+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Philip_Billing_202: 404
+[2025-10-29T09:23:15.248+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Tom_Ince_203: 404
+[2025-10-29T09:23:15.840+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Danny_Williams_204: 404
+[2025-10-29T09:23:16.482+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Abdelhamid_Sabiri_205: 404
+[2025-10-29T09:23:17.063+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Alex_Pritchard_206: 404
+[2025-10-29T09:23:17.647+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Ramadan_Sobhi_207: 404
+[2025-10-29T09:23:18.236+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Juninho_Bacuna_208: 404
+[2025-10-29T09:23:18.904+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Collin_Quaner_209: 404
+[2025-10-29T09:23:19.506+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Laurent_Depoitre_210: 404
+[2025-10-29T09:23:20.119+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Steve_Mounie_211: 404
+[2025-10-29T09:23:20.735+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Elias_Kachunga_212: 404
+[2025-10-29T09:23:21.329+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Erik_Durm_461: 404
+[2025-10-29T09:23:21.934+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Adama_Diakhaby_471: 404
+[2025-10-29T09:23:22.529+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Isaac_Mbenza_514: 404
+[2025-10-29T09:23:23.120+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Jon Gorenc_Stankovic_522: 404
+[2025-10-29T09:23:23.695+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Ryan_Schofield_533: 404
+[2025-10-29T09:23:24.298+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Karlan_Grant_585: 404
+[2025-10-29T09:23:25.193+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Joel_Coleman_598: 404
+[2025-10-29T09:23:25.833+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Demeaco_Duhaney_601: 404
+[2025-10-29T09:23:26.445+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Matthew_Daly_606: 404
+[2025-10-29T09:23:27.181+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Aaron_Rowe_607: 404
+[2025-10-29T09:23:27.747+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Kasper_Schmeichel_213: 404
+[2025-10-29T09:23:28.396+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Eldin_Jakupovic_214: 404
+[2025-10-29T09:23:28.947+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Wes_Morgan_215: 404
+[2025-10-29T09:23:29.572+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Christian_Fuchs_216: 404
+[2025-10-29T09:23:30.180+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Danny_Simpson_217: 404
+[2025-10-29T09:23:30.866+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Yohan_Benalouane_218: 404
+[2025-10-29T09:23:31.504+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Benjamin_Chilwell_219: 404
+[2025-10-29T09:23:32.292+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Harry_Maguire_220: 404
+[2025-10-29T09:23:32.858+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Ricardo Domingos_Barbosa Pereira_221: 404
+[2025-10-29T09:23:33.505+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Jonny_Evans_222: 404
+[2025-10-29T09:23:34.099+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Marc_Albrighton_224: 404
+[2025-10-29T09:23:34.716+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Demarai_Gray_225: 404
+[2025-10-29T09:23:35.327+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Daniel_Amartey_226: 404
+[2025-10-29T09:23:35.925+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Wilfred_Ndidi_227: 404
+[2025-10-29T09:23:36.526+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Vicente_Iborra_228: 404
+[2025-10-29T09:23:37.205+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Matty_James_229: 404
+[2025-10-29T09:23:37.851+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Hamza_Choudhury_230: 404
+[2025-10-29T09:23:38.521+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Adrien Sebastian_Perruchet Silva_231: 404
+[2025-10-29T09:23:39.199+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Fousseni_Diabaté_232: 404
+[2025-10-29T09:23:39.827+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for James_Maddison_233: 404
+[2025-10-29T09:23:40.425+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Jamie_Vardy_234: 404
+[2025-10-29T09:23:41.010+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Shinji_Okazaki_235: 404
+[2025-10-29T09:23:41.601+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Kelechi_Iheanacho_236: 404
+[2025-10-29T09:23:42.376+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Danny_Ward_457: 404
+[2025-10-29T09:23:42.976+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Rachid_Ghezzal_492: 404
+[2025-10-29T09:23:43.641+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Filip_Benkovic_501: 404
+[2025-10-29T09:23:44.221+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Çaglar_Söyüncü_515: 404
+[2025-10-29T09:23:44.855+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Nampalys_Mendy_527: 404
+[2025-10-29T09:23:45.473+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Josh_Knight_558: 404
+[2025-10-29T09:23:46.081+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Harvey_Barnes_571: 404
+[2025-10-29T09:23:46.681+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Youri_Tielemans_591: 404
+[2025-10-29T09:23:47.278+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Simon_Mignolet_237: 404
+[2025-10-29T09:23:47.980+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Loris_Karius_238: 404
+[2025-10-29T09:23:48.602+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Dejan_Lovren_239: 404
+[2025-10-29T09:23:49.431+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Alberto_Moreno_240: 404
+[2025-10-29T09:23:50.020+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Joseph_Gomez_242: 404
+[2025-10-29T09:23:50.620+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Joel_Matip_243: 404
+[2025-10-29T09:23:51.202+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Ragnar_Klavan_244: 404
+[2025-10-29T09:23:51.850+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Trent_Alexander-Arnold_245: 404
+[2025-10-29T09:23:52.440+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Virgil_van Dijk_246: 404
+[2025-10-29T09:23:53.050+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Andrew_Robertson_247: 404
+[2025-10-29T09:23:53.645+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Alex_Oxlade-Chamberlain_248: 404
+[2025-10-29T09:23:54.237+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Jordan_Henderson_249: 404
+[2025-10-29T09:23:54.846+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Adam_Lallana_250: 404
+[2025-10-29T09:23:55.423+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Sadio_Mané_251: 404
+[2025-10-29T09:23:56.042+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Georginio_Wijnaldum_252: 404
+[2025-10-29T09:23:56.769+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Mohamed_Salah_253: 404
+[2025-10-29T09:23:57.351+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for James_Milner_254: 404
+[2025-10-29T09:23:58.048+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Fabio Henrique_Tavares_255: 404
+[2025-10-29T09:23:58.710+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Naby_Keita_256: 404
+[2025-10-29T09:23:59.456+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Roberto_Firmino_257: 404
+[2025-10-29T09:24:00.381+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Xherdan_Shaqiri_462: 404
+[2025-10-29T09:24:01.143+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Alisson_Ramses Becker_468: 404
+[2025-10-29T09:24:01.873+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Daniel_Sturridge_472: 404
+[2025-10-29T09:24:02.492+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Divock_Origi_543: 404
+[2025-10-29T09:24:03.092+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Rafael_Camacho_557: 404
+[2025-10-29T09:24:03.689+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Curtis_Jones_597: 404
+[2025-10-29T09:24:04.304+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Riyad_Mahrez_223: 404
+[2025-10-29T09:24:04.956+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Ederson_Santana de Moraes_260: 404
+[2025-10-29T09:24:05.512+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Claudio_Bravo_261: 404
+[2025-10-29T09:24:06.150+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for John_Stones_262: 404
+[2025-10-29T09:24:06.905+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Vincent_Kompany_263: 404
+[2025-10-29T09:24:08.203+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Nicolás_Otamendi_264: 404
+[2025-10-29T09:24:09.278+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Kyle_Walker_265: 404
+[2025-10-29T09:24:10.158+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Danilo Luiz_da Silva_266: 404
+[2025-10-29T09:24:11.290+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Benjamin_Mendy_267: 404
+[2025-10-29T09:24:12.372+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Aymeric_Laporte_268: 404
+[2025-10-29T09:24:13.186+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Fabian_Delph_269: 404
+[2025-10-29T09:24:14.436+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Raheem_Sterling_270: 404
+[2025-10-29T09:24:15.280+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for David_Silva_271: 404
+[2025-10-29T09:24:16.010+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Fernando_Luiz Rosa_272: 404
+[2025-10-29T09:24:16.649+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Kevin_De Bruyne_273: 404
+[2025-10-29T09:24:17.314+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Ilkay_Gündogan_274: 404
+[2025-10-29T09:24:17.876+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Leroy_Sané_275: 404
+[2025-10-29T09:24:18.480+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Bernardo Mota_Veiga de Carvalho e Silva_276: 404
+[2025-10-29T09:24:19.209+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Phil_Foden_277: 404
+[2025-10-29T09:24:19.837+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Brahim_Diaz_278: 404
+[2025-10-29T09:24:20.444+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Oleksandr_Zinchenko_279: 404
+[2025-10-29T09:24:21.133+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Sergio_Agüero_280: 404
+[2025-10-29T09:24:21.780+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Gabriel Fernando_de Jesus_281: 404
+[2025-10-29T09:24:22.373+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Arijanet_Muric_529: 404
+[2025-10-29T09:24:23.083+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Philippe_Sandler_604: 404
+[2025-10-29T09:24:23.736+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for David_de Gea_282: 404
+[2025-10-29T09:24:24.365+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Sergio_Romero_283: 404
+[2025-10-29T09:24:24.960+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Chris_Smalling_284: 404
+[2025-10-29T09:24:25.573+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Phil_Jones_285: 404
+[2025-10-29T09:24:26.236+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Luke_Shaw_286: 404
+[2025-10-29T09:24:26.894+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Marcos_Rojo_287: 404
+[2025-10-29T09:24:27.510+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Antonio_Valencia_288: 404
+[2025-10-29T09:24:28.100+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Matteo_Darmian_289: 404
+[2025-10-29T09:24:28.741+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Daley_Blind_290: 404
+[2025-10-29T09:24:29.368+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Eric_Bailly_291: 404
+[2025-10-29T09:24:29.971+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Victor_Lindelöf_292: 404
+[2025-10-29T09:24:30.570+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Ashley_Young_293: 404
+[2025-10-29T09:24:31.210+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for José Diogo_Dalot Teixeira_294: 404
+[2025-10-29T09:24:31.767+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Alexis_Sánchez_295: 404
+[2025-10-29T09:24:32.336+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Nemanja_Matic_296: 404
+[2025-10-29T09:24:32.926+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Juan_Mata_297: 404
+[2025-10-29T09:24:33.517+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Marouane_Fellaini_298: 404
+[2025-10-29T09:24:34.207+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Ander_Herrera_299: 404
+[2025-10-29T09:24:34.766+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Jesse_Lingard_300: 404
+[2025-10-29T09:24:35.345+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Anthony_Martial_301: 404
+[2025-10-29T09:24:35.936+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Paul_Pogba_302: 404
+[2025-10-29T09:24:36.621+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Scott_McTominay_303: 404
+[2025-10-29T09:24:37.302+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Frederico_Rodrigues de Paula Santos_304: 404
+[2025-10-29T09:24:37.938+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Marcus_Rashford_305: 404
+[2025-10-29T09:24:38.519+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Romelu_Lukaku_306: 404
+[2025-10-29T09:24:39.109+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Andreas_Pereira_481: 404
+[2025-10-29T09:24:39.732+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Lee_Grant_520: 404
+[2025-10-29T09:24:40.367+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Angel_Gomes_568: 404
+[2025-10-29T09:24:41.034+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for James_Garner_602: 404
+[2025-10-29T09:24:41.596+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Tahith_Chong_603: 404
+[2025-10-29T09:24:42.228+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Mason_Greenwood_608: 404
+[2025-10-29T09:24:42.870+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Robert_Elliot_307: 404
+[2025-10-29T09:24:43.530+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Karl_Darlow_308: 404
+[2025-10-29T09:24:44.119+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Martin_Dubravka_309: 404
+[2025-10-29T09:24:44.681+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for DeAndre_Yedlin_310: 404
+[2025-10-29T09:24:45.295+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Ciaran_Clark_311: 404
+[2025-10-29T09:24:45.842+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Jamaal_Lascelles_312: 404
+[2025-10-29T09:24:46.457+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Paul_Dummett_313: 404
+[2025-10-29T09:24:47.025+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Florian_Lejeune_314: 404
+[2025-10-29T09:24:47.634+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Javier_Manquillo_315: 404
+[2025-10-29T09:24:48.240+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Chancel_Mbemba_316: 404
+[2025-10-29T09:24:48.810+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Matt_Ritchie_317: 404
+[2025-10-29T09:24:49.440+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Jonjo_Shelvey_318: 404
+[2025-10-29T09:24:50.046+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Mohamed_Diamé_319: 404
+[2025-10-29T09:24:50.662+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Christian_Atsu_320: 404
+[2025-10-29T09:24:51.280+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Jacob_Murphy_321: 404
+[2025-10-29T09:24:51.884+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Mikel_Merino_322: 404
+[2025-10-29T09:24:52.497+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Isaac_Hayden_323: 404
+[2025-10-29T09:24:53.125+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Sung-yueng_Ki_324: 404
+[2025-10-29T09:24:53.665+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Dwight_Gayle_325: 404
+[2025-10-29T09:24:54.285+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Ayoze_Pérez_326: 404
+[2025-10-29T09:24:54.904+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Jose Luis_Mato Sanmartín_327: 404
+[2025-10-29T09:24:55.561+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Robert Kenedy_Nunes do Nascimento_458: 404
+[2025-10-29T09:24:56.166+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Fabian_Schär_482: 404
+[2025-10-29T09:24:56.767+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Yoshinori_Muto_488: 404
+[2025-10-29T09:24:57.351+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Salomón_Rondón_493: 404
+[2025-10-29T09:24:57.965+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Federico_Fernández_516: 404
+[2025-10-29T09:24:58.526+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Jamie_Sterry_530: 404
+[2025-10-29T09:24:59.142+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Sean_Longstaff_531: 404
+[2025-10-29T09:24:59.783+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Frederick_Woodman_553: 404
+[2025-10-29T09:25:00.404+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Callum_Roberts_577: 404
+[2025-10-29T09:25:01.022+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Miguel_Almirón_587: 404
+[2025-10-29T09:25:01.642+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Antonio_Barreca_588: 404
+[2025-10-29T09:25:02.298+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Kelland_Watts_622: 404
+[2025-10-29T09:25:02.884+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Lewis_Cass_623: 404
+[2025-10-29T09:25:03.513+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Danny_Ings_258: 404
+[2025-10-29T09:25:04.212+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Alex_McCarthy_328: 404
+[2025-10-29T09:25:04.844+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Fraser_Forster_329: 404
+[2025-10-29T09:25:05.413+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Ryan_Bertrand_330: 404
+[2025-10-29T09:25:06.004+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Maya_Yoshida_331: 404
+[2025-10-29T09:25:06.579+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Cédric_Soares_332: 404
+[2025-10-29T09:25:07.182+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Jack_Stephens_333: 404
+[2025-10-29T09:25:07.813+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Sam_McQueen_334: 404
+[2025-10-29T09:25:08.506+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Jan_Bednarek_335: 404
+[2025-10-29T09:25:09.089+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Wesley_Hoedt_336: 404
+[2025-10-29T09:25:09.650+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Steven_Davis_337: 404
+[2025-10-29T09:25:10.427+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for James_Ward-Prowse_338: 404
+[2025-10-29T09:25:11.000+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Oriol_Romeu Vidal_339: 404
+[2025-10-29T09:25:11.595+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Pierre-Emile_Højbjerg_340: 404
+[2025-10-29T09:25:12.202+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Sofiane_Boufal_341: 404
+[2025-10-29T09:25:12.923+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Joshua_Sims_342: 404
+[2025-10-29T09:25:13.560+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Nathan_Redmond_343: 404
+[2025-10-29T09:25:14.206+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Mario_Lemina_344: 404
+[2025-10-29T09:25:14.793+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Stuart_Armstrong_345: 404
+[2025-10-29T09:25:15.726+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Mohamed_Elyounoussi_346: 404
+[2025-10-29T09:25:16.302+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Shane_Long_347: 404
+[2025-10-29T09:25:16.947+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Charlie_Austin_348: 404
+[2025-10-29T09:25:17.587+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Manolo_Gabbiadini_349: 404
+[2025-10-29T09:25:18.437+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Guido_Carrillo_350: 404
+[2025-10-29T09:25:19.265+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Angus_Gunn_452: 404
+[2025-10-29T09:25:19.881+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Jannik_Vestergaard_463: 404
+[2025-10-29T09:25:20.577+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Matt_Targett_479: 404
+[2025-10-29T09:25:21.162+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Michael_Obafemi_550: 404
+[2025-10-29T09:25:21.845+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Yan_Valery_556: 404
+[2025-10-29T09:25:22.461+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Tyreke_Johnson_562: 404
+[2025-10-29T09:25:23.086+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Kayne_Ramsay_565: 404
+[2025-10-29T09:25:23.671+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Callum_Slattery_570: 404
+[2025-10-29T09:25:24.276+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Sam_Gallagher_574: 404
+[2025-10-29T09:25:24.880+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Alfie_Jones_595: 404
+[2025-10-29T09:25:25.490+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Hugo_Lloris_351: 404
+[2025-10-29T09:25:26.163+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Michel_Vorm_352: 404
+[2025-10-29T09:25:26.812+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Toby_Alderweireld_353: 404
+[2025-10-29T09:25:27.469+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Danny_Rose_354: 404
+[2025-10-29T09:25:28.072+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Jan_Vertonghen_355: 404
+[2025-10-29T09:25:28.718+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Ben_Davies_356: 404
+[2025-10-29T09:25:29.336+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Kieran_Trippier_357: 404
+[2025-10-29T09:25:29.986+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Kyle_Walker-Peters_358: 404
+[2025-10-29T09:25:30.681+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Davinson_Sánchez_359: 404
+[2025-10-29T09:25:31.277+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Serge_Aurier_360: 404
+[2025-10-29T09:25:31.926+0000] {fetch_api_data.py:90} INFO - Players Data --> [OrderedDict([('assists', '0'), ('bonus', '1'), ('bps', '22'), ('clean_sheets', '1'), ('creativity', '0.1'), ('element', '361'), ('fixture', '10'), ('goals_conceded', '0'), ('goals_scored', '0'), ('ict_index', '1.7'), ('influence', '17.0'), ('kickoff_time', '2021-08-15T15:30:00Z'), ('minutes', '90'), ('opponent_team', '12'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '1'), ('saves', '0'), ('selected', '96915'), ('team_a_score', '0'), ('team_h_score', '1'), ('threat', '0.0'), ('total_points', '7'), ('transfers_balance', '0'), ('transfers_in', '0'), ('transfers_out', '0'), ('value', '45'), ('was_home', 'True'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '25'), ('clean_sheets', '1'), ('creativity', '0.0'), ('element', '361'), ('fixture', '17'), ('goals_conceded', '0'), ('goals_scored', '0'), ('ict_index', '5.2'), ('influence', '19.0'), ('kickoff_time', '2021-08-22T13:00:00Z'), ('minutes', '90'), ('opponent_team', '20'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '2'), ('saves', '0'), ('selected', '227449'), ('team_a_score', '1'), ('team_h_score', '0'), ('threat', '33.0'), ('total_points', '6'), ('transfers_balance', '67452'), ('transfers_in', '83116'), ('transfers_out', '15664'), ('value', '45'), ('was_home', 'False'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '1'), ('bps', '27'), ('clean_sheets', '1'), ('creativity', '1.1'), ('element', '361'), ('fixture', '27'), ('goals_conceded', '0'), ('goals_scored', '0'), ('ict_index', '3.7'), ('influence', '26.8'), ('kickoff_time', '2021-08-29T13:00:00Z'), ('minutes', '90'), ('opponent_team', '18'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '3'), ('saves', '0'), ('selected', '404813'), ('team_a_score', '0'), ('team_h_score', '1'), ('threat', '9.0'), ('total_points', '7'), ('transfers_balance', '153990'), ('transfers_in', '182400'), ('transfers_out', '28410'), ('value', '46'), ('was_home', 'True'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '3'), ('clean_sheets', '0'), ('creativity', '0.0'), ('element', '361'), ('fixture', '34'), ('goals_conceded', '0'), ('goals_scored', '0'), ('ict_index', '0.1'), ('influence', '1.4'), ('kickoff_time', '2021-09-11T11:30:00Z'), ('minutes', '11'), ('opponent_team', '7'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '4'), ('saves', '0'), ('selected', '729401'), ('team_a_score', '0'), ('team_h_score', '3'), ('threat', '0.0'), ('total_points', '1'), ('transfers_balance', '260715'), ('transfers_in', '376305'), ('transfers_out', '115590'), ('value', '46'), ('was_home', 'False'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '19'), ('clean_sheets', '0'), ('creativity', '10.4'), ('element', '361'), ('fixture', '48'), ('goals_conceded', '3'), ('goals_scored', '0'), ('ict_index', '4.4'), ('influence', '29.2'), ('kickoff_time', '2021-09-19T15:30:00Z'), ('minutes', '90'), ('opponent_team', '6'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '5'), ('saves', '0'), ('selected', '519573'), ('team_a_score', '3'), ('team_h_score', '0'), ('threat', '4.0'), ('total_points', '1'), ('transfers_balance', '-186708'), ('transfers_in', '15171'), ('transfers_out', '201879'), ('value', '46'), ('was_home', 'True'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '16'), ('clean_sheets', '0'), ('creativity', '14.2'), ('element', '361'), ('fixture', '51'), ('goals_conceded', '3'), ('goals_scored', '0'), ('ict_index', '2.6'), ('influence', '10.2'), ('kickoff_time', '2021-09-26T15:30:00Z'), ('minutes', '90'), ('opponent_team', '1'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '6'), ('saves', '0'), ('selected', '509533'), ('team_a_score', '1'), ('team_h_score', '3'), ('threat', '2.0'), ('total_points', '1'), ('transfers_balance', '-26002'), ('transfers_in', '27739'), ('transfers_out', '53741'), ('value', '46'), ('was_home', 'False'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '1'), ('bps', '23'), ('clean_sheets', '0'), ('creativity', '10.3'), ('element', '361'), ('fixture', '68'), ('goals_conceded', '1'), ('goals_scored', '0'), ('ict_index', '4.6'), ('influence', '35.2'), ('kickoff_time', '2021-10-03T13:00:00Z'), ('minutes', '90'), ('opponent_team', '2'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '7'), ('saves', '0'), ('selected', '487765'), ('team_a_score', '1'), ('team_h_score', '2'), ('threat', '0.0'), ('total_points', '3'), ('transfers_balance', '-25046'), ('transfers_in', '16494'), ('transfers_out', '41540'), ('value', '46'), ('was_home', 'True'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '5'), ('clean_sheets', '0'), ('creativity', '0.6'), ('element', '361'), ('fixture', '77'), ('goals_conceded', '2'), ('goals_scored', '0'), ('ict_index', '3.1'), ('influence', '12.8'), ('kickoff_time', '2021-10-17T15:30:00Z'), ('minutes', '90'), ('opponent_team', '14'), ('own_goals', '1'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '8'), ('saves', '0'), ('selected', '474608'), ('team_a_score', '3'), ('team_h_score', '2'), ('threat', '18.0'), ('total_points', '-1'), ('transfers_balance', '-17086'), ('transfers_in', '13897'), ('transfers_out', '30983'), ('value', '46'), ('was_home', 'False'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '19'), ('clean_sheets', '0'), ('creativity', '1.1'), ('element', '361'), ('fixture', '90'), ('goals_conceded', '1'), ('goals_scored', '0'), ('ict_index', '3.1'), ('influence', '29.4'), ('kickoff_time', '2021-10-24T13:00:00Z'), ('minutes', '90'), ('opponent_team', '19'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '9'), ('saves', '0'), ('selected', '436030'), ('team_a_score', '0'), ('team_h_score', '1'), ('threat', '0.0'), ('total_points', '2'), ('transfers_balance', '-38080'), ('transfers_in', '5583'), ('transfers_out', '43663'), ('value', '45'), ('was_home', 'False'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '9'), ('clean_sheets', '0'), ('creativity', '0.7'), ('element', '361'), ('fixture', '98'), ('goals_conceded', '3'), ('goals_scored', '0'), ('ict_index', '2.1'), ('influence', '14.4'), ('kickoff_time', '2021-10-30T16:30:00Z'), ('minutes', '90'), ('opponent_team', '13'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '10'), ('saves', '0'), ('selected', '408317'), ('team_a_score', '3'), ('team_h_score', '0'), ('threat', '6.0'), ('total_points', '1'), ('transfers_balance', '-31119'), ('transfers_in', '7802'), ('transfers_out', '38921'), ('value', '45'), ('was_home', 'True'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '2'), ('bps', '28'), ('clean_sheets', '1'), ('creativity', '0.3'), ('element', '361'), ('fixture', '106'), ('goals_conceded', '0'), ('goals_scored', '0'), ('ict_index', '2.1'), ('influence', '20.4'), ('kickoff_time', '2021-11-07T14:00:00Z'), ('minutes', '90'), ('opponent_team', '8'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '11'), ('saves', '0'), ('selected', '396330'), ('team_a_score', '0'), ('team_h_score', '0'), ('threat', '0.0'), ('total_points', '8'), ('transfers_balance', '-15111'), ('transfers_in', '7991'), ('transfers_out', '23102'), ('value', '45'), ('was_home', 'False'), ('yellow_cards', '0')]), OrderedDict([('assists', '1'), ('bonus', '1'), ('bps', '26'), ('clean_sheets', '0'), ('creativity', '16.7'), ('element', '361'), ('fixture', '118'), ('goals_conceded', '1'), ('goals_scored', '0'), ('ict_index', '4.5'), ('influence', '20.4'), ('kickoff_time', '2021-11-21T16:30:00Z'), ('minutes', '90'), ('opponent_team', '10'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '12'), ('saves', '0'), ('selected', '420270'), ('team_a_score', '1'), ('team_h_score', '2'), ('threat', '8.0'), ('total_points', '6'), ('transfers_balance', '19747'), ('transfers_in', '33283'), ('transfers_out', '13536'), ('value', '45'), ('was_home', 'True'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '25'), ('clean_sheets', '1'), ('creativity', '0.3'), ('element', '361'), ('fixture', '140'), ('goals_conceded', '0'), ('goals_scored', '0'), ('ict_index', '1.3'), ('influence', '12.6'), ('kickoff_time', '2021-12-02T19:30:00Z'), ('minutes', '90'), ('opponent_team', '3'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '14'), ('saves', '0'), ('selected', '450337'), ('team_a_score', '0'), ('team_h_score', '2'), ('threat', '0.0'), ('total_points', '6'), ('transfers_balance', '17119'), ('transfers_in', '27636'), ('transfers_out', '10517'), ('value', '45'), ('was_home', 'True'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '27'), ('clean_sheets', '1'), ('creativity', '3.2'), ('element', '361'), ('fixture', '147'), ('goals_conceded', '0'), ('goals_scored', '0'), ('ict_index', '2.2'), ('influence', '19.0'), ('kickoff_time', '2021-12-05T14:00:00Z'), ('minutes', '90'), ('opponent_team', '15'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '15'), ('saves', '0'), ('selected', '511090'), ('team_a_score', '0'), ('team_h_score', '3'), ('threat', '0.0'), ('total_points', '6'), ('transfers_balance', '56590'), ('transfers_in', '66411'), ('transfers_out', '9821'), ('value', '45'), ('was_home', 'True'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '16'), ('clean_sheets', '0'), ('creativity', '3.6'), ('element', '361'), ('fixture', '177'), ('goals_conceded', '2'), ('goals_scored', '0'), ('ict_index', '2.9'), ('influence', '25.4'), ('kickoff_time', '2021-12-19T16:30:00Z'), ('minutes', '90'), ('opponent_team', '11'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '18'), ('saves', '0'), ('selected', '541317'), ('team_a_score', '2'), ('team_h_score', '2'), ('threat', '0.0'), ('total_points', '1'), ('transfers_balance', '-4768'), ('transfers_in', '12858'), ('transfers_out', '17626'), ('value', '45'), ('was_home', 'True'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '25'), ('clean_sheets', '1'), ('creativity', '1.3'), ('element', '361'), ('fixture', '188'), ('goals_conceded', '0'), ('goals_scored', '0'), ('ict_index', '1.3'), ('influence', '11.6'), ('kickoff_time', '2021-12-26T15:00:00Z'), ('minutes', '90'), ('opponent_team', '7'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '19'), ('saves', '0'), ('selected', '591967'), ('team_a_score', '0'), ('team_h_score', '3'), ('threat', '0.0'), ('total_points', '6'), ('transfers_balance', '25858'), ('transfers_in', '41487'), ('transfers_out', '15629'), ('value', '46'), ('was_home', 'True'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '14'), ('clean_sheets', '0'), ('creativity', '13.0'), ('element', '361'), ('fixture', '199'), ('goals_conceded', '1'), ('goals_scored', '0'), ('ict_index', '5.8'), ('influence', '24.4'), ('kickoff_time', '2021-12-28T15:00:00Z'), ('minutes', '90'), ('opponent_team', '16'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '20'), ('saves', '0'), ('selected', '672968'), ('team_a_score', '1'), ('team_h_score', '1'), ('threat', '21.0'), ('total_points', '2'), ('transfers_balance', '69349'), ('transfers_in', '76651'), ('transfers_out', '7302'), ('value', '46'), ('was_home', 'False'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '29'), ('clean_sheets', '1'), ('creativity', '3.0'), ('element', '361'), ('fixture', '210'), ('goals_conceded', '0'), ('goals_scored', '0'), ('ict_index', '2.2'), ('influence', '19.4'), ('kickoff_time', '2022-01-01T15:00:00Z'), ('minutes', '90'), ('opponent_team', '18'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '21'), ('saves', '0'), ('selected', '678060'), ('team_a_score', '1'), ('team_h_score', '0'), ('threat', '0.0'), ('total_points', '6'), ('transfers_balance', '28475'), ('transfers_in', '57546'), ('transfers_out', '29071'), ('value', '46'), ('was_home', 'False'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '0'), ('clean_sheets', '0'), ('creativity', '0.0'), ('element', '361'), ('fixture', '166'), ('goals_conceded', '0'), ('goals_scored', '0'), ('ict_index', '0.0'), ('influence', '0.0'), ('kickoff_time', '2022-01-19T19:30:00Z'), ('minutes', '0'), ('opponent_team', '9'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '22'), ('saves', '0'), ('selected', '519940'), ('team_a_score', '3'), ('team_h_score', '2'), ('threat', '0.0'), ('total_points', '0'), ('transfers_balance', '-92215'), ('transfers_in', '19429'), ('transfers_out', '111644'), ('value', '46'), ('was_home', 'False'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '11'), ('clean_sheets', '0'), ('creativity', '0.3'), ('element', '361'), ('fixture', '223'), ('goals_conceded', '2'), ('goals_scored', '0'), ('ict_index', '1.3'), ('influence', '12.8'), ('kickoff_time', '2022-01-23T16:30:00Z'), ('minutes', '90'), ('opponent_team', '6'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '23'), ('saves', '0'), ('selected', '476565'), ('team_a_score', '0'), ('team_h_score', '2'), ('threat', '0.0'), ('total_points', '1'), ('transfers_balance', '-107136'), ('transfers_in', '1118'), ('transfers_out', '108254'), ('value', '46'), ('was_home', 'False'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '0'), ('clean_sheets', '0'), ('creativity', '0.0'), ('element', '361'), ('fixture', '240'), ('goals_conceded', '0'), ('goals_scored', '0'), ('ict_index', '0.0'), ('influence', '0.0'), ('kickoff_time', '2022-02-09T19:45:00Z'), ('minutes', '0'), ('opponent_team', '16'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '24'), ('saves', '0'), ('selected', '448295'), ('team_a_score', '3'), ('team_h_score', '2'), ('threat', '0.0'), ('total_points', '0'), ('transfers_balance', '-33532'), ('transfers_in', '8966'), ('transfers_out', '42498'), ('value', '46'), ('was_home', 'True'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '0'), ('clean_sheets', '0'), ('creativity', '0.0'), ('element', '361'), ('fixture', '249'), ('goals_conceded', '0'), ('goals_scored', '0'), ('ict_index', '0.0'), ('influence', '0.0'), ('kickoff_time', '2022-02-13T14:00:00Z'), ('minutes', '0'), ('opponent_team', '20'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '25'), ('saves', '0'), ('selected', '374848'), ('team_a_score', '2'), ('team_h_score', '0'), ('threat', '0.0'), ('total_points', '0'), ('transfers_balance', '-71223'), ('transfers_in', '169'), ('transfers_out', '71392'), ('value', '46'), ('was_home', 'True'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '13'), ('clean_sheets', '0'), ('creativity', '0.0'), ('element', '361'), ('fixture', '257'), ('goals_conceded', '2'), ('goals_scored', '0'), ('ict_index', '1.6'), ('influence', '16.4'), ('kickoff_time', '2022-02-19T17:30:00Z'), ('minutes', '90'), ('opponent_team', '12'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '26'), ('saves', '0'), ('selected', '347802'), ('team_a_score', '3'), ('team_h_score', '2'), ('threat', '0.0'), ('total_points', '1'), ('transfers_balance', '-26112'), ('transfers_in', '2884'), ('transfers_out', '28996'), ('value', '46'), ('was_home', 'False'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '15'), ('clean_sheets', '0'), ('creativity', '1.9'), ('element', '361'), ('fixture', '124'), ('goals_conceded', '1'), ('goals_scored', '0'), ('ict_index', '3.4'), ('influence', '27.8'), ('kickoff_time', '2022-02-23T19:30:00Z'), ('minutes', '90'), ('opponent_team', '5'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '26'), ('saves', '0'), ('selected', '347802'), ('team_a_score', '0'), ('team_h_score', '1'), ('threat', '4.0'), ('total_points', '2'), ('transfers_balance', '-26112'), ('transfers_in', '2884'), ('transfers_out', '28996'), ('value', '46'), ('was_home', 'False'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '25'), ('clean_sheets', '1'), ('creativity', '0.1'), ('element', '361'), ('fixture', '267'), ('goals_conceded', '0'), ('goals_scored', '0'), ('ict_index', '1.9'), ('influence', '18.8'), ('kickoff_time', '2022-02-26T12:30:00Z'), ('minutes', '90'), ('opponent_team', '10'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '27'), ('saves', '0'), ('selected', '375093'), ('team_a_score', '4'), ('team_h_score', '0'), ('threat', '0.0'), ('total_points', '6'), ('transfers_balance', '10513'), ('transfers_in', '16839'), ('transfers_out', '6326'), ('value', '46'), ('was_home', 'False'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '24'), ('clean_sheets', '1'), ('creativity', '0.8'), ('element', '361'), ('fixture', '278'), ('goals_conceded', '0'), ('goals_scored', '0'), ('ict_index', '3.6'), ('influence', '28.0'), ('kickoff_time', '2022-03-07T20:00:00Z'), ('minutes', '90'), ('opponent_team', '8'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '28'), ('saves', '0'), ('selected', '364693'), ('team_a_score', '0'), ('team_h_score', '5'), ('threat', '7.0'), ('total_points', '6'), ('transfers_balance', '2964'), ('transfers_in', '20997'), ('transfers_out', '18033'), ('value', '46'), ('was_home', 'True'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '6'), ('clean_sheets', '0'), ('creativity', '0.8'), ('element', '361'), ('fixture', '288'), ('goals_conceded', '3'), ('goals_scored', '0'), ('ict_index', '6.0'), ('influence', '12.8'), ('kickoff_time', '2022-03-12T17:30:00Z'), ('minutes', '90'), ('opponent_team', '13'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '29'), ('saves', '0'), ('selected', '440598'), ('team_a_score', '2'), ('team_h_score', '3'), ('threat', '46.0'), ('total_points', '0'), ('transfers_balance', '60338'), ('transfers_in', '71670'), ('transfers_out', '11332'), ('value', '46'), ('was_home', 'False'), ('yellow_cards', '1')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '25'), ('clean_sheets', '1'), ('creativity', '0.3'), ('element', '361'), ('fixture', '153'), ('goals_conceded', '0'), ('goals_scored', '0'), ('ict_index', '2.9'), ('influence', '29.0'), ('kickoff_time', '2022-03-16T19:30:00Z'), ('minutes', '90'), ('opponent_team', '4'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '29'), ('saves', '0'), ('selected', '440598'), ('team_a_score', '2'), ('team_h_score', '0'), ('threat', '0.0'), ('total_points', '6'), ('transfers_balance', '60338'), ('transfers_in', '71670'), ('transfers_out', '11332'), ('value', '46'), ('was_home', 'False'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '14'), ('clean_sheets', '0'), ('creativity', '0.5'), ('element', '361'), ('fixture', '298'), ('goals_conceded', '1'), ('goals_scored', '0'), ('ict_index', '1.1'), ('influence', '10.0'), ('kickoff_time', '2022-03-20T16:30:00Z'), ('minutes', '90'), ('opponent_team', '19'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '30'), ('saves', '0'), ('selected', '441955'), ('team_a_score', '1'), ('team_h_score', '3'), ('threat', '0.0'), ('total_points', '2'), ('transfers_balance', '13640'), ('transfers_in', '21460'), ('transfers_out', '7820'), ('value', '46'), ('was_home', 'True'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '13'), ('clean_sheets', '0'), ('creativity', '11.4'), ('element', '361'), ('fixture', '308'), ('goals_conceded', '1'), ('goals_scored', '0'), ('ict_index', '3.7'), ('influence', '15.6'), ('kickoff_time', '2022-04-03T15:30:00Z'), ('minutes', '90'), ('opponent_team', '14'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '31'), ('saves', '0'), ('selected', '443648'), ('team_a_score', '1'), ('team_h_score', '5'), ('threat', '10.0'), ('total_points', '2'), ('transfers_balance', '-601'), ('transfers_in', '11899'), ('transfers_out', '12500'), ('value', '46'), ('was_home', 'True'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '28'), ('clean_sheets', '1'), ('creativity', '0.0'), ('element', '361'), ('fixture', '312'), ('goals_conceded', '0'), ('goals_scored', '0'), ('ict_index', '2.7'), ('influence', '27.4'), ('kickoff_time', '2022-04-09T16:30:00Z'), ('minutes', '90'), ('opponent_team', '2'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '32'), ('saves', '0'), ('selected', '443387'), ('team_a_score', '4'), ('team_h_score', '0'), ('threat', '0.0'), ('total_points', '6'), ('transfers_balance', '-778'), ('transfers_in', '10851'), ('transfers_out', '11629'), ('value', '46'), ('was_home', 'False'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '12'), ('clean_sheets', '0'), ('creativity', '1.7'), ('element', '361'), ('fixture', '327'), ('goals_conceded', '1'), ('goals_scored', '0'), ('ict_index', '1.8'), ('influence', '16.2'), ('kickoff_time', '2022-04-16T11:30:00Z'), ('minutes', '90'), ('opponent_team', '4'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '33'), ('saves', '0'), ('selected', '468660'), ('team_a_score', '1'), ('team_h_score', '0'), ('threat', '0.0'), ('total_points', '2'), ('transfers_balance', '26605'), ('transfers_in', '36995'), ('transfers_out', '10390'), ('value', '46'), ('was_home', 'True'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '26'), ('clean_sheets', '1'), ('creativity', '1.8'), ('element', '361'), ('fixture', '332'), ('goals_conceded', '0'), ('goals_scored', '0'), ('ict_index', '3.1'), ('influence', '29.4'), ('kickoff_time', '2022-04-23T16:30:00Z'), ('minutes', '90'), ('opponent_team', '3'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '34'), ('saves', '0'), ('selected', '474359'), ('team_a_score', '0'), ('team_h_score', '0'), ('threat', '0.0'), ('total_points', '6'), ('transfers_balance', '3534'), ('transfers_in', '17361'), ('transfers_out', '13827'), ('value', '46'), ('was_home', 'False'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '12'), ('clean_sheets', '0'), ('creativity', '0.3'), ('element', '361'), ('fixture', '347'), ('goals_conceded', '1'), ('goals_scored', '0'), ('ict_index', '5.2'), ('influence', '24.6'), ('kickoff_time', '2022-05-01T13:00:00Z'), ('minutes', '90'), ('opponent_team', '9'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '35'), ('saves', '0'), ('selected', '489856'), ('team_a_score', '1'), ('team_h_score', '3'), ('threat', '27.0'), ('total_points', '2'), ('transfers_balance', '13887'), ('transfers_in', '24646'), ('transfers_out', '10759'), ('value', '46'), ('was_home', 'True'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '17'), ('clean_sheets', '0'), ('creativity', '0.1'), ('element', '361'), ('fixture', '358'), ('goals_conceded', '1'), ('goals_scored', '0'), ('ict_index', '4.3'), ('influence', '43.0'), ('kickoff_time', '2022-05-07T18:45:00Z'), ('minutes', '90'), ('opponent_team', '11'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '36'), ('saves', '0'), ('selected', '502096'), ('team_a_score', '1'), ('team_h_score', '1'), ('threat', '0.0'), ('total_points', '2'), ('transfers_balance', '14900'), ('transfers_in', '33899'), ('transfers_out', '18999'), ('value', '47'), ('was_home', 'False'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '29'), ('clean_sheets', '1'), ('creativity', '0.7'), ('element', '361'), ('fixture', '218'), ('goals_conceded', '0'), ('goals_scored', '0'), ('ict_index', '2.8'), ('influence', '26.8'), ('kickoff_time', '2022-05-12T18:45:00Z'), ('minutes', '90'), ('opponent_team', '1'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '36'), ('saves', '0'), ('selected', '502096'), ('team_a_score', '0'), ('team_h_score', '3'), ('threat', '0.0'), ('total_points', '6'), ('transfers_balance', '14900'), ('transfers_in', '33899'), ('transfers_out', '18999'), ('value', '47'), ('was_home', 'True'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '1'), ('bps', '27'), ('clean_sheets', '1'), ('creativity', '15.7'), ('element', '361'), ('fixture', '367'), ('goals_conceded', '0'), ('goals_scored', '0'), ('ict_index', '3.9'), ('influence', '23.4'), ('kickoff_time', '2022-05-15T11:00:00Z'), ('minutes', '90'), ('opponent_team', '5'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '37'), ('saves', '0'), ('selected', '522987'), ('team_a_score', '0'), ('team_h_score', '1'), ('threat', '0.0'), ('total_points', '7'), ('transfers_balance', '21402'), ('transfers_in', '32533'), ('transfers_out', '11131'), ('value', '47'), ('was_home', 'True'), ('yellow_cards', '0')]), OrderedDict([('assists', '0'), ('bonus', '0'), ('bps', '25'), ('clean_sheets', '1'), ('creativity', '0.0'), ('element', '361'), ('fixture', '380'), ('goals_conceded', '0'), ('goals_scored', '0'), ('ict_index', '0.0'), ('influence', '0.0'), ('kickoff_time', '2022-05-22T15:00:00Z'), ('minutes', '90'), ('opponent_team', '15'), ('own_goals', '0'), ('penalties_missed', '0'), ('penalties_saved', '0'), ('red_cards', '0'), ('round', '38'), ('saves', '0'), ('selected', '606545'), ('team_a_score', '5'), ('team_h_score', '0'), ('threat', '0.0'), ('total_points', '6'), ('transfers_balance', '66106'), ('transfers_in', '77653'), ('transfers_out', '11547'), ('value', '47'), ('was_home', 'False'), ('yellow_cards', '0')])]
+[2025-10-29T09:25:31.927+0000] {logging_mixin.py:150} INFO - Eric Dier
+[2025-10-29T09:25:31.929+0000] {logging_mixin.py:150} INFO - Eric Dier
+[2025-10-29T09:25:31.930+0000] {logging_mixin.py:150} INFO - Eric Dier
+[2025-10-29T09:25:31.931+0000] {logging_mixin.py:150} INFO - Eric Dier
+[2025-10-29T09:25:31.931+0000] {logging_mixin.py:150} INFO - Eric Dier
+[2025-10-29T09:25:31.933+0000] {logging_mixin.py:150} INFO - Eric Dier
+[2025-10-29T09:25:31.934+0000] {logging_mixin.py:150} INFO - Eric Dier
+[2025-10-29T09:25:31.935+0000] {logging_mixin.py:150} INFO - Eric Dier
+[2025-10-29T09:25:31.936+0000] {logging_mixin.py:150} INFO - Eric Dier
+[2025-10-29T09:25:31.937+0000] {logging_mixin.py:150} INFO - Eric Dier
+[2025-10-29T09:25:31.938+0000] {logging_mixin.py:150} INFO - Eric Dier
+[2025-10-29T09:25:31.939+0000] {logging_mixin.py:150} INFO - Eric Dier
+[2025-10-29T09:25:31.940+0000] {logging_mixin.py:150} INFO - Eric Dier
+[2025-10-29T09:25:31.941+0000] {logging_mixin.py:150} INFO - Eric Dier
+[2025-10-29T09:25:31.942+0000] {logging_mixin.py:150} INFO - Eric Dier
+[2025-10-29T09:25:31.943+0000] {logging_mixin.py:150} INFO - Eric Dier
+[2025-10-29T09:25:31.945+0000] {logging_mixin.py:150} INFO - Eric Dier
+[2025-10-29T09:25:31.946+0000] {logging_mixin.py:150} INFO - Eric Dier
+[2025-10-29T09:25:31.946+0000] {logging_mixin.py:150} INFO - Eric Dier
+[2025-10-29T09:25:31.947+0000] {logging_mixin.py:150} INFO - Eric Dier
+[2025-10-29T09:25:31.948+0000] {logging_mixin.py:150} INFO - Eric Dier
+[2025-10-29T09:25:31.948+0000] {logging_mixin.py:150} INFO - Eric Dier
+[2025-10-29T09:25:31.949+0000] {logging_mixin.py:150} INFO - Eric Dier
+[2025-10-29T09:25:31.950+0000] {logging_mixin.py:150} INFO - Eric Dier
+[2025-10-29T09:25:31.951+0000] {logging_mixin.py:150} INFO - Eric Dier
+[2025-10-29T09:25:31.952+0000] {logging_mixin.py:150} INFO - Eric Dier
+[2025-10-29T09:25:31.952+0000] {logging_mixin.py:150} INFO - Eric Dier
+[2025-10-29T09:25:31.953+0000] {logging_mixin.py:150} INFO - Eric Dier
+[2025-10-29T09:25:31.954+0000] {logging_mixin.py:150} INFO - Eric Dier
+[2025-10-29T09:25:31.955+0000] {logging_mixin.py:150} INFO - Eric Dier
+[2025-10-29T09:25:31.955+0000] {logging_mixin.py:150} INFO - Eric Dier
+[2025-10-29T09:25:31.956+0000] {logging_mixin.py:150} INFO - Eric Dier
+[2025-10-29T09:25:31.959+0000] {logging_mixin.py:150} INFO - Eric Dier
+[2025-10-29T09:25:31.960+0000] {logging_mixin.py:150} INFO - Eric Dier
+[2025-10-29T09:25:31.961+0000] {logging_mixin.py:150} INFO - Eric Dier
+[2025-10-29T09:25:31.962+0000] {logging_mixin.py:150} INFO - Eric Dier
+[2025-10-29T09:25:31.963+0000] {logging_mixin.py:150} INFO - Eric Dier
+[2025-10-29T09:25:31.963+0000] {logging_mixin.py:150} INFO - Eric Dier
+[2025-10-29T09:25:32.635+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Mousa_Dembélé_362: 404
+[2025-10-29T09:25:33.211+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Erik_Lamela_363: 404
+[2025-10-29T09:25:33.784+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Christian_Eriksen_364: 404
+[2025-10-29T09:25:34.404+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Bamidele_Alli_365: 404
+[2025-10-29T09:25:35.013+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Victor_Wanyama_366: 404
+[2025-10-29T09:25:35.612+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Heung-Min_Son_367: 404
+[2025-10-29T09:25:36.252+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Harry_Winks_368: 404
+[2025-10-29T09:25:36.904+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Moussa_Sissoko_369: 404
+[2025-10-29T09:25:37.526+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Lucas_Rodrigues Moura da Silva_370: 404
+[2025-10-29T09:25:38.124+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Fernando_Llorente_371: 404
+[2025-10-29T09:25:38.732+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Harry_Kane_372: 404
+[2025-10-29T09:25:39.325+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Georges-Kévin_Nkoudou_497: 404
+[2025-10-29T09:25:39.954+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Luke_Amos_523: 404
+[2025-10-29T09:25:40.606+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Paulo_Gazzaniga_536: 404
+[2025-10-29T09:25:41.234+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Alfie_Whiteman_538: 404
+[2025-10-29T09:25:41.879+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Oliver_Skipp_540: 404
+[2025-10-29T09:25:42.454+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Juan_Foyth_549: 404
+[2025-10-29T09:25:43.221+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Timothy_Eyoma_561: 404
+[2025-10-29T09:25:43.823+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Kazaiah_Sterling_578: 404
+[2025-10-29T09:25:44.409+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for George_Marsh_612: 404
+[2025-10-29T09:25:44.984+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Vincent_Janssen_614: 404
+[2025-10-29T09:25:45.587+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Heurelho_Gomes_373: 404
+[2025-10-29T09:25:46.198+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Pontus_Dahlberg_374: 404
+[2025-10-29T09:25:46.790+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Younes_Kaboul_375: 404
+[2025-10-29T09:25:47.364+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Craig_Cathcart_376: 404
+[2025-10-29T09:25:47.964+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Sebastian_Prödl_377: 404
+[2025-10-29T09:25:48.553+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for José_Holebas_378: 404
+[2025-10-29T09:25:49.121+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Miguel_Britos_379: 404
+[2025-10-29T09:25:49.759+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Christian_Kabasele_380: 404
+[2025-10-29T09:25:50.362+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Daryl_Janmaat_381: 404
+[2025-10-29T09:25:50.978+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Adrian_Mariappa_382: 404
+[2025-10-29T09:25:51.695+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Francisco_Femenía Far_383: 404
+[2025-10-29T09:25:52.276+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Marvin_Zeegelaar_384: 404
+[2025-10-29T09:25:52.880+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Marc_Navarro_385: 404
+[2025-10-29T09:25:53.561+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Adam_Masina_386: 404
+[2025-10-29T09:25:54.174+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Nathaniel_Chalobah_387: 404
+[2025-10-29T09:25:54.843+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Tom_Cleverley_388: 404
+[2025-10-29T09:25:55.413+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Etienne_Capoue_389: 404
+[2025-10-29T09:25:56.060+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Abdoulaye_Doucouré_390: 404
+[2025-10-29T09:25:56.648+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Roberto_Pereyra_391: 404
+[2025-10-29T09:25:57.266+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Will_Hughes_392: 404
+[2025-10-29T09:25:57.890+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Gerard_Deulofeu_394: 404
+[2025-10-29T09:25:58.484+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Andre_Gray_395: 404
+[2025-10-29T09:25:59.060+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Troy_Deeney_396: 404
+[2025-10-29T09:25:59.645+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Stefano_Okaka_397: 404
+[2025-10-29T09:26:00.260+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Jerome_Sinclair_398: 404
+[2025-10-29T09:26:00.933+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Ben_Foster_445: 404
+[2025-10-29T09:26:01.591+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Ken_Sema_446: 404
+[2025-10-29T09:26:02.246+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Domingos_Quina_517: 404
+[2025-10-29T09:26:02.844+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Isaac_Success Ajayi_524: 404
+[2025-10-29T09:26:03.425+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Ben_Wilmot_544: 404
+[2025-10-29T09:26:04.031+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Adalberto_Peñaranda_554: 404
+[2025-10-29T09:26:04.631+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Adrián_San Miguel del Castillo_399: 404
+[2025-10-29T09:26:05.200+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Lukasz_Fabianski_400: 404
+[2025-10-29T09:26:05.812+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Winston_Reid_401: 404
+[2025-10-29T09:26:06.445+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Aaron_Cresswell_402: 404
+[2025-10-29T09:26:07.190+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Angelo_Ogbonna_403: 404
+[2025-10-29T09:26:07.876+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Sam_Byram_404: 404
+[2025-10-29T09:26:08.524+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Pablo_Zabaleta_405: 404
+[2025-10-29T09:26:09.139+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Declan_Rice_406: 404
+[2025-10-29T09:26:09.770+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Reece_Oxford_407: 404
+[2025-10-29T09:26:10.334+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Ryan_Fredericks_408: 404
+[2025-10-29T09:26:11.055+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Issa_Diop_409: 404
+[2025-10-29T09:26:11.619+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Arthur_Masuaku_410: 404
+[2025-10-29T09:26:12.211+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Mark_Noble_411: 404
+[2025-10-29T09:26:12.841+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Pedro_Obiang_413: 404
+[2025-10-29T09:26:13.435+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Manuel_Lanzini_414: 404
+[2025-10-29T09:26:14.010+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Michail_Antonio_415: 404
+[2025-10-29T09:26:14.599+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Edimilson_Fernandes_416: 404
+[2025-10-29T09:26:15.193+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Marko_Arnautovic_417: 404
+[2025-10-29T09:26:15.819+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Andy_Carroll_418: 404
+[2025-10-29T09:26:16.405+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Javier_Hernández Balcázar_419: 404
+[2025-10-29T09:26:17.036+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Jordan_Hugill_420: 404
+[2025-10-29T09:26:17.654+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Jack_Wilshere_447: 404
+[2025-10-29T09:26:18.357+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Andriy_Yarmolenko_453: 404
+[2025-10-29T09:26:18.997+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Fabián_Balbuena_464: 404
+[2025-10-29T09:26:19.585+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Felipe Anderson_Pereira Gomes_465: 404
+[2025-10-29T09:26:20.210+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Robert_Snodgrass_489: 404
+[2025-10-29T09:26:20.850+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Lucas_Pérez_502: 404
+[2025-10-29T09:26:21.449+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Carlos_Sánchez_518: 404
+[2025-10-29T09:26:22.131+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Grady_Diangana_539: 404
+[2025-10-29T09:26:23.360+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Joe_Powell_547: 404
+[2025-10-29T09:26:24.004+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Conor_Coventry_548: 404
+[2025-10-29T09:26:24.636+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Alexandre Nascimento_Costa Silva_560: 404
+[2025-10-29T09:26:25.330+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Samir_Nasri_569: 404
+[2025-10-29T09:26:25.961+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Ben_Johnson_605: 404
+[2025-10-29T09:26:26.679+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Nathan_Holland_611: 404
+[2025-10-29T09:26:27.585+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for John_Ruddy_421: 404
+[2025-10-29T09:26:28.361+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Will_Norris_422: 404
+[2025-10-29T09:26:29.071+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Willy_Boly_423: 404
+[2025-10-29T09:26:30.161+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Barry_Douglas_424: 404
+[2025-10-29T09:26:30.817+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Matt_Doherty_425: 404
+[2025-10-29T09:26:31.486+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Romain_Saïss_426: 404
+[2025-10-29T09:26:32.149+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Ryan_Bennett_427: 404
+[2025-10-29T09:26:33.331+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Danny_Batth_428: 404
+[2025-10-29T09:26:34.079+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Roderick Jefferson_Gonçalves Miranda_429: 404
+[2025-10-29T09:26:34.854+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Conor_Coady_430: 404
+[2025-10-29T09:26:35.446+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Rúben Gonçalo_Silva Nascimento Vinagre_431: 404
+[2025-10-29T09:26:36.132+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Diogo_Jota_432: 404
+[2025-10-29T09:26:36.758+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Rúben Diogo_da Silva Neves_433: 404
+[2025-10-29T09:26:37.358+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Ivan_Cavaleiro_434: 404
+[2025-10-29T09:26:38.119+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Hélder_Costa_435: 404
+[2025-10-29T09:26:38.717+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Bright_Enobakhare_436: 404
+[2025-10-29T09:26:39.484+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Raúl_Jiménez_437: 404
+[2025-10-29T09:26:40.368+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Bonatini Lohner Maia_Bonatini_438: 404
+[2025-10-29T09:26:41.556+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Morgan_Gibbs-White_448: 404
+[2025-10-29T09:26:43.058+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Rafa_Mir_449: 404
+[2025-10-29T09:26:44.603+0000] {fetch_api_data.py:97} WARNING - Failed to fetch data for Rui Pedro_dos Santos Patrício_454: 404
+[2025-10-29T09:37:17.480+0000] {logging_mixin.py:150} INFO - An Error Occured fetching data from : https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/master/data/2021-22/players/João Filipe Iria_Santos Moutinho_475/gw.csv -> ('Connection aborted.', OSError(0, 'Error'))
+[2025-10-29T09:37:17.482+0000] {python.py:183} INFO - Done. Returned value was: None
+[2025-10-29T09:37:17.528+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=fpl_gameweeks_etl, task_id=fetch_players_gw_task, map_index=3, execution_date=20251029T091906, start_date=20251029T091932, end_date=20251029T093717
+[2025-10-29T09:37:17.585+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2025-10-29T09:37:17.633+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -99,6 +99,7 @@ def fpl_fixtures_pipeline():
     def load_fixtures_task(fixtures):
         return load_fixtures(fixtures)
 
+    # DAG Dependency
     fixtures_fn = fetch_fixtures_task.expand(season=SEASONS)
     parsed_fixtures = parse_fixtures_task.expand(fixtures_data=fixtures_fn)
     load_fixtures_to_db = load_fixtures_task(parsed_fixtures)
@@ -113,5 +114,5 @@ def fpl_fixtures_pipeline():
         >> load_fixtures_to_db
     )
 
-
+# invoke the pipeline
 fpl_fixtures_pipeline()

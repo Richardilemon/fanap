@@ -1,0 +1,28 @@
+[2025-10-29T10:24:35.654+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fpl_gameweeks_etl.parse_gw_stats_table_task manual__2025-10-29T10:16:47.335875+00:00 [queued]>
+[2025-10-29T10:24:35.668+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fpl_gameweeks_etl.parse_gw_stats_table_task manual__2025-10-29T10:16:47.335875+00:00 [queued]>
+[2025-10-29T10:24:35.669+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2025-10-29T10:24:35.802+0000] {taskinstance.py:1327} INFO - Executing <Task(_PythonDecoratedOperator): parse_gw_stats_table_task> on 2025-10-29 10:16:47.335875+00:00
+[2025-10-29T10:24:35.809+0000] {standard_task_runner.py:57} INFO - Started process 11858 to run task
+[2025-10-29T10:24:35.813+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'fpl_gameweeks_etl', 'parse_gw_stats_table_task', 'manual__2025-10-29T10:16:47.335875+00:00', '--job-id', '914', '--raw', '--subdir', 'DAGS_FOLDER/fpl_gameweeks_dag.py', '--cfg-path', '/tmp/tmppqwzqayk']
+[2025-10-29T10:24:35.814+0000] {standard_task_runner.py:85} INFO - Job 914: Subtask parse_gw_stats_table_task
+[2025-10-29T10:24:35.905+0000] {task_command.py:410} INFO - Running <TaskInstance: fpl_gameweeks_etl.parse_gw_stats_table_task manual__2025-10-29T10:16:47.335875+00:00 [running]> on host dede24b5451e
+[2025-10-29T10:24:36.434+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='richardilemon' AIRFLOW_CTX_DAG_ID='fpl_gameweeks_etl' AIRFLOW_CTX_TASK_ID='parse_gw_stats_table_task' AIRFLOW_CTX_EXECUTION_DATE='2025-10-29T10:16:47.335875+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-29T10:16:47.335875+00:00'
+[2025-10-29T10:24:38.771+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/decorators/base.py", line 220, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 181, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 198, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/fpl_gameweeks_dag.py", line 128, in parse_gw_stats_table_task
+    return parse_gw_stats_table(gw_data, fixtures, players_folder)
+  File "/opt/airflow/scripts/load_player_gameweek_stats.py", line 82, in parse_gw_stats_table
+    team_code = match_team_code(fixtures, row["opponent_team"], row["kickoff_time"])
+  File "/opt/airflow/scripts/load_player_gameweek_stats.py", line 62, in match_team_code
+    fixture_time = datetime.strptime(row["kickoff_time"], "%Y-%m-%dT%H:%M:%SZ")
+TypeError: list indices must be integers or slices, not str
+[2025-10-29T10:24:38.786+0000] {taskinstance.py:1350} INFO - Marking task as UP_FOR_RETRY. dag_id=fpl_gameweeks_etl, task_id=parse_gw_stats_table_task, execution_date=20251029T101647, start_date=20251029T102435, end_date=20251029T102438
+[2025-10-29T10:24:38.808+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 914 for task parse_gw_stats_table_task (list indices must be integers or slices, not str; 11858)
+[2025-10-29T10:24:38.838+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2025-10-29T10:24:38.880+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

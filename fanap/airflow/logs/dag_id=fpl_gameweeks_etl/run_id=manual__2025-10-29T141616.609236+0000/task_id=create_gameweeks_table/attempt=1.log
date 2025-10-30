@@ -1,0 +1,30 @@
+[2025-10-29T14:16:18.410+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fpl_gameweeks_etl.create_gameweeks_table manual__2025-10-29T14:16:16.609236+00:00 [queued]>
+[2025-10-29T14:16:18.434+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fpl_gameweeks_etl.create_gameweeks_table manual__2025-10-29T14:16:16.609236+00:00 [queued]>
+[2025-10-29T14:16:18.435+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2025-10-29T14:16:18.482+0000] {taskinstance.py:1327} INFO - Executing <Task(PostgresOperator): create_gameweeks_table> on 2025-10-29 14:16:16.609236+00:00
+[2025-10-29T14:16:18.497+0000] {standard_task_runner.py:57} INFO - Started process 16686 to run task
+[2025-10-29T14:16:18.514+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'fpl_gameweeks_etl', 'create_gameweeks_table', 'manual__2025-10-29T14:16:16.609236+00:00', '--job-id', '1085', '--raw', '--subdir', 'DAGS_FOLDER/fpl_gameweeks_dag.py', '--cfg-path', '/tmp/tmp2xcvm1nl']
+[2025-10-29T14:16:18.519+0000] {standard_task_runner.py:85} INFO - Job 1085: Subtask create_gameweeks_table
+[2025-10-29T14:16:19.066+0000] {task_command.py:410} INFO - Running <TaskInstance: fpl_gameweeks_etl.create_gameweeks_table manual__2025-10-29T14:16:16.609236+00:00 [running]> on host dede24b5451e
+[2025-10-29T14:16:19.397+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='richardilemon' AIRFLOW_CTX_DAG_ID='fpl_gameweeks_etl' AIRFLOW_CTX_TASK_ID='create_gameweeks_table' AIRFLOW_CTX_EXECUTION_DATE='2025-10-29T14:16:16.609236+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-29T14:16:16.609236+00:00'
+[2025-10-29T14:16:19.399+0000] {sql.py:265} INFO - Executing: 
+            CREATE TABLE IF NOT EXISTS game_weeks (
+                season TEXT,
+                gameweek INTEGER,
+                deadline TIMESTAMP,
+                PRIMARY KEY (season, gameweek)
+            );
+        
+[2025-10-29T14:16:19.438+0000] {base.py:73} INFO - Using connection ID 'fpl_db_conn' for task execution.
+[2025-10-29T14:16:19.567+0000] {base.py:73} INFO - Using connection ID 'fpl_db_conn' for task execution.
+[2025-10-29T14:16:19.582+0000] {sql.py:375} INFO - Running statement: 
+            CREATE TABLE IF NOT EXISTS game_weeks (
+                season TEXT,
+                gameweek INTEGER,
+                deadline TIMESTAMP,
+                PRIMARY KEY (season, gameweek)
+            );
+        , parameters: None
+[2025-10-29T14:16:19.603+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=fpl_gameweeks_etl, task_id=create_gameweeks_table, execution_date=20251029T141616, start_date=20251029T141618, end_date=20251029T141619
+[2025-10-29T14:16:19.641+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2025-10-29T14:16:19.856+0000] {taskinstance.py:2653} INFO - 7 downstream tasks scheduled from follow-on schedule check

@@ -6,6 +6,42 @@ from scripts.utils.infer_season import infer_season
 
 
 def parse_fixtures(csv_text):
+    """
+    Parse fixture data from a CSV text object into a structured list of tuples.
+
+    This function processes fixture-related CSV data (as returned by an API or a file),
+    infers the season based on the kickoff time, safely handles missing or malformed values,
+    and returns a list of tuples ready for database insertion.
+
+    Parameters
+    ----------
+    csv_text : dict
+        A dictionary expected to contain a `"csv"` key with the CSV data as a string.
+        Example: {"csv": "<CSV string content>"}
+
+    Returns
+    -------
+    list of tuple
+        A list where each tuple represents a fixture record with the following structure:
+        (
+            code : int,
+            season : str,
+            gameweek : int or None,
+            kickoff_time : datetime or None,
+            team_h : int,
+            team_a : int,
+            team_h_score : int or None,
+            team_a_score : int or None,
+            team_h_difficulty : int or None,
+            team_a_difficulty : int or None
+        )
+
+    Notes
+    -----
+    - Skips rows without valid data.
+    - Uses `infer_season()` to determine the season from kickoff date.
+    - Gracefully handles missing, empty, or float values in numeric fields.
+    """
     if not csv_text:
         print("⚠️ Skipping : No CSV data.")
         return []
@@ -50,6 +86,7 @@ def parse_fixtures(csv_text):
         team_a_difficulty = (
             int(row["team_a_difficulty"]) if row["team_a_difficulty"] else None
         )
+        
 
         print(
             f"Season -> {type(season)}, code -> {type(code)}, gameweek -> {type(gameweek)}, "
@@ -63,7 +100,7 @@ def parse_fixtures(csv_text):
                 code,
                 season,
                 gameweek,
-                kickoff_time,
+                row["kickoff_time"],
                 team_h,
                 team_a,
                 team_h_score,
@@ -78,6 +115,30 @@ def parse_fixtures(csv_text):
 
 @db_connection_wrapper
 def load_fixtures(connection, fixtures):
+
+    """
+    Insert or update fixture data in the PostgreSQL database.
+
+    This function inserts parsed fixture records into the `fixtures` table,
+    updating any existing rows with matching `code` values to ensure data consistency.
+
+    Parameters
+    ----------
+    connection : PostgresHook
+        Active PostgreSQL database connection provided by the `db_connection_wrapper` decorator.
+    fixtures : list of list of tuple
+        List containing lists of fixture tuples as returned by `parse_fixtures()`.
+
+    Returns
+    -------
+    None
+        Commits all changes to the database and prints a success message upon completion.
+
+    Notes
+    -----
+    - Uses an UPSERT pattern with `ON CONFLICT (code)` to prevent duplicate records.
+    - Ignores empty fixture lists safely.
+    """
     if not fixtures:
         return
     cursor = connection.cursor()
