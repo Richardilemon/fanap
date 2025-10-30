@@ -65,8 +65,7 @@ def fpl_gameweeks_etl():
                 season TEXT,
                 gameweek INTEGER,
                 player_name TEXT,
-                # team_code INTEGER,
-                fixture INTEGER,
+                fixture_id INTEGER,
                 opponent_team INTEGER,
                 goals_scored INTEGER,
                 assists INTEGER,
@@ -117,17 +116,17 @@ def fpl_gameweeks_etl():
     def parse_players_seasons_stats(players_gw_stats):
         return parse_players_seasons(players_gw_stats)
 
-    @task()
-    def fetch_fixtures_task(season):
-        return fetch_data_from_api(season)
+    # @task()
+    # def fetch_fixtures_task(season):
+    #     return fetch_data_from_api(season)
+
+    # @task()
+    # def parse_fixtures_task(fixtures_data):
+    #     return parse_fixtures(fixtures_data)
 
     @task()
-    def parse_fixtures_task(fixtures_data):
-        return parse_fixtures(fixtures_data)
-
-    @task()
-    def parse_gw_stats_table_task(gw_data, fixtures):
-        return parse_gw_stats_table(gw_data, fixtures)
+    def parse_gw_stats_table_task(gw_data):
+        return parse_gw_stats_table(gw_data)
 
     @task()
     def load_player_gameweek_stats_task(records):
@@ -159,12 +158,12 @@ def fpl_gameweeks_etl():
         season=SEASONS
     )  # NOTE: ONLY THE 2018-19 SEASON DATA (for Players) IS FULLY AVAILABLE ON THE API PROVIDED, AND SOME ACROSS THE OTHER SEASONS.
 
-    fixtures_fn = fetch_fixtures_task.expand(season=SEASONS)
+    # fixtures_fn = fetch_fixtures_task.expand(season=SEASONS)
     # get_match_code = match_code_task(fixtures_fn)
-    parsed_fixtures = parse_fixtures_task.expand(fixtures_data=fixtures_fn)
+    # parsed_fixtures = parse_fixtures_task.expand(fixtures_data=fixtures_fn)
 
     parse_gw_stats_table_task_fn = parse_gw_stats_table_task(
-        fetch_players_gw_fn, parsed_fixtures
+        fetch_players_gw_fn
     )
 
     # parse_gw_stats_table_task_fn = parse_gw_stats_table_task(

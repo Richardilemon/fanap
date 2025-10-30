@@ -1,0 +1,637 @@
+[2025-10-30T15:55:09.000+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fpl_gameweeks_etl.fetch_players_gw_task manual__2025-10-30T15:54:48.225883+00:00 map_index=5 [queued]>
+[2025-10-30T15:55:09.026+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fpl_gameweeks_etl.fetch_players_gw_task manual__2025-10-30T15:54:48.225883+00:00 map_index=5 [queued]>
+[2025-10-30T15:55:09.026+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2025-10-30T15:55:09.385+0000] {taskinstance.py:1327} INFO - Executing <Mapped(_PythonDecoratedOperator): fetch_players_gw_task> on 2025-10-30 15:54:48.225883+00:00
+[2025-10-30T15:55:09.403+0000] {standard_task_runner.py:57} INFO - Started process 4118 to run task
+[2025-10-30T15:55:09.414+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'fpl_gameweeks_etl', 'fetch_players_gw_task', 'manual__2025-10-30T15:54:48.225883+00:00', '--job-id', '2795', '--raw', '--subdir', 'DAGS_FOLDER/fpl_gameweeks_dag.py', '--cfg-path', '/tmp/tmpsovh3e25', '--map-index', '5']
+[2025-10-30T15:55:09.416+0000] {standard_task_runner.py:85} INFO - Job 2795: Subtask fetch_players_gw_task
+[2025-10-30T15:55:09.560+0000] {task_command.py:410} INFO - Running <TaskInstance: fpl_gameweeks_etl.fetch_players_gw_task manual__2025-10-30T15:54:48.225883+00:00 map_index=5 [running]> on host 83097c7e7881
+[2025-10-30T15:55:09.832+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='richardilemon' AIRFLOW_CTX_DAG_ID='fpl_gameweeks_etl' AIRFLOW_CTX_TASK_ID='fetch_players_gw_task' AIRFLOW_CTX_EXECUTION_DATE='2025-10-30T15:54:48.225883+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-30T15:54:48.225883+00:00'
+[2025-10-30T15:55:10.840+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Petr_Cech_1: 404
+[2025-10-30T15:55:11.452+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Bernd_Leno_2: 404
+[2025-10-30T15:55:12.040+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Laurent_Koscielny_3: 404
+[2025-10-30T15:55:12.624+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Héctor_Bellerín_4: 404
+[2025-10-30T15:55:13.298+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Nacho_Monreal_5: 404
+[2025-10-30T15:55:13.927+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Rob_Holding_6: 404
+[2025-10-30T15:55:14.523+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Shkodran_Mustafi_7: 404
+[2025-10-30T15:55:15.099+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Sead_Kolasinac_8: 404
+[2025-10-30T15:55:15.686+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Konstantinos_Mavropanos_10: 404
+[2025-10-30T15:55:16.330+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Stephan_Lichtsteiner_11: 404
+[2025-10-30T15:55:16.992+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Sokratis_Papastathopoulos_12: 404
+[2025-10-30T15:55:17.635+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Mesut_Özil_13: 404
+[2025-10-30T15:55:18.211+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Aaron_Ramsey_14: 404
+[2025-10-30T15:55:18.806+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Alex_Iwobi_15: 404
+[2025-10-30T15:55:19.411+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Mohamed_Elneny_16: 404
+[2025-10-30T15:55:20.016+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Granit_Xhaka_17: 404
+[2025-10-30T15:55:20.641+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Henrikh_Mkhitaryan_18: 404
+[2025-10-30T15:55:21.295+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Reiss_Nelson_19: 404
+[2025-10-30T15:55:21.947+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Ainsley_Maitland-Niles_20: 404
+[2025-10-30T15:55:22.566+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Danny_Welbeck_21: 404
+[2025-10-30T15:55:23.175+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Alexandre_Lacazette_22: 404
+[2025-10-30T15:55:23.770+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Pierre-Emerick_Aubameyang_23: 404
+[2025-10-30T15:55:24.425+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Lucas_Torreira_450: 404
+[2025-10-30T15:55:25.090+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Matteo_Guendouzi_451: 404
+[2025-10-30T15:55:25.729+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Emiliano_Martínez_542: 404
+[2025-10-30T15:55:26.380+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Emile_Smith-Rowe_545: 404
+[2025-10-30T15:55:26.995+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Zech_Medley_546: 404
+[2025-10-30T15:55:27.588+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Edward_Nketiah_552: 404
+[2025-10-30T15:55:28.173+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Bukayo_Saka_563: 404
+[2025-10-30T15:55:28.737+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Joseph_Willock_566: 404
+[2025-10-30T15:55:29.341+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Carl_Jenkinson_581: 404
+[2025-10-30T15:55:29.897+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Denis_Suárez_586: 404
+[2025-10-30T15:55:30.472+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Asmir_Begovic_24: 404
+[2025-10-30T15:55:31.153+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Artur_Boruc_25: 404
+[2025-10-30T15:55:38.827+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Simon_Francis_26: 404
+[2025-10-30T15:55:42.766+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Steve_Cook_27: 404
+[2025-10-30T15:55:43.376+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Charlie_Daniels_28: 404
+[2025-10-30T15:55:43.967+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Adam_Smith_29: 404
+[2025-10-30T15:55:44.699+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Tyrone_Mings_30: 404
+[2025-10-30T15:55:45.628+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Nathan_Aké_31: 404
+[2025-10-30T15:55:51.373+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Jack_Simpson_32: 404
+[2025-10-30T15:55:51.976+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Marc_Pugh_34: 404
+[2025-10-30T15:55:52.630+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Andrew_Surman_35: 404
+[2025-10-30T15:55:53.262+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Junior_Stanislas_36: 404
+[2025-10-30T15:55:53.821+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Dan_Gosling_37: 404
+[2025-10-30T15:55:54.489+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Jordon_Ibe_38: 404
+[2025-10-30T15:55:55.154+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Lewis_Cook_39: 404
+[2025-10-30T15:55:55.742+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Ryan_Fraser_40: 404
+[2025-10-30T15:55:56.304+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Emerson_Hyndman_41: 404
+[2025-10-30T15:55:56.849+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for David_Brooks_42: 404
+[2025-10-30T15:55:57.414+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Callum_Wilson_43: 404
+[2025-10-30T15:55:58.002+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Lys_Mousset_44: 404
+[2025-10-30T15:55:58.638+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Joshua_King_45: 404
+[2025-10-30T15:55:59.286+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Jermain_Defoe_46: 404
+[2025-10-30T15:55:59.877+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Nathaniel_Clyne_241: 404
+[2025-10-30T15:56:00.466+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Dominic_Solanke_259: 404
+[2025-10-30T15:56:01.186+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Diego_Rico_473: 404
+[2025-10-30T15:56:01.733+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Jefferson_Lerma_494: 404
+[2025-10-30T15:56:02.333+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Chris_Mepham_580: 404
+[2025-10-30T15:56:02.935+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Sam_Surridge_599: 404
+[2025-10-30T15:56:03.605+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Kyle_Taylor_600: 404
+[2025-10-30T15:56:08.827+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Nnamdi_Ofoborh_613: 404
+[2025-10-30T15:56:13.469+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Mark_Travers_616: 404
+[2025-10-30T15:56:15.730+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Matt_Butcher_620: 404
+[2025-10-30T15:56:16.473+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Mathew_Ryan_47: 404
+[2025-10-30T15:56:17.060+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Lewis_Dunk_48: 404
+[2025-10-30T15:56:17.686+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Shane_Duffy_49: 404
+[2025-10-30T15:56:18.310+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Bruno_Saltor Grau_50: 404
+[2025-10-30T15:56:18.940+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Gaëtan_Bong_51: 404
+[2025-10-30T15:56:19.516+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Markus_Suttner_52: 404
+[2025-10-30T15:56:20.157+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Ezequiel_Schelotto_53: 404
+[2025-10-30T15:56:20.898+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Leon_Balogun_54: 404
+[2025-10-30T15:56:23.659+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Anthony_Knockaert_55: 404
+[2025-10-30T15:56:32.762+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Dale_Stephens_56: 404
+[2025-10-30T15:56:37.241+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Beram_Kayal_57: 404
+[2025-10-30T15:56:37.863+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Solomon_March_58: 404
+[2025-10-30T15:56:39.601+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Pascal_Groß_59: 404
+[2025-10-30T15:56:40.594+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Davy_Pröpper_60: 404
+[2025-10-30T15:56:41.185+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for José Heriberto_Izquierdo Mena_61: 404
+[2025-10-30T15:56:41.821+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Glenn_Murray_62: 404
+[2025-10-30T15:56:42.510+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Tomer_Hemed_63: 404
+[2025-10-30T15:56:43.127+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Sam_Baldock_64: 404
+[2025-10-30T15:56:43.787+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Jürgen_Locadia_65: 404
+[2025-10-30T15:56:44.369+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Florin_Andone_66: 404
+[2025-10-30T15:56:45.006+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for David_Button_179: 404
+[2025-10-30T15:56:45.622+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Jason_Steele_439: 404
+[2025-10-30T15:56:46.233+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Bernardo_Fernandes da Silva Junior_440: 404
+[2025-10-30T15:56:47.026+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Yves_Bissouma_466: 404
+[2025-10-30T15:56:49.800+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Alireza_Jahanbakhsh_476: 404
+[2025-10-30T15:56:50.448+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Martín_Montoya_503: 404
+[2025-10-30T15:56:51.022+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Viktor_Gyokeres_551: 404
+[2025-10-30T15:56:51.652+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Ben_White_559: 404
+[2025-10-30T15:56:52.267+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Max_Sanders_572: 404
+[2025-10-30T15:56:52.868+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Dan_Burn_582: 404
+[2025-10-30T15:56:53.472+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Jayson_Molumby_617: 404
+[2025-10-30T15:56:54.653+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Tom_Heaton_67: 404
+[2025-10-30T15:56:55.209+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Nick_Pope_68: 404
+[2025-10-30T15:56:55.838+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Matthew_Lowton_69: 404
+[2025-10-30T15:56:56.416+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Ben_Mee_70: 404
+[2025-10-30T15:56:57.030+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Stephen_Ward_71: 404
+[2025-10-30T15:56:57.656+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for James_Tarkowski_72: 404
+[2025-10-30T15:56:58.257+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Kevin_Long_73: 404
+[2025-10-30T15:56:58.900+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Charlie_Taylor_74: 404
+[2025-10-30T15:56:59.513+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Phil_Bardsley_75: 404
+[2025-10-30T15:57:00.115+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Johann Berg_Gudmundsson_76: 404
+[2025-10-30T15:57:00.789+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Steven_Defour_77: 404
+[2025-10-30T15:57:01.396+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Jeff_Hendrick_78: 404
+[2025-10-30T15:57:02.068+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Robbie_Brady_79: 404
+[2025-10-30T15:57:02.851+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Ashley_Westwood_80: 404
+[2025-10-30T15:57:03.470+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Jonathan_Walters_81: 404
+[2025-10-30T15:57:04.524+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Jack_Cork_82: 404
+[2025-10-30T15:57:05.174+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Aaron_Lennon_83: 404
+[2025-10-30T15:57:05.782+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Sam_Vokes_84: 404
+[2025-10-30T15:57:06.445+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Ashley_Barnes_85: 404
+[2025-10-30T15:57:07.720+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Nahki_Wells_86: 404
+[2025-10-30T15:57:08.309+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Chris_Wood_87: 404
+[2025-10-30T15:57:08.915+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Anders_Lindegaard_485: 404
+[2025-10-30T15:57:09.486+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Joe_Hart_490: 404
+[2025-10-30T15:57:10.061+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Ben_Gibson_491: 404
+[2025-10-30T15:57:10.672+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Matej_Vydra_495: 404
+[2025-10-30T15:57:11.342+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Dwight_McNeil_534: 404
+[2025-10-30T15:57:11.933+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Abd-Al-Ali Morakinyo Olaposi_Koiki_564: 404
+[2025-10-30T15:57:12.576+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Josh_Benson_583: 404
+[2025-10-30T15:57:13.226+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Peter_Crouch_590: 404
+[2025-10-30T15:57:13.809+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Anthony_Driscoll-Glennon_615: 404
+[2025-10-30T15:57:14.462+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Harry_Arter_33: 404
+[2025-10-30T15:57:15.191+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Neil_Etheridge_88: 404
+[2025-10-30T15:57:15.796+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Alex_Smithies_89: 404
+[2025-10-30T15:57:16.476+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Sean_Morrison_90: 404
+[2025-10-30T15:57:17.019+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Sol_Bamba_91: 404
+[2025-10-30T15:57:17.645+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Bruno_Ecuele Manga_92: 404
+[2025-10-30T15:57:18.261+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Matthew_Connolly_93: 404
+[2025-10-30T15:57:19.080+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Joe_Bennett_94: 404
+[2025-10-30T15:57:22.808+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Lee_Peltier_95: 404
+[2025-10-30T15:57:23.438+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Ashley Darel Jazz_Richards_96: 404
+[2025-10-30T15:57:24.036+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Greg_Halford_97: 404
+[2025-10-30T15:57:24.676+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Joe_Ralls_98: 404
+[2025-10-30T15:57:25.337+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for David Junior_Hoilett_99: 404
+[2025-10-30T15:57:25.914+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Nathaniel_Mendez-Laing_100: 404
+[2025-10-30T15:57:26.540+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Callum_Paterson_101: 404
+[2025-10-30T15:57:27.194+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Aron_Gunnarsson_102: 404
+[2025-10-30T15:57:27.784+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Anthony_Pilkington_103: 404
+[2025-10-30T15:57:28.472+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Loïc_Damour_104: 404
+[2025-10-30T15:57:29.067+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Danny_Ward_105: 404
+[2025-10-30T15:57:29.730+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Josh_Murphy_106: 404
+[2025-10-30T15:57:42.137+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Kenneth_Zohore_107: 404
+[2025-10-30T15:57:42.782+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Omar_Bogle_108: 404
+[2025-10-30T15:57:43.378+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Gary_Madine_109: 404
+[2025-10-30T15:57:43.980+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Bobby_Reid_110: 404
+[2025-10-30T15:57:44.653+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Oumar_Niasse_176: 404
+[2025-10-30T15:57:45.270+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Greg_Cunninghamm_467: 404
+[2025-10-30T15:57:45.878+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Víctor_Camarasa_504: 404
+[2025-10-30T15:57:46.498+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Kadeem_Harris_535: 404
+[2025-10-30T15:57:47.201+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Brian_Murphy_537: 404
+[2025-10-30T15:57:47.848+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Rhys_Healey_573: 404
+[2025-10-30T15:57:48.484+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Leandro_Bacuna_589: 404
+[2025-10-30T15:57:49.471+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Thibaut_Courtois_111: 404
+[2025-10-30T15:57:50.128+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Willy_Caballero_112: 404
+[2025-10-30T15:57:50.812+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for César_Azpilicueta_113: 404
+[2025-10-30T15:57:51.976+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Gary_Cahill_114: 404
+[2025-10-30T15:57:52.588+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Marcos_Alonso_115: 404
+[2025-10-30T15:57:53.256+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for David_Luiz Moreira Marinho_116: 404
+[2025-10-30T15:57:53.842+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Victor_Moses_117: 404
+[2025-10-30T15:57:54.479+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Antonio_Rüdiger_118: 404
+[2025-10-30T15:57:55.112+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Andreas_Christensen_119: 404
+[2025-10-30T15:57:55.732+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Davide_Zappacosta_120: 404
+[2025-10-30T15:57:56.305+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Emerson_Palmieri dos Santos_121: 404
+[2025-10-30T15:57:56.899+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Eden_Hazard_122: 404
+[2025-10-30T15:57:57.555+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Cesc_Fàbregas_123: 404
+[2025-10-30T15:57:58.206+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Willian_Borges Da Silva_124: 404
+[2025-10-30T15:57:58.803+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Pedro_Rodríguez Ledesma_125: 404
+[2025-10-30T15:57:59.436+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for N'Golo_Kanté_126: 404
+[2025-10-30T15:58:00.013+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Ross_Barkley_127: 404
+[2025-10-30T15:58:00.654+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Daniel_Drinkwater_128: 404
+[2025-10-30T15:58:01.300+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Tiemoué_Bakayoko_129: 404
+[2025-10-30T15:58:01.984+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Ethan_Ampadu_130: 404
+[2025-10-30T15:58:02.618+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Callum_Hudson-Odoi_131: 404
+[2025-10-30T15:58:03.225+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Ruben_Loftus-Cheek_132: 404
+[2025-10-30T15:58:03.912+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Olivier_Giroud_133: 404
+[2025-10-30T15:58:04.610+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Álvaro_Morata_134: 404
+[2025-10-30T15:58:05.191+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Jorge Luiz_Frello Filho_459: 404
+[2025-10-30T15:58:05.833+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Tammy_Abraham_496: 404
+[2025-10-30T15:58:06.527+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Kepa_Arrizabalaga_498: 404
+[2025-10-30T15:58:07.329+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Mateo_Kovacic_499: 404
+[2025-10-30T15:58:08.036+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Gonzalo_Higuaín_579: 404
+[2025-10-30T15:58:08.596+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Addji Keaninkin Marc-Israel_Guehi_624: 404
+[2025-10-30T15:58:09.218+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Wayne_Hennessey_135: 404
+[2025-10-30T15:58:09.815+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Julian_Speroni_136: 404
+[2025-10-30T15:58:10.463+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Vicente_Guaita_137: 404
+[2025-10-30T15:58:11.131+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for James_Tomkins_138: 404
+[2025-10-30T15:58:12.236+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Scott_Dann_139: 404
+[2025-10-30T15:58:12.978+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Martin_Kelly_140: 404
+[2025-10-30T15:58:23.923+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Jeffrey_Schlupp_141: 404
+[2025-10-30T15:58:30.036+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Patrick_van Aanholt_142: 404
+[2025-10-30T15:58:30.652+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Mamadou_Sakho_143: 404
+[2025-10-30T15:58:31.314+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Jairo_Riedewald_144: 404
+[2025-10-30T15:58:31.948+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Aaron_Wan-Bissaka_145: 404
+[2025-10-30T15:58:32.551+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for James_McArthur_147: 404
+[2025-10-30T15:58:33.174+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Bakary_Sako_148: 404
+[2025-10-30T15:58:33.777+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Andros_Townsend_149: 404
+[2025-10-30T15:58:34.372+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Luka_Milivojevic_150: 404
+[2025-10-30T15:58:34.975+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Wilfried_Zaha_151: 404
+[2025-10-30T15:58:35.577+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Christian_Benteke_152: 404
+[2025-10-30T15:58:36.192+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Alexander_Sørloth_153: 404
+[2025-10-30T15:58:36.883+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Cheikhou_Kouyaté_412: 404
+[2025-10-30T15:58:37.470+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Joel_Ward_441: 404
+[2025-10-30T15:58:38.136+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Jaroslaw_Jach_442: 404
+[2025-10-30T15:58:38.877+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Pape_Souaré_443: 404
+[2025-10-30T15:58:39.512+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Connor_Wickham_444: 404
+[2025-10-30T15:58:40.110+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Sullay_Kaikai_477: 404
+[2025-10-30T15:58:40.693+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Max_Meyer_486: 404
+[2025-10-30T15:58:41.289+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Jordan_Ayew_505: 404
+[2025-10-30T15:58:41.882+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Joe_Tupper_576: 404
+[2025-10-30T15:58:42.483+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Lucas_Perri_584: 404
+[2025-10-30T15:58:43.133+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Michy_Batshuayi_592: 404
+[2025-10-30T15:58:43.809+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Sam_Woods_609: 404
+[2025-10-30T15:58:44.506+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Luke_Dreher_618: 404
+[2025-10-30T15:58:45.155+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Nikola_Tavares_619: 404
+[2025-10-30T15:58:45.802+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Jordan_Pickford_154: 404
+[2025-10-30T15:58:46.519+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Maarten_Stekelenburg_155: 404
+[2025-10-30T15:58:47.154+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Leighton_Baines_156: 404
+[2025-10-30T15:58:47.706+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Seamus_Coleman_157: 404
+[2025-10-30T15:58:48.256+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Phil_Jagielka_158: 404
+[2025-10-30T15:58:48.843+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Ashley_Williams_159: 404
+[2025-10-30T15:58:49.435+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Mason_Holgate_160: 404
+[2025-10-30T15:58:50.032+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Jonjoe_Kenny_161: 404
+[2025-10-30T15:58:50.617+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Michael_Keane_162: 404
+[2025-10-30T15:58:51.207+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Cuco_Martina_163: 404
+[2025-10-30T15:58:51.861+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Theo_Walcott_164: 404
+[2025-10-30T15:58:52.468+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Yannick_Bolasie_165: 404
+[2025-10-30T15:58:53.122+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for James_McCarthy_166: 404
+[2025-10-30T15:58:53.711+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Morgan_Schneiderlin_167: 404
+[2025-10-30T15:58:54.302+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Idrissa_Gueye_168: 404
+[2025-10-30T15:58:54.883+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Tom_Davies_169: 404
+[2025-10-30T15:58:55.495+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Ademola_Lookman_170: 404
+[2025-10-30T15:58:56.077+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Davy_Klaassen_171: 404
+[2025-10-30T15:58:56.709+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Gylfi_Sigurdsson_172: 404
+[2025-10-30T15:58:57.328+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Nikola_Vlasic_173: 404
+[2025-10-30T15:58:57.980+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Beni_Baningime_174: 404
+[2025-10-30T15:58:58.571+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Dominic_Calvert-Lewin_175: 404
+[2025-10-30T15:58:59.187+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Cenk_Tosun_177: 404
+[2025-10-30T15:58:59.768+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Richarlison_de Andrade_393: 404
+[2025-10-30T15:59:00.388+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Kevin_Mirallas_469: 404
+[2025-10-30T15:59:01.029+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Sandro_Ramírez_470: 404
+[2025-10-30T15:59:01.630+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Lucas_Digne_484: 404
+[2025-10-30T15:59:02.243+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Yerry_Mina_506: 404
+[2025-10-30T15:59:02.871+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Bernard_Anício Caldeira Duarte_507: 404
+[2025-10-30T15:59:03.499+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for André Filipe_Tavares Gomes_508: 404
+[2025-10-30T15:59:04.095+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Kurt_Zouma_526: 404
+[2025-10-30T15:59:04.701+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Kieran_Dowell_528: 404
+[2025-10-30T15:59:05.352+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Tyias_Browning_532: 404
+[2025-10-30T15:59:05.973+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Calum_Chambers_9: 404
+[2025-10-30T15:59:06.629+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Marcus_Bettinelli_178: 404
+[2025-10-30T15:59:07.264+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Tim_Ream_180: 404
+[2025-10-30T15:59:07.816+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Denis_Odoi_181: 404
+[2025-10-30T15:59:08.417+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Tom_Cairney_182: 404
+[2025-10-30T15:59:09.093+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Kevin_McDonald_183: 404
+[2025-10-30T15:59:09.684+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Ryan_Sessegnon_184: 404
+[2025-10-30T15:59:10.315+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Stefan_Johansen_185: 404
+[2025-10-30T15:59:11.004+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Floyd_Ayité_186: 404
+[2025-10-30T15:59:11.633+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Neeskens_Kebano_187: 404
+[2025-10-30T15:59:12.289+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Rui Pedro_da Rocha Fonte_188: 404
+[2025-10-30T15:59:12.953+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Aboubakar_Kamara_189: 404
+[2025-10-30T15:59:13.676+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Maxime_Le Marchand_455: 404
+[2025-10-30T15:59:14.307+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Jean Michael_Seri_456: 404
+[2025-10-30T15:59:14.913+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Cyrus_Christie_460: 404
+[2025-10-30T15:59:15.541+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Fabricio_Agosto Ramírez_474: 404
+[2025-10-30T15:59:16.203+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for André_Schürrle_478: 404
+[2025-10-30T15:59:16.809+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Aleksandar_Mitrovic_480: 404
+[2025-10-30T15:59:17.415+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Alfie_Mawson_487: 404
+[2025-10-30T15:59:18.014+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Sergio_Rico_509: 404
+[2025-10-30T15:59:18.600+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Joe_Bryan_510: 404
+[2025-10-30T15:59:19.171+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Timothy_Fosu-Mensah_511: 404
+[2025-10-30T15:59:19.777+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for André-Frank_Zambo Anguissa_512: 404
+[2025-10-30T15:59:20.430+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Luciano_Vietto_513: 404
+[2025-10-30T15:59:21.069+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Ibrahima_Cissé_521: 404
+[2025-10-30T15:59:21.742+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Zeze Steven_Sessegnon_541: 404
+[2025-10-30T15:59:22.287+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Ryan_Babel_575: 404
+[2025-10-30T15:59:22.957+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Håvard_Nordtveit_593: 404
+[2025-10-30T15:59:23.590+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Lazar_Markovic_594: 404
+[2025-10-30T15:59:24.253+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Harvey_Elliott_610: 404
+[2025-10-30T15:59:24.884+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Luca_De La Torre_621: 404
+[2025-10-30T15:59:25.550+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Jason_Puncheon_146: 404
+[2025-10-30T15:59:26.202+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Ben_Hamer_190: 404
+[2025-10-30T15:59:26.868+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Jonas_Lössl_191: 404
+[2025-10-30T15:59:27.489+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Christopher_Schindler_192: 404
+[2025-10-30T15:59:28.088+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Chris_Löwe_193: 404
+[2025-10-30T15:59:28.712+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Tommy_Smith_194: 404
+[2025-10-30T15:59:29.348+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Mathias_Jorgensen_195: 404
+[2025-10-30T15:59:29.952+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Scott_Malone_196: 404
+[2025-10-30T15:59:30.566+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Florent_Hadergjonaj_197: 404
+[2025-10-30T15:59:31.177+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Terence_Kongolo_198: 404
+[2025-10-30T15:59:31.768+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Aaron_Mooy_199: 404
+[2025-10-30T15:59:32.352+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Rajiv_van La Parra_200: 404
+[2025-10-30T15:59:32.946+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Jonathan_Hogg_201: 404
+[2025-10-30T15:59:33.509+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Philip_Billing_202: 404
+[2025-10-30T15:59:34.089+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Tom_Ince_203: 404
+[2025-10-30T15:59:34.687+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Danny_Williams_204: 404
+[2025-10-30T15:59:35.265+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Abdelhamid_Sabiri_205: 404
+[2025-10-30T15:59:35.988+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Alex_Pritchard_206: 404
+[2025-10-30T15:59:36.580+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Ramadan_Sobhi_207: 404
+[2025-10-30T15:59:37.178+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Juninho_Bacuna_208: 404
+[2025-10-30T15:59:37.774+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Collin_Quaner_209: 404
+[2025-10-30T15:59:38.415+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Laurent_Depoitre_210: 404
+[2025-10-30T15:59:39.035+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Steve_Mounie_211: 404
+[2025-10-30T15:59:39.686+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Elias_Kachunga_212: 404
+[2025-10-30T15:59:40.253+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Erik_Durm_461: 404
+[2025-10-30T15:59:40.860+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Adama_Diakhaby_471: 404
+[2025-10-30T15:59:41.522+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Isaac_Mbenza_514: 404
+[2025-10-30T15:59:42.199+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Jon Gorenc_Stankovic_522: 404
+[2025-10-30T15:59:42.814+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Ryan_Schofield_533: 404
+[2025-10-30T15:59:43.423+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Karlan_Grant_585: 404
+[2025-10-30T15:59:44.016+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Joel_Coleman_598: 404
+[2025-10-30T15:59:44.620+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Demeaco_Duhaney_601: 404
+[2025-10-30T15:59:45.239+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Matthew_Daly_606: 404
+[2025-10-30T15:59:45.848+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Aaron_Rowe_607: 404
+[2025-10-30T15:59:46.470+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Kasper_Schmeichel_213: 404
+[2025-10-30T15:59:47.127+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Eldin_Jakupovic_214: 404
+[2025-10-30T15:59:47.739+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Wes_Morgan_215: 404
+[2025-10-30T15:59:48.340+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Christian_Fuchs_216: 404
+[2025-10-30T15:59:49.084+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Danny_Simpson_217: 404
+[2025-10-30T15:59:49.690+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Yohan_Benalouane_218: 404
+[2025-10-30T15:59:50.412+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Benjamin_Chilwell_219: 404
+[2025-10-30T15:59:51.030+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Harry_Maguire_220: 404
+[2025-10-30T15:59:51.673+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Ricardo Domingos_Barbosa Pereira_221: 404
+[2025-10-30T15:59:52.262+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Jonny_Evans_222: 404
+[2025-10-30T15:59:52.894+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Marc_Albrighton_224: 404
+[2025-10-30T15:59:53.506+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Demarai_Gray_225: 404
+[2025-10-30T15:59:54.085+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Daniel_Amartey_226: 404
+[2025-10-30T15:59:54.723+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Wilfred_Ndidi_227: 404
+[2025-10-30T15:59:55.347+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Vicente_Iborra_228: 404
+[2025-10-30T15:59:55.996+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Matty_James_229: 404
+[2025-10-30T15:59:56.577+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Hamza_Choudhury_230: 404
+[2025-10-30T15:59:57.179+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Adrien Sebastian_Perruchet Silva_231: 404
+[2025-10-30T15:59:57.766+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Fousseni_Diabaté_232: 404
+[2025-10-30T15:59:58.401+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for James_Maddison_233: 404
+[2025-10-30T15:59:59.139+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Jamie_Vardy_234: 404
+[2025-10-30T16:00:00.798+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Shinji_Okazaki_235: 404
+[2025-10-30T16:00:01.425+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Kelechi_Iheanacho_236: 404
+[2025-10-30T16:00:02.028+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Danny_Ward_457: 404
+[2025-10-30T16:00:02.716+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Rachid_Ghezzal_492: 404
+[2025-10-30T16:00:03.407+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Filip_Benkovic_501: 404
+[2025-10-30T16:00:04.129+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Çaglar_Söyüncü_515: 404
+[2025-10-30T16:00:05.749+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Nampalys_Mendy_527: 404
+[2025-10-30T16:00:06.391+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Josh_Knight_558: 404
+[2025-10-30T16:00:07.011+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Harvey_Barnes_571: 404
+[2025-10-30T16:00:07.762+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Youri_Tielemans_591: 404
+[2025-10-30T16:00:08.388+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Simon_Mignolet_237: 404
+[2025-10-30T16:00:09.308+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Loris_Karius_238: 404
+[2025-10-30T16:00:10.006+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Dejan_Lovren_239: 404
+[2025-10-30T16:00:11.583+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Alberto_Moreno_240: 404
+[2025-10-30T16:00:12.148+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Joseph_Gomez_242: 404
+[2025-10-30T16:00:12.765+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Joel_Matip_243: 404
+[2025-10-30T16:00:13.603+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Ragnar_Klavan_244: 404
+[2025-10-30T16:00:20.289+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Trent_Alexander-Arnold_245: 404
+[2025-10-30T16:00:20.891+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Virgil_van Dijk_246: 404
+[2025-10-30T16:00:24.257+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Andrew_Robertson_247: 404
+[2025-10-30T16:00:29.957+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Alex_Oxlade-Chamberlain_248: 404
+[2025-10-30T16:00:30.573+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Jordan_Henderson_249: 404
+[2025-10-30T16:00:31.208+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Adam_Lallana_250: 404
+[2025-10-30T16:00:31.800+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Sadio_Mané_251: 404
+[2025-10-30T16:00:32.437+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Georginio_Wijnaldum_252: 404
+[2025-10-30T16:00:33.570+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Mohamed_Salah_253: 404
+[2025-10-30T16:00:34.247+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for James_Milner_254: 404
+[2025-10-30T16:00:34.874+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Fabio Henrique_Tavares_255: 404
+[2025-10-30T16:00:35.450+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Naby_Keita_256: 404
+[2025-10-30T16:00:36.179+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Roberto_Firmino_257: 404
+[2025-10-30T16:00:36.825+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Xherdan_Shaqiri_462: 404
+[2025-10-30T16:00:37.467+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Alisson_Ramses Becker_468: 404
+[2025-10-30T16:00:38.102+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Daniel_Sturridge_472: 404
+[2025-10-30T16:00:38.989+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Divock_Origi_543: 404
+[2025-10-30T16:00:43.985+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Rafael_Camacho_557: 404
+[2025-10-30T16:00:44.636+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Curtis_Jones_597: 404
+[2025-10-30T16:00:45.309+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Riyad_Mahrez_223: 404
+[2025-10-30T16:00:45.937+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Ederson_Santana de Moraes_260: 404
+[2025-10-30T16:00:46.559+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Claudio_Bravo_261: 404
+[2025-10-30T16:00:47.225+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for John_Stones_262: 404
+[2025-10-30T16:00:47.870+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Vincent_Kompany_263: 404
+[2025-10-30T16:00:48.468+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Nicolás_Otamendi_264: 404
+[2025-10-30T16:00:49.046+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Kyle_Walker_265: 404
+[2025-10-30T16:00:49.627+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Danilo Luiz_da Silva_266: 404
+[2025-10-30T16:00:50.264+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Benjamin_Mendy_267: 404
+[2025-10-30T16:00:50.912+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Aymeric_Laporte_268: 404
+[2025-10-30T16:00:51.523+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Fabian_Delph_269: 404
+[2025-10-30T16:00:52.186+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Raheem_Sterling_270: 404
+[2025-10-30T16:00:52.795+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for David_Silva_271: 404
+[2025-10-30T16:00:53.447+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Fernando_Luiz Rosa_272: 404
+[2025-10-30T16:00:54.394+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Kevin_De Bruyne_273: 404
+[2025-10-30T16:00:55.004+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Ilkay_Gündogan_274: 404
+[2025-10-30T16:00:55.602+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Leroy_Sané_275: 404
+[2025-10-30T16:00:57.815+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Bernardo Mota_Veiga de Carvalho e Silva_276: 404
+[2025-10-30T16:00:58.459+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Phil_Foden_277: 404
+[2025-10-30T16:00:59.030+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Brahim_Diaz_278: 404
+[2025-10-30T16:00:59.648+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Oleksandr_Zinchenko_279: 404
+[2025-10-30T16:01:00.241+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Sergio_Agüero_280: 404
+[2025-10-30T16:01:00.849+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Gabriel Fernando_de Jesus_281: 404
+[2025-10-30T16:01:01.502+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Arijanet_Muric_529: 404
+[2025-10-30T16:01:02.101+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Philippe_Sandler_604: 404
+[2025-10-30T16:01:02.707+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for David_de Gea_282: 404
+[2025-10-30T16:01:03.307+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Sergio_Romero_283: 404
+[2025-10-30T16:01:03.926+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Chris_Smalling_284: 404
+[2025-10-30T16:01:04.565+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Phil_Jones_285: 404
+[2025-10-30T16:01:05.205+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Luke_Shaw_286: 404
+[2025-10-30T16:01:05.788+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Marcos_Rojo_287: 404
+[2025-10-30T16:01:06.380+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Antonio_Valencia_288: 404
+[2025-10-30T16:01:06.986+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Matteo_Darmian_289: 404
+[2025-10-30T16:01:07.626+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Daley_Blind_290: 404
+[2025-10-30T16:01:08.220+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Eric_Bailly_291: 404
+[2025-10-30T16:01:08.813+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Victor_Lindelöf_292: 404
+[2025-10-30T16:01:09.470+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Ashley_Young_293: 404
+[2025-10-30T16:01:10.067+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for José Diogo_Dalot Teixeira_294: 404
+[2025-10-30T16:01:10.691+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Alexis_Sánchez_295: 404
+[2025-10-30T16:01:11.340+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Nemanja_Matic_296: 404
+[2025-10-30T16:01:11.998+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Juan_Mata_297: 404
+[2025-10-30T16:01:12.616+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Marouane_Fellaini_298: 404
+[2025-10-30T16:01:13.210+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Ander_Herrera_299: 404
+[2025-10-30T16:01:13.850+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Jesse_Lingard_300: 404
+[2025-10-30T16:01:14.489+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Anthony_Martial_301: 404
+[2025-10-30T16:01:15.135+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Paul_Pogba_302: 404
+[2025-10-30T16:01:15.736+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Scott_McTominay_303: 404
+[2025-10-30T16:01:16.330+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Frederico_Rodrigues de Paula Santos_304: 404
+[2025-10-30T16:01:17.003+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Marcus_Rashford_305: 404
+[2025-10-30T16:01:17.637+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Romelu_Lukaku_306: 404
+[2025-10-30T16:01:18.319+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Andreas_Pereira_481: 404
+[2025-10-30T16:01:18.906+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Lee_Grant_520: 404
+[2025-10-30T16:01:19.482+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Angel_Gomes_568: 404
+[2025-10-30T16:01:20.117+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for James_Garner_602: 404
+[2025-10-30T16:01:20.828+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Tahith_Chong_603: 404
+[2025-10-30T16:01:21.436+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Mason_Greenwood_608: 404
+[2025-10-30T16:01:22.061+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Robert_Elliot_307: 404
+[2025-10-30T16:01:22.715+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Karl_Darlow_308: 404
+[2025-10-30T16:01:23.281+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Martin_Dubravka_309: 404
+[2025-10-30T16:01:23.851+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for DeAndre_Yedlin_310: 404
+[2025-10-30T16:01:24.470+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Ciaran_Clark_311: 404
+[2025-10-30T16:01:25.101+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Jamaal_Lascelles_312: 404
+[2025-10-30T16:01:25.696+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Paul_Dummett_313: 404
+[2025-10-30T16:01:26.378+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Florian_Lejeune_314: 404
+[2025-10-30T16:01:27.026+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Javier_Manquillo_315: 404
+[2025-10-30T16:01:27.588+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Chancel_Mbemba_316: 404
+[2025-10-30T16:01:28.205+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Matt_Ritchie_317: 404
+[2025-10-30T16:01:28.802+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Jonjo_Shelvey_318: 404
+[2025-10-30T16:01:29.420+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Mohamed_Diamé_319: 404
+[2025-10-30T16:01:30.017+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Christian_Atsu_320: 404
+[2025-10-30T16:01:30.654+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Jacob_Murphy_321: 404
+[2025-10-30T16:01:31.308+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Mikel_Merino_322: 404
+[2025-10-30T16:01:31.887+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Isaac_Hayden_323: 404
+[2025-10-30T16:01:32.471+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Sung-yueng_Ki_324: 404
+[2025-10-30T16:01:33.084+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Dwight_Gayle_325: 404
+[2025-10-30T16:01:33.668+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Ayoze_Pérez_326: 404
+[2025-10-30T16:01:34.248+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Jose Luis_Mato Sanmartín_327: 404
+[2025-10-30T16:01:34.826+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Robert Kenedy_Nunes do Nascimento_458: 404
+[2025-10-30T16:01:35.447+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Fabian_Schär_482: 404
+[2025-10-30T16:01:36.017+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Yoshinori_Muto_488: 404
+[2025-10-30T16:01:36.601+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Salomón_Rondón_493: 404
+[2025-10-30T16:01:37.196+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Federico_Fernández_516: 404
+[2025-10-30T16:01:37.768+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Jamie_Sterry_530: 404
+[2025-10-30T16:01:38.435+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Sean_Longstaff_531: 404
+[2025-10-30T16:01:39.091+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Frederick_Woodman_553: 404
+[2025-10-30T16:01:39.705+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Callum_Roberts_577: 404
+[2025-10-30T16:01:40.309+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Miguel_Almirón_587: 404
+[2025-10-30T16:01:40.931+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Antonio_Barreca_588: 404
+[2025-10-30T16:01:41.568+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Kelland_Watts_622: 404
+[2025-10-30T16:01:42.205+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Lewis_Cass_623: 404
+[2025-10-30T16:01:42.856+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Danny_Ings_258: 404
+[2025-10-30T16:01:43.455+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Alex_McCarthy_328: 404
+[2025-10-30T16:01:44.027+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Fraser_Forster_329: 404
+[2025-10-30T16:01:44.639+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Ryan_Bertrand_330: 404
+[2025-10-30T16:01:45.223+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Maya_Yoshida_331: 404
+[2025-10-30T16:01:45.866+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Cédric_Soares_332: 404
+[2025-10-30T16:01:46.484+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Jack_Stephens_333: 404
+[2025-10-30T16:01:47.158+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Sam_McQueen_334: 404
+[2025-10-30T16:01:47.736+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Jan_Bednarek_335: 404
+[2025-10-30T16:01:48.325+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Wesley_Hoedt_336: 404
+[2025-10-30T16:01:48.936+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Steven_Davis_337: 404
+[2025-10-30T16:01:49.530+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for James_Ward-Prowse_338: 404
+[2025-10-30T16:01:50.145+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Oriol_Romeu Vidal_339: 404
+[2025-10-30T16:01:50.724+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Pierre-Emile_Højbjerg_340: 404
+[2025-10-30T16:01:51.364+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Sofiane_Boufal_341: 404
+[2025-10-30T16:01:51.966+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Joshua_Sims_342: 404
+[2025-10-30T16:01:52.532+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Nathan_Redmond_343: 404
+[2025-10-30T16:01:53.094+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Mario_Lemina_344: 404
+[2025-10-30T16:01:53.680+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Stuart_Armstrong_345: 404
+[2025-10-30T16:01:54.321+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Mohamed_Elyounoussi_346: 404
+[2025-10-30T16:01:54.911+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Shane_Long_347: 404
+[2025-10-30T16:01:55.539+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Charlie_Austin_348: 404
+[2025-10-30T16:01:56.123+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Manolo_Gabbiadini_349: 404
+[2025-10-30T16:01:56.715+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Guido_Carrillo_350: 404
+[2025-10-30T16:01:57.293+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Angus_Gunn_452: 404
+[2025-10-30T16:01:57.853+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Jannik_Vestergaard_463: 404
+[2025-10-30T16:01:58.435+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Matt_Targett_479: 404
+[2025-10-30T16:01:59.008+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Michael_Obafemi_550: 404
+[2025-10-30T16:01:59.585+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Yan_Valery_556: 404
+[2025-10-30T16:02:00.199+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Tyreke_Johnson_562: 404
+[2025-10-30T16:02:00.814+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Kayne_Ramsay_565: 404
+[2025-10-30T16:02:01.428+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Callum_Slattery_570: 404
+[2025-10-30T16:02:02.020+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Sam_Gallagher_574: 404
+[2025-10-30T16:02:02.605+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Alfie_Jones_595: 404
+[2025-10-30T16:02:03.180+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Hugo_Lloris_351: 404
+[2025-10-30T16:02:03.766+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Michel_Vorm_352: 404
+[2025-10-30T16:02:04.375+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Toby_Alderweireld_353: 404
+[2025-10-30T16:02:04.935+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Danny_Rose_354: 404
+[2025-10-30T16:02:05.516+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Jan_Vertonghen_355: 404
+[2025-10-30T16:02:06.147+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Ben_Davies_356: 404
+[2025-10-30T16:02:06.738+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Kieran_Trippier_357: 404
+[2025-10-30T16:02:07.345+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Kyle_Walker-Peters_358: 404
+[2025-10-30T16:02:07.906+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Davinson_Sánchez_359: 404
+[2025-10-30T16:02:08.519+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Serge_Aurier_360: 404
+[2025-10-30T16:02:09.109+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Eric_Dier_361: 404
+[2025-10-30T16:02:09.685+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Mousa_Dembélé_362: 404
+[2025-10-30T16:02:10.247+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Erik_Lamela_363: 404
+[2025-10-30T16:02:10.829+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Christian_Eriksen_364: 404
+[2025-10-30T16:02:11.455+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Bamidele_Alli_365: 404
+[2025-10-30T16:02:12.034+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Victor_Wanyama_366: 404
+[2025-10-30T16:02:12.602+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Heung-Min_Son_367: 404
+[2025-10-30T16:02:13.201+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Harry_Winks_368: 404
+[2025-10-30T16:02:13.925+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Moussa_Sissoko_369: 404
+[2025-10-30T16:02:14.503+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Lucas_Rodrigues Moura da Silva_370: 404
+[2025-10-30T16:02:15.129+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Fernando_Llorente_371: 404
+[2025-10-30T16:02:15.757+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Harry_Kane_372: 404
+[2025-10-30T16:02:16.342+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Georges-Kévin_Nkoudou_497: 404
+[2025-10-30T16:02:16.991+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Luke_Amos_523: 404
+[2025-10-30T16:02:17.574+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Paulo_Gazzaniga_536: 404
+[2025-10-30T16:02:18.144+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Alfie_Whiteman_538: 404
+[2025-10-30T16:02:18.765+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Oliver_Skipp_540: 404
+[2025-10-30T16:02:19.366+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Juan_Foyth_549: 404
+[2025-10-30T16:02:19.934+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Timothy_Eyoma_561: 404
+[2025-10-30T16:02:20.478+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Kazaiah_Sterling_578: 404
+[2025-10-30T16:02:21.029+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for George_Marsh_612: 404
+[2025-10-30T16:02:21.586+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Vincent_Janssen_614: 404
+[2025-10-30T16:02:22.178+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Heurelho_Gomes_373: 404
+[2025-10-30T16:02:22.740+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Pontus_Dahlberg_374: 404
+[2025-10-30T16:02:23.327+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Younes_Kaboul_375: 404
+[2025-10-30T16:02:23.937+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Craig_Cathcart_376: 404
+[2025-10-30T16:02:24.588+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Sebastian_Prödl_377: 404
+[2025-10-30T16:02:25.178+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for José_Holebas_378: 404
+[2025-10-30T16:02:25.805+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Miguel_Britos_379: 404
+[2025-10-30T16:02:26.380+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Christian_Kabasele_380: 404
+[2025-10-30T16:02:26.961+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Daryl_Janmaat_381: 404
+[2025-10-30T16:02:27.518+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Adrian_Mariappa_382: 404
+[2025-10-30T16:02:28.089+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Francisco_Femenía Far_383: 404
+[2025-10-30T16:02:28.687+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Marvin_Zeegelaar_384: 404
+[2025-10-30T16:02:29.261+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Marc_Navarro_385: 404
+[2025-10-30T16:02:29.822+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Adam_Masina_386: 404
+[2025-10-30T16:02:30.475+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Nathaniel_Chalobah_387: 404
+[2025-10-30T16:02:31.080+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Tom_Cleverley_388: 404
+[2025-10-30T16:02:31.662+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Etienne_Capoue_389: 404
+[2025-10-30T16:02:32.306+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Abdoulaye_Doucouré_390: 404
+[2025-10-30T16:02:32.883+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Roberto_Pereyra_391: 404
+[2025-10-30T16:02:33.471+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Will_Hughes_392: 404
+[2025-10-30T16:02:34.045+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Gerard_Deulofeu_394: 404
+[2025-10-30T16:02:34.671+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Andre_Gray_395: 404
+[2025-10-30T16:02:35.278+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Troy_Deeney_396: 404
+[2025-10-30T16:02:35.936+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Stefano_Okaka_397: 404
+[2025-10-30T16:02:36.503+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Jerome_Sinclair_398: 404
+[2025-10-30T16:02:37.091+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Ben_Foster_445: 404
+[2025-10-30T16:02:37.678+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Ken_Sema_446: 404
+[2025-10-30T16:02:38.255+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Domingos_Quina_517: 404
+[2025-10-30T16:02:38.943+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Isaac_Success Ajayi_524: 404
+[2025-10-30T16:02:39.656+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Ben_Wilmot_544: 404
+[2025-10-30T16:02:40.229+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Adalberto_Peñaranda_554: 404
+[2025-10-30T16:02:40.862+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Adrián_San Miguel del Castillo_399: 404
+[2025-10-30T16:02:41.488+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Lukasz_Fabianski_400: 404
+[2025-10-30T16:02:42.132+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Winston_Reid_401: 404
+[2025-10-30T16:02:42.744+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Aaron_Cresswell_402: 404
+[2025-10-30T16:02:43.389+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Angelo_Ogbonna_403: 404
+[2025-10-30T16:02:43.980+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Sam_Byram_404: 404
+[2025-10-30T16:02:44.573+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Pablo_Zabaleta_405: 404
+[2025-10-30T16:02:45.167+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Declan_Rice_406: 404
+[2025-10-30T16:02:45.752+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Reece_Oxford_407: 404
+[2025-10-30T16:02:46.352+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Ryan_Fredericks_408: 404
+[2025-10-30T16:02:46.969+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Issa_Diop_409: 404
+[2025-10-30T16:02:48.014+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Arthur_Masuaku_410: 404
+[2025-10-30T16:02:48.609+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Mark_Noble_411: 404
+[2025-10-30T16:02:49.202+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Pedro_Obiang_413: 404
+[2025-10-30T16:02:49.807+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Manuel_Lanzini_414: 404
+[2025-10-30T16:02:50.373+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Michail_Antonio_415: 404
+[2025-10-30T16:02:50.927+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Edimilson_Fernandes_416: 404
+[2025-10-30T16:02:51.504+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Marko_Arnautovic_417: 404
+[2025-10-30T16:02:52.102+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Andy_Carroll_418: 404
+[2025-10-30T16:02:52.729+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Javier_Hernández Balcázar_419: 404
+[2025-10-30T16:02:53.346+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Jordan_Hugill_420: 404
+[2025-10-30T16:02:53.986+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Jack_Wilshere_447: 404
+[2025-10-30T16:02:54.552+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Andriy_Yarmolenko_453: 404
+[2025-10-30T16:02:55.138+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Fabián_Balbuena_464: 404
+[2025-10-30T16:02:55.734+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Felipe Anderson_Pereira Gomes_465: 404
+[2025-10-30T16:02:56.373+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Robert_Snodgrass_489: 404
+[2025-10-30T16:02:57.035+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Lucas_Pérez_502: 404
+[2025-10-30T16:02:57.679+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Carlos_Sánchez_518: 404
+[2025-10-30T16:02:58.231+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Grady_Diangana_539: 404
+[2025-10-30T16:02:58.851+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Joe_Powell_547: 404
+[2025-10-30T16:03:03.787+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Conor_Coventry_548: 404
+[2025-10-30T16:03:07.049+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Alexandre Nascimento_Costa Silva_560: 404
+[2025-10-30T16:03:07.644+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Samir_Nasri_569: 404
+[2025-10-30T16:03:08.203+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Ben_Johnson_605: 404
+[2025-10-30T16:03:08.821+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Nathan_Holland_611: 404
+[2025-10-30T16:03:09.559+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for John_Ruddy_421: 404
+[2025-10-30T16:03:10.130+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Will_Norris_422: 404
+[2025-10-30T16:03:10.720+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Willy_Boly_423: 404
+[2025-10-30T16:03:11.284+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Barry_Douglas_424: 404
+[2025-10-30T16:03:11.934+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Matt_Doherty_425: 404
+[2025-10-30T16:03:12.562+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Romain_Saïss_426: 404
+[2025-10-30T16:03:13.124+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Ryan_Bennett_427: 404
+[2025-10-30T16:03:13.693+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Danny_Batth_428: 404
+[2025-10-30T16:03:14.291+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Roderick Jefferson_Gonçalves Miranda_429: 404
+[2025-10-30T16:03:14.917+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Conor_Coady_430: 404
+[2025-10-30T16:03:15.559+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Rúben Gonçalo_Silva Nascimento Vinagre_431: 404
+[2025-10-30T16:03:16.125+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Diogo_Jota_432: 404
+[2025-10-30T16:03:16.750+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Rúben Diogo_da Silva Neves_433: 404
+[2025-10-30T16:03:17.351+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Ivan_Cavaleiro_434: 404
+[2025-10-30T16:03:19.002+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Hélder_Costa_435: 404
+[2025-10-30T16:03:19.642+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Bright_Enobakhare_436: 404
+[2025-10-30T16:03:20.219+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Raúl_Jiménez_437: 404
+[2025-10-30T16:03:20.817+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Bonatini Lohner Maia_Bonatini_438: 404
+[2025-10-30T16:03:21.419+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Morgan_Gibbs-White_448: 404
+[2025-10-30T16:03:22.037+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Rafa_Mir_449: 404
+[2025-10-30T16:03:22.670+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Rui Pedro_dos Santos Patrício_454: 404
+[2025-10-30T16:03:23.249+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for João Filipe Iria_Santos Moutinho_475: 404
+[2025-10-30T16:03:23.831+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Jonathan_Castro Otto_483: 404
+[2025-10-30T16:03:24.436+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Adama_Traoré_500: 404
+[2025-10-30T16:03:25.016+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Leander_Dendoncker_519: 404
+[2025-10-30T16:03:25.603+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Kortney_Hause_525: 404
+[2025-10-30T16:03:26.197+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Ryan John_Giles_555: 404
+[2025-10-30T16:03:26.845+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Max_Kilman_567: 404
+[2025-10-30T16:03:27.466+0000] {fetch_api_data.py:98} WARNING - Failed to fetch data for Cameron_John_596: 404
+[2025-10-30T16:03:27.473+0000] {python.py:183} INFO - Done. Returned value was: []
+[2025-10-30T16:03:27.551+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=fpl_gameweeks_etl, task_id=fetch_players_gw_task, map_index=5, execution_date=20251030T155448, start_date=20251030T155509, end_date=20251030T160327
+[2025-10-30T16:03:27.592+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2025-10-30T16:03:27.640+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

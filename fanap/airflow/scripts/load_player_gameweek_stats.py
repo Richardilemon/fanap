@@ -163,15 +163,14 @@ def load_player_gameweek_stats(connection, records):
         _cursor.execute(
             """
             INSERT INTO player_gameweek_stats (
-                season, gameweek, player_name, fixture, opponent_team, goals_scored, assists, clean_sheets,
+                season, gameweek, player_name, fixture_id, opponent_team, goals_scored, assists, clean_sheets,
                 goals_conceded, own_goals, penalties_saved, penalties_missed, red_cards,
                 yellow_cards, big_chances_missed, big_chances_created, clearance_blocks_interceptions,
                 completed_passes, dribbles, errors_leading_to_goal, fouls, key_passes, open_play_crosses,
                 was_home, winning_goals
             ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
             ON CONFLICT (season, gameweek, player_name) DO UPDATE SET
-                # team_code = EXCLUDED.team_code,
-                fixture = EXCLUDED.fixture,
+                fixture_id= EXCLUDED.fixture_id,
                 opponent_team = EXCLUDED.opponent_team,
                 goals_scored = EXCLUDED.goals_scored,
                 assists = EXCLUDED.assists,
