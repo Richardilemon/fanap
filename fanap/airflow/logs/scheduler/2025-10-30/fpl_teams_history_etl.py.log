@@ -3076,3 +3076,87 @@ ModuleNotFoundError: No module named 'utils'
 [2025-10-30T16:13:05.758+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:13:05.758+0000] {dag.py:2742} INFO - Sync 1 DAGs
 [2025-10-30T16:13:05.797+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:13:05.797+0000] {dag.py:3508} INFO - Setting next_dagrun for fpl_teams_history_etl to 2025-10-30T00:00:00+00:00, run_after=2025-10-31T00:00:00+00:00
 [2025-10-30T16:13:05.827+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/fpl_teams_history_etl.py took 0.213 seconds
+[2025-10-30T16:13:36.209+0000] {processor.py:157} INFO - Started process (PID=5212) to work on /opt/airflow/dags/fpl_teams_history_etl.py
+[2025-10-30T16:13:36.211+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/fpl_teams_history_etl.py for tasks to queue
+[2025-10-30T16:13:36.214+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:13:36.212+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/fpl_teams_history_etl.py
+[2025-10-30T16:13:36.332+0000] {processor.py:836} INFO - DAG(s) dict_keys(['fpl_teams_history_etl']) retrieved from /opt/airflow/dags/fpl_teams_history_etl.py
+[2025-10-30T16:13:36.368+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:13:36.368+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-10-30T16:13:36.409+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:13:36.409+0000] {dag.py:3508} INFO - Setting next_dagrun for fpl_teams_history_etl to 2025-10-30T00:00:00+00:00, run_after=2025-10-31T00:00:00+00:00
+[2025-10-30T16:13:36.432+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/fpl_teams_history_etl.py took 0.231 seconds
+[2025-10-30T16:14:06.650+0000] {processor.py:157} INFO - Started process (PID=5242) to work on /opt/airflow/dags/fpl_teams_history_etl.py
+[2025-10-30T16:14:06.651+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/fpl_teams_history_etl.py for tasks to queue
+[2025-10-30T16:14:06.653+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:14:06.653+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/fpl_teams_history_etl.py
+[2025-10-30T16:14:06.755+0000] {processor.py:836} INFO - DAG(s) dict_keys(['fpl_teams_history_etl']) retrieved from /opt/airflow/dags/fpl_teams_history_etl.py
+[2025-10-30T16:14:06.781+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:14:06.781+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-10-30T16:14:06.826+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:14:06.826+0000] {dag.py:3508} INFO - Setting next_dagrun for fpl_teams_history_etl to 2025-10-30T00:00:00+00:00, run_after=2025-10-31T00:00:00+00:00
+[2025-10-30T16:14:06.864+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/fpl_teams_history_etl.py took 0.222 seconds
+[2025-10-30T16:14:36.998+0000] {processor.py:157} INFO - Started process (PID=5272) to work on /opt/airflow/dags/fpl_teams_history_etl.py
+[2025-10-30T16:14:37.000+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/fpl_teams_history_etl.py for tasks to queue
+[2025-10-30T16:14:37.002+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:14:37.001+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/fpl_teams_history_etl.py
+[2025-10-30T16:14:37.132+0000] {processor.py:836} INFO - DAG(s) dict_keys(['fpl_teams_history_etl']) retrieved from /opt/airflow/dags/fpl_teams_history_etl.py
+[2025-10-30T16:14:37.191+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:14:37.191+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-10-30T16:14:37.284+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:14:37.284+0000] {dag.py:3508} INFO - Setting next_dagrun for fpl_teams_history_etl to 2025-10-30T00:00:00+00:00, run_after=2025-10-31T00:00:00+00:00
+[2025-10-30T16:14:37.316+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/fpl_teams_history_etl.py took 0.328 seconds
+[2025-10-30T16:15:07.512+0000] {processor.py:157} INFO - Started process (PID=5302) to work on /opt/airflow/dags/fpl_teams_history_etl.py
+[2025-10-30T16:15:07.513+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/fpl_teams_history_etl.py for tasks to queue
+[2025-10-30T16:15:07.514+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:15:07.514+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/fpl_teams_history_etl.py
+[2025-10-30T16:15:07.608+0000] {processor.py:836} INFO - DAG(s) dict_keys(['fpl_teams_history_etl']) retrieved from /opt/airflow/dags/fpl_teams_history_etl.py
+[2025-10-30T16:15:07.633+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:15:07.633+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-10-30T16:15:07.666+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:15:07.665+0000] {dag.py:3508} INFO - Setting next_dagrun for fpl_teams_history_etl to 2025-10-30T00:00:00+00:00, run_after=2025-10-31T00:00:00+00:00
+[2025-10-30T16:15:07.690+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/fpl_teams_history_etl.py took 0.183 seconds
+[2025-10-30T16:15:37.959+0000] {processor.py:157} INFO - Started process (PID=5332) to work on /opt/airflow/dags/fpl_teams_history_etl.py
+[2025-10-30T16:15:37.960+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/fpl_teams_history_etl.py for tasks to queue
+[2025-10-30T16:15:37.961+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:15:37.961+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/fpl_teams_history_etl.py
+[2025-10-30T16:15:38.055+0000] {processor.py:836} INFO - DAG(s) dict_keys(['fpl_teams_history_etl']) retrieved from /opt/airflow/dags/fpl_teams_history_etl.py
+[2025-10-30T16:15:38.079+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:15:38.079+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-10-30T16:15:38.153+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:15:38.153+0000] {dag.py:3508} INFO - Setting next_dagrun for fpl_teams_history_etl to 2025-10-30T00:00:00+00:00, run_after=2025-10-31T00:00:00+00:00
+[2025-10-30T16:15:38.180+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/fpl_teams_history_etl.py took 0.225 seconds
+[2025-10-30T16:16:08.399+0000] {processor.py:157} INFO - Started process (PID=5362) to work on /opt/airflow/dags/fpl_teams_history_etl.py
+[2025-10-30T16:16:08.401+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/fpl_teams_history_etl.py for tasks to queue
+[2025-10-30T16:16:08.403+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:16:08.403+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/fpl_teams_history_etl.py
+[2025-10-30T16:16:08.637+0000] {processor.py:836} INFO - DAG(s) dict_keys(['fpl_teams_history_etl']) retrieved from /opt/airflow/dags/fpl_teams_history_etl.py
+[2025-10-30T16:16:08.686+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:16:08.686+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-10-30T16:16:08.749+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:16:08.748+0000] {dag.py:3508} INFO - Setting next_dagrun for fpl_teams_history_etl to 2025-10-30T00:00:00+00:00, run_after=2025-10-31T00:00:00+00:00
+[2025-10-30T16:16:08.798+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/fpl_teams_history_etl.py took 0.407 seconds
+[2025-10-30T16:16:39.100+0000] {processor.py:157} INFO - Started process (PID=5392) to work on /opt/airflow/dags/fpl_teams_history_etl.py
+[2025-10-30T16:16:39.101+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/fpl_teams_history_etl.py for tasks to queue
+[2025-10-30T16:16:39.102+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:16:39.102+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/fpl_teams_history_etl.py
+[2025-10-30T16:16:39.233+0000] {processor.py:836} INFO - DAG(s) dict_keys(['fpl_teams_history_etl']) retrieved from /opt/airflow/dags/fpl_teams_history_etl.py
+[2025-10-30T16:16:39.335+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:16:39.334+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-10-30T16:16:39.474+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:16:39.474+0000] {dag.py:3508} INFO - Setting next_dagrun for fpl_teams_history_etl to 2025-10-30T00:00:00+00:00, run_after=2025-10-31T00:00:00+00:00
+[2025-10-30T16:16:39.525+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/fpl_teams_history_etl.py took 0.431 seconds
+[2025-10-30T16:17:09.787+0000] {processor.py:157} INFO - Started process (PID=5422) to work on /opt/airflow/dags/fpl_teams_history_etl.py
+[2025-10-30T16:17:09.788+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/fpl_teams_history_etl.py for tasks to queue
+[2025-10-30T16:17:09.791+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:17:09.790+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/fpl_teams_history_etl.py
+[2025-10-30T16:17:09.936+0000] {processor.py:836} INFO - DAG(s) dict_keys(['fpl_teams_history_etl']) retrieved from /opt/airflow/dags/fpl_teams_history_etl.py
+[2025-10-30T16:17:09.976+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:17:09.976+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-10-30T16:17:10.053+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:17:10.053+0000] {dag.py:3508} INFO - Setting next_dagrun for fpl_teams_history_etl to 2025-10-30T00:00:00+00:00, run_after=2025-10-31T00:00:00+00:00
+[2025-10-30T16:17:10.102+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/fpl_teams_history_etl.py took 0.324 seconds
+[2025-10-30T16:17:40.365+0000] {processor.py:157} INFO - Started process (PID=5452) to work on /opt/airflow/dags/fpl_teams_history_etl.py
+[2025-10-30T16:17:40.366+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/fpl_teams_history_etl.py for tasks to queue
+[2025-10-30T16:17:40.368+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:17:40.367+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/fpl_teams_history_etl.py
+[2025-10-30T16:17:40.479+0000] {processor.py:836} INFO - DAG(s) dict_keys(['fpl_teams_history_etl']) retrieved from /opt/airflow/dags/fpl_teams_history_etl.py
+[2025-10-30T16:17:40.520+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:17:40.520+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-10-30T16:17:40.561+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:17:40.561+0000] {dag.py:3508} INFO - Setting next_dagrun for fpl_teams_history_etl to 2025-10-30T00:00:00+00:00, run_after=2025-10-31T00:00:00+00:00
+[2025-10-30T16:17:40.590+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/fpl_teams_history_etl.py took 0.230 seconds
+[2025-10-30T16:18:10.920+0000] {processor.py:157} INFO - Started process (PID=5477) to work on /opt/airflow/dags/fpl_teams_history_etl.py
+[2025-10-30T16:18:10.923+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/fpl_teams_history_etl.py for tasks to queue
+[2025-10-30T16:18:10.927+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:18:10.926+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/fpl_teams_history_etl.py
+[2025-10-30T16:18:11.081+0000] {processor.py:836} INFO - DAG(s) dict_keys(['fpl_teams_history_etl']) retrieved from /opt/airflow/dags/fpl_teams_history_etl.py
+[2025-10-30T16:18:11.115+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:18:11.115+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-10-30T16:18:11.171+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:18:11.170+0000] {dag.py:3508} INFO - Setting next_dagrun for fpl_teams_history_etl to 2025-10-30T00:00:00+00:00, run_after=2025-10-31T00:00:00+00:00
+[2025-10-30T16:18:11.202+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/fpl_teams_history_etl.py took 0.295 seconds
+[2025-10-30T16:18:41.486+0000] {processor.py:157} INFO - Started process (PID=5512) to work on /opt/airflow/dags/fpl_teams_history_etl.py
+[2025-10-30T16:18:41.487+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/fpl_teams_history_etl.py for tasks to queue
+[2025-10-30T16:18:41.489+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:18:41.489+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/fpl_teams_history_etl.py
+[2025-10-30T16:18:41.594+0000] {processor.py:836} INFO - DAG(s) dict_keys(['fpl_teams_history_etl']) retrieved from /opt/airflow/dags/fpl_teams_history_etl.py
+[2025-10-30T16:18:41.631+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:18:41.631+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-10-30T16:18:41.673+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:18:41.673+0000] {dag.py:3508} INFO - Setting next_dagrun for fpl_teams_history_etl to 2025-10-30T00:00:00+00:00, run_after=2025-10-31T00:00:00+00:00
+[2025-10-30T16:18:41.700+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/fpl_teams_history_etl.py took 0.222 seconds
+[2025-10-30T16:19:12.218+0000] {processor.py:157} INFO - Started process (PID=5537) to work on /opt/airflow/dags/fpl_teams_history_etl.py
+[2025-10-30T16:19:12.219+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/fpl_teams_history_etl.py for tasks to queue
+[2025-10-30T16:19:12.221+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:19:12.221+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/fpl_teams_history_etl.py
+[2025-10-30T16:19:12.342+0000] {processor.py:836} INFO - DAG(s) dict_keys(['fpl_teams_history_etl']) retrieved from /opt/airflow/dags/fpl_teams_history_etl.py
+[2025-10-30T16:19:12.388+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:19:12.387+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-10-30T16:19:12.438+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:19:12.438+0000] {dag.py:3508} INFO - Setting next_dagrun for fpl_teams_history_etl to 2025-10-30T00:00:00+00:00, run_after=2025-10-31T00:00:00+00:00
+[2025-10-30T16:19:12.474+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/fpl_teams_history_etl.py took 0.263 seconds

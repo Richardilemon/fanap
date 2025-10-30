@@ -3532,3 +3532,80 @@ TypeError: too many positional arguments
 [2025-10-30T16:13:25.932+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:13:25.932+0000] {dag.py:2742} INFO - Sync 1 DAGs
 [2025-10-30T16:13:25.963+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:13:25.963+0000] {dag.py:3508} INFO - Setting next_dagrun for fpl_gameweeks_etl to 2025-10-30T00:00:00+00:00, run_after=2025-10-31T00:00:00+00:00
 [2025-10-30T16:13:25.992+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/fpl_gameweeks_dag.py took 0.209 seconds
+[2025-10-30T16:13:56.161+0000] {processor.py:157} INFO - Started process (PID=5232) to work on /opt/airflow/dags/fpl_gameweeks_dag.py
+[2025-10-30T16:13:56.162+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/fpl_gameweeks_dag.py for tasks to queue
+[2025-10-30T16:13:56.163+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:13:56.163+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/fpl_gameweeks_dag.py
+[2025-10-30T16:13:56.294+0000] {processor.py:836} INFO - DAG(s) dict_keys(['fpl_gameweeks_etl']) retrieved from /opt/airflow/dags/fpl_gameweeks_dag.py
+[2025-10-30T16:13:56.326+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:13:56.326+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-10-30T16:13:56.366+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:13:56.366+0000] {dag.py:3508} INFO - Setting next_dagrun for fpl_gameweeks_etl to 2025-10-30T00:00:00+00:00, run_after=2025-10-31T00:00:00+00:00
+[2025-10-30T16:13:56.398+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/fpl_gameweeks_dag.py took 0.242 seconds
+[2025-10-30T16:14:26.712+0000] {processor.py:157} INFO - Started process (PID=5262) to work on /opt/airflow/dags/fpl_gameweeks_dag.py
+[2025-10-30T16:14:26.714+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/fpl_gameweeks_dag.py for tasks to queue
+[2025-10-30T16:14:26.715+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:14:26.715+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/fpl_gameweeks_dag.py
+[2025-10-30T16:14:26.830+0000] {processor.py:836} INFO - DAG(s) dict_keys(['fpl_gameweeks_etl']) retrieved from /opt/airflow/dags/fpl_gameweeks_dag.py
+[2025-10-30T16:14:26.860+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:14:26.859+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-10-30T16:14:26.900+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:14:26.900+0000] {dag.py:3508} INFO - Setting next_dagrun for fpl_gameweeks_etl to 2025-10-30T00:00:00+00:00, run_after=2025-10-31T00:00:00+00:00
+[2025-10-30T16:14:26.929+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/fpl_gameweeks_dag.py took 0.223 seconds
+[2025-10-30T16:14:57.112+0000] {processor.py:157} INFO - Started process (PID=5292) to work on /opt/airflow/dags/fpl_gameweeks_dag.py
+[2025-10-30T16:14:57.114+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/fpl_gameweeks_dag.py for tasks to queue
+[2025-10-30T16:14:57.117+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:14:57.116+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/fpl_gameweeks_dag.py
+[2025-10-30T16:14:57.318+0000] {processor.py:836} INFO - DAG(s) dict_keys(['fpl_gameweeks_etl']) retrieved from /opt/airflow/dags/fpl_gameweeks_dag.py
+[2025-10-30T16:14:57.347+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:14:57.346+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-10-30T16:14:57.379+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:14:57.379+0000] {dag.py:3508} INFO - Setting next_dagrun for fpl_gameweeks_etl to 2025-10-30T00:00:00+00:00, run_after=2025-10-31T00:00:00+00:00
+[2025-10-30T16:14:57.402+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/fpl_gameweeks_dag.py took 0.298 seconds
+[2025-10-30T16:15:27.582+0000] {processor.py:157} INFO - Started process (PID=5322) to work on /opt/airflow/dags/fpl_gameweeks_dag.py
+[2025-10-30T16:15:27.583+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/fpl_gameweeks_dag.py for tasks to queue
+[2025-10-30T16:15:27.585+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:15:27.584+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/fpl_gameweeks_dag.py
+[2025-10-30T16:15:27.712+0000] {processor.py:836} INFO - DAG(s) dict_keys(['fpl_gameweeks_etl']) retrieved from /opt/airflow/dags/fpl_gameweeks_dag.py
+[2025-10-30T16:15:27.738+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:15:27.738+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-10-30T16:15:27.767+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:15:27.767+0000] {dag.py:3508} INFO - Setting next_dagrun for fpl_gameweeks_etl to 2025-10-30T00:00:00+00:00, run_after=2025-10-31T00:00:00+00:00
+[2025-10-30T16:15:27.795+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/fpl_gameweeks_dag.py took 0.216 seconds
+[2025-10-30T16:15:58.229+0000] {processor.py:157} INFO - Started process (PID=5352) to work on /opt/airflow/dags/fpl_gameweeks_dag.py
+[2025-10-30T16:15:58.231+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/fpl_gameweeks_dag.py for tasks to queue
+[2025-10-30T16:15:58.235+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:15:58.234+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/fpl_gameweeks_dag.py
+[2025-10-30T16:15:58.662+0000] {processor.py:836} INFO - DAG(s) dict_keys(['fpl_gameweeks_etl']) retrieved from /opt/airflow/dags/fpl_gameweeks_dag.py
+[2025-10-30T16:15:58.737+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:15:58.737+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-10-30T16:15:58.851+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:15:58.851+0000] {dag.py:3508} INFO - Setting next_dagrun for fpl_gameweeks_etl to 2025-10-30T00:00:00+00:00, run_after=2025-10-31T00:00:00+00:00
+[2025-10-30T16:15:58.916+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/fpl_gameweeks_dag.py took 0.700 seconds
+[2025-10-30T16:16:30.189+0000] {processor.py:157} INFO - Started process (PID=5382) to work on /opt/airflow/dags/fpl_gameweeks_dag.py
+[2025-10-30T16:16:30.190+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/fpl_gameweeks_dag.py for tasks to queue
+[2025-10-30T16:16:30.192+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:16:30.191+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/fpl_gameweeks_dag.py
+[2025-10-30T16:16:30.341+0000] {processor.py:836} INFO - DAG(s) dict_keys(['fpl_gameweeks_etl']) retrieved from /opt/airflow/dags/fpl_gameweeks_dag.py
+[2025-10-30T16:16:30.372+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:16:30.372+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-10-30T16:16:30.407+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:16:30.406+0000] {dag.py:3508} INFO - Setting next_dagrun for fpl_gameweeks_etl to 2025-10-30T00:00:00+00:00, run_after=2025-10-31T00:00:00+00:00
+[2025-10-30T16:16:30.439+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/fpl_gameweeks_dag.py took 0.254 seconds
+[2025-10-30T16:17:00.691+0000] {processor.py:157} INFO - Started process (PID=5412) to work on /opt/airflow/dags/fpl_gameweeks_dag.py
+[2025-10-30T16:17:00.692+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/fpl_gameweeks_dag.py for tasks to queue
+[2025-10-30T16:17:00.694+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:17:00.693+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/fpl_gameweeks_dag.py
+[2025-10-30T16:17:00.891+0000] {processor.py:836} INFO - DAG(s) dict_keys(['fpl_gameweeks_etl']) retrieved from /opt/airflow/dags/fpl_gameweeks_dag.py
+[2025-10-30T16:17:00.923+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:17:00.923+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-10-30T16:17:00.963+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:17:00.962+0000] {dag.py:3508} INFO - Setting next_dagrun for fpl_gameweeks_etl to 2025-10-30T00:00:00+00:00, run_after=2025-10-31T00:00:00+00:00
+[2025-10-30T16:17:00.992+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/fpl_gameweeks_dag.py took 0.309 seconds
+[2025-10-30T16:17:31.874+0000] {processor.py:157} INFO - Started process (PID=5442) to work on /opt/airflow/dags/fpl_gameweeks_dag.py
+[2025-10-30T16:17:31.877+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/fpl_gameweeks_dag.py for tasks to queue
+[2025-10-30T16:17:31.881+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:17:31.880+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/fpl_gameweeks_dag.py
+[2025-10-30T16:17:32.342+0000] {processor.py:836} INFO - DAG(s) dict_keys(['fpl_gameweeks_etl']) retrieved from /opt/airflow/dags/fpl_gameweeks_dag.py
+[2025-10-30T16:17:32.397+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:17:32.397+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-10-30T16:17:32.435+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:17:32.435+0000] {dag.py:3508} INFO - Setting next_dagrun for fpl_gameweeks_etl to 2025-10-30T00:00:00+00:00, run_after=2025-10-31T00:00:00+00:00
+[2025-10-30T16:17:32.461+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/fpl_gameweeks_dag.py took 0.604 seconds
+[2025-10-30T16:18:02.571+0000] {processor.py:157} INFO - Started process (PID=5472) to work on /opt/airflow/dags/fpl_gameweeks_dag.py
+[2025-10-30T16:18:02.572+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/fpl_gameweeks_dag.py for tasks to queue
+[2025-10-30T16:18:02.574+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:18:02.574+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/fpl_gameweeks_dag.py
+[2025-10-30T16:18:02.887+0000] {processor.py:836} INFO - DAG(s) dict_keys(['fpl_gameweeks_etl']) retrieved from /opt/airflow/dags/fpl_gameweeks_dag.py
+[2025-10-30T16:18:02.940+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:18:02.940+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-10-30T16:18:02.984+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:18:02.984+0000] {dag.py:3508} INFO - Setting next_dagrun for fpl_gameweeks_etl to 2025-10-30T00:00:00+00:00, run_after=2025-10-31T00:00:00+00:00
+[2025-10-30T16:18:03.015+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/fpl_gameweeks_dag.py took 0.450 seconds
+[2025-10-30T16:18:33.924+0000] {processor.py:157} INFO - Started process (PID=5502) to work on /opt/airflow/dags/fpl_gameweeks_dag.py
+[2025-10-30T16:18:33.926+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/fpl_gameweeks_dag.py for tasks to queue
+[2025-10-30T16:18:33.927+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:18:33.927+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/fpl_gameweeks_dag.py
+[2025-10-30T16:18:34.082+0000] {processor.py:836} INFO - DAG(s) dict_keys(['fpl_gameweeks_etl']) retrieved from /opt/airflow/dags/fpl_gameweeks_dag.py
+[2025-10-30T16:18:34.114+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:18:34.113+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-10-30T16:18:34.151+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:18:34.151+0000] {dag.py:3508} INFO - Setting next_dagrun for fpl_gameweeks_etl to 2025-10-30T00:00:00+00:00, run_after=2025-10-31T00:00:00+00:00
+[2025-10-30T16:18:34.183+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/fpl_gameweeks_dag.py took 0.264 seconds
+[2025-10-30T16:19:04.799+0000] {processor.py:157} INFO - Started process (PID=5532) to work on /opt/airflow/dags/fpl_gameweeks_dag.py
+[2025-10-30T16:19:04.800+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/fpl_gameweeks_dag.py for tasks to queue
+[2025-10-30T16:19:04.803+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:19:04.802+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/fpl_gameweeks_dag.py
+[2025-10-30T16:19:05.032+0000] {processor.py:836} INFO - DAG(s) dict_keys(['fpl_gameweeks_etl']) retrieved from /opt/airflow/dags/fpl_gameweeks_dag.py
+[2025-10-30T16:19:05.094+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:19:05.094+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2025-10-30T16:19:05.143+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:19:05.142+0000] {dag.py:3508} INFO - Setting next_dagrun for fpl_gameweeks_etl to 2025-10-30T00:00:00+00:00, run_after=2025-10-31T00:00:00+00:00
+[2025-10-30T16:19:05.173+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/fpl_gameweeks_dag.py took 0.380 seconds

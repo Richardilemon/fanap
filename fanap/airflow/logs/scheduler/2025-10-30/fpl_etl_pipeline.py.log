@@ -6816,3 +6816,171 @@ Traceback (most recent call last):
 ImportError: cannot import name 'SEASONS' from 'scripts.load_fixtures' (/opt/airflow/scripts/load_fixtures.py)
 [2025-10-30T16:13:04.693+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/fpl_etl_pipeline.py
 [2025-10-30T16:13:04.726+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/fpl_etl_pipeline.py took 0.123 seconds
+[2025-10-30T16:13:35.149+0000] {processor.py:157} INFO - Started process (PID=5207) to work on /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-30T16:13:35.150+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/fpl_etl_pipeline.py for tasks to queue
+[2025-10-30T16:13:35.151+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:13:35.151+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-30T16:13:35.220+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:13:35.216+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/fpl_etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/fpl_etl_pipeline.py", line 16, in <module>
+    from scripts.load_fixtures import SEASONS
+ImportError: cannot import name 'SEASONS' from 'scripts.load_fixtures' (/opt/airflow/scripts/load_fixtures.py)
+[2025-10-30T16:13:35.221+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-30T16:13:35.254+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/fpl_etl_pipeline.py took 0.110 seconds
+[2025-10-30T16:14:05.543+0000] {processor.py:157} INFO - Started process (PID=5237) to work on /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-30T16:14:05.544+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/fpl_etl_pipeline.py for tasks to queue
+[2025-10-30T16:14:05.546+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:14:05.546+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-30T16:14:05.660+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:14:05.655+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/fpl_etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/fpl_etl_pipeline.py", line 16, in <module>
+    from scripts.load_fixtures import SEASONS
+ImportError: cannot import name 'SEASONS' from 'scripts.load_fixtures' (/opt/airflow/scripts/load_fixtures.py)
+[2025-10-30T16:14:05.662+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-30T16:14:05.695+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/fpl_etl_pipeline.py took 0.158 seconds
+[2025-10-30T16:14:35.898+0000] {processor.py:157} INFO - Started process (PID=5267) to work on /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-30T16:14:35.899+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/fpl_etl_pipeline.py for tasks to queue
+[2025-10-30T16:14:35.900+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:14:35.900+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-30T16:14:35.988+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:14:35.983+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/fpl_etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/fpl_etl_pipeline.py", line 16, in <module>
+    from scripts.load_fixtures import SEASONS
+ImportError: cannot import name 'SEASONS' from 'scripts.load_fixtures' (/opt/airflow/scripts/load_fixtures.py)
+[2025-10-30T16:14:35.991+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-30T16:14:36.029+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/fpl_etl_pipeline.py took 0.135 seconds
+[2025-10-30T16:15:06.289+0000] {processor.py:157} INFO - Started process (PID=5297) to work on /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-30T16:15:06.290+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/fpl_etl_pipeline.py for tasks to queue
+[2025-10-30T16:15:06.291+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:15:06.291+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-30T16:15:06.371+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:15:06.366+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/fpl_etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/fpl_etl_pipeline.py", line 16, in <module>
+    from scripts.load_fixtures import SEASONS
+ImportError: cannot import name 'SEASONS' from 'scripts.load_fixtures' (/opt/airflow/scripts/load_fixtures.py)
+[2025-10-30T16:15:06.372+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-30T16:15:06.404+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/fpl_etl_pipeline.py took 0.119 seconds
+[2025-10-30T16:15:36.878+0000] {processor.py:157} INFO - Started process (PID=5327) to work on /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-30T16:15:36.879+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/fpl_etl_pipeline.py for tasks to queue
+[2025-10-30T16:15:36.881+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:15:36.880+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-30T16:15:36.958+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:15:36.953+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/fpl_etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/fpl_etl_pipeline.py", line 16, in <module>
+    from scripts.load_fixtures import SEASONS
+ImportError: cannot import name 'SEASONS' from 'scripts.load_fixtures' (/opt/airflow/scripts/load_fixtures.py)
+[2025-10-30T16:15:36.960+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-30T16:15:36.993+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/fpl_etl_pipeline.py took 0.119 seconds
+[2025-10-30T16:16:07.385+0000] {processor.py:157} INFO - Started process (PID=5357) to work on /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-30T16:16:07.388+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/fpl_etl_pipeline.py for tasks to queue
+[2025-10-30T16:16:07.392+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:16:07.391+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-30T16:16:07.674+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:16:07.666+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/fpl_etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/fpl_etl_pipeline.py", line 16, in <module>
+    from scripts.load_fixtures import SEASONS
+ImportError: cannot import name 'SEASONS' from 'scripts.load_fixtures' (/opt/airflow/scripts/load_fixtures.py)
+[2025-10-30T16:16:07.677+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-30T16:16:07.737+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/fpl_etl_pipeline.py took 0.369 seconds
+[2025-10-30T16:16:38.557+0000] {processor.py:157} INFO - Started process (PID=5387) to work on /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-30T16:16:38.560+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/fpl_etl_pipeline.py for tasks to queue
+[2025-10-30T16:16:38.564+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:16:38.563+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-30T16:16:38.924+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:16:38.907+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/fpl_etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/fpl_etl_pipeline.py", line 16, in <module>
+    from scripts.load_fixtures import SEASONS
+ImportError: cannot import name 'SEASONS' from 'scripts.load_fixtures' (/opt/airflow/scripts/load_fixtures.py)
+[2025-10-30T16:16:38.930+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-30T16:16:39.022+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/fpl_etl_pipeline.py took 0.482 seconds
+[2025-10-30T16:17:09.460+0000] {processor.py:157} INFO - Started process (PID=5417) to work on /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-30T16:17:09.466+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/fpl_etl_pipeline.py for tasks to queue
+[2025-10-30T16:17:09.470+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:17:09.469+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-30T16:17:09.659+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:17:09.651+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/fpl_etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/fpl_etl_pipeline.py", line 16, in <module>
+    from scripts.load_fixtures import SEASONS
+ImportError: cannot import name 'SEASONS' from 'scripts.load_fixtures' (/opt/airflow/scripts/load_fixtures.py)
+[2025-10-30T16:17:09.662+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-30T16:17:09.708+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/fpl_etl_pipeline.py took 0.262 seconds
+[2025-10-30T16:17:40.179+0000] {processor.py:157} INFO - Started process (PID=5447) to work on /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-30T16:17:40.181+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/fpl_etl_pipeline.py for tasks to queue
+[2025-10-30T16:17:40.182+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:17:40.182+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-30T16:17:40.268+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:17:40.264+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/fpl_etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/fpl_etl_pipeline.py", line 16, in <module>
+    from scripts.load_fixtures import SEASONS
+ImportError: cannot import name 'SEASONS' from 'scripts.load_fixtures' (/opt/airflow/scripts/load_fixtures.py)
+[2025-10-30T16:17:40.270+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-30T16:17:40.306+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/fpl_etl_pipeline.py took 0.132 seconds
+[2025-10-30T16:18:10.945+0000] {processor.py:157} INFO - Started process (PID=5480) to work on /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-30T16:18:10.947+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/fpl_etl_pipeline.py for tasks to queue
+[2025-10-30T16:18:10.950+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:18:10.949+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-30T16:18:11.061+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:18:11.055+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/fpl_etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/fpl_etl_pipeline.py", line 16, in <module>
+    from scripts.load_fixtures import SEASONS
+ImportError: cannot import name 'SEASONS' from 'scripts.load_fixtures' (/opt/airflow/scripts/load_fixtures.py)
+[2025-10-30T16:18:11.063+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-30T16:18:11.103+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/fpl_etl_pipeline.py took 0.167 seconds
+[2025-10-30T16:18:41.230+0000] {processor.py:157} INFO - Started process (PID=5507) to work on /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-30T16:18:41.236+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/fpl_etl_pipeline.py for tasks to queue
+[2025-10-30T16:18:41.238+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:18:41.238+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-30T16:18:41.348+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:18:41.338+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/fpl_etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/fpl_etl_pipeline.py", line 16, in <module>
+    from scripts.load_fixtures import SEASONS
+ImportError: cannot import name 'SEASONS' from 'scripts.load_fixtures' (/opt/airflow/scripts/load_fixtures.py)
+[2025-10-30T16:18:41.352+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-30T16:18:41.413+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/fpl_etl_pipeline.py took 0.190 seconds
+[2025-10-30T16:19:12.224+0000] {processor.py:157} INFO - Started process (PID=5540) to work on /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-30T16:19:12.225+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/fpl_etl_pipeline.py for tasks to queue
+[2025-10-30T16:19:12.226+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:19:12.226+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-30T16:19:12.310+0000] {logging_mixin.py:150} INFO - [2025-10-30T16:19:12.306+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/fpl_etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/fpl_etl_pipeline.py", line 16, in <module>
+    from scripts.load_fixtures import SEASONS
+ImportError: cannot import name 'SEASONS' from 'scripts.load_fixtures' (/opt/airflow/scripts/load_fixtures.py)
+[2025-10-30T16:19:12.311+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/fpl_etl_pipeline.py
+[2025-10-30T16:19:12.351+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/fpl_etl_pipeline.py took 0.135 seconds
