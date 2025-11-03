@@ -1,0 +1,4 @@
+.env
+/airflow/dags/__pycache__
+/airflow/scripts/__pycache__
+variables.json

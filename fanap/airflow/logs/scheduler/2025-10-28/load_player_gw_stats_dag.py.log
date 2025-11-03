@@ -1,0 +1,15 @@
+[2025-10-28T23:46:20.972+0000] {processor.py:157} INFO - Started process (PID=188) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-28T23:46:20.973+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-28T23:46:20.974+0000] {logging_mixin.py:150} INFO - [2025-10-28T23:46:20.973+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-28T23:46:21.002+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-28T23:46:21.029+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.062 seconds
+[2025-10-28T23:46:51.264+0000] {processor.py:157} INFO - Started process (PID=218) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-28T23:46:51.265+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-28T23:46:51.266+0000] {logging_mixin.py:150} INFO - [2025-10-28T23:46:51.266+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-28T23:46:51.283+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-28T23:46:51.306+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.047 seconds
+[2025-10-28T23:47:21.467+0000] {processor.py:157} INFO - Started process (PID=247) to work on /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-28T23:47:21.468+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/load_player_gw_stats_dag.py for tasks to queue
+[2025-10-28T23:47:21.470+0000] {logging_mixin.py:150} INFO - [2025-10-28T23:47:21.469+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-28T23:47:21.482+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/load_player_gw_stats_dag.py
+[2025-10-28T23:47:21.506+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/load_player_gw_stats_dag.py took 0.044 seconds

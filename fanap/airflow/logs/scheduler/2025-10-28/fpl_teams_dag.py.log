@@ -1,0 +1,54 @@
+[2025-10-28T23:46:20.709+0000] {processor.py:157} INFO - Started process (PID=183) to work on /opt/airflow/dags/fpl_teams_dag.py
+[2025-10-28T23:46:20.710+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/fpl_teams_dag.py for tasks to queue
+[2025-10-28T23:46:20.711+0000] {logging_mixin.py:150} INFO - [2025-10-28T23:46:20.711+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/fpl_teams_dag.py
+[2025-10-28T23:46:20.884+0000] {logging_mixin.py:150} INFO - [2025-10-28T23:46:20.869+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/fpl_teams_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/fpl_teams_dag.py", line 8, in <module>
+    from scripts.utils.fetch_api_data import fetch_data_from_api
+  File "/opt/airflow/scripts/utils/fetch_api_data.py", line 41, in <module>
+    endpoint=Variable.get("FIXTURES_DATASET_PATH"),
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/variable.py", line 142, in get
+    raise KeyError(f"Variable {key} does not exist")
+KeyError: 'Variable FIXTURES_DATASET_PATH does not exist'
+[2025-10-28T23:46:20.888+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/fpl_teams_dag.py
+[2025-10-28T23:46:20.913+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/fpl_teams_dag.py took 0.209 seconds
+[2025-10-28T23:46:51.082+0000] {processor.py:157} INFO - Started process (PID=213) to work on /opt/airflow/dags/fpl_teams_dag.py
+[2025-10-28T23:46:51.084+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/fpl_teams_dag.py for tasks to queue
+[2025-10-28T23:46:51.085+0000] {logging_mixin.py:150} INFO - [2025-10-28T23:46:51.084+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/fpl_teams_dag.py
+[2025-10-28T23:46:51.188+0000] {logging_mixin.py:150} INFO - [2025-10-28T23:46:51.177+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/fpl_teams_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/fpl_teams_dag.py", line 8, in <module>
+    from scripts.utils.fetch_api_data import fetch_data_from_api
+  File "/opt/airflow/scripts/utils/fetch_api_data.py", line 41, in <module>
+    endpoint=Variable.get("FIXTURES_DATASET_PATH"),
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/variable.py", line 142, in get
+    raise KeyError(f"Variable {key} does not exist")
+KeyError: 'Variable FIXTURES_DATASET_PATH does not exist'
+[2025-10-28T23:46:51.190+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/fpl_teams_dag.py
+[2025-10-28T23:46:51.205+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/fpl_teams_dag.py took 0.128 seconds
+[2025-10-28T23:47:21.318+0000] {processor.py:157} INFO - Started process (PID=241) to work on /opt/airflow/dags/fpl_teams_dag.py
+[2025-10-28T23:47:21.319+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/fpl_teams_dag.py for tasks to queue
+[2025-10-28T23:47:21.320+0000] {logging_mixin.py:150} INFO - [2025-10-28T23:47:21.319+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/fpl_teams_dag.py
+[2025-10-28T23:47:21.416+0000] {logging_mixin.py:150} INFO - [2025-10-28T23:47:21.405+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/fpl_teams_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/fpl_teams_dag.py", line 8, in <module>
+    from scripts.utils.fetch_api_data import fetch_data_from_api
+  File "/opt/airflow/scripts/utils/fetch_api_data.py", line 41, in <module>
+    endpoint=Variable.get("FIXTURES_DATASET_PATH"),
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/variable.py", line 142, in get
+    raise KeyError(f"Variable {key} does not exist")
+KeyError: 'Variable FIXTURES_DATASET_PATH does not exist'
+[2025-10-28T23:47:21.419+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/fpl_teams_dag.py
+[2025-10-28T23:47:21.437+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/fpl_teams_dag.py took 0.126 seconds
