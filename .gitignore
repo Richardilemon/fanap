@@ -3,3 +3,4 @@
 /airflow/scripts/__pycache__
 variables.json
 __pycache__
+/airflow/logs
