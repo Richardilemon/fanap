@@ -61,10 +61,12 @@ def fpl_gameweeks_etl():
         task_id="create_gw_stats_table",
         postgres_conn_id="fpl_db_conn",
         sql="""
+            DROP TABLE IF EXISTS player_gameweek_stats;
             CREATE TABLE IF NOT EXISTS player_gameweek_stats (
                 season TEXT,
                 gameweek INTEGER,
                 player_name TEXT,
+                player_cost DECIMAL(4,1),
                 fixture_id INTEGER,
                 opponent_team INTEGER,
                 goals_scored INTEGER,

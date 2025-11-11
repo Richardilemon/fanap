@@ -23,6 +23,25 @@ def fetch_players_data():
         return []
 
 
+def map_position(element_type):
+    """
+    Map numeric element_type to position string.
+    
+    Args:
+        element_type (int): Numeric position type from FPL API
+        
+    Returns:
+        str: Position abbreviation (GK, DEF, MID, FWD)
+    """
+    position_map = {
+        1: "GK",
+        2: "DEF",
+        3: "MID",
+        4: "FWD"
+    }
+    return position_map.get(element_type, "UNKNOWN")
+
+
 @db_connection_wrapper
 def load_players(connection, players):
     """
@@ -39,11 +58,12 @@ def load_players(connection, players):
     """
     _cursor = connection.cursor()
     for player in players:
+        position = map_position(player["element_type"])
         _cursor.execute(
             """
             INSERT INTO players (
                 code, first_name, second_name, web_name,
-                team_code, type_name, now_cost, status
+                team_code, position, now_cost, status
             )
             VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
             ON CONFLICT (code) DO UPDATE SET
@@ -51,7 +71,7 @@ def load_players(connection, players):
                 second_name = EXCLUDED.second_name,
                 web_name = EXCLUDED.web_name,
                 team_code = EXCLUDED.team_code,
-                type_name = EXCLUDED.type_name,
+                position = EXCLUDED.position,
                 now_cost = EXCLUDED.now_cost,
                 status = EXCLUDED.status;
         """,
@@ -61,7 +81,7 @@ def load_players(connection, players):
                 player["second_name"],
                 player["web_name"],
                 player["team_code"],
-                player["element_type"],
+                position,
                 player["now_cost"],
                 player["status"],
             ),

@@ -1,0 +1,33 @@
+[2025-11-06T00:13:54.595+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fpl_players_etl.check_players_api scheduled__2025-11-05T00:00:00+00:00 [queued]>
+[2025-11-06T00:13:54.600+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fpl_players_etl.check_players_api scheduled__2025-11-05T00:00:00+00:00 [queued]>
+[2025-11-06T00:13:54.603+0000] {taskinstance.py:1308} INFO - Starting attempt 2 of 2
+[2025-11-06T00:13:54.814+0000] {taskinstance.py:1327} INFO - Executing <Task(HttpSensor): check_players_api> on 2025-11-05 00:00:00+00:00
+[2025-11-06T00:13:54.820+0000] {standard_task_runner.py:57} INFO - Started process 21076 to run task
+[2025-11-06T00:13:54.823+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'fpl_players_etl', 'check_players_api', 'scheduled__2025-11-05T00:00:00+00:00', '--job-id', '81', '--raw', '--subdir', 'DAGS_FOLDER/fpl_players_dag.py', '--cfg-path', '/tmp/tmpv8gczspl']
+[2025-11-06T00:13:54.824+0000] {standard_task_runner.py:85} INFO - Job 81: Subtask check_players_api
+[2025-11-06T00:13:54.876+0000] {task_command.py:410} INFO - Running <TaskInstance: fpl_players_etl.check_players_api scheduled__2025-11-05T00:00:00+00:00 [running]> on host 497d0baba1c5
+[2025-11-06T00:13:54.939+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='richardilemon' AIRFLOW_CTX_DAG_ID='fpl_players_etl' AIRFLOW_CTX_TASK_ID='check_players_api' AIRFLOW_CTX_EXECUTION_DATE='2025-11-05T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-11-05T00:00:00+00:00'
+[2025-11-06T00:13:54.944+0000] {http.py:122} INFO - Poking: api/bootstrap-static/
+[2025-11-06T00:13:54.975+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/sensors/base.py", line 225, in execute
+    raise e
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/sensors/base.py", line 212, in execute
+    poke_return = self.poke(context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/http/sensors/http.py", line 137, in poke
+    raise exc
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/http/sensors/http.py", line 128, in poke
+    extra_options=self.extra_options,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/http/hooks/http.py", line 148, in run
+    session = self.get_conn(headers)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/http/hooks/http.py", line 100, in get_conn
+    conn = self.get_connection(self.http_conn_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/hooks/base.py", line 72, in get_connection
+    conn = Connection.get_connection_from_secrets(conn_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 463, in get_connection_from_secrets
+    raise AirflowNotFoundException(f"The conn_id `{conn_id}` isn't defined")
+airflow.exceptions.AirflowNotFoundException: The conn_id `fpl_base_api` isn't defined
+[2025-11-06T00:13:54.980+0000] {taskinstance.py:1350} INFO - Marking task as FAILED. dag_id=fpl_players_etl, task_id=check_players_api, execution_date=20251105T000000, start_date=20251106T001354, end_date=20251106T001354
+[2025-11-06T00:13:54.986+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 81 for task check_players_api (The conn_id `fpl_base_api` isn't defined; 21076)
+[2025-11-06T00:13:55.007+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2025-11-06T00:13:55.034+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

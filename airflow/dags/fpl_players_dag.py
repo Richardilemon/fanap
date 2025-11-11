@@ -27,6 +27,7 @@ def fpl_players_etl():
         task_id="check_players_api",
         http_conn_id="fpl_base_api",
         endpoint="api/bootstrap-static/",
+        headers={"User-Agent": "Mozilla/5.0"},
         poke_interval=5,
         timeout=10,
         mode="poke",
@@ -42,7 +43,7 @@ def fpl_players_etl():
                 second_name TEXT,
                 web_name TEXT,
                 team_code INTEGER,
-                type_name TEXT,
+                position TEXT,
                 now_cost INTEGER,
                 status TEXT
             );

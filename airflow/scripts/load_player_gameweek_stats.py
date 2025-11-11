@@ -26,7 +26,7 @@ def parse_fixture_time(fixture_time_str):
         print(f"⚠️ Could not parse fixture time '{fixture_time_str}': {e}")
         return None
     
-# SEASONS = ["2020-21", "2021-22", "2022-23", "2023-24"]
+# SEASONS = ["2020-21", "2021-22", "2022-23", "2023-24", "2024-25", "2025-26"]
 REPO_BASE = "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/master/data"  # FIXTURES_BASE_URL
 
 
@@ -59,45 +59,26 @@ def get_players_folder(players):
 
     return players_lists
 
-# I NEED MORE CLARITY ON THIS..... I DON'T THINK IT'S NECESSARY
-# def match_team_code(fixtures, opponent_id, kickoff_time_str):
 
-#     # kickoff_time = datetime.strptime(kickoff_time_str, "%Y-%m-%dT%H:%M:%SZ")
-
-#     for matches in fixtures:
-#         for match in matches:
-#             fixture_time = datetime.strptime(match[3],  "%Y-%m-%dT%H:%M:%SZ")  # kickoff_time
-            
-#         # print(f"Fixture Time -> {type(fixture_time)}")
-#         # fixture_time
-        
-#         # Compare timestamps with a 60-second tolerance
-#         if abs((fixture_time - kickoff_time_str).total_seconds()) <= 60:
-#             # if int(row["team_h"]) == int(opponent_id):
-#             if int(match[4]) == int(opponent_id): # team_h
-#                 # return int(row["team_a"]) # team_a
-#                 return int(match[5]) # team_a
-#             elif int(match[5]) == int(opponent_id): # team_a
-#             # elif int(row["team_a"]) == int(opponent_id): # team_a
-#                 # return int(row["team_h"]) # team_h
-#                 return int(match[4]) # team_h
-                
-
-    # return None
-
-
-# def parse_gw_stats_table(gw_data, fixtures):
 def parse_gw_stats_table(gw_data):
     """
-    Parse player gameweek statistics and match them with team codes.
+    Parse player gameweek statistics.
 
     Args:
         gw_data (list): A list (or list of lists) of player gameweek stats dictionaries.
-        fixtures (list): A list of fixture dictionaries containing team IDs and kickoff times.
 
     Returns:
         list[tuple]: A list of tuples representing cleaned and structured player gameweek data.
     """
+    # Add null check
+    if gw_data is None:
+        print("⚠️ Warning: gw_data is None. Returning empty records list.")
+        return []
+    
+    if not gw_data:
+        print("⚠️ Warning: gw_data is empty. Returning empty records list.")
+        return []
+    
     records = []
 
     # Flatten if gw_data contains sublists
@@ -110,20 +91,18 @@ def parse_gw_stats_table(gw_data):
 
             gameweek = int(row.get("round", 0))
             kickoff_time = datetime.strptime(row.get("kickoff_time"), "%Y-%m-%dT%H:%M:%SZ")
-            team_code = ""
             season = infer_season(kickoff_time) if kickoff_time else None
 
             player_name = row.get("player_name", "Unknown Player")
-
-            if team_code is None:
-                print(f"⚠️ Could not determine team code for GW{gameweek} in {season}")
-                continue
+            
+            # Extract player cost (value) - convert from FPL format (e.g., 95 = £9.5m)
+            player_cost = int(row.get("value", 0)) / 10.0
 
             record = (
                 season,
                 gameweek,
                 player_name,
-                # team_code,
+                player_cost,  # Added player cost
                 int(row.get("fixture")),
                 int(row.get("opponent_team")),
                 int(row.get("goals_scored", 0)),
@@ -163,14 +142,15 @@ def load_player_gameweek_stats(connection, records):
         _cursor.execute(
             """
             INSERT INTO player_gameweek_stats (
-                season, gameweek, player_name, fixture_id, opponent_team, goals_scored, assists, clean_sheets,
+                season, gameweek, player_name, player_cost, fixture_id, opponent_team, goals_scored, assists, clean_sheets,
                 goals_conceded, own_goals, penalties_saved, penalties_missed, red_cards,
                 yellow_cards, big_chances_missed, big_chances_created, clearance_blocks_interceptions,
                 completed_passes, dribbles, errors_leading_to_goal, fouls, key_passes, open_play_crosses,
                 was_home, winning_goals
-            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
             ON CONFLICT (season, gameweek, player_name) DO UPDATE SET
-                fixture_id= EXCLUDED.fixture_id,
+                player_cost = EXCLUDED.player_cost,
+                fixture_id = EXCLUDED.fixture_id,
                 opponent_team = EXCLUDED.opponent_team,
                 goals_scored = EXCLUDED.goals_scored,
                 assists = EXCLUDED.assists,
@@ -196,75 +176,3 @@ def load_player_gameweek_stats(connection, records):
             record,
         )
     connection.commit()
-
-
-# def main():
-#     conn = db_connection_wrapper()
-#     try:
-#         # create_player_gameweek_stats_table(conn)
-#         for season in SEASONS:
-#             print(f"\n📦 Processing season: {season}")
-#             fixtures = fetch_fixtures_for_season(season)
-#             players_list = fetch_players_list(season)
-#             for player in players_list:
-#                 player_folder = (
-#                     player["first_name"]
-#                     + "_"
-#                     + player["second_name"]
-#                     + "_"
-#                     + player["id"]
-#                 )
-#                 player_name, _ = extract_player_name_and_id(player_folder)
-#                 gw_data = fetch_player_gameweek(season, player_folder)
-#                 records = []
-#                 for row in gw_data:
-#                     gameweek = int(row["round"])
-#                     team_code = match_team_code(
-#                         fixtures, row["opponent_team"], row["kickoff_time"]
-#                     )
-#                     if team_code is None:
-#                         print(
-#                             f"⚠️ Could not determine team code for {player_name} GW{gameweek} in {season}"
-#                         )
-#                         continue
-#                     try:
-#                         record = (
-#                             season,
-#                             gameweek,
-#                             player_name,
-#                             team_code,
-#                             int(row["goals_scored"]),
-#                             int(row["assists"]),
-#                             int(row["clean_sheets"]),
-#                             int(row["goals_conceded"]),
-#                             int(row["own_goals"]),
-#                             int(row["penalties_saved"]),
-#                             int(row["penalties_missed"]),
-#                             int(row["red_cards"]),
-#                             int(row["yellow_cards"]),
-#                             int(row["big_chances_missed"]),
-#                             int(row["big_chances_created"]),
-#                             int(row["clearances_blocks_interceptions"]),
-#                             int(row["completed_passes"]),
-#                             int(row["dribbles"]),
-#                             int(row["errors_leading_to_goal"]),
-#                             int(row["fouls"]),
-#                             int(row["key_passes"]),
-#                             int(row["open_play_crosses"]),
-#                             bool(int(row["was_home"])),
-#                             int(row["winning_goals"]),
-#                         )
-#                         records.append(record)
-#                     except Exception as e:
-#                         print(
-#                             f"❌ Error parsing row for {player_name} in {season}, GW{gameweek}: {e}"
-#                         )
-#                 if records:
-#                     insert_player_gameweek_stats(conn, records)
-#     finally:
-#         conn.close()
-#         print("\n✅ Player gameweek stats loaded successfully.")
-
-
-# if __name__ == "__main__":
-#     main()

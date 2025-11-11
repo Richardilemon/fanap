@@ -24,7 +24,7 @@ services:
 
   pgadmin:
     image: dpage/pgadmin4
-    container_name: fpl_pgadmin
+    container_name: pgadmin
     environment:
       - PGADMIN_DEFAULT_EMAIL=${PGADMIN_DEFAULT_EMAIL}
       - PGADMIN_DEFAULT_PASSWORD=${PGADMIN_DEFAULT_PASSWORD}
