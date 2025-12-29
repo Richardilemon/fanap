@@ -12,3 +12,4 @@ logs/
 plugins/
 
 airflow_backup/
+x/
