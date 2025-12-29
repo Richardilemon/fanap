@@ -291,6 +291,10 @@ if __name__ == '__main__':
     # Test configuration when run directly
     import sys
     from pprint import pprint
+
+    from dotenv import load_dotenv  
+    
+    load_dotenv() 
     
     print("🔍 Verifying API configuration...")
     config_status = verify_config()

@@ -1,7 +1,7 @@
 import requests
 from datetime import datetime
 from scripts.utils.db_config import db_connection_wrapper
-from airflow.models import Variable
+import os
 import logging
 from scripts.utils.infer_season import infer_season
 import psycopg2
@@ -80,7 +80,7 @@ def fetch_teams_data():
         All exceptions are handled internally, so no exceptions are propagated.
     """
     try:
-        url = Variable.get("FPL_TEAMS_API_URL")
+        url = os.getenv("FPL_TEAMS_API_URL", "https://fantasy.premierleague.com/api/bootstrap-static/")
         logger.info(f"Fetching teams data from {url}")
         
         response = requests.get(url, timeout=30)

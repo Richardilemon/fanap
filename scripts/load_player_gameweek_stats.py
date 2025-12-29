@@ -39,8 +39,9 @@ def validate_player_gameweek_record(season, gameweek, player_name, player_cost):
         return False, f"Invalid season format: {season}"
     
     # Check gameweek range (Premier League has 38 gameweeks)
-    if not isinstance(gameweek, int) or gameweek < 1 or gameweek > 38:
-        return False, f"Gameweek must be between 1 and 38, got: {gameweek}"
+    max_gw = 47 if season == "2019-20" else 38
+    if not isinstance(gameweek, int) or gameweek < 1 or gameweek > max_gw:
+        return False, f"Gameweek must be between 1 and {max_gw}, got: {gameweek}"
     
     # Check player name is non-empty
     if not player_name or not isinstance(player_name, str) or len(player_name.strip()) == 0:
@@ -90,7 +91,7 @@ def get_players_folder(players):
 
     for player in players:
         player_folder = (
-            player["first_name"] + "_" + player["second_name"] + "_" + player["id"]
+            player["first_name"] + "_" + player["second_name"] + "_" + str(player["id"])
         )
         players_lists.append(player_folder)
 

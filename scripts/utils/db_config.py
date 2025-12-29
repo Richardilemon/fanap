@@ -65,3 +65,52 @@ def db_connection_wrapper(func):
                 logger.info("🔒 Database connection closed")
     
     return wrapper
+
+
+# ADD THIS SECTION AT THE BOTTOM
+if __name__ == '__main__':
+    # Test connection when run directly
+    import sys
+    from dotenv import load_dotenv
+    
+    # Load .env file
+    load_dotenv()
+    
+    print("🔍 Testing database connection...")
+    print(f"DATABASE_URL: {'✅ SET' if os.getenv('DATABASE_URL') else '❌ NOT SET'}")
+    
+    try:
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        
+        # Test query
+        cursor.execute("SELECT version();")
+        version = cursor.fetchone()[0]
+        print(f"\n✅ Connection successful!")
+        print(f"PostgreSQL version: {version[:80]}")
+        
+        # List tables
+        cursor.execute("""
+            SELECT table_name 
+            FROM information_schema.tables 
+            WHERE table_schema = 'public'
+            ORDER BY table_name;
+        """)
+        tables = cursor.fetchall()
+        
+        if tables:
+            print(f"\n📊 Tables found:")
+            for table in tables:
+                print(f"   - {table[0]}")
+        else:
+            print("\n⚠️ No tables found. Run schema setup first.")
+        
+        cursor.close()
+        conn.close()
+        
+    except Exception as e:
+        print(f"\n❌ Connection failed: {e}")
+        print(f"Error type: {type(e).__name__}")
+        import traceback
+        traceback.print_exc()
+        sys.exit(1)

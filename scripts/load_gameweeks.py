@@ -41,7 +41,7 @@ def validate_gameweek_record(season, gameweek, deadline):
     
     # Check deadline is in reasonable range (not too far in past or future)
     now = datetime.now()
-    if deadline < datetime(2019, 1, 1) or deadline > now + timedelta(days=365):
+    if deadline < datetime(2016, 1, 1) or deadline > now + timedelta(days=365):
         return False, f"Deadline out of reasonable range: {deadline}"
     
     return True, None
