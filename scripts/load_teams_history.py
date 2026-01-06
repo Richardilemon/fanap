@@ -97,27 +97,3 @@ def load_teams_history_records(connection, teams_history_records):
     connection.commit()
     print(f"✅ Loaded teams for {season}")
 
-
-# def main(base_url):
-#     conn = get_db_connection()
-#     try:
-#         print("Creating teams table...")
-#         create_teams_table(conn)
-#         for season in SEASONS:
-#             print(f"Fetching teams for {season}...")
-#             csv_text = fetch_teams_csv(base_url, season)
-#             load_and_insert_teams_from_csv(conn, csv_text, season)
-#         print("✅ Teams history loaded successfully.")
-#     finally:
-#         conn.close()
-
-
-# if __name__ == "__main__":
-#     import sys
-
-#     base_url = (
-#         sys.argv[1]
-#         if len(sys.argv) > 1
-#         else "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/master/data"
-#     )
-#     main(base_url)

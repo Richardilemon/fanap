@@ -19,7 +19,7 @@ from scripts.load_player_gameweek_stats import (
 from scripts.utils.fetch_api_data import fetch_data_from_api
 
 # Available seasons
-SEASONS = ["2018-19", "2019-20", "2020-21", "2021-22", "2022-23", "2023-24", "2024-25", "2025-26"]
+SEASONS = ["2019-20", "2020-21", "2021-22", "2022-23", "2023-24", "2024-25", "2025-26"]
 
 
 def load_player_stats_for_season(season):

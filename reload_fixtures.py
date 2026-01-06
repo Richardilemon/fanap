@@ -1,5 +1,5 @@
 """
-Reload fixtures for current season
+Reload fixtures for ALL seasons including the id column
 """
 import os
 import sys
@@ -10,92 +10,111 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from scripts.load_fixtures import parse_fixtures, load_fixtures
 from scripts.utils.fetch_api_data import fetch_data_from_api
-from scripts.utils.infer_season import infer_season
+
+SEASONS = ["2019-20", "2020-21", "2021-22", "2022-23", "2023-24", "2024-25", "2025-26"]
 
 print("=" * 70)
-print("🔄 RELOADING FIXTURES")
+print("🔄 RELOADING FIXTURES FOR ALL SEASONS")
 print("=" * 70)
+print(f"\nSeasons: {', '.join(SEASONS)}")
 
-season = infer_season()
-print(f"\n📅 Season: {season}\n")
+if input("\nProceed? (yes/no): ").lower() != "yes":
+    print("Cancelled.")
+    sys.exit(0)
 
-print("1️⃣ Fetching fixtures from API...")
-try:
-    fixtures_data = fetch_data_from_api(
-        season=season,
-        endpoint="fixtures.csv"
-    )
-    
-    if not fixtures_data:
-        print("❌ No fixtures data returned")
-        sys.exit(1)
-    
-    print(f"✅ Fetched fixtures data")
-    
-except Exception as e:
-    print(f"❌ Failed to fetch: {e}")
-    import traceback
-    traceback.print_exc()
-    sys.exit(1)
+results = {}
 
-print("\n2️⃣ Parsing fixtures...")
-try:
-    # fixtures_data should be a list with one dict containing 'csv' key
-    if isinstance(fixtures_data, list) and len(fixtures_data) > 0:
-        parsed_fixtures = parse_fixtures(fixtures_data[0])
-    else:
-        parsed_fixtures = parse_fixtures(fixtures_data)
+for season in SEASONS:
+    print(f"\n{'='*70}")
+    print(f"📥 SEASON: {season}")
+    print(f"{'='*70}")
     
-    if not parsed_fixtures:
-        print("❌ No fixtures parsed")
-        sys.exit(1)
-    
-    print(f"✅ Parsed {len(parsed_fixtures)} fixtures")
-    
-except Exception as e:
-    print(f"❌ Failed to parse: {e}")
-    import traceback
-    traceback.print_exc()
-    sys.exit(1)
+    try:
+        # Fetch from Vaastav
+        print(f"  Fetching fixtures...")
+        fixtures_data = fetch_data_from_api(
+            season=season,
+            endpoint="fixtures.csv"
+        )
+        
+        if not fixtures_data:
+            print(f"  ❌ No data for {season}")
+            results[season] = False
+            continue
+        
+        # Parse (includes id now)
+        print(f"  Parsing...")
+        if isinstance(fixtures_data, list) and len(fixtures_data) > 0:
+            parsed = parse_fixtures(fixtures_data[0])
+        else:
+            parsed = parse_fixtures(fixtures_data)
+        
+        if not parsed:
+            print(f"  ❌ Parsing failed for {season}")
+            results[season] = False
+            continue
+        
+        print(f"  ✅ Parsed {len(parsed)} fixtures")
+        
+        # Load to database
+        print(f"  Loading to database...")
+        load_fixtures([parsed])
+        results[season] = True
+        print(f"  ✅ {season} complete!")
+        
+    except Exception as e:
+        print(f"  ❌ Error: {e}")
+        import traceback
+        traceback.print_exc()
+        results[season] = False
 
-print("\n3️⃣ Loading to database...")
-try:
-    # Wrap in list as load_fixtures expects list of lists
-    load_fixtures([parsed_fixtures])
-    print("✅ Loaded successfully")
-    
-except Exception as e:
-    print(f"❌ Failed to load: {e}")
-    import traceback
-    traceback.print_exc()
-    sys.exit(1)
-
+# Summary
 print("\n" + "=" * 70)
-print("✅ FIXTURES RELOADED!")
+print("📊 SUMMARY")
 print("=" * 70)
+
+for season, success in results.items():
+    emoji = "✅" if success else "❌"
+    print(f"  {emoji} {season}")
+
+success_count = sum(results.values())
+print(f"\n✅ Success: {success_count}/{len(SEASONS)}")
 
 # Verify
-from scripts.utils.db_config import get_db_connection
-conn = get_db_connection()
-cursor = conn.cursor()
+if success_count > 0:
+    print("\n" + "=" * 70)
+    print("🔍 VERIFICATION")
+    print("=" * 70)
+    
+    from scripts.utils.db_config import get_db_connection
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    
+    cursor.execute("""
+        SELECT season,
+               COUNT(*) as total,
+               COUNT(id) as with_id,
+               MIN(id) as min_id,
+               MAX(id) as max_id
+        FROM fixtures
+        GROUP BY season
+        ORDER BY season;
+    """)
+    
+    print(f"\n{'Season':<10} {'Total':<8} {'With ID':<8} {'ID Range':<20}")
+    print("-" * 55)
+    
+    for row in cursor.fetchall():
+        season, total, with_id, min_id, max_id = row
+        id_range = f"{min_id}-{max_id}" if min_id else "NULL"
+        print(f"{season:<10} {total:<8} {with_id:<8} {id_range:<20}")
+    
+    cursor.close()
+    conn.close()
 
-cursor.execute("""
-    SELECT COUNT(*), COUNT(id), MIN(id), MAX(id)
-    FROM fixtures
-    WHERE season = %s;
-""", (season,))
+print("\n" + "=" * 70)
+print("✅ FIXTURES RELOAD COMPLETE!")
+print("=" * 70)
 
-count, id_count, min_id, max_id = cursor.fetchone()
-
-print(f"\n📊 Verification:")
-print(f"   Total fixtures: {count}")
-print(f"   With id: {id_count}")
-print(f"   ID range: {min_id} to {max_id}")
-
-if id_count < count:
-    print(f"\n⚠️  Warning: {count - id_count} fixtures missing id!")
-else:
-    print(f"\n✅ All fixtures have id column populated!")
-
-cursor.close()
-conn.close()
+if success_count > 0:
+    print("\n💡 Next: python migrate_add_team_names.py")

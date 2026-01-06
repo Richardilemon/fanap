@@ -122,24 +122,28 @@ def add_team_name_columns():
     conn.commit()
     print("✅ Indexes created")
     
-    # Step 5: Verify
-    print("\n5️⃣ Verifying...")
-    
+    # Step 5: Verify ALL SEASONS
+    print("\n5️⃣ Verifying all seasons...")
+
     cursor.execute("""
         SELECT 
+            season,
             COUNT(*) as total,
             COUNT(player_team_name) as with_player,
             COUNT(opponent_team_name) as with_opponent
         FROM player_gameweek_stats
-        WHERE season = '2025-26';
+        GROUP BY season
+        ORDER BY season;
     """)
-    
-    total, player, opponent = cursor.fetchone()
-    
-    print(f"\n📊 Results for 2025-26:")
-    print(f"   Total records: {total}")
-    print(f"   With player_team_name: {player} ({player/total*100:.1f}%)")
-    print(f"   With opponent_team_name: {opponent} ({opponent/total*100:.1f}%)")
+
+    print(f"\n📊 Results by season:")
+    print(f"{'Season':<10} {'Total':<8} {'Player Team':<12} {'Opponent':<12} {'Coverage'}")
+    print("-" * 60)
+
+    for row in cursor.fetchall():
+        season, total, player, opponent = row
+        coverage = min(player/total*100, opponent/total*100) if total > 0 else 0
+        print(f"{season:<10} {total:<8} {player:<12} {opponent:<12} {coverage:.1f}%")
     
     # Step 6: Check for NULLs
     cursor.execute("""
