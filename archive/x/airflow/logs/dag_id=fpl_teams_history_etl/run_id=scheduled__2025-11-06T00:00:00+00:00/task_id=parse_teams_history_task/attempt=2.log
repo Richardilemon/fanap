@@ -1,0 +1,26 @@
+[2025-11-07T02:18:22.588+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fpl_teams_history_etl.parse_teams_history_task scheduled__2025-11-06T00:00:00+00:00 [queued]>
+[2025-11-07T02:18:22.594+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fpl_teams_history_etl.parse_teams_history_task scheduled__2025-11-06T00:00:00+00:00 [queued]>
+[2025-11-07T02:18:22.594+0000] {taskinstance.py:1308} INFO - Starting attempt 2 of 2
+[2025-11-07T02:18:22.602+0000] {taskinstance.py:1327} INFO - Executing <Task(_PythonDecoratedOperator): parse_teams_history_task> on 2025-11-06 00:00:00+00:00
+[2025-11-07T02:18:22.604+0000] {standard_task_runner.py:57} INFO - Started process 10317 to run task
+[2025-11-07T02:18:22.607+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'fpl_teams_history_etl', 'parse_teams_history_task', 'scheduled__2025-11-06T00:00:00+00:00', '--job-id', '204', '--raw', '--subdir', 'DAGS_FOLDER/fpl_teams_history_etl.py', '--cfg-path', '/tmp/tmpfr0b1tqr']
+[2025-11-07T02:18:22.607+0000] {standard_task_runner.py:85} INFO - Job 204: Subtask parse_teams_history_task
+[2025-11-07T02:18:22.640+0000] {task_command.py:410} INFO - Running <TaskInstance: fpl_teams_history_etl.parse_teams_history_task scheduled__2025-11-06T00:00:00+00:00 [running]> on host 9e8fdbd91f0c
+[2025-11-07T02:18:22.703+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='richardilemon' AIRFLOW_CTX_DAG_ID='fpl_teams_history_etl' AIRFLOW_CTX_TASK_ID='parse_teams_history_task' AIRFLOW_CTX_EXECUTION_DATE='2025-11-06T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-11-06T00:00:00+00:00'
+[2025-11-07T02:18:22.705+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/decorators/base.py", line 220, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 181, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 198, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/fpl_teams_history_etl.py", line 61, in parse_teams_history_task
+    return parse_team_history(teams_history)
+  File "/opt/airflow/scripts/load_teams_history.py", line 26, in parse_team_history
+    for data in csv_text:
+TypeError: 'NoneType' object is not iterable
+[2025-11-07T02:18:22.713+0000] {taskinstance.py:1350} INFO - Marking task as FAILED. dag_id=fpl_teams_history_etl, task_id=parse_teams_history_task, execution_date=20251106T000000, start_date=20251107T021822, end_date=20251107T021822
+[2025-11-07T02:18:22.718+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 204 for task parse_teams_history_task ('NoneType' object is not iterable; 10317)
+[2025-11-07T02:18:22.746+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2025-11-07T02:18:22.761+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

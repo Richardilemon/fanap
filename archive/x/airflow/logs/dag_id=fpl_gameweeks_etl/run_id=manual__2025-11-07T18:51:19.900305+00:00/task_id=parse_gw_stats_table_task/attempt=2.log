@@ -1,0 +1,26 @@
+[2025-11-07T19:03:54.200+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fpl_gameweeks_etl.parse_gw_stats_table_task manual__2025-11-07T18:51:19.900305+00:00 [queued]>
+[2025-11-07T19:03:54.206+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fpl_gameweeks_etl.parse_gw_stats_table_task manual__2025-11-07T18:51:19.900305+00:00 [queued]>
+[2025-11-07T19:03:54.207+0000] {taskinstance.py:1308} INFO - Starting attempt 2 of 2
+[2025-11-07T19:03:54.214+0000] {taskinstance.py:1327} INFO - Executing <Task(_PythonDecoratedOperator): parse_gw_stats_table_task> on 2025-11-07 18:51:19.900305+00:00
+[2025-11-07T19:03:54.219+0000] {standard_task_runner.py:57} INFO - Started process 18592 to run task
+[2025-11-07T19:03:54.221+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'fpl_gameweeks_etl', 'parse_gw_stats_table_task', 'manual__2025-11-07T18:51:19.900305+00:00', '--job-id', '254', '--raw', '--subdir', 'DAGS_FOLDER/fpl_gameweeks_dag.py', '--cfg-path', '/tmp/tmpdlud54r3']
+[2025-11-07T19:03:54.223+0000] {standard_task_runner.py:85} INFO - Job 254: Subtask parse_gw_stats_table_task
+[2025-11-07T19:03:54.299+0000] {task_command.py:410} INFO - Running <TaskInstance: fpl_gameweeks_etl.parse_gw_stats_table_task manual__2025-11-07T18:51:19.900305+00:00 [running]> on host 49bf20bea3ae
+[2025-11-07T19:03:54.366+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='richardilemon' AIRFLOW_CTX_DAG_ID='fpl_gameweeks_etl' AIRFLOW_CTX_TASK_ID='parse_gw_stats_table_task' AIRFLOW_CTX_EXECUTION_DATE='2025-11-07T18:51:19.900305+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-07T18:51:19.900305+00:00'
+[2025-11-07T19:03:54.367+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/decorators/base.py", line 220, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 181, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 198, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/fpl_gameweeks_dag.py", line 131, in parse_gw_stats_table_task
+    return parse_gw_stats_table(gw_data)
+  File "/opt/airflow/scripts/load_player_gameweek_stats.py", line 79, in parse_gw_stats_table
+    for row in gw_data:
+TypeError: 'NoneType' object is not iterable
+[2025-11-07T19:03:54.373+0000] {taskinstance.py:1350} INFO - Marking task as FAILED. dag_id=fpl_gameweeks_etl, task_id=parse_gw_stats_table_task, execution_date=20251107T185119, start_date=20251107T190354, end_date=20251107T190354
+[2025-11-07T19:03:54.380+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 254 for task parse_gw_stats_table_task ('NoneType' object is not iterable; 18592)
+[2025-11-07T19:03:54.407+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2025-11-07T19:03:54.423+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check
