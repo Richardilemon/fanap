@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fanap: Analysis - Discovery</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#22d3ee","primary-dim": "rgba(34, 211, 238, 0.1)",
+                        "background-light": "#f5f8f5",
+                        "background-dark": "#0f0f11",
+                        "card-dark": "#18181b",
+                        "border-dark": "#27272a",
+                    },
+                    fontFamily: {
+                        "display": ["Roboto Condensed", "sans-serif"],
+                        "body": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #18181b; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #27272a; 
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3f3f46; 
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 16px;
+            width: 16px;
+            border-radius: 50%;
+            background: #22d3ee;
+            cursor: pointer;
+            margin-top: -6px;
+            box-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 4px;
+            cursor: pointer;
+            background: #27272a;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-body overflow-hidden">
+<div class="flex h-screen w-full">
+<aside class="hidden md:flex flex-col w-64 bg-card-dark border-r border-border-dark flex-shrink-0 h-full justify-between p-4">
+<div class="flex flex-col gap-6">
+<div class="flex gap-3 items-center px-2">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 border border-primary/20" data-alt="Fanap logo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDVdppggGRYgPz2zI7F9V4UKIFmViLJ0BQZFzt_zr7ssU-IC_WGbaZ5Qrb33N_G64iAPuVjl0B-FUIHX6ewXKjc7ToBSVmuq-yLLIIFznhIW_mpTtySdjjZYd1mQDfSoBF0yYKnfUNN-ljCoHdn1FM5dj_lYtjMCV7axu2Mil4C71LtNOZlSOj7Bh0twEV5kZqgjCkjVpTDc8cms45_lstERN48YZfjzgXXfbaxzzSIm1lstR5JdxkR8q5zJcNox0u5tTeF5amne80J");'></div>
+<div class="flex flex-col">
+<h1 class="text-white text-lg font-display font-bold leading-none tracking-tight">Fanap</h1>
+<p class="text-gray-400 text-xs font-normal">Pro Analytics Suite</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2 font-display">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<p class="text-sm font-medium">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors" href="#">
+<span class="material-symbols-outlined">emoji_events</span>
+<p class="text-sm font-medium">League Leaders</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors" href="#">
+<span class="material-symbols-outlined">group</span>
+<p class="text-sm font-medium">My Team</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<p class="text-sm font-medium">Fixtures</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors" href="#">
+<span class="material-symbols-outlined">compare_arrows</span>
+<p class="text-sm font-medium">Transfer Market</p>
+</a>
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-white bg-white/5 transition-colors group" href="#">
+<span class="material-symbols-outlined fill-1 text-primary">query_stats</span>
+<div class="flex-1 flex justify-between items-center">
+<p class="text-sm font-bold">Analysis</p>
+<span class="material-symbols-outlined text-gray-400 text-[18px]">expand_less</span>
+</div>
+</a>
+<div class="flex flex-col gap-1 pl-11">
+<a class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-primary-dim text-primary border border-primary/20" href="#">
+<p class="text-sm font-bold">Discovery</p>
+</a>
+<a class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors" href="#">
+<p class="text-sm font-medium">Comparison</p>
+</a>
+<a class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors" href="#">
+<p class="text-sm font-medium">Player Research</p>
+</a>
+</div>
+</div>
+</nav>
+</div>
+<div class="flex flex-col gap-2 font-display">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<p class="text-sm font-medium">Settings</p>
+</a>
+<div class="pt-4 border-t border-border-dark flex items-center gap-3 px-2">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-8" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBGStqEh4laQXAvQHk9wkNc8V-ldsQ1NXEXA9uAPnu8xP1ceutBTZmHIwJNbw54KMgrrd0iIJNzAPNu_GbmCcJHdE40-1kvbf0CmJZmy6CVkWklwHX_hmOp5AeB3P2wVWqHDQX56CmGMvk5kzb3Gh4E3nH4uIOs3JRR3Z9mVjrfRUc8YLtxWYzBDaUGcC0xNgBdK22lkIMu8cT1SKMHjdXBJsLeANT7D3FvVfCX_k5H7wmb7iKZ3lACJzl8js0Tju366qOaW8bkaFxQ");'></div>
+<div>
+<p class="text-sm font-medium text-white">Alex Manager</p>
+<p class="text-xs text-primary">Top 10k</p>
+</div>
+</div>
+</div>
+</aside>
+<div class="flex flex-1 flex-col h-full overflow-hidden relative">
+<header class="flex items-center justify-between border-b border-border-dark bg-background-dark/80 backdrop-blur-md px-8 py-4 z-10 sticky top-0">
+<div class="flex items-center gap-6">
+<button class="md:hidden text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="flex items-center gap-4 font-display">
+<span class="text-gray-400 text-sm font-medium">Gameweek 25</span>
+<span class="h-1 w-1 rounded-full bg-primary"></span>
+<span class="text-primary text-sm font-medium">Preparing</span>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex relative group">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 material-symbols-outlined text-[20px]">search</span>
+<input class="bg-card-dark border border-border-dark rounded-full py-2 pl-10 pr-4 text-sm text-white focus:outline-none focus:border-primary w-64 transition-all placeholder:text-gray-600 font-body" placeholder="Search player, team..."/>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center justify-center rounded-full size-10 bg-card-dark text-white hover:bg-white/10 transition-colors border border-border-dark relative">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-primary rounded-full border border-card-dark"></span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-1 overflow-y-auto p-4 md:p-8">
+<div class="max-w-[1400px] mx-auto flex flex-col gap-6 pb-10">
+<div class="flex flex-col gap-6">
+<div class="flex justify-between items-end">
+<div>
+<div class="flex items-center gap-2 text-sm font-display mb-1 uppercase tracking-wider">
+<span class="text-gray-500 font-semibold">Analysis</span>
+<span class="material-symbols-outlined text-gray-600 text-xs">chevron_right</span>
+<span class="text-primary font-bold">Discovery</span>
+</div>
+<h1 class="text-white text-3xl md:text-4xl font-display font-bold tracking-tight">Hidden Gems</h1>
+<p class="text-gray-400 font-body text-sm mt-1">Uncover statistical outliers and high-potential assets.</p>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+<div class="bg-card-dark border border-border-dark rounded-xl p-5 shadow-lg lg:col-span-1 flex flex-col gap-4 justify-center">
+<div class="flex justify-between items-center mb-1">
+<span class="text-white font-display font-bold text-sm uppercase tracking-wider flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">filter_list</span> Filters
+                            </span>
+<span class="text-primary text-xs font-mono bg-primary-dim px-2 py-0.5 rounded">Active</span>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between text-xs font-body">
+<span class="text-gray-400">Max Ownership</span>
+<span class="text-white font-bold">5.0%</span>
+</div>
+<input class="w-full" max="100" min="0" type="range" value="5"/>
+<div class="flex justify-between text-[10px] text-gray-600 font-mono">
+<span>0%</span>
+<span>100%</span>
+</div>
+</div>
+<div class="flex gap-2 mt-1">
+<select class="bg-background-dark border border-border-dark text-white text-xs rounded px-2 py-1.5 w-full focus:ring-1 focus:ring-primary focus:border-primary">
+<option>All Positions</option>
+<option>Defenders</option>
+<option>Midfielders</option>
+<option>Forwards</option>
+</select>
+<select class="bg-background-dark border border-border-dark text-white text-xs rounded px-2 py-1.5 w-full focus:ring-1 focus:ring-primary focus:border-primary">
+<option>Price: Any</option>
+<option>&lt; 5.0m</option>
+<option>&lt; 7.0m</option>
+<option>&lt; 10.0m</option>
+</select>
+</div>
+</div>
+<div class="lg:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="bg-card-dark border border-border-dark rounded-xl p-5 flex items-center gap-4 relative overflow-hidden group">
+<div class="absolute right-0 top-0 h-full w-1 bg-primary"></div>
+<div class="bg-primary-dim p-3 rounded-full text-primary">
+<span class="material-symbols-outlined">diamond</span>
+</div>
+<div>
+<p class="text-gray-400 text-xs font-display uppercase tracking-wider mb-0.5">Hidden Gems Found</p>
+<p class="text-2xl font-display font-bold text-white">12</p>
+</div>
+</div>
+<div class="bg-card-dark border border-border-dark rounded-xl p-5 flex items-center gap-4 relative overflow-hidden">
+<div class="bg-background-dark border border-border-dark p-3 rounded-full text-gray-300">
+<span class="material-symbols-outlined">payments</span>
+</div>
+<div>
+<p class="text-gray-400 text-xs font-display uppercase tracking-wider mb-0.5">Average Price</p>
+<p class="text-2xl font-display font-bold text-white">£6.2m</p>
+</div>
+</div>
+<div class="bg-card-dark border border-border-dark rounded-xl p-5 flex items-center gap-4 relative overflow-hidden">
+<div class="bg-background-dark border border-border-dark p-3 rounded-full text-gray-300">
+<span class="material-symbols-outlined">trending_up</span>
+</div>
+<div>
+<p class="text-gray-400 text-xs font-display uppercase tracking-wider mb-0.5">Avg Points (Last 3)</p>
+<p class="text-2xl font-display font-bold text-white">5.8</p>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-6 h-auto xl:h-[500px]">
+<div class="xl:col-span-2 bg-card-dark border border-border-dark rounded-xl p-0 flex flex-col shadow-lg overflow-hidden h-full">
+<div class="p-5 border-b border-border-dark flex justify-between items-center">
+<h3 class="text-white font-display font-bold text-lg flex items-center gap-2">
+<span class="size-2 rounded-full bg-primary animate-pulse"></span>
+                                Top Differentials
+                            </h3>
+<button class="text-xs text-primary font-medium hover:text-white transition-colors uppercase tracking-wider">Export CSV</button>
+</div>
+<div class="flex-1 overflow-auto">
+<table class="w-full text-sm text-left">
+<thead class="text-xs text-gray-500 font-display uppercase bg-background-dark/50 sticky top-0 backdrop-blur-sm z-10">
+<tr>
+<th class="py-3 pl-5 pr-2 font-semibold">Player</th>
+<th class="py-3 px-2 font-semibold text-center">Pos</th>
+<th class="py-3 px-2 font-semibold text-right">Price</th>
+<th class="py-3 px-2 font-semibold text-right">Own%</th>
+<th class="py-3 px-2 font-semibold text-right">Pts (Last 5)</th>
+<th class="py-3 px-2 font-semibold text-right text-primary">xGI</th>
+<th class="py-3 pl-2 pr-5 font-semibold text-right">Next 3</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-dark font-body">
+<tr class="group cursor-pointer hover:bg-white/5 transition-colors">
+<td class="py-3 pl-5 pr-2">
+<div class="font-bold text-white">Pascal Groß</div>
+<div class="text-[10px] text-gray-500 uppercase">Brighton</div>
+</td>
+<td class="py-3 px-2 text-center text-xs text-gray-400">MID</td>
+<td class="py-3 px-2 text-right text-white font-medium">£6.4m</td>
+<td class="py-3 px-2 text-right text-gray-400">4.2%</td>
+<td class="py-3 px-2 text-right text-white font-bold">32</td>
+<td class="py-3 px-2 text-right text-primary font-bold">3.8</td>
+<td class="py-3 pl-2 pr-5 text-right">
+<div class="flex justify-end gap-1">
+<span class="size-2 rounded-full bg-green-500" title="Easy"></span>
+<span class="size-2 rounded-full bg-green-500" title="Easy"></span>
+<span class="size-2 rounded-full bg-gray-500" title="Medium"></span>
+</div>
+</td>
+</tr>
+<tr class="group cursor-pointer hover:bg-white/5 transition-colors">
+<td class="py-3 pl-5 pr-2">
+<div class="font-bold text-white">Richarlison</div>
+<div class="text-[10px] text-gray-500 uppercase">Spurs</div>
+</td>
+<td class="py-3 px-2 text-center text-xs text-gray-400">MID</td>
+<td class="py-3 px-2 text-right text-white font-medium">£7.1m</td>
+<td class="py-3 px-2 text-right text-gray-400">4.8%</td>
+<td class="py-3 px-2 text-right text-white font-bold">28</td>
+<td class="py-3 px-2 text-right text-primary font-bold">4.1</td>
+<td class="py-3 pl-2 pr-5 text-right">
+<div class="flex justify-end gap-1">
+<span class="size-2 rounded-full bg-green-500"></span>
+<span class="size-2 rounded-full bg-red-500"></span>
+<span class="size-2 rounded-full bg-green-500"></span>
+</div>
+</td>
+</tr>
+<tr class="group cursor-pointer hover:bg-white/5 transition-colors">
+<td class="py-3 pl-5 pr-2">
+<div class="font-bold text-white">D. Jota</div>
+<div class="text-[10px] text-gray-500 uppercase">Liverpool</div>
+</td>
+<td class="py-3 px-2 text-center text-xs text-gray-400">MID</td>
+<td class="py-3 px-2 text-right text-white font-medium">£8.0m</td>
+<td class="py-3 px-2 text-right text-gray-400">3.5%</td>
+<td class="py-3 px-2 text-right text-white font-bold">25</td>
+<td class="py-3 px-2 text-right text-primary font-bold">3.2</td>
+<td class="py-3 pl-2 pr-5 text-right">
+<div class="flex justify-end gap-1">
+<span class="size-2 rounded-full bg-gray-500"></span>
+<span class="size-2 rounded-full bg-green-500"></span>
+<span class="size-2 rounded-full bg-green-500"></span>
+</div>
+</td>
+</tr>
+<tr class="group cursor-pointer hover:bg-white/5 transition-colors">
+<td class="py-3 pl-5 pr-2">
+<div class="font-bold text-white">G. Jesus</div>
+<div class="text-[10px] text-gray-500 uppercase">Arsenal</div>
+</td>
+<td class="py-3 px-2 text-center text-xs text-gray-400">FWD</td>
+<td class="py-3 px-2 text-right text-white font-medium">£7.9m</td>
+<td class="py-3 px-2 text-right text-gray-400">2.1%</td>
+<td class="py-3 px-2 text-right text-white font-bold">21</td>
+<td class="py-3 px-2 text-right text-primary font-bold">3.9</td>
+<td class="py-3 pl-2 pr-5 text-right">
+<div class="flex justify-end gap-1">
+<span class="size-2 rounded-full bg-green-500"></span>
+<span class="size-2 rounded-full bg-green-500"></span>
+<span class="size-2 rounded-full bg-gray-500"></span>
+</div>
+</td>
+</tr>
+<tr class="group cursor-pointer hover:bg-white/5 transition-colors">
+<td class="py-3 pl-5 pr-2">
+<div class="font-bold text-white">P. Estupiñán</div>
+<div class="text-[10px] text-gray-500 uppercase">Brighton</div>
+</td>
+<td class="py-3 px-2 text-center text-xs text-gray-400">DEF</td>
+<td class="py-3 px-2 text-right text-white font-medium">£5.0m</td>
+<td class="py-3 px-2 text-right text-gray-400">14.1%</td>
+<td class="py-3 px-2 text-right text-white font-bold">19</td>
+<td class="py-3 px-2 text-right text-primary font-bold">1.2</td>
+<td class="py-3 pl-2 pr-5 text-right">
+<div class="flex justify-end gap-1">
+<span class="size-2 rounded-full bg-green-500"></span>
+<span class="size-2 rounded-full bg-green-500"></span>
+<span class="size-2 rounded-full bg-gray-500"></span>
+</div>
+</td>
+</tr>
+<tr class="group cursor-pointer hover:bg-white/5 transition-colors">
+<td class="py-3 pl-5 pr-2">
+<div class="font-bold text-white">C. Palmer</div>
+<div class="text-[10px] text-gray-500 uppercase">Chelsea</div>
+</td>
+<td class="py-3 px-2 text-center text-xs text-gray-400">MID</td>
+<td class="py-3 px-2 text-right text-white font-medium">£5.8m</td>
+<td class="py-3 px-2 text-right text-gray-400">18.5%</td>
+<td class="py-3 px-2 text-right text-white font-bold">35</td>
+<td class="py-3 px-2 text-right text-primary font-bold">4.2</td>
+<td class="py-3 pl-2 pr-5 text-right">
+<div class="flex justify-end gap-1">
+<span class="size-2 rounded-full bg-red-500"></span>
+<span class="size-2 rounded-full bg-green-500"></span>
+<span class="size-2 rounded-full bg-red-500"></span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="xl:col-span-1 bg-card-dark border border-border-dark rounded-xl p-5 flex flex-col shadow-lg">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-white font-display font-bold text-lg">Ownership vs. xGI</h3>
+<button class="text-gray-500 hover:text-white">
+<span class="material-symbols-outlined">info</span>
+</button>
+</div>
+<div class="flex-1 relative border-l border-b border-border-dark m-2 bg-[radial-gradient(#27272a_1px,transparent_1px)] [background-size:16px_16px]">
+<div class="absolute -left-8 top-1/2 -translate-y-1/2 -rotate-90 text-[10px] text-gray-500 font-mono tracking-widest">xGOAL INVOLVEMENT</div>
+<div class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] text-gray-500 font-mono tracking-widest">OWNERSHIP %</div>
+<div class="absolute left-[5%] bottom-[80%] group cursor-pointer z-10">
+<div class="size-3 rounded-full bg-primary shadow-[0_0_8px_rgba(34,211,238,0.8)] ring-2 ring-background-dark group-hover:scale-150 transition-transform"></div>
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-max bg-background-dark border border-border-dark p-2 rounded z-20 shadow-xl">
+<p class="text-xs font-bold text-white">Gross</p>
+<p class="text-[10px] text-gray-400">Own: 4.2% | xGI: 3.8</p>
+</div>
+</div>
+<div class="absolute left-[8%] bottom-[70%] group cursor-pointer">
+<div class="size-3 rounded-full bg-white/80 ring-2 ring-background-dark hover:bg-primary transition-colors"></div>
+</div>
+<div class="absolute left-[3%] bottom-[60%] group cursor-pointer">
+<div class="size-3 rounded-full bg-white/80 ring-2 ring-background-dark hover:bg-primary transition-colors"></div>
+</div>
+<div class="absolute left-[15%] bottom-[85%] group cursor-pointer z-10">
+<div class="size-3 rounded-full bg-primary/80 ring-2 ring-background-dark hover:scale-125 transition-transform"></div>
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-max bg-background-dark border border-border-dark p-2 rounded z-20 shadow-xl">
+<p class="text-xs font-bold text-white">Richarlison</p>
+<p class="text-[10px] text-gray-400">Own: 4.8% | xGI: 4.1</p>
+</div>
+</div>
+<div class="absolute left-[20%] bottom-[40%] group cursor-pointer">
+<div class="size-3 rounded-full bg-gray-500 ring-2 ring-background-dark hover:bg-white transition-colors"></div>
+</div>
+<div class="absolute left-[40%] bottom-[90%] group cursor-pointer">
+<div class="size-3 rounded-full bg-gray-500 ring-2 ring-background-dark hover:bg-white transition-colors"></div>
+</div>
+<div class="absolute top-0 right-0 p-2">
+<span class="text-[10px] text-primary bg-primary-dim px-2 py-1 rounded border border-primary/20">High Potential</span>
+</div>
+</div>
+</div>
+</div>
+<div>
+<h2 class="text-white text-xl font-display font-bold mb-4 border-l-4 border-primary pl-3">By Price Bracket</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-card-dark border border-border-dark rounded-xl p-5 hover:border-primary/50 transition-colors cursor-pointer group">
+<div class="flex justify-between items-center mb-3">
+<h4 class="text-gray-300 font-display font-bold">Budget Defenders</h4>
+<span class="text-xs text-primary bg-primary-dim px-2 py-1 rounded">&lt; £4.5m</span>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between items-center text-sm border-b border-border-dark/50 pb-2">
+<span class="text-white font-medium">B. Branthwaite</span>
+<div class="text-right">
+<div class="text-white font-bold">24 pts</div>
+<div class="text-[10px] text-gray-500">Last 5</div>
+</div>
+</div>
+<div class="flex justify-between items-center text-sm border-b border-border-dark/50 pb-2">
+<span class="text-white font-medium">M. Gusto</span>
+<div class="text-right">
+<div class="text-white font-bold">18 pts</div>
+<div class="text-[10px] text-gray-500">Last 5</div>
+</div>
+</div>
+</div>
+<div class="mt-3 text-center">
+<span class="text-xs text-gray-500 group-hover:text-primary transition-colors flex items-center justify-center gap-1">View Full List <span class="material-symbols-outlined text-xs">arrow_forward</span></span>
+</div>
+</div>
+<div class="bg-card-dark border border-border-dark rounded-xl p-5 hover:border-primary/50 transition-colors cursor-pointer group">
+<div class="flex justify-between items-center mb-3">
+<h4 class="text-gray-300 font-display font-bold">Mid-Price Mids</h4>
+<span class="text-xs text-primary bg-primary-dim px-2 py-1 rounded">&lt; £6.5m</span>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between items-center text-sm border-b border-border-dark/50 pb-2">
+<span class="text-white font-medium">Douglas Luiz</span>
+<div class="text-right">
+<div class="text-white font-bold">31 pts</div>
+<div class="text-[10px] text-gray-500">Last 5</div>
+</div>
+</div>
+<div class="flex justify-between items-center text-sm border-b border-border-dark/50 pb-2">
+<span class="text-white font-medium">Hwang Hee-chan</span>
+<div class="text-right">
+<div class="text-white font-bold">29 pts</div>
+<div class="text-[10px] text-gray-500">Last 5</div>
+</div>
+</div>
+</div>
+<div class="mt-3 text-center">
+<span class="text-xs text-gray-500 group-hover:text-primary transition-colors flex items-center justify-center gap-1">View Full List <span class="material-symbols-outlined text-xs">arrow_forward</span></span>
+</div>
+</div>
+<div class="bg-card-dark border border-border-dark rounded-xl p-5 hover:border-primary/50 transition-colors cursor-pointer group">
+<div class="flex justify-between items-center mb-3">
+<h4 class="text-gray-300 font-display font-bold">Differential Forwards</h4>
+<span class="text-xs text-primary bg-primary-dim px-2 py-1 rounded">&lt; 5% Own</span>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between items-center text-sm border-b border-border-dark/50 pb-2">
+<span class="text-white font-medium">C. Cunha</span>
+<div class="text-right">
+<div class="text-white font-bold">28 pts</div>
+<div class="text-[10px] text-gray-500">Last 5</div>
+</div>
+</div>
+<div class="flex justify-between items-center text-sm border-b border-border-dark/50 pb-2">
+<span class="text-white font-medium">D. Nunez</span>
+<div class="text-right">
+<div class="text-white font-bold">25 pts</div>
+<div class="text-[10px] text-gray-500">Last 5</div>
+</div>
+</div>
+</div>
+<div class="mt-3 text-center">
+<span class="text-xs text-gray-500 group-hover:text-primary transition-colors flex items-center justify-center gap-1">View Full List <span class="material-symbols-outlined text-xs">arrow_forward</span></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

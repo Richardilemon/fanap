@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fanap: My Team</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0df20d",
+                        "background-light": "#f5f8f5",
+                        "background-dark": "#0f0f11",
+                        "card-dark": "#18181b",
+                        "border-dark": "#27272a",
+                        "pitch-dark": "#064e3b",
+                        "pitch-light": "#065f46",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #18181b; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #27272a; 
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3f3f46; 
+        }
+        .pitch-gradient {
+            background: radial-gradient(circle, rgba(6,95,70,1) 0%, rgba(6,78,59,1) 100%);
+        }
+        .pitch-lines {
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 100px 100px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display overflow-hidden">
+<div class="flex h-screen w-full">
+<aside class="hidden md:flex flex-col w-64 bg-card-dark border-r border-border-dark flex-shrink-0 h-full justify-between p-4">
+<div class="flex flex-col gap-6">
+<div class="flex gap-3 items-center px-2">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 border border-primary/20" data-alt="Fanap logo with abstract green geometric shape" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDVdppggGRYgPz2zI7F9V4UKIFmViLJ0BQZFzt_zr7ssU-IC_WGbaZ5Qrb33N_G64iAPuVjl0B-FUIHX6ewXKjc7ToBSVmuq-yLLIIFznhIW_mpTtySdjjZYd1mQDfSoBF0yYKnfUNN-ljCoHdn1FM5dj_lYtjMCV7axu2Mil4C71LtNOZlSOj7Bh0twEV5kZqgjCkjVpTDc8cms45_lstERN48YZfjzgXXfbaxzzSIm1lstR5JdxkR8q5zJcNox0u5tTeF5amne80J");'></div>
+<div class="flex flex-col">
+<h1 class="text-white text-lg font-bold leading-none tracking-tight">Fanap</h1>
+<p class="text-gray-400 text-xs font-normal">Pro Analytics Suite</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<p class="text-sm font-medium">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors" href="#">
+<span class="material-symbols-outlined">trophy</span>
+<p class="text-sm font-medium">League Leaders</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary border border-primary/20" href="#">
+<span class="material-symbols-outlined fill-1">group</span>
+<p class="text-sm font-bold">My Team</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<p class="text-sm font-medium">Fixtures</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors" href="#">
+<span class="material-symbols-outlined">compare_arrows</span>
+<p class="text-sm font-medium">Transfer Market</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<p class="text-sm font-medium">Analysis</p>
+</a>
+</nav>
+</div>
+<div class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<p class="text-sm font-medium">Settings</p>
+</a>
+<div class="pt-4 border-t border-border-dark flex items-center gap-3 px-2">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-8" data-alt="User profile picture of a man looking confident" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBGStqEh4laQXAvQHk9wkNc8V-ldsQ1NXEXA9uAPnu8xP1ceutBTZmHIwJNbw54KMgrrd0iIJNzAPNu_GbmCcJHdE40-1kvbf0CmJZmy6CVkWklwHX_hmOp5AeB3P2wVWqHDQX56CmGMvk5kzb3Gh4E3nH4uIOs3JRR3Z9mVjrfRUc8YLtxWYzBDaUGcC0xNgBdK22lkIMu8cT1SKMHjdXBJsLeANT7D3FvVfCX_k5H7wmb7iKZ3lACJzl8js0Tju366qOaW8bkaFxQ");'></div>
+<div>
+<p class="text-sm font-medium text-white">Alex Manager</p>
+<p class="text-xs text-primary">Top 10k</p>
+</div>
+</div>
+</div>
+</aside>
+<div class="flex flex-1 flex-col h-full overflow-hidden relative">
+<header class="flex items-center justify-between border-b border-border-dark bg-background-dark/80 backdrop-blur-md px-8 py-4 z-10 sticky top-0">
+<div class="flex items-center gap-6">
+<button class="md:hidden text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="flex items-center gap-4">
+<span class="text-gray-400 text-sm font-medium">Gameweek 24</span>
+<div class="flex items-center gap-2 bg-red-500/10 px-2 py-0.5 rounded border border-red-500/20">
+<span class="h-1.5 w-1.5 rounded-full bg-red-500 animate-pulse"></span>
+<span class="text-red-500 text-xs font-bold uppercase tracking-wider">Deadline Passed</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex relative group">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 material-symbols-outlined text-[20px]">search</span>
+<input class="bg-card-dark border border-border-dark rounded-full py-2 pl-10 pr-4 text-sm text-white focus:outline-none focus:border-primary w-64 transition-all placeholder:text-gray-600" placeholder="Search player to transfer..."/>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center justify-center rounded-full size-10 bg-card-dark text-white hover:bg-white/10 transition-colors border border-border-dark relative">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-primary rounded-full border border-card-dark"></span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-1 overflow-y-auto p-4 md:p-6 lg:p-8">
+<div class="max-w-[1600px] mx-auto flex flex-col gap-6 pb-10">
+<div class="flex flex-wrap justify-between items-end gap-4">
+<div>
+<h1 class="text-white text-3xl md:text-4xl font-bold tracking-tight mb-1">My Team</h1>
+<p class="text-gray-400">Manage your squad, transfers, and formation.</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-4 py-2 bg-card-dark border border-border-dark rounded-lg text-white text-sm font-medium hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined text-[18px]">restart_alt</span>
+                                Reset
+                            </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-card-dark border border-border-dark rounded-lg text-white text-sm font-medium hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined text-[18px]">smart_toy</span>
+                                Auto Pick
+                            </button>
+<button class="flex items-center gap-2 px-6 py-2 bg-primary text-black rounded-lg text-sm font-bold hover:bg-primary/90 transition-colors shadow-[0_0_15px_rgba(13,242,13,0.3)]">
+<span class="material-symbols-outlined text-[18px]">save</span>
+                                Save Team
+                            </button>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+<div class="lg:col-span-8 flex flex-col gap-6">
+<div class="relative w-full aspect-[4/5] md:aspect-[16/11] rounded-2xl overflow-hidden border border-emerald-800 shadow-2xl pitch-gradient pitch-lines flex flex-col justify-between p-4 py-6 md:py-8">
+<div class="absolute inset-0 pointer-events-none opacity-20 flex items-center justify-center">
+<div class="w-full h-[1px] bg-white absolute top-1/2"></div>
+<div class="size-32 border border-white rounded-full"></div>
+<div class="absolute top-0 w-64 h-32 border-b border-l border-r border-white rounded-b-lg"></div>
+<div class="absolute bottom-0 w-64 h-32 border-t border-l border-r border-white rounded-t-lg"></div>
+</div>
+<div class="relative z-10 flex justify-center items-center h-1/5">
+<div class="flex flex-col items-center gap-1 group cursor-pointer hover:scale-105 transition-transform">
+<div class="relative">
+<div class="bg-gray-800 text-yellow-400 p-2 rounded-t-md shadow-lg border border-gray-700">
+<span class="material-symbols-outlined text-4xl">checkroom</span>
+</div>
+<div class="absolute -top-2 -right-2 bg-background-dark text-white text-[10px] font-bold px-1.5 py-0.5 rounded border border-gray-700">6</div>
+</div>
+<div class="bg-card-dark/90 backdrop-blur border border-border-dark rounded px-3 py-1 text-center min-w-[90px]">
+<p class="text-white text-xs font-bold truncate">Areola</p>
+<div class="flex justify-center items-center gap-1 text-[10px] text-gray-400">
+<span>WHU</span>
+<span class="size-1.5 rounded-full bg-red-500" title="Diff: 4"></span>
+</div>
+</div>
+</div>
+</div>
+<div class="relative z-10 flex justify-around items-center h-1/5 px-8 md:px-20">
+<div class="flex flex-col items-center gap-1 group cursor-pointer hover:scale-105 transition-transform">
+<div class="bg-red-700 text-white p-2 rounded-t-md shadow-lg border border-red-900">
+<span class="material-symbols-outlined text-4xl">checkroom</span>
+</div>
+<div class="bg-card-dark/90 backdrop-blur border border-border-dark rounded px-3 py-1 text-center min-w-[90px]">
+<p class="text-white text-xs font-bold truncate">Gabriel</p>
+<div class="flex justify-center items-center gap-1 text-[10px] text-gray-400">
+<span>ARS</span>
+<span class="size-1.5 rounded-full bg-green-500" title="Diff: 2"></span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-center gap-1 group cursor-pointer hover:scale-105 transition-transform">
+<div class="bg-sky-500 text-white p-2 rounded-t-md shadow-lg border border-sky-700">
+<span class="material-symbols-outlined text-4xl">checkroom</span>
+</div>
+<div class="bg-card-dark/90 backdrop-blur border border-border-dark rounded px-3 py-1 text-center min-w-[90px]">
+<p class="text-white text-xs font-bold truncate">Walker</p>
+<div class="flex justify-center items-center gap-1 text-[10px] text-gray-400">
+<span>MCI</span>
+<span class="size-1.5 rounded-full bg-green-500" title="Diff: 2"></span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-center gap-1 group cursor-pointer hover:scale-105 transition-transform">
+<div class="bg-white text-blue-900 p-2 rounded-t-md shadow-lg border border-gray-300">
+<span class="material-symbols-outlined text-4xl">checkroom</span>
+</div>
+<div class="bg-card-dark/90 backdrop-blur border border-border-dark rounded px-3 py-1 text-center min-w-[90px]">
+<p class="text-white text-xs font-bold truncate">Porro</p>
+<div class="flex justify-center items-center gap-1 text-[10px] text-gray-400">
+<span>TOT</span>
+<span class="size-1.5 rounded-full bg-gray-500" title="Diff: 3"></span>
+</div>
+</div>
+</div>
+</div>
+<div class="relative z-10 flex justify-around items-center h-1/5 px-4 md:px-12">
+<div class="flex flex-col items-center gap-1 group cursor-pointer hover:scale-105 transition-transform">
+<div class="relative">
+<div class="bg-red-600 text-white p-2 rounded-t-md shadow-lg border border-red-800">
+<span class="material-symbols-outlined text-4xl">checkroom</span>
+</div>
+<div class="absolute -top-2 -right-2 bg-yellow-500 text-black text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full border border-black shadow">C</div>
+</div>
+<div class="bg-card-dark/90 backdrop-blur border border-border-dark rounded px-3 py-1 text-center min-w-[90px]">
+<p class="text-white text-xs font-bold truncate">Salah</p>
+<div class="flex justify-center items-center gap-1 text-[10px] text-gray-400">
+<span>LIV</span>
+<span class="size-1.5 rounded-full bg-green-500" title="Diff: 2"></span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-center gap-1 group cursor-pointer hover:scale-105 transition-transform">
+<div class="bg-sky-500 text-white p-2 rounded-t-md shadow-lg border border-sky-700">
+<span class="material-symbols-outlined text-4xl">checkroom</span>
+</div>
+<div class="bg-card-dark/90 backdrop-blur border border-border-dark rounded px-3 py-1 text-center min-w-[90px]">
+<p class="text-white text-xs font-bold truncate">Foden</p>
+<div class="flex justify-center items-center gap-1 text-[10px] text-gray-400">
+<span>MCI</span>
+<span class="size-1.5 rounded-full bg-green-500" title="Diff: 2"></span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-center gap-1 group cursor-pointer hover:scale-105 transition-transform">
+<div class="bg-blue-900 text-white p-2 rounded-t-md shadow-lg border border-blue-950">
+<span class="material-symbols-outlined text-4xl">checkroom</span>
+</div>
+<div class="bg-card-dark/90 backdrop-blur border border-border-dark rounded px-3 py-1 text-center min-w-[90px]">
+<p class="text-white text-xs font-bold truncate">Palmer</p>
+<div class="flex justify-center items-center gap-1 text-[10px] text-gray-400">
+<span>CHE</span>
+<span class="size-1.5 rounded-full bg-red-500" title="Diff: 5"></span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-center gap-1 group cursor-pointer hover:scale-105 transition-transform">
+<div class="bg-red-700 text-white p-2 rounded-t-md shadow-lg border border-red-900">
+<span class="material-symbols-outlined text-4xl">checkroom</span>
+</div>
+<div class="bg-card-dark/90 backdrop-blur border border-border-dark rounded px-3 py-1 text-center min-w-[90px]">
+<p class="text-white text-xs font-bold truncate">Saka</p>
+<div class="flex justify-center items-center gap-1 text-[10px] text-gray-400">
+<span>ARS</span>
+<span class="size-1.5 rounded-full bg-green-500" title="Diff: 2"></span>
+</div>
+</div>
+</div>
+</div>
+<div class="relative z-10 flex justify-around items-center h-1/5 px-8 md:px-20">
+<div class="flex flex-col items-center gap-1 group cursor-pointer hover:scale-105 transition-transform">
+<div class="relative">
+<div class="bg-sky-500 text-white p-2 rounded-t-md shadow-lg border border-sky-700">
+<span class="material-symbols-outlined text-4xl">checkroom</span>
+</div>
+<div class="absolute -top-2 -right-2 bg-gray-200 text-black text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full border border-black shadow">V</div>
+</div>
+<div class="bg-card-dark/90 backdrop-blur border border-border-dark rounded px-3 py-1 text-center min-w-[90px]">
+<p class="text-white text-xs font-bold truncate">Haaland</p>
+<div class="flex justify-center items-center gap-1 text-[10px] text-gray-400">
+<span>MCI</span>
+<span class="size-1.5 rounded-full bg-green-500" title="Diff: 2"></span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-center gap-1 group cursor-pointer hover:scale-105 transition-transform">
+<div class="bg-amber-900 text-white p-2 rounded-t-md shadow-lg border border-amber-950">
+<span class="material-symbols-outlined text-4xl">checkroom</span>
+</div>
+<div class="bg-card-dark/90 backdrop-blur border border-border-dark rounded px-3 py-1 text-center min-w-[90px]">
+<p class="text-white text-xs font-bold truncate">Watkins</p>
+<div class="flex justify-center items-center gap-1 text-[10px] text-gray-400">
+<span>AVL</span>
+<span class="size-1.5 rounded-full bg-gray-500" title="Diff: 3"></span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-center gap-1 group cursor-pointer hover:scale-105 transition-transform">
+<div class="relative">
+<div class="bg-red-600 text-black p-2 rounded-t-md shadow-lg border border-red-800">
+<span class="material-symbols-outlined text-4xl">checkroom</span>
+</div>
+<div class="absolute -top-2 -right-2 bg-yellow-400 text-black text-[10px] font-bold px-1 py-0.5 rounded border border-black shadow">!</div>
+</div>
+<div class="bg-card-dark/90 backdrop-blur border border-border-dark rounded px-3 py-1 text-center min-w-[90px]">
+<p class="text-white text-xs font-bold truncate">Solanke</p>
+<div class="flex justify-center items-center gap-1 text-[10px] text-gray-400">
+<span>BOU</span>
+<span class="size-1.5 rounded-full bg-gray-500" title="Diff: 3"></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-card-dark border border-border-dark rounded-xl p-4">
+<h3 class="text-gray-400 text-sm font-medium mb-4 uppercase tracking-wider">Substitutes</h3>
+<div class="flex justify-between md:justify-start md:gap-8 overflow-x-auto pb-2 md:pb-0">
+<div class="flex flex-col items-center gap-1 opacity-70 hover:opacity-100 transition-opacity cursor-pointer min-w-[80px]">
+<div class="bg-gray-700 text-gray-300 p-1.5 rounded-t-sm">
+<span class="material-symbols-outlined text-2xl">checkroom</span>
+</div>
+<div class="text-center">
+<p class="text-white text-xs font-medium">Dubravka</p>
+<p class="text-[10px] text-gray-500">NEW</p>
+</div>
+</div>
+<div class="flex flex-col items-center gap-1 opacity-70 hover:opacity-100 transition-opacity cursor-pointer min-w-[80px]">
+<div class="bg-gray-700 text-gray-300 p-1.5 rounded-t-sm">
+<span class="material-symbols-outlined text-2xl">checkroom</span>
+</div>
+<div class="text-center">
+<p class="text-white text-xs font-medium">Estupiñan</p>
+<p class="text-[10px] text-gray-500">BHA</p>
+</div>
+</div>
+<div class="flex flex-col items-center gap-1 opacity-70 hover:opacity-100 transition-opacity cursor-pointer min-w-[80px]">
+<div class="bg-gray-700 text-gray-300 p-1.5 rounded-t-sm">
+<span class="material-symbols-outlined text-2xl">checkroom</span>
+</div>
+<div class="text-center">
+<p class="text-white text-xs font-medium">Gordon</p>
+<p class="text-[10px] text-gray-500">NEW</p>
+</div>
+</div>
+<div class="flex flex-col items-center gap-1 opacity-70 hover:opacity-100 transition-opacity cursor-pointer min-w-[80px]">
+<div class="bg-gray-700 text-gray-300 p-1.5 rounded-t-sm">
+<span class="material-symbols-outlined text-2xl">checkroom</span>
+</div>
+<div class="text-center">
+<p class="text-white text-xs font-medium">Branthwaite</p>
+<p class="text-[10px] text-gray-500">EVE</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-4 flex flex-col gap-6">
+<div class="bg-card-dark border border-border-dark rounded-xl p-5 shadow-lg">
+<h3 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">analytics</span>
+                                    Team Summary
+                                </h3>
+<div class="grid grid-cols-2 gap-4 mb-4">
+<div class="bg-background-dark/50 p-3 rounded-lg border border-border-dark">
+<p class="text-gray-400 text-xs uppercase tracking-wider mb-1">Total Points</p>
+<p class="text-white text-2xl font-bold">1,452</p>
+</div>
+<div class="bg-background-dark/50 p-3 rounded-lg border border-border-dark">
+<p class="text-gray-400 text-xs uppercase tracking-wider mb-1">Overall Rank</p>
+<p class="text-primary text-2xl font-bold">12,405</p>
+</div>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between items-center py-2 border-b border-border-dark">
+<span class="text-gray-400 text-sm">Team Value</span>
+<span class="text-white font-medium">£104.2m</span>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-border-dark">
+<span class="text-gray-400 text-sm">In the Bank</span>
+<span class="text-primary font-medium">£1.8m</span>
+</div>
+<div class="flex justify-between items-center py-2">
+<span class="text-gray-400 text-sm">Free Transfers</span>
+<div class="flex items-center gap-2">
+<span class="bg-white/10 text-white text-xs font-bold px-2 py-0.5 rounded">2</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-card-dark border border-border-dark rounded-xl p-5 shadow-lg">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-white font-bold text-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">calendar_month</span>
+                                        Fixture Difficulty
+                                    </h3>
+<button class="text-xs text-primary hover:underline">View All</button>
+</div>
+<div class="flex flex-col gap-3">
+<div class="flex items-center gap-3">
+<span class="text-white text-sm font-bold w-8">MCI</span>
+<div class="flex flex-1 gap-1">
+<div class="h-8 flex-1 bg-green-500 rounded flex items-center justify-center text-[10px] text-black font-bold" title="Easy">EVE</div>
+<div class="h-8 flex-1 bg-green-500 rounded flex items-center justify-center text-[10px] text-black font-bold">CHE</div>
+<div class="h-8 flex-1 bg-green-600 rounded flex items-center justify-center text-[10px] text-black font-bold">BRE</div>
+<div class="h-8 flex-1 bg-red-600 rounded flex items-center justify-center text-[10px] text-white font-bold" title="Hard">LIV</div>
+<div class="h-8 flex-1 bg-gray-500 rounded flex items-center justify-center text-[10px] text-white font-bold">BHA</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-white text-sm font-bold w-8">LIV</span>
+<div class="flex flex-1 gap-1">
+<div class="h-8 flex-1 bg-green-500 rounded flex items-center justify-center text-[10px] text-black font-bold">BUR</div>
+<div class="h-8 flex-1 bg-green-500 rounded flex items-center justify-center text-[10px] text-black font-bold">BRE</div>
+<div class="h-8 flex-1 bg-gray-500 rounded flex items-center justify-center text-[10px] text-white font-bold">NFO</div>
+<div class="h-8 flex-1 bg-red-600 rounded flex items-center justify-center text-[10px] text-white font-bold">MCI</div>
+<div class="h-8 flex-1 bg-gray-500 rounded flex items-center justify-center text-[10px] text-white font-bold">EVE</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-white text-sm font-bold w-8">ARS</span>
+<div class="flex flex-1 gap-1">
+<div class="h-8 flex-1 bg-green-500 rounded flex items-center justify-center text-[10px] text-black font-bold">WHU</div>
+<div class="h-8 flex-1 bg-green-500 rounded flex items-center justify-center text-[10px] text-black font-bold">BUR</div>
+<div class="h-8 flex-1 bg-green-500 rounded flex items-center justify-center text-[10px] text-black font-bold">NEW</div>
+<div class="h-8 flex-1 bg-green-600 rounded flex items-center justify-center text-[10px] text-black font-bold">SHU</div>
+<div class="h-8 flex-1 bg-green-500 rounded flex items-center justify-center text-[10px] text-black font-bold">BRE</div>
+</div>
+</div>
+<div class="flex justify-end gap-3 mt-1">
+<div class="flex items-center gap-1">
+<div class="size-2 rounded-full bg-green-500"></div>
+<span class="text-[10px] text-gray-400">Easy</span>
+</div>
+<div class="flex items-center gap-1">
+<div class="size-2 rounded-full bg-gray-500"></div>
+<span class="text-[10px] text-gray-400">Medium</span>
+</div>
+<div class="flex items-center gap-1">
+<div class="size-2 rounded-full bg-red-600"></div>
+<span class="text-[10px] text-gray-400">Hard</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-card-dark border border-border-dark rounded-xl p-5 shadow-lg flex-1">
+<h3 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">visibility</span>
+                                    Watchlist
+                                </h3>
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between p-2 rounded bg-white/5 hover:bg-white/10 cursor-pointer transition-colors group">
+<div class="flex items-center gap-3">
+<div class="bg-blue-600 p-1 rounded text-white"><span class="material-symbols-outlined text-lg">checkroom</span></div>
+<div>
+<p class="text-white text-sm font-bold">K. De Bruyne</p>
+<p class="text-xs text-gray-400">MCI • £10.8m</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-primary text-sm font-bold">58 pts</p>
+<p class="text-[10px] text-gray-500">Form: 9.2</p>
+</div>
+</div>
+<div class="flex items-center justify-between p-2 rounded bg-white/5 hover:bg-white/10 cursor-pointer transition-colors group">
+<div class="flex items-center gap-3">
+<div class="bg-red-700 p-1 rounded text-white"><span class="material-symbols-outlined text-lg">checkroom</span></div>
+<div>
+<p class="text-white text-sm font-bold">T. Alexander-Arnold</p>
+<p class="text-xs text-gray-400">LIV • £8.5m</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-white text-sm font-bold">102 pts</p>
+<p class="text-[10px] text-gray-500">Form: 4.5</p>
+</div>
+</div>
+<div class="flex items-center justify-between p-2 rounded bg-white/5 hover:bg-white/10 cursor-pointer transition-colors group">
+<div class="flex items-center gap-3">
+<div class="bg-amber-500 p-1 rounded text-black"><span class="material-symbols-outlined text-lg">checkroom</span></div>
+<div>
+<p class="text-white text-sm font-bold">Pedro Neto</p>
+<p class="text-xs text-gray-400">WOL • £5.7m</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-white text-sm font-bold">84 pts</p>
+<p class="text-[10px] text-gray-500">Form: 6.0</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-4 py-2 border border-dashed border-gray-600 text-gray-400 text-sm rounded hover:bg-white/5 hover:text-white transition-colors">
+                                    + Add Player
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>
