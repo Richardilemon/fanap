@@ -1,436 +1,143 @@
-<!DOCTYPE html>
-<html class="dark" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Fanap: Analysis - Comparison</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#0df20d",
-                        "background-light": "#f5f8f5",
-                        "background-dark": "#0f0f11",
-                        "card-dark": "#18181b",
-                        "border-dark": "#27272a",
-                    },
-                    fontFamily: {
-                        "display": ["Space Grotesk", "sans-serif"]
-                    },
-                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
-                },
-            },
-        }
-    </script>
-<style>
-        ::-webkit-scrollbar {
-            width: 6px;
-            height: 6px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #18181b; 
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #27272a; 
-            border-radius: 3px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #3f3f46; 
-        }
-    </style>
-</head>
-<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display overflow-hidden">
-<div class="flex h-screen w-full">
-<aside class="hidden md:flex flex-col w-64 bg-card-dark border-r border-border-dark flex-shrink-0 h-full justify-between p-4 overflow-y-auto">
+{% extends "base.html" %}
+
+{% block title %}Fanap: Analysis - Comparison{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
 <div class="flex flex-col gap-6">
-<div class="flex gap-3 items-center px-2">
-<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 border border-primary/20" data-alt="Fanap logo with abstract green geometric shape" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDVdppggGRYgPz2zI7F9V4UKIFmViLJ0BQZFzt_zr7ssU-IC_WGbaZ5Qrb33N_G64iAPuVjl0B-FUIHX6ewXKjc7ToBSVmuq-yLLIIFznhIW_mpTtySdjjZYd1mQDfSoBF0yYKnfUNN-ljCoHdn1FM5dj_lYtjMCV7axu2Mil4C71LtNOZlSOj7Bh0twEV5kZqgjCkjVpTDc8cms45_lstERN48YZfjzgXXfbaxzzSIm1lstR5JdxkR8q5zJcNox0u5tTeF5amne80J");'></div>
-<div class="flex flex-col">
-<h1 class="text-white text-lg font-bold leading-none tracking-tight">Fanap</h1>
-<p class="text-gray-400 text-xs font-normal">Pro Analytics Suite</p>
-</div>
-</div>
-<nav class="flex flex-col gap-2">
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors" href="#">
-<span class="material-symbols-outlined">dashboard</span>
-<p class="text-sm font-medium">Dashboard</p>
-</a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors" href="#">
-<span class="material-symbols-outlined">trophy</span>
-<p class="text-sm font-medium">League Leaders</p>
-</a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors" href="#">
-<span class="material-symbols-outlined">group</span>
-<p class="text-sm font-medium">My Team</p>
-</a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors" href="#">
-<span class="material-symbols-outlined">calendar_month</span>
-<p class="text-sm font-medium">Fixtures</p>
-</a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors" href="#">
-<span class="material-symbols-outlined">swap_horiz</span>
-<p class="text-sm font-medium">Transfer Market</p>
-</a>
-<div class="flex flex-col gap-1">
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-white bg-white/5 transition-colors" href="#">
-<span class="material-symbols-outlined fill-1 text-primary">analytics</span>
-<p class="text-sm font-bold">Analysis</p>
-</a>
-<div class="flex flex-col pl-11 gap-1">
-<a class="px-3 py-1.5 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors text-sm font-medium" href="#">
-                                    Discovery
-                                </a>
-<a class="px-3 py-1.5 rounded-lg text-primary bg-primary/10 border border-primary/20 text-sm font-bold" href="#">
-                                    Comparison
-                                </a>
-<a class="px-3 py-1.5 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors text-sm font-medium" href="#">
-                                    Player Research
-                                </a>
-</div>
-</div>
-</nav>
-</div>
-<div class="flex flex-col gap-2 mt-auto pt-4">
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors" href="#">
-<span class="material-symbols-outlined">settings</span>
-<p class="text-sm font-medium">Settings</p>
-</a>
-<div class="pt-4 border-t border-border-dark flex items-center gap-3 px-2">
-<div class="bg-center bg-no-repeat bg-cover rounded-full size-8" data-alt="User profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBGStqEh4laQXAvQHk9wkNc8V-ldsQ1NXEXA9uAPnu8xP1ceutBTZmHIwJNbw54KMgrrd0iIJNzAPNu_GbmCcJHdE40-1kvbf0CmJZmy6CVkWklwHX_hmOp5AeB3P2wVWqHDQX56CmGMvk5kzb3Gh4E3nH4uIOs3JRR3Z9mVjrfRUc8YLtxWYzBDaUGcC0xNgBdK22lkIMu8cT1SKMHjdXBJsLeANT7D3FvVfCX_k5H7wmb7iKZ3lACJzl8js0Tju366qOaW8bkaFxQ");'></div>
-<div>
-<p class="text-sm font-medium text-white">Alex Manager</p>
-<p class="text-xs text-primary">Top 10k</p>
-</div>
-</div>
-</div>
-</aside>
-<div class="flex flex-1 flex-col h-full overflow-hidden relative">
-<header class="flex items-center justify-between border-b border-border-dark bg-background-dark/80 backdrop-blur-md px-8 py-4 z-10 sticky top-0">
-<div class="flex items-center gap-6">
-<button class="md:hidden text-white">
-<span class="material-symbols-outlined">menu</span>
-</button>
-<div class="flex items-center gap-4">
-<span class="text-gray-400 text-sm font-medium">Gameweek 24</span>
-<span class="h-1 w-1 rounded-full bg-primary"></span>
-<span class="text-primary text-sm font-medium">Live</span>
-</div>
-</div>
-<div class="flex items-center gap-6">
-<div class="hidden md:flex relative group">
-<span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 material-symbols-outlined text-[20px]">search</span>
-<input class="bg-card-dark border border-border-dark rounded-full py-2 pl-10 pr-4 text-sm text-white focus:outline-none focus:border-primary w-64 transition-all placeholder:text-gray-600" placeholder="Search global data..."/>
-</div>
-<div class="flex gap-3">
-<button class="flex items-center justify-center rounded-full size-10 bg-card-dark text-white hover:bg-white/10 transition-colors border border-border-dark relative">
-<span class="material-symbols-outlined text-[20px]">notifications</span>
-<span class="absolute top-2 right-2 size-2 bg-primary rounded-full border border-card-dark"></span>
-</button>
-</div>
-</div>
-</header>
-<main class="flex-1 overflow-y-auto p-4 md:p-8">
-<div class="max-w-[1400px] mx-auto flex flex-col gap-8 pb-10">
-<div class="flex flex-col gap-2">
-<div class="flex items-center gap-2 text-sm text-gray-400 mb-1">
-<span>Analysis</span>
-<span class="material-symbols-outlined text-[12px]">chevron_right</span>
-<span class="text-white font-medium">Comparison</span>
-</div>
-<h1 class="text-white text-3xl md:text-4xl font-bold tracking-tight mb-1">Player Comparison</h1>
-<p class="text-gray-400">Deep dive into player statistics, performance metrics, and match-up analysis.</p>
-</div>
-<div class="flex flex-col gap-6">
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 relative">
-<div class="absolute left-1/2 top-[120px] -translate-x-1/2 -translate-y-1/2 z-10 hidden lg:flex items-center justify-center size-12 bg-background-dark border-4 border-card-dark rounded-full text-white font-bold text-xs shadow-xl">
-                                VS
-                            </div>
-<div class="flex flex-col gap-4">
-<div class="relative">
-<span class="absolute left-4 top-1/2 -translate-y-1/2 text-primary material-symbols-outlined">search</span>
-<input class="w-full bg-card-dark border border-border-dark rounded-xl py-4 pl-12 pr-4 text-white focus:ring-1 focus:ring-primary focus:border-primary placeholder:text-gray-600 font-medium shadow-sm transition-all" placeholder="Select Player 1..." type="text" value="Erling Haaland"/>
-<button class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-white">
-<span class="material-symbols-outlined">close</span>
-</button>
-</div>
-<div class="bg-card-dark border border-border-dark rounded-xl p-6 relative overflow-hidden group">
-<div class="absolute top-0 right-0 w-48 h-48 bg-cyan-400/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-<div class="flex items-center gap-6 relative z-10">
-<div class="size-24 rounded-full bg-gray-800 border-2 border-gray-700 overflow-hidden flex-shrink-0">
-<img alt="Haaland" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBP_qmsYXgiqpkB1kCnx9x1qCCYGtlqq-Nq3krHHYhT915bWdOTUIbPS3rg2PIZqb3jW4d4BPHStw7m-i0IxhO8aRjojBolenE84URZID6fLuCzsUpDfvyh1twdp2qpYH_5mKAL0CzQd36PMzvtzM1mPswP18Hkylyj1Oorh9iCxLyU1JpMEPbt1fvs2AFhcP1iI-Gwve-NE3_0IU3luuLkJ0OLvh6zHtRP2kn56OU6-VXAPUv1Qzdg9VVRAgMhzbz_fURiKY6iHr4Y"/>
-</div>
-<div>
-<div class="flex items-center gap-2 mb-1">
-<span class="bg-blue-900/40 text-blue-200 text-[10px] px-2 py-0.5 rounded border border-blue-500/20 font-bold uppercase tracking-wider">Man City</span>
-<span class="bg-gray-800 text-gray-400 text-[10px] px-2 py-0.5 rounded border border-gray-700 font-bold uppercase tracking-wider">FWD</span>
-</div>
-<h2 class="text-2xl font-bold text-white leading-tight">Erling Haaland</h2>
-<div class="flex items-center gap-4 mt-2">
-<div>
-<p class="text-xs text-gray-500">Price</p>
-<p class="text-white font-bold">£14.2m</p>
-</div>
-<div class="w-px h-6 bg-border-dark"></div>
-<div>
-<p class="text-xs text-gray-500">Selected</p>
-<p class="text-primary font-bold">78.4%</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="flex flex-col gap-4">
-<div class="relative">
-<span class="absolute left-4 top-1/2 -translate-y-1/2 text-primary material-symbols-outlined">search</span>
-<input class="w-full bg-card-dark border border-border-dark rounded-xl py-4 pl-12 pr-4 text-white focus:ring-1 focus:ring-primary focus:border-primary placeholder:text-gray-600 font-medium shadow-sm transition-all" placeholder="Select Player 2..." type="text" value="Mohamed Salah"/>
-<button class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-white">
-<span class="material-symbols-outlined">close</span>
-</button>
-</div>
-<div class="bg-card-dark border border-border-dark rounded-xl p-6 relative overflow-hidden group">
-<div class="absolute top-0 right-0 w-48 h-48 bg-red-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-<div class="flex items-center gap-6 relative z-10">
-<div class="size-24 rounded-full bg-gray-800 border-2 border-gray-700 overflow-hidden flex-shrink-0">
-<img alt="Salah" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGXna8tQRLXOl2xIWN6Y3f8XTDCKgtVEbIKMNE8qwdUyYYEf0sdS9u9HShc-qGVyKu5it2tTSalPFQkBRHgvzzLTZf8W9f7grx9SmWI9dKt03oq8FhwdvhZ3Z5-U2XWAoLP7Bp17jditurritUqE3QRifnj7G1a1f2sr2qi7CFDgHslHKgYw_r4bz_kky3BvJIJh5EERl5_d41TLvHwGpQASUhi7AypegfjttH53Wu1PEF1BithPLZTpQ3sN6XIm8pBuXrAtSDWPd9"/>
-</div>
-<div>
-<div class="flex items-center gap-2 mb-1">
-<span class="bg-red-900/40 text-red-200 text-[10px] px-2 py-0.5 rounded border border-red-500/20 font-bold uppercase tracking-wider">Liverpool</span>
-<span class="bg-gray-800 text-gray-400 text-[10px] px-2 py-0.5 rounded border border-gray-700 font-bold uppercase tracking-wider">MID</span>
-</div>
-<h2 class="text-2xl font-bold text-white leading-tight">Mohamed Salah</h2>
-<div class="flex items-center gap-4 mt-2">
-<div>
-<p class="text-xs text-gray-500">Price</p>
-<p class="text-primary font-bold">£13.1m</p>
-</div>
-<div class="w-px h-6 bg-border-dark"></div>
-<div>
-<p class="text-xs text-gray-500">Selected</p>
-<p class="text-white font-bold">32.1%</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div>
-<h3 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
-<span class="material-symbols-outlined text-primary">compare_arrows</span> Head-to-Head Stats
-                            </h3>
-<div class="grid grid-cols-2 md:grid-cols-5 gap-3">
-<div class="bg-card-dark border border-border-dark rounded-lg p-4 flex flex-col items-center justify-center text-center">
-<p class="text-xs text-gray-400 font-medium uppercase tracking-wider mb-2">Total Points</p>
-<div class="flex items-center justify-center gap-4 w-full">
-<span class="text-xl font-bold text-primary">156</span>
-<div class="h-4 w-px bg-border-dark"></div>
-<span class="text-xl font-bold text-gray-500">152</span>
-</div>
-</div>
-<div class="bg-card-dark border border-border-dark rounded-lg p-4 flex flex-col items-center justify-center text-center">
-<p class="text-xs text-gray-400 font-medium uppercase tracking-wider mb-2">Goals</p>
-<div class="flex items-center justify-center gap-4 w-full">
-<span class="text-xl font-bold text-primary">18</span>
-<div class="h-4 w-px bg-border-dark"></div>
-<span class="text-xl font-bold text-gray-500">14</span>
-</div>
-</div>
-<div class="bg-card-dark border border-border-dark rounded-lg p-4 flex flex-col items-center justify-center text-center">
-<p class="text-xs text-gray-400 font-medium uppercase tracking-wider mb-2">Assists</p>
-<div class="flex items-center justify-center gap-4 w-full">
-<span class="text-xl font-bold text-gray-500">5</span>
-<div class="h-4 w-px bg-border-dark"></div>
-<span class="text-xl font-bold text-primary">8</span>
-</div>
-</div>
-<div class="bg-card-dark border border-border-dark rounded-lg p-4 flex flex-col items-center justify-center text-center">
-<p class="text-xs text-gray-400 font-medium uppercase tracking-wider mb-2">xG (Expected Goals)</p>
-<div class="flex items-center justify-center gap-4 w-full">
-<span class="text-xl font-bold text-primary">18.2</span>
-<div class="h-4 w-px bg-border-dark"></div>
-<span class="text-xl font-bold text-gray-500">14.5</span>
-</div>
-</div>
-<div class="bg-card-dark border border-border-dark rounded-lg p-4 flex flex-col items-center justify-center text-center col-span-2 md:col-span-1">
-<p class="text-xs text-gray-400 font-medium uppercase tracking-wider mb-2">Form</p>
-<div class="flex items-center justify-center gap-4 w-full">
-<span class="text-xl font-bold text-gray-500">6.2</span>
-<div class="h-4 w-px bg-border-dark"></div>
-<span class="text-xl font-bold text-primary">7.5</span>
-</div>
-</div>
-</div>
-</div>
-<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-<div class="bg-card-dark border border-border-dark rounded-xl p-5 flex flex-col">
-<h4 class="text-white font-bold text-sm mb-4 border-b border-border-dark pb-2">Haaland: Upcoming</h4>
-<div class="flex flex-col gap-2">
-<div class="flex items-center justify-between p-2 rounded hover:bg-white/5 transition-colors">
-<div class="flex items-center gap-3">
-<span class="text-gray-400 text-xs font-mono">GW25</span>
-<div class="flex items-center gap-2">
-<span class="text-white font-medium text-sm">CHE</span>
-<span class="text-xs text-gray-500">(H)</span>
-</div>
-</div>
-<div class="px-2 py-1 rounded bg-gray-700 text-white text-[10px] font-bold">3</div>
-</div>
-<div class="flex items-center justify-between p-2 rounded hover:bg-white/5 transition-colors">
-<div class="flex items-center gap-3">
-<span class="text-gray-400 text-xs font-mono">GW26</span>
-<div class="flex items-center gap-2">
-<span class="text-white font-medium text-sm">BRE</span>
-<span class="text-xs text-gray-500">(H)</span>
-</div>
-</div>
-<div class="px-2 py-1 rounded bg-[#0df20d]/20 text-[#0df20d] text-[10px] font-bold border border-[#0df20d]/20">2</div>
-</div>
-<div class="flex items-center justify-between p-2 rounded hover:bg-white/5 transition-colors">
-<div class="flex items-center gap-3">
-<span class="text-gray-400 text-xs font-mono">GW27</span>
-<div class="flex items-center gap-2">
-<span class="text-white font-medium text-sm">BOU</span>
-<span class="text-xs text-gray-500">(A)</span>
-</div>
-</div>
-<div class="px-2 py-1 rounded bg-[#0df20d]/20 text-[#0df20d] text-[10px] font-bold border border-[#0df20d]/20">2</div>
-</div>
-<div class="flex items-center justify-between p-2 rounded hover:bg-white/5 transition-colors">
-<div class="flex items-center gap-3">
-<span class="text-gray-400 text-xs font-mono">GW28</span>
-<div class="flex items-center gap-2">
-<span class="text-white font-medium text-sm">LIV</span>
-<span class="text-xs text-gray-500">(A)</span>
-</div>
-</div>
-<div class="px-2 py-1 rounded bg-red-500/20 text-red-500 text-[10px] font-bold border border-red-500/20">5</div>
-</div>
-</div>
-</div>
-<div class="bg-card-dark border border-border-dark rounded-xl p-5 flex flex-col lg:order-3">
-<h4 class="text-white font-bold text-sm mb-4 border-b border-border-dark pb-2">Salah: Upcoming</h4>
-<div class="flex flex-col gap-2">
-<div class="flex items-center justify-between p-2 rounded hover:bg-white/5 transition-colors">
-<div class="flex items-center gap-3">
-<span class="text-gray-400 text-xs font-mono">GW25</span>
-<div class="flex items-center gap-2">
-<span class="text-white font-medium text-sm">BRE</span>
-<span class="text-xs text-gray-500">(A)</span>
-</div>
-</div>
-<div class="px-2 py-1 rounded bg-[#0df20d]/20 text-[#0df20d] text-[10px] font-bold border border-[#0df20d]/20">2</div>
-</div>
-<div class="flex items-center justify-between p-2 rounded hover:bg-white/5 transition-colors">
-<div class="flex items-center gap-3">
-<span class="text-gray-400 text-xs font-mono">GW26</span>
-<div class="flex items-center gap-2">
-<span class="text-white font-medium text-sm">LUT</span>
-<span class="text-xs text-gray-500">(H)</span>
-</div>
-</div>
-<div class="px-2 py-1 rounded bg-[#0df20d]/20 text-[#0df20d] text-[10px] font-bold border border-[#0df20d]/20">2</div>
-</div>
-<div class="flex items-center justify-between p-2 rounded hover:bg-white/5 transition-colors">
-<div class="flex items-center gap-3">
-<span class="text-gray-400 text-xs font-mono">GW27</span>
-<div class="flex items-center gap-2">
-<span class="text-white font-medium text-sm">NFO</span>
-<span class="text-xs text-gray-500">(A)</span>
-</div>
-</div>
-<div class="px-2 py-1 rounded bg-gray-700 text-white text-[10px] font-bold">3</div>
-</div>
-<div class="flex items-center justify-between p-2 rounded hover:bg-white/5 transition-colors">
-<div class="flex items-center gap-3">
-<span class="text-gray-400 text-xs font-mono">GW28</span>
-<div class="flex items-center gap-2">
-<span class="text-white font-medium text-sm">MCI</span>
-<span class="text-xs text-gray-500">(H)</span>
-</div>
-</div>
-<div class="px-2 py-1 rounded bg-red-500/20 text-red-500 text-[10px] font-bold border border-red-500/20">5</div>
-</div>
-</div>
-</div>
-<div class="bg-card-dark border border-border-dark rounded-xl p-5 flex flex-col justify-between lg:order-2 shadow-lg">
-<h4 class="text-white font-bold text-sm mb-6 flex items-center gap-2">
-<span class="material-symbols-outlined text-primary text-base">bar_chart</span> Visual Comparison
-                                </h4>
-<div class="flex flex-col justify-center gap-6 h-full">
-<div class="flex flex-col gap-1">
-<div class="flex justify-between text-xs text-gray-400 mb-1">
-<span>Threat</span>
-</div>
-<div class="flex items-center gap-2">
-<span class="text-xs font-bold text-white w-8 text-right">98</span>
-<div class="flex-1 h-2 bg-gray-800 rounded-full flex overflow-hidden">
-<div class="bg-primary h-full" style="width: 55%"></div>
-<div class="bg-gray-600 h-full" style="width: 45%"></div>
-</div>
-<span class="text-xs font-bold text-gray-400 w-8">82</span>
-</div>
-</div>
-<div class="flex flex-col gap-1">
-<div class="flex justify-between text-xs text-gray-400 mb-1">
-<span>Creativity</span>
-</div>
-<div class="flex items-center gap-2">
-<span class="text-xs font-bold text-gray-400 w-8 text-right">32</span>
-<div class="flex-1 h-2 bg-gray-800 rounded-full flex overflow-hidden">
-<div class="bg-gray-600 h-full" style="width: 30%"></div>
-<div class="bg-primary h-full" style="width: 70%"></div>
-</div>
-<span class="text-xs font-bold text-white w-8">75</span>
-</div>
-</div>
-<div class="flex flex-col gap-1">
-<div class="flex justify-between text-xs text-gray-400 mb-1">
-<span>Influence</span>
-</div>
-<div class="flex items-center gap-2">
-<span class="text-xs font-bold text-white w-8 text-right">92</span>
-<div class="flex-1 h-2 bg-gray-800 rounded-full flex overflow-hidden">
-<div class="bg-primary h-full" style="width: 52%"></div>
-<div class="bg-gray-600 h-full" style="width: 48%"></div>
-</div>
-<span class="text-xs font-bold text-gray-400 w-8">88</span>
-</div>
-</div>
-<div class="flex flex-col gap-1">
-<div class="flex justify-between text-xs text-gray-400 mb-1">
-<span>ICT Index</span>
-</div>
-<div class="flex items-center gap-2">
-<span class="text-xs font-bold text-white w-8 text-right">221</span>
-<div class="flex-1 h-2 bg-gray-800 rounded-full flex overflow-hidden">
-<div class="bg-primary h-full" style="width: 51%"></div>
-<div class="bg-gray-600 h-full" style="width: 49%"></div>
-</div>
-<span class="text-xs font-bold text-gray-400 w-8">215</span>
-</div>
-</div>
-</div>
-<div class="flex justify-center gap-6 mt-4 pt-4 border-t border-border-dark">
-<div class="flex items-center gap-2">
-<div class="size-2 rounded-full bg-primary"></div>
-<span class="text-[10px] text-gray-400">Haaland</span>
-</div>
-<div class="flex items-center gap-2">
-<div class="size-2 rounded-full bg-gray-600"></div>
-<span class="text-[10px] text-gray-400">Salah</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</main>
-</div>
-</div>
-</body></html>
+    <div class="flex justify-between items-end">
+        <div>
+            <div class="flex items-center gap-2 text-sm font-condensed mb-1 uppercase tracking-wider">
+                <span class="text-gray-500 font-semibold">Analysis</span>
+                <span class="material-symbols-outlined text-gray-600 text-xs">chevron_right</span>
+                <span class="text-primary font-bold">Comparison</span>
+            </div>
+            <h1 class="text-white text-3xl md:text-4xl font-condensed font-bold tracking-tight uppercase">Player Comparison</h1>
+            <p class="text-gray-400 text-sm mt-1">Head-to-head analysis of two players.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Player Selection -->
+<div class="bg-card-dark border border-border-dark rounded-xl p-6 shadow-lg">
+    <form action="{{ url_for('analysis.compare') }}" method="get" class="flex flex-col md:flex-row gap-4 items-end">
+        <div class="flex-1">
+            <label class="text-xs text-gray-400 uppercase tracking-wider mb-2 block font-condensed">Player 1</label>
+            <input type="text" name="p1" value="{{ player1_name }}" placeholder="e.g., Haaland"
+                   class="w-full bg-background-dark border border-border-dark rounded-lg px-4 py-3 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none"/>
+        </div>
+        <div class="flex items-center justify-center text-gray-500 font-bold text-xl px-4">
+            <span class="material-symbols-outlined">compare_arrows</span>
+        </div>
+        <div class="flex-1">
+            <label class="text-xs text-gray-400 uppercase tracking-wider mb-2 block font-condensed">Player 2</label>
+            <input type="text" name="p2" value="{{ player2_name }}" placeholder="e.g., Salah"
+                   class="w-full bg-background-dark border border-border-dark rounded-lg px-4 py-3 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none"/>
+        </div>
+        <button type="submit" class="bg-primary text-black font-bold px-8 py-3 rounded-lg hover:bg-primary/90 transition-colors font-condensed uppercase">
+            Compare
+        </button>
+    </form>
+</div>
+
+{% if comparison and comparison | length >= 2 %}
+<!-- Comparison Results -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    {% for player in comparison %}
+    <div class="bg-card-dark border {{ 'border-primary/30' if loop.index == 1 else 'border-border-dark' }} rounded-xl overflow-hidden shadow-lg">
+        <!-- Player Header -->
+        <div class="p-6 border-b border-border-dark {{ 'bg-primary/5' if loop.index == 1 else '' }}">
+            <div class="flex items-center gap-4">
+                <div class="size-16 rounded-full bg-gray-600 flex items-center justify-center text-2xl font-bold text-white border-2 {{ 'border-primary' if loop.index == 1 else 'border-border-dark' }}">
+                    {{ player.player_name[:2] | upper }}
+                </div>
+                <div>
+                    <h3 class="text-white font-condensed font-bold text-2xl uppercase">{{ player.player_name }}</h3>
+                    <p class="text-gray-400 text-sm">{{ player.team }}</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="p-6">
+            <div class="grid grid-cols-2 gap-4">
+                <div class="bg-background-dark rounded-lg p-4 text-center">
+                    <p class="text-gray-400 text-xs uppercase tracking-wider mb-1 font-condensed">Total Points</p>
+                    <p class="text-3xl font-bold {{ 'text-primary' if loop.index == 1 else 'text-white' }}">{{ player.points }}</p>
+                </div>
+                <div class="bg-background-dark rounded-lg p-4 text-center">
+                    <p class="text-gray-400 text-xs uppercase tracking-wider mb-1 font-condensed">Pts/Game</p>
+                    <p class="text-3xl font-bold text-white">{{ player.points_per_game }}</p>
+                </div>
+                <div class="bg-background-dark rounded-lg p-4 text-center">
+                    <p class="text-gray-400 text-xs uppercase tracking-wider mb-1 font-condensed">Goals</p>
+                    <p class="text-2xl font-bold text-white">{{ player.goals }}</p>
+                </div>
+                <div class="bg-background-dark rounded-lg p-4 text-center">
+                    <p class="text-gray-400 text-xs uppercase tracking-wider mb-1 font-condensed">Assists</p>
+                    <p class="text-2xl font-bold text-white">{{ player.assists }}</p>
+                </div>
+                <div class="bg-background-dark rounded-lg p-4 text-center">
+                    <p class="text-gray-400 text-xs uppercase tracking-wider mb-1 font-condensed">xG</p>
+                    <p class="text-2xl font-bold text-primary">{{ player.avg_xg }}</p>
+                </div>
+                <div class="bg-background-dark rounded-lg p-4 text-center">
+                    <p class="text-gray-400 text-xs uppercase tracking-wider mb-1 font-condensed">xA</p>
+                    <p class="text-2xl font-bold text-primary">{{ player.avg_xa }}</p>
+                </div>
+                <div class="bg-background-dark rounded-lg p-4 text-center">
+                    <p class="text-gray-400 text-xs uppercase tracking-wider mb-1 font-condensed">Bonus</p>
+                    <p class="text-2xl font-bold text-white">{{ player.bonus }}</p>
+                </div>
+                <div class="bg-background-dark rounded-lg p-4 text-center">
+                    <p class="text-gray-400 text-xs uppercase tracking-wider mb-1 font-condensed">Games</p>
+                    <p class="text-2xl font-bold text-white">{{ player.games_played }}</p>
+                </div>
+            </div>
+
+            <!-- Upcoming Fixtures -->
+            <div class="mt-6">
+                <h4 class="text-white font-condensed font-bold uppercase text-sm mb-3 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary text-sm">calendar_month</span>
+                    Upcoming Fixtures
+                </h4>
+                <div class="flex gap-2">
+                    {% set fixtures = player1_fixtures if loop.index == 1 else player2_fixtures %}
+                    {% for fixture in fixtures[:5] %}
+                    <div class="flex-1 rounded-lg p-2 text-center {{ 'bg-fdr-2' if fixture.difficulty <= 2 else 'bg-fdr-3' if fixture.difficulty == 3 else 'bg-fdr-4' if fixture.difficulty == 4 else 'bg-fdr-5' }}">
+                        <p class="text-[10px] {{ 'text-black' if fixture.difficulty <= 3 else 'text-white' }} font-bold">{{ fixture.opponent }}</p>
+                        <p class="text-[8px] {{ 'text-black/60' if fixture.difficulty <= 3 else 'text-white/60' }}">{{ fixture.venue }}</p>
+                    </div>
+                    {% else %}
+                    <p class="text-gray-500 text-sm">No upcoming fixtures</p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% elif player1_name and player2_name %}
+<!-- No results -->
+<div class="bg-card-dark border border-border-dark rounded-xl p-8 text-center">
+    <span class="material-symbols-outlined text-4xl text-gray-500 mb-2">person_search</span>
+    <p class="text-gray-400">Could not find both players. Please check the names and try again.</p>
+</div>
+{% else %}
+<!-- Empty state -->
+<div class="bg-card-dark border border-border-dark rounded-xl p-12 text-center">
+    <span class="material-symbols-outlined text-6xl text-gray-600 mb-4">compare</span>
+    <h3 class="text-white font-condensed font-bold text-xl mb-2 uppercase">Compare Two Players</h3>
+    <p class="text-gray-400 max-w-md mx-auto">Enter two player names above to see a detailed head-to-head comparison of their stats, form, and upcoming fixtures.</p>
+    <div class="flex justify-center gap-4 mt-6">
+        <a href="{{ url_for('analysis.compare', p1='Haaland', p2='Salah') }}" class="text-primary hover:text-white text-sm font-medium transition-colors">
+            Try: Haaland vs Salah
+        </a>
+        <a href="{{ url_for('analysis.compare', p1='Palmer', p2='Saka') }}" class="text-primary hover:text-white text-sm font-medium transition-colors">
+            Try: Palmer vs Saka
+        </a>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

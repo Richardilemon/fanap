@@ -88,16 +88,29 @@ def load_gameweeks_pipeline(season):
         if not fixtures_data:
             print(f"⚠️ No data for gameweeks in {season}")
             return False
-        
+
         gameweeks_data = parse_gameweeks(fixtures_data)
         if not gameweeks_data:
             print(f"⚠️ No gameweeks parsed for {season}")
             return False
-        
-        load_gameweeks([gameweeks_data])
+
+        # Fetch total_players from bootstrap API for ownership calculations
+        total_players = None
+        try:
+            from scripts.fpl_api_client import FPLAPIClient
+            client = FPLAPIClient()
+            bootstrap = client.get_bootstrap_static()
+            if bootstrap:
+                total_players = bootstrap.get('total_players')
+                if total_players:
+                    print(f"   📊 Total FPL managers: {total_players:,}")
+        except Exception as e:
+            print(f"   ⚠️ Could not fetch total_players: {e}")
+
+        load_gameweeks([gameweeks_data], total_players=total_players)
         print(f"✅ Gameweeks loaded for {season}\n")
         return True
-        
+
     except Exception as e:
         print(f"❌ Error loading gameweeks for {season}: {e}\n")
         return False

@@ -13,3 +13,4 @@ plugins/
 
 airflow_backup/
 x/
+tinker/

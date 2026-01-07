@@ -126,7 +126,7 @@ def parse_gameweeks(fixture_data):
 
 
 @db_connection_wrapper
-def load_gameweeks(connection, gameweeks):
+def load_gameweeks(connection, gameweeks, total_players=None):
     """
     Insert or update gameweek deadlines into the database.
 
@@ -141,6 +141,9 @@ def load_gameweeks(connection, gameweeks):
         A list containing lists of tuples, where each tuple represents a gameweek entry.
         Each tuple should follow the structure:
         (season : str, gameweek : int, deadline : datetime)
+    total_players : int, optional
+        Total number of FPL managers from bootstrap-static API.
+        Used for accurate ownership percentage calculations.
 
     Returns
     -------
@@ -156,6 +159,7 @@ def load_gameweeks(connection, gameweeks):
             season TEXT,
             gameweek INTEGER,
             deadline TIMESTAMP,
+            total_players BIGINT,
             PRIMARY KEY (season, gameweek)
         );
     """
@@ -191,13 +195,14 @@ def load_gameweeks(connection, gameweeks):
                 try:
                     _cursor.execute(
                         """
-                        INSERT INTO game_weeks (season, gameweek, deadline)
-                        VALUES (%s, %s, %s)
+                        INSERT INTO game_weeks (season, gameweek, deadline, total_players)
+                        VALUES (%s, %s, %s, %s)
                         ON CONFLICT (season, gameweek) DO UPDATE SET
-                            deadline = EXCLUDED.deadline
+                            deadline = EXCLUDED.deadline,
+                            total_players = COALESCE(EXCLUDED.total_players, game_weeks.total_players)
                         RETURNING (xmax = 0) AS inserted;
                     """,
-                        (season, gameweek_num, deadline),
+                        (season, gameweek_num, deadline, total_players),
                     )
                     
                     # Check if it was an insert or update

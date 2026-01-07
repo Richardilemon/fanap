@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>{% block title %}Fanap{% endblock %}</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Roboto+Condensed:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Theme Configuration -->
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00e5ff",
+                        "primary-dim": "#00b2c7",
+                        "background-light": "#f5f8f5",
+                        "background-dark": "#0a0a0c",
+                        "card-dark": "#161618",
+                        "border-dark": "#27272a",
+                        "text-secondary": "#a1a1aa",
+                        "fdr-1": "#00ff87",
+                        "fdr-2": "#00ff87",
+                        "fdr-3": "#e7e7e7",
+                        "fdr-4": "#ff1751",
+                        "fdr-5": "#80072d",
+                    },
+                    fontFamily: {
+                        "sans": ["Inter", "sans-serif"],
+                        "condensed": ["Roboto Condensed", "sans-serif"],
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        "glow": "0 0 15px rgba(0, 229, 255, 0.15)",
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #18181b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #27272a;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00e5ff;
+        }
+        .bar-gradient {
+            background: linear-gradient(90deg, #00e5ff 0%, #00b2c7 100%);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill-1 {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+    {% block extra_head %}{% endblock %}
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-gray-100 font-sans overflow-hidden">
+    <div class="flex h-screen w-full">
+        <!-- Sidebar -->
+        <aside class="hidden md:flex flex-col w-64 bg-card-dark border-r border-border-dark flex-shrink-0 h-full justify-between p-4 z-20">
+            <div class="flex flex-col gap-6">
+                <!-- Logo -->
+                <div class="flex gap-3 items-center px-2">
+                    <div class="bg-primary/20 rounded-full size-10 flex items-center justify-center shadow-glow">
+                        <span class="text-primary text-xl font-bold">F</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <h1 class="text-white text-xl font-condensed font-bold leading-none tracking-tight uppercase">Fanap</h1>
+                        <p class="text-primary text-[10px] font-medium tracking-wider uppercase">Pro Analytics</p>
+                    </div>
+                </div>
+                <!-- Navigation -->
+                <nav class="flex flex-col gap-1">
+                    <a class="flex items-center gap-3 px-3 py-2 rounded-lg {{ 'bg-primary/10 text-primary border border-primary/20 shadow-[0_0_10px_rgba(0,229,255,0.1)]' if active_page == 'dashboard' else 'text-gray-400 hover:text-white hover:bg-white/5' }} transition-colors group" href="{{ url_for('dashboard') }}">
+                        <span class="material-symbols-outlined {{ 'fill-1' if active_page == 'dashboard' else '' }} group-hover:text-primary transition-colors">dashboard</span>
+                        <p class="text-sm {{ 'font-bold' if active_page == 'dashboard' else 'font-medium' }}">Dashboard</p>
+                    </a>
+                    <a class="flex items-center gap-3 px-3 py-2 rounded-lg {{ 'bg-primary/10 text-primary border border-primary/20 shadow-[0_0_10px_rgba(0,229,255,0.1)]' if active_page == 'league_leaders' else 'text-gray-400 hover:text-white hover:bg-white/5' }} transition-colors group" href="{{ url_for('league.league_leaders') }}">
+                        <span class="material-symbols-outlined {{ 'fill-1' if active_page == 'league_leaders' else '' }} group-hover:text-primary transition-colors">trophy</span>
+                        <p class="text-sm {{ 'font-bold' if active_page == 'league_leaders' else 'font-medium' }}">League Leaders</p>
+                    </a>
+                    <a class="flex items-center gap-3 px-3 py-2 rounded-lg {{ 'bg-primary/10 text-primary border border-primary/20 shadow-[0_0_10px_rgba(0,229,255,0.1)]' if active_page == 'my_team' else 'text-gray-400 hover:text-white hover:bg-white/5' }} transition-colors group" href="#">
+                        <span class="material-symbols-outlined {{ 'fill-1' if active_page == 'my_team' else '' }} group-hover:text-primary transition-colors">group</span>
+                        <p class="text-sm {{ 'font-bold' if active_page == 'my_team' else 'font-medium' }}">My Team</p>
+                    </a>
+                    <a class="flex items-center gap-3 px-3 py-2 rounded-lg {{ 'bg-primary/10 text-primary border border-primary/20 shadow-[0_0_10px_rgba(0,229,255,0.1)]' if active_page == 'fixtures' else 'text-gray-400 hover:text-white hover:bg-white/5' }} transition-colors group" href="{{ url_for('fixtures.fixtures') }}">
+                        <span class="material-symbols-outlined {{ 'fill-1' if active_page == 'fixtures' else '' }} group-hover:text-primary transition-colors">calendar_month</span>
+                        <p class="text-sm {{ 'font-bold' if active_page == 'fixtures' else 'font-medium' }}">Fixtures</p>
+                    </a>
+                    <a class="flex items-center gap-3 px-3 py-2 rounded-lg {{ 'bg-primary/10 text-primary border border-primary/20 shadow-[0_0_10px_rgba(0,229,255,0.1)]' if active_page == 'transfers' else 'text-gray-400 hover:text-white hover:bg-white/5' }} transition-colors group" href="#">
+                        <span class="material-symbols-outlined {{ 'fill-1' if active_page == 'transfers' else '' }} group-hover:text-primary transition-colors">compare_arrows</span>
+                        <p class="text-sm {{ 'font-bold' if active_page == 'transfers' else 'font-medium' }}">Transfer Market</p>
+                    </a>
+                    <div class="flex flex-col gap-1">
+                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg {{ 'bg-white/5 text-white' if active_page == 'analysis' else 'text-gray-400 hover:text-white hover:bg-white/5' }} transition-colors group" href="{{ url_for('analysis.discovery') }}">
+                            <span class="material-symbols-outlined {{ 'fill-1 text-primary' if active_page == 'analysis' else '' }} group-hover:text-primary transition-colors">analytics</span>
+                            <div class="flex-1 flex justify-between items-center">
+                                <p class="text-sm {{ 'font-bold' if active_page == 'analysis' else 'font-medium' }}">Analysis</p>
+                                {% if active_page == 'analysis' %}
+                                <span class="material-symbols-outlined text-gray-400 text-[18px]">expand_less</span>
+                                {% endif %}
+                            </div>
+                        </a>
+                        {% if active_page == 'analysis' %}
+                        <div class="flex flex-col gap-1 pl-11">
+                            <a class="flex items-center gap-2 px-3 py-1.5 rounded-lg {{ 'bg-primary/10 text-primary border border-primary/20' if active_sub == 'discovery' else 'text-gray-400 hover:text-white hover:bg-white/5' }} transition-colors" href="{{ url_for('analysis.discovery') }}">
+                                <p class="text-sm {{ 'font-bold' if active_sub == 'discovery' else 'font-medium' }}">Discovery</p>
+                            </a>
+                            <a class="flex items-center gap-2 px-3 py-1.5 rounded-lg {{ 'bg-primary/10 text-primary border border-primary/20' if active_sub == 'compare' else 'text-gray-400 hover:text-white hover:bg-white/5' }} transition-colors" href="{{ url_for('analysis.compare') }}">
+                                <p class="text-sm {{ 'font-bold' if active_sub == 'compare' else 'font-medium' }}">Comparison</p>
+                            </a>
+                            <a class="flex items-center gap-2 px-3 py-1.5 rounded-lg {{ 'bg-primary/10 text-primary border border-primary/20' if active_sub == 'player' else 'text-gray-400 hover:text-white hover:bg-white/5' }} transition-colors" href="{{ url_for('analysis.player_research') }}">
+                                <p class="text-sm {{ 'font-bold' if active_sub == 'player' else 'font-medium' }}">Player Research</p>
+                            </a>
+                        </div>
+                        {% endif %}
+                    </div>
+                </nav>
+            </div>
+            <!-- Bottom section -->
+            <div class="flex flex-col gap-2">
+                <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors group" href="#">
+                    <span class="material-symbols-outlined group-hover:text-primary transition-colors">settings</span>
+                    <p class="text-sm font-medium">Settings</p>
+                </a>
+                <div class="pt-4 border-t border-border-dark flex items-center gap-3 px-2">
+                    <div class="bg-primary/20 rounded-full size-9 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-primary text-lg">person</span>
+                    </div>
+                    <div>
+                        <p class="text-sm font-bold text-white font-condensed">FPL Manager</p>
+                        <p class="text-xs text-primary">Season {{ season }}</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="flex flex-1 flex-col h-full overflow-hidden relative bg-background-dark">
+            <!-- Header -->
+            <header class="flex items-center justify-between border-b border-border-dark bg-card-dark/80 backdrop-blur-md px-6 py-3 z-10 sticky top-0">
+                <div class="flex items-center gap-6">
+                    <button class="md:hidden text-white">
+                        <span class="material-symbols-outlined">menu</span>
+                    </button>
+                    <div class="flex items-center gap-3 bg-black/20 px-3 py-1 rounded-full border border-border-dark">
+                        <span class="text-gray-400 text-xs font-medium uppercase tracking-wider">Gameweek {{ current_gameweek }}</span>
+                        <span class="h-1.5 w-1.5 rounded-full bg-primary animate-pulse"></span>
+                        <span class="text-primary text-xs font-bold uppercase">Live</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-6">
+                    <div class="hidden md:flex relative group">
+                        <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 material-symbols-outlined text-[18px]">search</span>
+                        <input class="bg-black/20 border border-border-dark rounded-md py-1.5 pl-9 pr-4 text-sm text-white focus:outline-none focus:border-primary w-64 transition-all placeholder:text-gray-600 font-sans" placeholder="Search player, team..."/>
+                    </div>
+                    <div class="flex gap-3">
+                        <button class="flex items-center justify-center rounded-full size-9 bg-card-dark text-white hover:bg-white/10 transition-colors border border-border-dark relative">
+                            <span class="material-symbols-outlined text-[20px]">notifications</span>
+                            <span class="absolute top-2 right-2 size-1.5 bg-primary rounded-full"></span>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Page Content -->
+            <main class="flex-1 overflow-y-auto p-4 md:p-8 scroll-smooth">
+                <div class="max-w-[1400px] mx-auto flex flex-col gap-8 pb-10">
+                    {% block content %}{% endblock %}
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
