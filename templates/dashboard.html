@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fanap: Home Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Roboto+Condensed:ital,wght@0,300..700;1,300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00E5FF","primary-dark": "#00acc1",
+                        "background-light": "#f5f8f5",
+                        "background-dark": "#0f0f11",
+                        "card-dark": "#18181b",
+                        "border-dark": "#27272a",
+                        "success": "#10b981",
+                        "danger": "#ef4444",
+                    },
+                    fontFamily: {
+                        "display": ["Roboto Condensed", "sans-serif"],
+                        "sans": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #18181b; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #27272a; 
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3f3f46; 
+        }
+        .fpl-gradient-text {
+            background: linear-gradient(to right, #ffffff, #00E5FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-sans overflow-hidden">
+<div class="flex h-screen w-full">
+<aside class="hidden md:flex flex-col w-64 bg-card-dark border-r border-border-dark flex-shrink-0 h-full justify-between p-4">
+<div class="flex flex-col gap-6">
+<div class="flex gap-3 items-center px-2">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 border border-primary/20 shadow-[0_0_10px_rgba(0,229,255,0.2)]" data-alt="Fanap logo with abstract green geometric shape" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDVdppggGRYgPz2zI7F9V4UKIFmViLJ0BQZFzt_zr7ssU-IC_WGbaZ5Qrb33N_G64iAPuVjl0B-FUIHX6ewXKjc7ToBSVmuq-yLLIIFznhIW_mpTtySdjjZYd1mQDfSoBF0yYKnfUNN-ljCoHdn1FM5dj_lYtjMCV7axu2Mil4C71LtNOZlSOj7Bh0twEV5kZqgjCkjVpTDc8cms45_lstERN48YZfjzgXXfbaxzzSIm1lstR5JdxkR8q5zJcNox0u5tTeF5amne80J");'></div>
+<div class="flex flex-col">
+<h1 class="text-white text-xl font-display font-bold leading-none tracking-tight uppercase italic">Fanap</h1>
+<p class="text-gray-400 text-xs font-normal tracking-wide">Pro Analytics Suite</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary border border-primary/20" href="#">
+<span class="material-symbols-outlined fill-1">dashboard</span>
+<p class="text-sm font-bold font-display uppercase tracking-wide">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors" href="#">
+<span class="material-symbols-outlined">trophy</span>
+<p class="text-sm font-medium font-display uppercase tracking-wide">League Leaders</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors" href="#">
+<span class="material-symbols-outlined">group</span>
+<p class="text-sm font-medium font-display uppercase tracking-wide">My Team</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<p class="text-sm font-medium font-display uppercase tracking-wide">Fixtures</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors" href="#">
+<span class="material-symbols-outlined">compare_arrows</span>
+<p class="text-sm font-medium font-display uppercase tracking-wide">Transfer Market</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<p class="text-sm font-medium font-display uppercase tracking-wide">Analysis</p>
+</a>
+</nav>
+</div>
+<div class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<p class="text-sm font-medium font-display uppercase tracking-wide">Settings</p>
+</a>
+<div class="pt-4 border-t border-border-dark flex items-center gap-3 px-2">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-8 border border-gray-600" data-alt="User profile picture of a man looking confident" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBGStqEh4laQXAvQHk9wkNc8V-ldsQ1NXEXA9uAPnu8xP1ceutBTZmHIwJNbw54KMgrrd0iIJNzAPNu_GbmCcJHdE40-1kvbf0CmJZmy6CVkWklwHX_hmOp5AeB3P2wVWqHDQX56CmGMvk5kzb3Gh4E3nH4uIOs3JRR3Z9mVjrfRUc8YLtxWYzBDaUGcC0xNgBdK22lkIMu8cT1SKMHjdXBJsLeANT7D3FvVfCX_k5H7wmb7iKZ3lACJzl8js0Tju366qOaW8bkaFxQ");'></div>
+<div>
+<p class="text-sm font-bold font-display text-white uppercase">Alex Manager</p>
+<p class="text-xs text-primary">Top 10k</p>
+</div>
+</div>
+</div>
+</aside>
+<div class="flex flex-1 flex-col h-full overflow-hidden relative">
+<header class="flex items-center justify-between border-b border-border-dark bg-background-dark/80 backdrop-blur-md px-8 py-4 z-10 sticky top-0">
+<div class="flex items-center gap-6">
+<button class="md:hidden text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="flex items-center gap-4">
+<span class="text-gray-400 text-sm font-medium font-display uppercase tracking-wide">Gameweek 24</span>
+<span class="h-1.5 w-1.5 rounded-full bg-primary animate-pulse"></span>
+<span class="text-primary text-sm font-bold font-display uppercase tracking-wide">Live Updates</span>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex relative group">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 material-symbols-outlined text-[20px]">search</span>
+<input class="bg-card-dark border border-border-dark rounded-full py-2 pl-10 pr-4 text-sm text-white focus:outline-none focus:border-primary w-64 transition-all placeholder:text-gray-600 font-sans" placeholder="Search player, team..."/>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center justify-center rounded-full size-10 bg-card-dark text-white hover:bg-white/10 transition-colors border border-border-dark relative">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-primary rounded-full border border-card-dark"></span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-1 overflow-y-auto p-4 md:p-8">
+<div class="max-w-[1400px] mx-auto flex flex-col gap-6 pb-10">
+<div class="flex flex-wrap justify-between items-end gap-4 mb-2">
+<div>
+<h1 class="text-white text-3xl md:text-4xl font-bold font-display tracking-tight uppercase italic mb-1">Manager Dashboard</h1>
+<p class="text-gray-400 font-sans text-sm">Welcome back, Alex. Gameweek 25 deadline in <span class="text-white font-mono">2d 14h 15m</span>.</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-4 py-2 bg-primary text-background-dark rounded-lg text-sm font-bold font-display uppercase tracking-wide hover:bg-primary/90 transition-colors shadow-[0_0_15px_rgba(0,229,255,0.3)]">
+<span class="material-symbols-outlined text-[18px]">smart_toy</span>
+                                Auto-Pick Team
+                            </button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="bg-card-dark border border-border-dark rounded-xl p-5 relative overflow-hidden group hover:border-primary/50 transition-colors">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-white">leaderboard</span>
+</div>
+<p class="text-gray-400 text-xs font-bold font-display uppercase tracking-wider mb-2">Overall Rank</p>
+<div class="flex items-baseline gap-3">
+<span class="text-3xl font-bold text-white font-mono">14,205</span>
+<div class="flex items-center text-success text-sm font-medium bg-success/10 px-1.5 py-0.5 rounded">
+<span class="material-symbols-outlined text-sm">arrow_upward</span>
+                                    2.4k
+                                </div>
+</div>
+<p class="text-xs text-gray-500 mt-2">Top 0.3% of managers</p>
+</div>
+<div class="bg-card-dark border border-border-dark rounded-xl p-5 relative overflow-hidden group hover:border-primary/50 transition-colors">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-white">attach_money</span>
+</div>
+<p class="text-gray-400 text-xs font-bold font-display uppercase tracking-wider mb-2">Team Value</p>
+<div class="flex items-baseline gap-3">
+<span class="text-3xl font-bold text-white font-mono">£103.4m</span>
+</div>
+<div class="flex justify-between items-center mt-2 text-xs">
+<span class="text-gray-500">Bank: <span class="text-white font-mono">£1.2m</span></span>
+<span class="text-gray-500">Transfers: <span class="text-primary font-bold">2 FT</span></span>
+</div>
+</div>
+<div class="bg-card-dark border border-border-dark rounded-xl p-5 relative overflow-hidden group hover:border-primary/50 transition-colors">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-white">sports_soccer</span>
+</div>
+<p class="text-gray-400 text-xs font-bold font-display uppercase tracking-wider mb-2">Gameweek 24 Points</p>
+<div class="flex items-baseline gap-3">
+<span class="text-3xl font-bold text-white font-mono">78</span>
+<span class="text-xs text-gray-500 font-sans">Avg: 52</span>
+</div>
+<div class="w-full bg-gray-800 h-1.5 rounded-full mt-3 overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 85%"></div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 h-full">
+<div class="lg:col-span-8 flex flex-col gap-6">
+<div class="bg-gradient-to-b from-card-dark to-black border border-border-dark rounded-xl p-6 shadow-lg flex flex-col gap-4 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+<div class="flex items-center justify-between z-10">
+<h3 class="text-white font-bold font-display text-lg flex items-center gap-2 uppercase italic tracking-wide">
+<span class="material-symbols-outlined text-primary">smart_toy</span>
+                                        AI Scout Assistant
+                                    </h3>
+<span class="text-[10px] text-primary bg-primary/10 px-2 py-1 rounded border border-primary/20 uppercase font-bold tracking-wider">Beta 2.0</span>
+</div>
+<div class="bg-white/5 rounded-lg p-4 border border-border-dark z-10">
+<div class="flex gap-3">
+<div class="bg-primary/20 p-1.5 h-fit rounded-md">
+<span class="material-symbols-outlined text-primary text-sm">auto_awesome</span>
+</div>
+<div>
+<p class="text-gray-300 text-sm leading-relaxed">
+                                                Based on your current squad, <span class="text-white font-bold">Haaland</span> is projected to score highest in GW25. However, your defense is vulnerable. I recommend replacing <span class="text-danger font-bold">Porro</span> due to injury risk.
+                                            </p>
+</div>
+</div>
+</div>
+<div class="flex gap-2 z-10">
+<input class="flex-1 bg-black/50 border border-border-dark rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-primary transition-colors font-sans placeholder:text-gray-600" placeholder="Ask about transfers, captains, or stats..." type="text"/>
+<button class="bg-primary hover:bg-primary-dark text-black px-4 rounded-lg flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+<div class="flex gap-2 overflow-x-auto pb-1 z-10 scrollbar-hide">
+<button class="whitespace-nowrap px-3 py-1.5 rounded-full border border-border-dark bg-card-dark hover:bg-white/5 text-xs text-gray-400 hover:text-white transition-colors">Best Captain?</button>
+<button class="whitespace-nowrap px-3 py-1.5 rounded-full border border-border-dark bg-card-dark hover:bg-white/5 text-xs text-gray-400 hover:text-white transition-colors">Wildcard Strategy</button>
+<button class="whitespace-nowrap px-3 py-1.5 rounded-full border border-border-dark bg-card-dark hover:bg-white/5 text-xs text-gray-400 hover:text-white transition-colors">Replace Saka?</button>
+</div>
+</div>
+<div class="bg-card-dark border border-border-dark rounded-xl p-6 shadow-lg">
+<div class="flex justify-between items-center mb-5">
+<h3 class="text-white font-bold font-display text-lg uppercase italic tracking-wide">
+                                        Transfer Recommendations
+                                    </h3>
+<button class="text-xs text-primary font-bold hover:underline uppercase tracking-wide">View All</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="border border-border-dark bg-background-dark/50 rounded-lg p-3 flex items-center justify-between group hover:border-primary/30 transition-all">
+<div class="flex items-center gap-3">
+<div class="flex flex-col items-center">
+<span class="text-[10px] text-danger font-bold uppercase mb-1">Out</span>
+<div class="size-10 rounded-full bg-gray-800 bg-cover bg-center border border-danger/30 grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDVIxen3-9SGYDAI_hzaNXe0l9H8BlmExWEsohJPpanJXnEWvBGJJ1ysmW49SeSatSqvB8vbeX03ozNS90q4FJby4b06TM6q2fjnmyx20vBQvfEHSK5BKaRor346gV36-ZrPBDjglg4z1jYhMDHjEFCkh2aVxPMntByHFpD6hK7EJovd31XebSPPmbtMWuwPRZvOVwvavVMyZZYnZbyA5c0_fyhWlSvvcF3szjoyxYKh19a-GdWAGwKeHCxtC5JU5FsXC3JvVlnlOaa');"></div>
+</div>
+<span class="material-symbols-outlined text-gray-500 text-sm">arrow_forward</span>
+<div class="flex flex-col items-center">
+<span class="text-[10px] text-primary font-bold uppercase mb-1">In</span>
+<div class="size-10 rounded-full bg-gray-800 bg-cover bg-center border border-primary/30" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAL8pxG0OGQH0uqxoq7eK76TZ8Zdm-q4_oaVSeBvxpBZKcdNSh1fABOMJsa2hNB2V31PickrBe7LFWxkjRxNDVei_7isNzPrOaPLwAUznlnfUv5CgWzQrD5VeOPf4x8hW3vKMP5dJiIE88qzSR29ESi6XUOPbgEDXKLREFfP8NQjLILSUWz3iC54zAruF4sq3NpUzAUCATPPUgyxB0_bRbd8jZawzqvgR0gKT28uUCl95EXU2MYLzn11Z-Kd2dzSzU6BqqLfeuwRg_F');"></div>
+</div>
+<div class="ml-2">
+<p class="text-sm font-bold text-white">Saliba <span class="font-normal text-gray-400 text-xs">ARS</span></p>
+<p class="text-xs text-primary">+4.2 xPts</p>
+</div>
+</div>
+<button class="p-2 hover:bg-primary/20 rounded-lg text-primary transition-colors">
+<span class="material-symbols-outlined">add_circle</span>
+</button>
+</div>
+<div class="border border-border-dark bg-background-dark/50 rounded-lg p-3 flex items-center justify-between group hover:border-primary/30 transition-all">
+<div class="flex items-center gap-3">
+<div class="flex flex-col items-center">
+<span class="text-[10px] text-danger font-bold uppercase mb-1">Out</span>
+<div class="size-10 rounded-full bg-gray-800 bg-cover bg-center border border-danger/30 grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDiQYRGV3qD-BgffrDaMsaHQ-lIQj06rFG5_MoS4IjmvPxZeLdJWxmhiztjHRdvfRcqgYXSzhVmyiesgAHli7NpJXxNo423zonBs6nNtmPEj8sytnjHWdb0ZJOEXLmnKLNUltLeJ4g2QZXITHwfZC_Ieo58EKtks68CSVOcbAX6aIauIPUZ8O0XgsazVEi8I2xikkg71mashobYFg3SAIFLXr68j0HtFPh7s_7CqbDE_YBP6eA--JRKQ-NO4ktjnNtK_qiJuPW2hHmu');"></div>
+</div>
+<span class="material-symbols-outlined text-gray-500 text-sm">arrow_forward</span>
+<div class="flex flex-col items-center">
+<span class="text-[10px] text-primary font-bold uppercase mb-1">In</span>
+<div class="size-10 rounded-full bg-gray-800 bg-cover bg-center border border-primary/30" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBmSRoui_nZFiM4lgo22JbwcyVmQCq71MYAIoOLDzKdYYdhM54yE-Xncw4Z4pTzEY8iz1mwAJTfYyxpjDdRj0xFC-_qN6Vp-wVXGL5wDt433CADdKRxSLQQfGwQbih6lqbhiFrr7vD2vWZWzyDr0uhFSA1JmEM8pKQm2DZiAMEUshojOh3aVXGnCTFbsz2KEo8eTJnUK95G8FnAnvBzkk7plRmCHbP4G9VpOPRFAiA8hYORNTPdU3nPusQ7Ihc9fP5QcPokgYSOWufH');"></div>
+</div>
+<div class="ml-2">
+<p class="text-sm font-bold text-white">De Bruyne <span class="font-normal text-gray-400 text-xs">MCI</span></p>
+<p class="text-xs text-primary">+6.5 xPts</p>
+</div>
+</div>
+<button class="p-2 hover:bg-primary/20 rounded-lg text-primary transition-colors">
+<span class="material-symbols-outlined">add_circle</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-4 flex flex-col gap-6">
+<div class="bg-card-dark border border-border-dark rounded-xl p-6 shadow-lg h-full">
+<h3 class="text-white font-bold font-display text-lg mb-5 flex items-center justify-between uppercase italic tracking-wide">
+<span>Upcoming Fixtures</span>
+<span class="text-xs bg-white/10 text-white font-sans px-2 py-1 rounded not-italic normal-case">GW 25</span>
+</h3>
+<div class="flex flex-col gap-3 overflow-y-auto">
+<div class="flex items-center justify-between p-3 rounded-lg bg-background-dark/50 border border-border-dark hover:border-gray-600 transition-colors cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="text-xs font-bold text-gray-400 w-8">SAT</div>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-white">LIV (H)</span>
+<span class="text-[10px] text-gray-500">v Burnley</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="size-2 rounded-full bg-success shadow-[0_0_8px_rgba(16,185,129,0.5)]"></span>
+<span class="text-xs font-bold text-success">Diff 2</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-3 rounded-lg bg-background-dark/50 border border-border-dark hover:border-gray-600 transition-colors cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="text-xs font-bold text-gray-400 w-8">SAT</div>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-white">MCI (H)</span>
+<span class="text-[10px] text-gray-500">v Everton</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="size-2 rounded-full bg-success shadow-[0_0_8px_rgba(16,185,129,0.5)]"></span>
+<span class="text-xs font-bold text-success">Diff 2</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-3 rounded-lg bg-background-dark/50 border border-border-dark hover:border-gray-600 transition-colors cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="text-xs font-bold text-gray-400 w-8">SUN</div>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-white">ARS (A)</span>
+<span class="text-[10px] text-gray-500">v West Ham</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="size-2 rounded-full bg-yellow-500 shadow-[0_0_8px_rgba(234,179,8,0.5)]"></span>
+<span class="text-xs font-bold text-yellow-500">Diff 3</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-3 rounded-lg bg-background-dark/50 border border-border-dark hover:border-gray-600 transition-colors cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="text-xs font-bold text-gray-400 w-8">SUN</div>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-white">AVL (H)</span>
+<span class="text-[10px] text-gray-500">v Man Utd</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="size-2 rounded-full bg-red-500 shadow-[0_0_8px_rgba(239,68,68,0.5)]"></span>
+<span class="text-xs font-bold text-danger">Diff 4</span>
+</div>
+</div>
+<button class="mt-2 w-full py-2 text-xs font-medium text-gray-400 hover:text-white border-t border-border-dark transition-colors uppercase tracking-wider">Full Schedule</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

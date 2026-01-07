@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fanap: League Leaders</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Roboto+Condensed:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00e5ff","primary-dim": "#00b2c7",
+                        "background-light": "#f5f8f5",
+                        "background-dark": "#0a0a0c",
+                        "card-dark": "#161618",
+                        "border-dark": "#27272a",
+                        "text-secondary": "#a1a1aa",
+                    },
+                    fontFamily: {
+                        "sans": ["Inter", "sans-serif"],
+                        "condensed": ["Roboto Condensed", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem", 
+                        "lg": "0.5rem", 
+                        "xl": "0.75rem", 
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        "glow": "0 0 15px rgba(0, 229, 255, 0.15)",
+                    }
+                },
+            },
+        }
+    </script>
+<style>::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #18181b; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #27272a; 
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00e5ff; 
+        }
+        .bar-gradient {
+            background: linear-gradient(90deg, #00e5ff 0%, #00b2c7 100%);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-gray-100 font-sans overflow-hidden">
+<div class="flex h-screen w-full">
+<aside class="hidden md:flex flex-col w-64 bg-card-dark border-r border-border-dark flex-shrink-0 h-full justify-between p-4 z-20">
+<div class="flex flex-col gap-6">
+<div class="flex gap-3 items-center px-2">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 border border-primary/20 shadow-glow" data-alt="Fanap logo with abstract cyan geometric shape" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDVdppggGRYgPz2zI7F9V4UKIFmViLJ0BQZFzt_zr7ssU-IC_WGbaZ5Qrb33N_G64iAPuVjl0B-FUIHX6ewXKjc7ToBSVmuq-yLLIIFznhIW_mpTtySdjjZYd1mQDfSoBF0yYKnfUNN-ljCoHdn1FM5dj_lYtjMCV7axu2Mil4C71LtNOZlSOj7Bh0twEV5kZqgjCkjVpTDc8cms45_lstERN48YZfjzgXXfbaxzzSIm1lstR5JdxkR8q5zJcNox0u5tTeF5amne80J");'></div>
+<div class="flex flex-col">
+<h1 class="text-white text-xl font-condensed font-bold leading-none tracking-tight uppercase">Fanap</h1>
+<p class="text-primary text-[10px] font-medium tracking-wider uppercase">Pro Analytics</p>
+</div>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">dashboard</span>
+<p class="text-sm font-medium">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary border border-primary/20 shadow-[0_0_10px_rgba(0,229,255,0.1)]" href="#">
+<span class="material-symbols-outlined fill-1">trophy</span>
+<p class="text-sm font-bold">League Leaders</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">group</span>
+<p class="text-sm font-medium">My Team</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">calendar_month</span>
+<p class="text-sm font-medium">Fixtures</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">compare_arrows</span>
+<p class="text-sm font-medium">Transfer Market</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">analytics</span>
+<p class="text-sm font-medium">Analysis</p>
+</a>
+</nav>
+</div>
+<div class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">settings</span>
+<p class="text-sm font-medium">Settings</p>
+</a>
+<div class="pt-4 border-t border-border-dark flex items-center gap-3 px-2">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-9 ring-2 ring-border-dark" data-alt="User profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBGStqEh4laQXAvQHk9wkNc8V-ldsQ1NXEXA9uAPnu8xP1ceutBTZmHIwJNbw54KMgrrd0iIJNzAPNu_GbmCcJHdE40-1kvbf0CmJZmy6CVkWklwHX_hmOp5AeB3P2wVWqHDQX56CmGMvk5kzb3Gh4E3nH4uIOs3JRR3Z9mVjrfRUc8YLtxWYzBDaUGcC0xNgBdK22lkIMu8cT1SKMHjdXBJsLeANT7D3FvVfCX_k5H7wmb7iKZ3lACJzl8js0Tju366qOaW8bkaFxQ");'></div>
+<div>
+<p class="text-sm font-bold text-white font-condensed">Alex Manager</p>
+<p class="text-xs text-primary">Rank: 8,492</p>
+</div>
+</div>
+</div>
+</aside>
+<div class="flex flex-1 flex-col h-full overflow-hidden relative bg-background-dark">
+<header class="flex items-center justify-between border-b border-border-dark bg-card-dark/80 backdrop-blur-md px-6 py-3 z-10 sticky top-0">
+<div class="flex items-center gap-6">
+<button class="md:hidden text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="flex items-center gap-3 bg-black/20 px-3 py-1 rounded-full border border-border-dark">
+<span class="text-gray-400 text-xs font-medium uppercase tracking-wider">Gameweek 24</span>
+<span class="h-1.5 w-1.5 rounded-full bg-primary animate-pulse"></span>
+<span class="text-primary text-xs font-bold uppercase">Live</span>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex relative group">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 material-symbols-outlined text-[18px]">search</span>
+<input class="bg-black/20 border border-border-dark rounded-md py-1.5 pl-9 pr-4 text-sm text-white focus:outline-none focus:border-primary w-64 transition-all placeholder:text-gray-600 font-sans" placeholder="Search player, team..."/>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center justify-center rounded-full size-9 bg-card-dark text-white hover:bg-white/10 transition-colors border border-border-dark relative">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+<span class="absolute top-2 right-2 size-1.5 bg-primary rounded-full"></span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-1 overflow-y-auto p-4 md:p-8 scroll-smooth">
+<div class="max-w-[1400px] mx-auto flex flex-col gap-8 pb-10">
+<div class="flex flex-wrap justify-between items-end gap-4 border-b border-border-dark pb-6">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="text-primary text-xs font-bold uppercase tracking-widest">Analytics Dashboard</span>
+</div>
+<h1 class="text-white text-3xl md:text-4xl font-condensed font-bold tracking-tight uppercase">League Leaders</h1>
+<p class="text-gray-400 text-sm font-sans mt-1">Deep dive into player performance metrics for Gameweek 24.</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-4 py-2 bg-card-dark border border-border-dark rounded-md text-gray-300 text-sm font-medium hover:text-white hover:border-gray-500 transition-colors">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+                            Season 23/24
+                        </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-primary text-black rounded-md text-sm font-bold hover:bg-white transition-colors shadow-glow">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                            Export Data
+                        </button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+<div class="bg-card-dark border border-border-dark rounded-lg p-5 flex flex-col h-full shadow-lg relative overflow-hidden group">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="text-white font-condensed font-bold text-lg uppercase tracking-wide">Top Scorers</h3>
+<p class="text-xs text-gray-500 font-sans">Golden Boot Race</p>
+</div>
+<span class="material-symbols-outlined text-primary p-2 bg-primary/10 rounded-md">sports_soccer</span>
+</div>
+<div class="flex-1">
+<table class="w-full text-sm text-left font-sans">
+<tbody class="divide-y divide-border-dark/50">
+<tr class="group cursor-pointer hover:bg-white/5 transition-colors">
+<td class="py-2.5 w-6 text-primary font-bold text-xs">1</td>
+<td class="py-2.5">
+<div class="font-semibold text-white">E. Haaland</div>
+<div class="text-[10px] text-gray-500 uppercase tracking-wide">Man City</div>
+</td>
+<td class="py-2.5 text-right font-bold text-white text-lg">18</td>
+</tr>
+<tr class="group cursor-pointer hover:bg-white/5 transition-colors">
+<td class="py-2.5 w-6 text-gray-500 font-bold text-xs">2</td>
+<td class="py-2.5">
+<div class="font-medium text-gray-300">M. Salah</div>
+<div class="text-[10px] text-gray-500 uppercase tracking-wide">Liverpool</div>
+</td>
+<td class="py-2.5 text-right font-bold text-gray-300">14</td>
+</tr>
+<tr class="group cursor-pointer hover:bg-white/5 transition-colors">
+<td class="py-2.5 w-6 text-gray-500 font-bold text-xs">3</td>
+<td class="py-2.5">
+<div class="font-medium text-gray-300">D. Solanke</div>
+<div class="text-[10px] text-gray-500 uppercase tracking-wide">Bournemouth</div>
+</td>
+<td class="py-2.5 text-right font-bold text-gray-300">12</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="mt-4 pt-3 border-t border-border-dark flex justify-between items-center">
+<span class="text-[10px] text-gray-500 uppercase">Updated 2h ago</span>
+<button class="text-primary hover:text-white text-xs font-bold uppercase flex items-center gap-1 transition-colors">View All <span class="material-symbols-outlined text-[14px]">arrow_forward</span></button>
+</div>
+</div>
+<div class="bg-card-dark border border-border-dark rounded-lg p-5 flex flex-col h-full shadow-lg relative overflow-hidden">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="text-white font-condensed font-bold text-lg uppercase tracking-wide">Top Assisters</h3>
+<p class="text-xs text-gray-500 font-sans">Playmakers</p>
+</div>
+<span class="material-symbols-outlined text-primary p-2 bg-primary/10 rounded-md">handshake</span>
+</div>
+<div class="flex-1">
+<table class="w-full text-sm text-left font-sans">
+<tbody class="divide-y divide-border-dark/50">
+<tr class="group cursor-pointer hover:bg-white/5 transition-colors">
+<td class="py-2.5 w-6 text-primary font-bold text-xs">1</td>
+<td class="py-2.5">
+<div class="font-semibold text-white">O. Watkins</div>
+<div class="text-[10px] text-gray-500 uppercase tracking-wide">Aston Villa</div>
+</td>
+<td class="py-2.5 text-right font-bold text-white text-lg">10</td>
+</tr>
+<tr class="group cursor-pointer hover:bg-white/5 transition-colors">
+<td class="py-2.5 w-6 text-gray-500 font-bold text-xs">2</td>
+<td class="py-2.5">
+<div class="font-medium text-gray-300">K. Trippier</div>
+<div class="text-[10px] text-gray-500 uppercase tracking-wide">Newcastle</div>
+</td>
+<td class="py-2.5 text-right font-bold text-gray-300">9</td>
+</tr>
+<tr class="group cursor-pointer hover:bg-white/5 transition-colors">
+<td class="py-2.5 w-6 text-gray-500 font-bold text-xs">3</td>
+<td class="py-2.5">
+<div class="font-medium text-gray-300">P. Neto</div>
+<div class="text-[10px] text-gray-500 uppercase tracking-wide">Wolves</div>
+</td>
+<td class="py-2.5 text-right font-bold text-gray-300">8</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="mt-4 pt-3 border-t border-border-dark flex justify-between items-center">
+<span class="text-[10px] text-gray-500 uppercase">Updated 2h ago</span>
+<button class="text-primary hover:text-white text-xs font-bold uppercase flex items-center gap-1 transition-colors">View All <span class="material-symbols-outlined text-[14px]">arrow_forward</span></button>
+</div>
+</div>
+<div class="bg-card-dark border border-primary/30 rounded-lg p-5 flex flex-col h-full shadow-[0_0_20px_rgba(0,229,255,0.05)] relative overflow-hidden">
+<div class="absolute top-0 right-0 w-48 h-48 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+<div class="flex justify-between items-start mb-4 relative z-10">
+<div>
+<h3 class="text-white font-condensed font-bold text-lg uppercase tracking-wide">Total Points</h3>
+<p class="text-xs text-gray-500 font-sans">MVP Leaderboard</p>
+</div>
+<span class="material-symbols-outlined text-white p-2 bg-primary rounded-md shadow-glow">leaderboard</span>
+</div>
+<div class="flex-1 relative z-10">
+<table class="w-full text-sm text-left font-sans">
+<tbody class="divide-y divide-border-dark/50">
+<tr class="group cursor-pointer hover:bg-white/5 transition-colors">
+<td class="py-2.5 w-6 text-primary font-bold text-xs">1</td>
+<td class="py-2.5">
+<div class="font-semibold text-white">O. Watkins</div>
+<div class="text-[10px] text-gray-500 uppercase tracking-wide">Aston Villa</div>
+</td>
+<td class="py-2.5 text-right font-bold text-primary text-xl">156</td>
+</tr>
+<tr class="group cursor-pointer hover:bg-white/5 transition-colors">
+<td class="py-2.5 w-6 text-gray-500 font-bold text-xs">2</td>
+<td class="py-2.5">
+<div class="font-medium text-gray-300">M. Salah</div>
+<div class="text-[10px] text-gray-500 uppercase tracking-wide">Liverpool</div>
+</td>
+<td class="py-2.5 text-right font-bold text-white">152</td>
+</tr>
+<tr class="group cursor-pointer hover:bg-white/5 transition-colors">
+<td class="py-2.5 w-6 text-gray-500 font-bold text-xs">3</td>
+<td class="py-2.5">
+<div class="font-medium text-gray-300">H. Son</div>
+<div class="text-[10px] text-gray-500 uppercase tracking-wide">Spurs</div>
+</td>
+<td class="py-2.5 text-right font-bold text-white">145</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="mt-4 pt-3 border-t border-border-dark flex justify-between items-center relative z-10">
+<span class="text-[10px] text-gray-500 uppercase">Updated 5m ago</span>
+<button class="text-primary hover:text-white text-xs font-bold uppercase flex items-center gap-1 transition-colors">Full Table <span class="material-symbols-outlined text-[14px]">arrow_forward</span></button>
+</div>
+</div>
+<div class="bg-card-dark border border-border-dark rounded-lg p-5 flex flex-col h-full shadow-lg">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="text-white font-condensed font-bold text-lg uppercase tracking-wide">Best Defense</h3>
+<p class="text-xs text-gray-500 font-sans">Clean Sheets &amp; xGC</p>
+</div>
+<span class="material-symbols-outlined text-primary p-2 bg-primary/10 rounded-md">shield</span>
+</div>
+<div class="flex items-center gap-4 mb-4">
+<div class="relative size-16 rounded-full flex items-center justify-center bg-gray-800 ring-2 ring-card-dark shadow-lg" style="background: conic-gradient(#00e5ff 42%, #27272a 0);">
+<div class="absolute inset-2 bg-card-dark rounded-full flex flex-col items-center justify-center">
+<span class="text-xs font-bold text-white font-condensed">42%</span>
+</div>
+</div>
+<div class="flex-1">
+<p class="text-white font-bold text-lg leading-tight font-condensed uppercase">Arsenal</p>
+<p class="text-primary text-xs font-medium">League Best</p>
+</div>
+</div>
+<div class="flex-1">
+<table class="w-full text-sm text-left font-sans">
+<thead class="text-[10px] text-gray-500 uppercase tracking-wider border-b border-border-dark/50">
+<tr>
+<th class="pb-2 font-medium">Team</th>
+<th class="pb-2 text-right">CS</th>
+<th class="pb-2 text-right">xGC</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-dark/50">
+<tr class="group cursor-pointer hover:bg-white/5 transition-colors">
+<td class="py-2 text-white font-medium text-xs">Arsenal</td>
+<td class="py-2 text-right text-primary font-bold">10</td>
+<td class="py-2 text-right text-gray-400 text-xs">18.2</td>
+</tr>
+<tr class="group cursor-pointer hover:bg-white/5 transition-colors">
+<td class="py-2 text-gray-300 font-medium text-xs">Liverpool</td>
+<td class="py-2 text-right text-white">8</td>
+<td class="py-2 text-right text-gray-400 text-xs">24.5</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="mt-4 pt-3 border-t border-border-dark flex justify-end items-center">
+<button class="text-primary hover:text-white text-xs font-bold uppercase flex items-center gap-1 transition-colors">Defensive Stats <span class="material-symbols-outlined text-[14px]">arrow_forward</span></button>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-5">
+<div class="flex items-center gap-3 border-l-4 border-primary pl-4">
+<h2 class="text-white text-2xl font-condensed font-bold uppercase tracking-wide">Visual Analysis</h2>
+<span class="px-2 py-0.5 rounded bg-primary/20 text-primary text-[10px] font-bold uppercase tracking-wider border border-primary/30">Broadcast View</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<div class="bg-card-dark border border-border-dark rounded-lg p-6 shadow-lg relative">
+<div class="absolute inset-0 p-6 flex justify-between pointer-events-none opacity-10">
+<div class="h-full w-px bg-white border-dashed border-l border-white/50"></div>
+<div class="h-full w-px bg-white border-dashed border-l border-white/50"></div>
+<div class="h-full w-px bg-white border-dashed border-l border-white/50"></div>
+<div class="h-full w-px bg-white border-dashed border-l border-white/50"></div>
+<div class="h-full w-px bg-white border-dashed border-l border-white/50"></div>
+</div>
+<div class="flex justify-between items-center mb-6 relative z-10">
+<h4 class="text-white font-condensed font-bold uppercase flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">bar_chart</span>
+                                    Top 10 Goal Scorers
+                                </h4>
+<div class="flex gap-2">
+<button class="text-[10px] uppercase font-bold text-primary bg-primary/10 px-2 py-1 rounded border border-primary/20">Goals</button>
+<button class="text-[10px] uppercase font-bold text-gray-500 hover:text-white px-2 py-1 rounded hover:bg-white/5 transition-colors">xG</button>
+</div>
+</div>
+<div class="flex flex-col gap-2.5 font-sans text-xs relative z-10">
+<div class="grid grid-cols-[100px_1fr_30px] items-center gap-3 group">
+<span class="text-white font-medium text-right truncate">E. Haaland</span>
+<div class="h-2 w-full bg-gray-800/50 rounded-sm overflow-hidden flex items-center">
+<div class="h-full bar-gradient shadow-glow rounded-sm transition-all duration-1000 group-hover:brightness-125" style="width: 100%"></div>
+</div>
+<span class="text-primary font-bold">18</span>
+</div>
+<div class="grid grid-cols-[100px_1fr_30px] items-center gap-3 group">
+<span class="text-gray-400 font-medium text-right truncate group-hover:text-white transition-colors">M. Salah</span>
+<div class="h-2 w-full bg-gray-800/50 rounded-sm overflow-hidden flex items-center">
+<div class="h-full bg-gray-600 group-hover:bg-primary/50 rounded-sm transition-all duration-300" style="width: 77%"></div>
+</div>
+<span class="text-gray-300 font-bold">14</span>
+</div>
+<div class="grid grid-cols-[100px_1fr_30px] items-center gap-3 group">
+<span class="text-gray-400 font-medium text-right truncate group-hover:text-white transition-colors">D. Solanke</span>
+<div class="h-2 w-full bg-gray-800/50 rounded-sm overflow-hidden flex items-center">
+<div class="h-full bg-gray-600 group-hover:bg-primary/50 rounded-sm transition-all duration-300" style="width: 66%"></div>
+</div>
+<span class="text-gray-300 font-bold">12</span>
+</div>
+<div class="grid grid-cols-[100px_1fr_30px] items-center gap-3 group">
+<span class="text-gray-400 font-medium text-right truncate group-hover:text-white transition-colors">H. Son</span>
+<div class="h-2 w-full bg-gray-800/50 rounded-sm overflow-hidden flex items-center">
+<div class="h-full bg-gray-600 group-hover:bg-primary/50 rounded-sm transition-all duration-300" style="width: 66%"></div>
+</div>
+<span class="text-gray-300 font-bold">12</span>
+</div>
+<div class="grid grid-cols-[100px_1fr_30px] items-center gap-3 group">
+<span class="text-gray-400 font-medium text-right truncate group-hover:text-white transition-colors">J. Bowen</span>
+<div class="h-2 w-full bg-gray-800/50 rounded-sm overflow-hidden flex items-center">
+<div class="h-full bg-gray-600 group-hover:bg-primary/50 rounded-sm transition-all duration-300" style="width: 61%"></div>
+</div>
+<span class="text-gray-300 font-bold">11</span>
+</div>
+<div class="grid grid-cols-[100px_1fr_30px] items-center gap-3 group">
+<span class="text-gray-400 font-medium text-right truncate group-hover:text-white transition-colors">O. Watkins</span>
+<div class="h-2 w-full bg-gray-800/50 rounded-sm overflow-hidden flex items-center">
+<div class="h-full bg-gray-700 group-hover:bg-primary/30 rounded-sm transition-all duration-300" style="width: 50%"></div>
+</div>
+<span class="text-gray-400 font-bold">9</span>
+</div>
+<div class="grid grid-cols-[100px_1fr_30px] items-center gap-3 group">
+<span class="text-gray-400 font-medium text-right truncate group-hover:text-white transition-colors">A. Isak</span>
+<div class="h-2 w-full bg-gray-800/50 rounded-sm overflow-hidden flex items-center">
+<div class="h-full bg-gray-700 group-hover:bg-primary/30 rounded-sm transition-all duration-300" style="width: 50%"></div>
+</div>
+<span class="text-gray-400 font-bold">9</span>
+</div>
+<div class="grid grid-cols-[100px_1fr_30px] items-center gap-3 group">
+<span class="text-gray-400 font-medium text-right truncate group-hover:text-white transition-colors">C. Palmer</span>
+<div class="h-2 w-full bg-gray-800/50 rounded-sm overflow-hidden flex items-center">
+<div class="h-full bg-gray-700 group-hover:bg-primary/30 rounded-sm transition-all duration-300" style="width: 44%"></div>
+</div>
+<span class="text-gray-400 font-bold">8</span>
+</div>
+<div class="grid grid-cols-[100px_1fr_30px] items-center gap-3 group">
+<span class="text-gray-400 font-medium text-right truncate group-hover:text-white transition-colors">Hwang H.C.</span>
+<div class="h-2 w-full bg-gray-800/50 rounded-sm overflow-hidden flex items-center">
+<div class="h-full bg-gray-700 group-hover:bg-primary/30 rounded-sm transition-all duration-300" style="width: 44%"></div>
+</div>
+<span class="text-gray-400 font-bold">8</span>
+</div>
+<div class="grid grid-cols-[100px_1fr_30px] items-center gap-3 group">
+<span class="text-gray-400 font-medium text-right truncate group-hover:text-white transition-colors">Richarlison</span>
+<div class="h-2 w-full bg-gray-800/50 rounded-sm overflow-hidden flex items-center">
+<div class="h-full bg-gray-700 group-hover:bg-primary/30 rounded-sm transition-all duration-300" style="width: 38%"></div>
+</div>
+<span class="text-gray-400 font-bold">7</span>
+</div>
+</div>
+</div>
+<div class="bg-card-dark border border-border-dark rounded-lg p-6 shadow-lg relative">
+<div class="absolute inset-0 p-6 flex justify-between pointer-events-none opacity-10">
+<div class="h-full w-px bg-white border-dashed border-l border-white/50"></div>
+<div class="h-full w-px bg-white border-dashed border-l border-white/50"></div>
+<div class="h-full w-px bg-white border-dashed border-l border-white/50"></div>
+<div class="h-full w-px bg-white border-dashed border-l border-white/50"></div>
+<div class="h-full w-px bg-white border-dashed border-l border-white/50"></div>
+</div>
+<div class="flex justify-between items-center mb-6 relative z-10">
+<h4 class="text-white font-condensed font-bold uppercase flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">show_chart</span>
+                                    Top 10 Assist Leaders
+                                </h4>
+<div class="flex gap-2">
+<button class="text-[10px] uppercase font-bold text-primary bg-primary/10 px-2 py-1 rounded border border-primary/20">Assists</button>
+<button class="text-[10px] uppercase font-bold text-gray-500 hover:text-white px-2 py-1 rounded hover:bg-white/5 transition-colors">xA</button>
+</div>
+</div>
+<div class="flex flex-col gap-2.5 font-sans text-xs relative z-10">
+<div class="grid grid-cols-[100px_1fr_30px] items-center gap-3 group">
+<span class="text-white font-medium text-right truncate">O. Watkins</span>
+<div class="h-2 w-full bg-gray-800/50 rounded-sm overflow-hidden flex items-center">
+<div class="h-full bar-gradient shadow-glow rounded-sm transition-all duration-1000 group-hover:brightness-125" style="width: 100%"></div>
+</div>
+<span class="text-primary font-bold">10</span>
+</div>
+<div class="grid grid-cols-[100px_1fr_30px] items-center gap-3 group">
+<span class="text-gray-400 font-medium text-right truncate group-hover:text-white transition-colors">K. Trippier</span>
+<div class="h-2 w-full bg-gray-800/50 rounded-sm overflow-hidden flex items-center">
+<div class="h-full bg-gray-600 group-hover:bg-primary/50 rounded-sm transition-all duration-300" style="width: 90%"></div>
+</div>
+<span class="text-gray-300 font-bold">9</span>
+</div>
+<div class="grid grid-cols-[100px_1fr_30px] items-center gap-3 group">
+<span class="text-gray-400 font-medium text-right truncate group-hover:text-white transition-colors">M. Salah</span>
+<div class="h-2 w-full bg-gray-800/50 rounded-sm overflow-hidden flex items-center">
+<div class="h-full bg-gray-600 group-hover:bg-primary/50 rounded-sm transition-all duration-300" style="width: 80%"></div>
+</div>
+<span class="text-gray-300 font-bold">8</span>
+</div>
+<div class="grid grid-cols-[100px_1fr_30px] items-center gap-3 group">
+<span class="text-gray-400 font-medium text-right truncate group-hover:text-white transition-colors">P. Neto</span>
+<div class="h-2 w-full bg-gray-800/50 rounded-sm overflow-hidden flex items-center">
+<div class="h-full bg-gray-600 group-hover:bg-primary/50 rounded-sm transition-all duration-300" style="width: 80%"></div>
+</div>
+<span class="text-gray-300 font-bold">8</span>
+</div>
+<div class="grid grid-cols-[100px_1fr_30px] items-center gap-3 group">
+<span class="text-gray-400 font-medium text-right truncate group-hover:text-white transition-colors">J. Alvarez</span>
+<div class="h-2 w-full bg-gray-800/50 rounded-sm overflow-hidden flex items-center">
+<div class="h-full bg-gray-600 group-hover:bg-primary/50 rounded-sm transition-all duration-300" style="width: 70%"></div>
+</div>
+<span class="text-gray-300 font-bold">7</span>
+</div>
+<div class="grid grid-cols-[100px_1fr_30px] items-center gap-3 group">
+<span class="text-gray-400 font-medium text-right truncate group-hover:text-white transition-colors">P. Porro</span>
+<div class="h-2 w-full bg-gray-800/50 rounded-sm overflow-hidden flex items-center">
+<div class="h-full bg-gray-700 group-hover:bg-primary/30 rounded-sm transition-all duration-300" style="width: 70%"></div>
+</div>
+<span class="text-gray-400 font-bold">7</span>
+</div>
+<div class="grid grid-cols-[100px_1fr_30px] items-center gap-3 group">
+<span class="text-gray-400 font-medium text-right truncate group-hover:text-white transition-colors">B. Saka</span>
+<div class="h-2 w-full bg-gray-800/50 rounded-sm overflow-hidden flex items-center">
+<div class="h-full bg-gray-700 group-hover:bg-primary/30 rounded-sm transition-all duration-300" style="width: 60%"></div>
+</div>
+<span class="text-gray-400 font-bold">6</span>
+</div>
+<div class="grid grid-cols-[100px_1fr_30px] items-center gap-3 group">
+<span class="text-gray-400 font-medium text-right truncate group-hover:text-white transition-colors">P. Foden</span>
+<div class="h-2 w-full bg-gray-800/50 rounded-sm overflow-hidden flex items-center">
+<div class="h-full bg-gray-700 group-hover:bg-primary/30 rounded-sm transition-all duration-300" style="width: 60%"></div>
+</div>
+<span class="text-gray-400 font-bold">6</span>
+</div>
+<div class="grid grid-cols-[100px_1fr_30px] items-center gap-3 group">
+<span class="text-gray-400 font-medium text-right truncate group-hover:text-white transition-colors">J. Maddison</span>
+<div class="h-2 w-full bg-gray-800/50 rounded-sm overflow-hidden flex items-center">
+<div class="h-full bg-gray-700 group-hover:bg-primary/30 rounded-sm transition-all duration-300" style="width: 60%"></div>
+</div>
+<span class="text-gray-400 font-bold">6</span>
+</div>
+<div class="grid grid-cols-[100px_1fr_30px] items-center gap-3 group">
+<span class="text-gray-400 font-medium text-right truncate group-hover:text-white transition-colors">Ward-Prowse</span>
+<div class="h-2 w-full bg-gray-800/50 rounded-sm overflow-hidden flex items-center">
+<div class="h-full bg-gray-700 group-hover:bg-primary/30 rounded-sm transition-all duration-300" style="width: 60%"></div>
+</div>
+<span class="text-gray-400 font-bold">6</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 border-t border-border-dark">
+<div class="bg-card-dark rounded-lg p-4 border border-border-dark flex gap-4 items-center group hover:border-primary/50 transition-colors">
+<div class="bg-primary/10 p-3 rounded-full text-primary group-hover:bg-primary group-hover:text-black transition-colors">
+<span class="material-symbols-outlined">trending_up</span>
+</div>
+<div>
+<p class="text-[10px] uppercase font-bold text-gray-500 tracking-wider">Highest Riser</p>
+<p class="text-white font-condensed font-bold text-lg">C. Palmer <span class="text-green-500 text-sm font-sans">(+0.4m)</span></p>
+</div>
+</div>
+<div class="bg-card-dark rounded-lg p-4 border border-border-dark flex gap-4 items-center group hover:border-red-500/50 transition-colors">
+<div class="bg-red-500/10 p-3 rounded-full text-red-500 group-hover:bg-red-500 group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">trending_down</span>
+</div>
+<div>
+<p class="text-[10px] uppercase font-bold text-gray-500 tracking-wider">Biggest Faller</p>
+<p class="text-white font-condensed font-bold text-lg">M. Rashford <span class="text-red-500 text-sm font-sans">(-0.2m)</span></p>
+</div>
+</div>
+<div class="bg-card-dark rounded-lg p-4 border border-border-dark flex gap-4 items-center group hover:border-blue-500/50 transition-colors">
+<div class="bg-blue-500/10 p-3 rounded-full text-blue-500 group-hover:bg-blue-500 group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">visibility</span>
+</div>
+<div>
+<p class="text-[10px] uppercase font-bold text-gray-500 tracking-wider">Most Transferred In</p>
+<p class="text-white font-condensed font-bold text-lg">K. De Bruyne <span class="text-gray-400 text-sm font-sans">(250k)</span></p>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

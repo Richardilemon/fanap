@@ -1,0 +1,56 @@
+name: FPL Weekly Update
+
+on:
+  schedule:
+    # Run every Monday at 11:30 PM WAT (22:30 UTC) after weekend gameweek
+    - cron: '30 22 * * 1'
+    # Run every Thursday at 11:30 PM WAT (22:30 UTC) after midweek games
+    - cron: '30 22 * * 4'
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  weekly-update:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+      
+      - name: Run Weekly Update
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: |
+          python weekly_update_auto.py
+      
+      - name: Verify data
+        if: success()
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: |
+          python verify_comprehensive_data.py
+      
+      - name: Notify on failure
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: '⚠️ Weekly FPL Update Failed',
+              body: 'The automated FPL weekly update failed. Check the [workflow run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}) for details.'
+            })
+      
+      - name: Notify on success
+        if: success()
+        run: |
+          echo "✅ Weekly update completed successfully"
